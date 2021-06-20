@@ -9,14 +9,11 @@ const MyMobile = (props) => {
         }
         window.addEventListener("resize", UpdateSize);
         UpdateSize();
-        return () => {
-            cleanup
-        };
     }, [])
 
     return (
         <React.Fragment>
-            {windowSize >= 550 ? props.chaildren : null}
+            {windowSize >= 550 ? props.children : null}
         </React.Fragment>
     )
 }
