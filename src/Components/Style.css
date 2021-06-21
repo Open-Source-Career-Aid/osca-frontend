@@ -1,12 +1,12 @@
-.header-text{
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 27px;
-    display: flex;
-    align-items: center;
-    text-align: center;
+.header-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  text-align: center;
 
-    color: #FFFFFF;
+  color: #ffffff;
 }
