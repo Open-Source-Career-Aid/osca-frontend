@@ -1,7 +1,7 @@
 import React from 'react'
 import MyDesktop from '../MyHelperCompnents/MyDesktop'
 
-import './Footer.css'
+import '../Styles/Footer.css'
 
 export const Footer = () => {
     return (
