@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import MyDesktop from "../MyHelperCompnents/MyDesktop";
-import "./Style.css";
+import "../Styles/Header.css";
 
 export default class Header extends Component {
     render() {
@@ -43,7 +43,7 @@ export default class Header extends Component {
                                     <div className="col-1"></div>
                                     <div className="col-4 header-text signup">
                                         <Link className="link">
-                                            Sign Up 
+                                            Sign Up
                                         </Link>
                                     </div>
                                 </div>

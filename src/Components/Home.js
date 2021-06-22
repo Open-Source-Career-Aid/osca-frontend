@@ -1,13 +1,15 @@
-import React, { Container} from 'react'
+import React from 'react'
 import { Row, Col } from 'react-bootstrap';
 import Button  from '@material-ui/core/Button'
-
-
+import MyDesktop from "../MyHelperCompnents/MyDesktop";
+import './../Styles/Body.css';
   
 const Home = () => {
     
         return (
-            <div fluid className="heading">
+            <MyDesktop>
+
+            <div fluid className="upperBody">
                
             <Col >
                 <Row style={{...styles.colorbackground, ...styles.gridRows}} xs={12} md={12} lg={12} xl={12}>
@@ -36,6 +38,7 @@ const Home = () => {
                 </Row>
             </Col>
             </div>
+            </MyDesktop>
         )
     
 }

@@ -1,0 +1,350 @@
+.footer__body {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  background: #ffffff;
+}
+
+.breaker {
+  position: absolute;
+  width: 1781px;
+  height: 0px;
+  left: 81px;
+  top: 33px;
+
+  border: 1px solid #c5c5c5;
+}
+
+.aid__component > .icon {
+  position: absolute;
+  left: 17.08%;
+  right: 79.64%;
+  top: 33.15%;
+  bottom: 60.28%;
+}
+
+.aid__component > .heading {
+  letter-spacing: 0em;
+  position: absolute;
+  width: 292px;
+  height: 54px;
+  left: 214px;
+  top: 469px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+  text-align: center;
+  color: #000000;
+}
+
+.aid__component > .description {
+  position: absolute;
+  width: 320px;
+  height: 158px;
+  left: 195px;
+  top: 559px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 37px;
+  text-align: center;
+
+  color: #586060;
+}
+
+.component__divider {
+  position: absolute;
+  width: 206px;
+  height: 0px;
+  left: 460px;
+  top: 450px;
+
+  border: 1px solid #989898;
+  transform: rotate(90deg);
+}
+
+.bite__component > .icon {
+  position: absolute;
+  left: 35.68%;
+  right: 61.1%;
+  top: 33.15%;
+  bottom: 60.31%;
+}
+
+.bite__component > .icon2 {
+  position: absolute;
+  left: 39.7%;
+  right: 57%;
+  top: 33.65%;
+  bottom: 60.31%;
+}
+
+.bite__component > .heading {
+  position: absolute;
+  width: 280px;
+  height: 35px;
+  left: 616px;
+  top: 473px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+  text-align: center;
+
+  color: #000000;
+}
+
+.bite__component > .description {
+  position: absolute;
+  width: 300px;
+  height: 158px;
+  left: 600px;
+  top: 559px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 37px;
+  text-align: center;
+
+  color: #586060;
+}
+
+.component__divider2 {
+  position: absolute;
+  width: 206px;
+  height: 0px;
+  left: 845px;
+  top: 450px;
+
+  border: 1px solid #989898;
+  transform: rotate(90deg);
+}
+
+.roadmaps__component > .icons {
+  position: absolute;
+  left: 58%;
+  right: 33.75%;
+  top: 33.15%;
+  bottom: 53.7%;
+}
+
+.roadmaps__component > .heading {
+  position: absolute;
+  width: 201px;
+  height: 37px;
+  left: 1057px;
+  top: 479px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+}
+
+.roadmaps__component > .description {
+  position: absolute;
+  width: 350px;
+  height: 158px;
+  left: 960px;
+  top: 559px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 37px;
+  text-align: center;
+
+  color: #586060;
+}
+
+.component__divider3 {
+  position: absolute;
+  width: 206px;
+  height: 0px;
+  left: 1225px;
+  top: 450px;
+
+  border: 1px solid #989898;
+  transform: rotate(90deg);
+}
+
+.progress__component > .icons {
+  position: absolute;
+  left: 78.38%;
+  right: 16.9%;
+  top: 33.15%;
+  bottom: 60.24%;
+}
+
+.progress__component > .icon2 {
+  position: absolute;
+  left: 79.5%;
+  right: 17.72%;
+  top: 34.6%;
+  bottom: 62.35%;
+}
+
+.progress__component > .heading {
+  position: absolute;
+  width: 328px;
+  height: 37px;
+  left: 1396px;
+  top: 477px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+}
+
+.progress__component > .description {
+  position: absolute;
+  width: 300px;
+  height: 158px;
+  left: 1386px;
+  top: 559px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 37px;
+  text-align: center;
+
+  color: #586060;
+}
+
+.lower__footer {
+  position: absolute;
+  width: 1920px;
+  height: 111px;
+  left: 0px;
+  top: 969px;
+  color: white;
+  background: #262929;
+}
+
+.contact {
+  position: absolute;
+  width: 98px;
+  height: 20px;
+  left: 714px;
+  top: 45px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  color: #ededed;
+}
+
+.About {
+  position: absolute;
+  width: 58px;
+  height: 20px;
+  left: 858px;
+  top: 45px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+
+  color: #ededed;
+}
+
+.footer__divider {
+  position: absolute;
+  width: 65px;
+  height: 0px;
+  left: 960px;
+  top: 37px;
+
+  border: 1px solid #989898;
+  transform: rotate(90deg);
+}
+
+.follow {
+  position: absolute;
+  width: 400px;
+  height: 28px;
+  left: 1062px;
+  top: 39px;
+}
+
+.Follow {
+  position: absolute;
+  width: 115px;
+  height: 20px;
+  left: 0;
+  top: 6px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+
+  color: #989898;
+}
+
+.handles > .twitter {
+  position: absolute;
+  left: 159px;
+  right: -0.01%;
+  top: 8px;
+  bottom: 0%;
+}
+
+.handles > .insta {
+  position: absolute;
+  left: 191px;
+  right: 36.35%;
+  top: 6px;
+  bottom: 4.07%;
+}
+
+.handles > .linkedin {
+  position: absolute;
+  left: 223px;
+  right: 34.74%;
+  top: 6px;
+  bottom: 4.17%;
+}
+
+.handles > .facebook {
+  position: absolute;
+  left: 254px;
+  right: 16.67%;
+  top: 5.73px;
+  bottom: -4.55%;
+}
