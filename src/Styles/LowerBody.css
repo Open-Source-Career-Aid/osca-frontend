@@ -1,0 +1,246 @@
+@media screen and (max-width: 1593px) {
+  body {
+    overflow-x: hidden;
+  }
+  .show__components {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .stack2 {
+    margin-top: 150px;
+  }
+
+  .component__divider2 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  body {
+    overflow-x: hidden;
+  }
+  .show__components {
+    display: flex;
+    flex-direction: column;
+  }
+  .stack1 > .component__divider {
+    display: none;
+  }
+  .stack2 > .component__divider3 {
+    display: none;
+  }
+  .stack1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .stack2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .bite__component {
+    margin-top: 100px;
+    margin-bottom: -40px;
+    min-width: 100vw;
+    min-height: 35rem;
+    background: #f5f5f5;
+    justify-content: center;
+  }
+  .progress__component {
+    min-width: 100vw;
+    min-height: 35rem;
+    background: #f5f5f5;
+    justify-content: center;
+    margin-top: 100px;
+  }
+}
+.footer__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.breaker {
+  width: 90%;
+  height: 0px;
+  border: 1px solid #c5c5c5;
+}
+
+.show__components {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 325px;
+}
+
+.stack1 {
+  display: flex;
+}
+.stack2 {
+  display: flex;
+}
+
+.stack1 > .aid__component {
+  width: 399px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aid__component > .heading {
+  margin-top: 40px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+}
+
+.aid__component > .description {
+  margin-top: 36px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 37px;
+  color: #586060;
+  text-align: center;
+  width: 350px;
+}
+
+.stack1 > .component__divider {
+  position: relative;
+  width: 206px;
+  margin-left: -95px;
+  margin-right: -95px;
+  margin-top: 100px;
+  height: 0px;
+  border: 1px solid #989898;
+  transform: rotate(90deg);
+}
+.component__divider2 {
+  position: relative;
+  min-width: 206px;
+  margin-left: -95px;
+  margin-right: -95px;
+  margin-top: -75px;
+  height: 0px;
+  border: 1px solid #989898;
+  transform: rotate(90deg);
+}
+.stack2 > .component__divider3 {
+  position: relative;
+  width: 206px;
+  height: 0px;
+  margin-left: -95px;
+  margin-right: -95px;
+  margin-top: 100px;
+  border: 1px solid #989898;
+  transform: rotate(90deg);
+}
+
+.bite__component > .icons > .icon {
+  margin-right: 15px;
+}
+.bite__component > .icons > .icon2 {
+  margin-top: 5px;
+}
+
+.stack1 > .bite__component {
+  width: 399px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bite__component > .heading {
+  margin-top: 43.52px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+}
+
+.bite__component > .description {
+  margin-top: 36px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 37px;
+  color: #586060;
+  text-align: center;
+  width: 300px;
+}
+
+.stack2 > .roadmaps__component {
+  width: 399px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.roadmaps__component > .heading {
+  margin-top: 50px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+}
+
+.roadmaps__component > .description {
+  margin-top: 36px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 37px;
+  color: #586060;
+  text-align: center;
+  width: 350px;
+}
+.stack2 > .progress__component {
+  width: 399px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress__component > .icon > .icon2 {
+  position: relative;
+  left: -40px;
+  top: -4px;
+}
+
+.progress__component > .heading {
+  margin-top: 47.57px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+}
+
+.progress__component > .description {
+  margin-top: 36px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 37px;
+  color: #586060;
+  text-align: center;
+  width: 300px;
+}
