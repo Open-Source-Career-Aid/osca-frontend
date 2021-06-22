@@ -2,11 +2,51 @@
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 27px;
   display: flex;
   align-items: center;
   text-align: center;
-
+  color: #8750A9;
   color: #ffffff;
+}
+
+.header{
+  background: linear-gradient(0deg, #8750A9, #8750A9),
+  linear-gradient(0deg, #C4C4C4, #C4C4C4);
+  position: fixed;
+  width: 100%;
+  z-index: 100px;
+}
+
+.link{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.link:hover{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.link:visited{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.signup{
+  background-color: #ffffff;
+  border-radius: 20.5px;
+  height: 30px;
+}
+
+.link-s{
+  color: #8750A9;
+  text-decoration: none;
+}
+
+.link-s:hover:visited{
+  color: #8750A9;
+  text-align: center;
+  text-decoration: #8750A9;
 }
