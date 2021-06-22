@@ -10,3 +10,34 @@
 
     color: #FFFFFF;
 }
+
+.heading {
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    /* background: linear-gradient(0deg, #8750A9, #8750A9), #C4C4C4; */
+}
+
+.heading h1 {
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2em;
+    line-height: 1em;
+    /* identical to box height */
+
+}
+
+.heading p {
+    font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 1em;
+line-height: 1.5em;
+display: flex;
+align-items: center;
+}
