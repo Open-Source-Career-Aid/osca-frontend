@@ -6,7 +6,10 @@
     align-items: center;
     text-align: center;
     color: #FFFFFF;
+    
 }
+
+
 
 .upperBody h1 {
 
@@ -34,4 +37,139 @@
     font-size: 5vh;
     line-height: 1.5em;
     
+}
+
+@media screen and (max-width: 4400px) {
+
+.center {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    text-align: center;
+}
+.seprator {
+    border-left: 1px solid #FFFFFF;
+}
+
+.headingPart1 {
+    color: #B280D1;
+    padding-right: 10%;
+}
+.headingPart2 {
+    padding-left: 15%;
+    color: #8750A9;
+}
+ h1.headingPart1  {
+    font-size: 6vw;
+    font-weight: 600;
+ } 
+ 
+ h1.headingPart2  {
+    font-size: 6vw;
+    font-weight: 600;
+ } 
+ .headingCol {
+     padding-right: 1vh;
+    font-weight: 600;
+
+ }
+
+ .buttonCol {
+    max-width:20vw;
+    margin: 0 10vw 0;
+    
+ }
+
+ .button1 {
+    padding: 1vh !important;
+
+    z-index: 1;
+ }
+
+ .button2 {
+    /* padding: 4%;
+    font-size: 2vh;
+    font-weight: 600;
+    background: #FFFFFF;
+    color: #8750A9;
+    border: 1px solid #8750A9;
+    box-sizing: border-box;
+    border-radius: 2rem;
+    z-index:  -1; */
+    padding: 1vh !important;
+
+}
+
+}
+
+@media screen and (max-width: 750px) {
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}    
+
+.seprator {
+    border-left: none;
+}
+.headingPart1 {
+    color: #8750A9;
+
+    padding-right: 0;
+}
+.headingPart2 {
+    padding-left: 0;
+    color: #8750A9;
+    
+}    
+h1.headingPart1  {
+    font-size: 5vh;
+    font-weight: 600;
+    line-height: 10vh%;
+ }
+ h1.headingPart2  {
+     font-weight: 600;
+    font-size: 8vh;
+    line-height: 10vh;
+    
+} 
+
+.buttonCol {
+    margin-left: 0;
+    margin-right: 0;
+    max-width:60%;
+    flex-direction:column ;
+    align-items: center;
+    text-align: center;
+    padding-top: 8vh;
+    
+}
+
+.button1 {
+    padding: 1.5vh !important;
+    
+    /* font-size : 2vh;
+    background:  #8750A9;
+    font-weight: 700;
+    border: 1px solid #8750A9;
+    box-sizing: border-box;
+    border-radius: 2rem; */
+    
+ }
+
+ .button2 {
+    padding: 1.5vh !important;
+
+    
+    /* font-size: 2vh;
+    font-weight: 600;
+    background: #FFFFFF;
+    color: #8750A9;
+    border: 1px solid #8750A9;
+    box-sizing: border-box;
+    border-radius: 2rem; */
+}
+
 }

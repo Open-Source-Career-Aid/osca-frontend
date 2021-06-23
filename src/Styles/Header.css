@@ -16,7 +16,7 @@
   linear-gradient(0deg, #C4C4C4, #C4C4C4);
   position: fixed;
   width: 100%;
-  z-index: 100px;
+  z-index: 2;
 }
 
 .link{
