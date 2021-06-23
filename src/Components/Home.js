@@ -3,7 +3,6 @@ import { Row, Col } from 'react-bootstrap';
 import Button  from '@material-ui/core/Button'
 import MyDesktop from "../MyHelperCompnents/MyDesktop";
 import './../Styles/Body.css';
-import zIndex from '@material-ui/core/styles/zIndex';
   
 const Home = () => {
     
