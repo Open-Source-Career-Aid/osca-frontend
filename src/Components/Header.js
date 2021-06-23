@@ -12,19 +12,19 @@ export default class Header extends Component {
                         <div className="row py-4">
                             <div className="col-2 line">
                             </div>
-                            <div className="col-1 header-text">
-                                <Link className="link">
-                                    Learn a Skill
-                                </Link>
-                            </div>
-                            <div className="col-3 header-text">
+                            <div className="col-4 header-text">
+                                <div className="col-3 header-text">
+                                    <Link className="link">
+                                        Learn a Skill
+                                    </Link>
+                                </div>
                                 <div className="row">
                                     <div className="col-9 text-center">
                                         <Link className="link">
                                             Track Your Progress
                                         </Link>
                                     </div>
-                                    <div className="col-2 text-end">
+                                    <div className="col-1 text-end">
                                         &nbsp;
                                         <Link className="link">
                                             About
@@ -32,7 +32,7 @@ export default class Header extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-4"></div>
+                            <div className="col-3"></div>
                             <div className="col-2 header-text">
                                 <div className="row">
                                     <div className="col-3 header-text">
