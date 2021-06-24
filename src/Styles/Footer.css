@@ -1,76 +1,84 @@
 @media screen and (max-width: 750px) {
   .lower__footer {
-    min-height: 205px;
+    min-height: 12.813rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     min-width: 100vw !important;
+    top: 0 !important;
+  }
+  .contact {
+    margin-left: 0 !important;
   }
   .About {
     margin-left: 0 !important;
-    margin-top: 12px;
+    margin-top: 0.75rem;
   }
   .footer__divider {
     transform: rotate(0deg) !important;
     width: 60% !important;
     margin-left: 0 !important;
-    margin-top: 26px;
+    margin-top: 1.625rem;
   }
   .follow {
     display: flex;
     flex-direction: column;
   }
   .follow > .Follow {
-    margin-bottom: 11px;
-    margin-top: 21px;
+    margin-bottom: 0.9rem;
+    margin-top: 0.45rem;
+    margin-left: 0 !important;
   }
   .follow > .handles {
-    margin-left: -10px !important;
+    margin-left: -0.9rem !important;
   }
 }
 .lower__footer {
   position: relative;
   width: 100vw;
-  height: 111px;
-  left: 0px;
+  height: 6.938rem;
+  left: 0;
   bottom: 0;
-  top: 252px;
+  top: 18.5rem;
   background: #262929;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
+a {
+  text-decoration: none;
+}
 .contact {
-  width: 98px;
-  height: 20px;
+  width: 6.125rem;
+  height: 1.25rem;
+  margin-left: 2rem;
 
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
-  font-size: 17px;
-  line-height: 25px;
+  font-size: 1.063rem;
+  line-height: 1.563rem;
   color: #ededed;
 }
 
 .About {
-  width: 58px;
-  height: 20px;
-  margin-left: 46px;
+  width: 3.625rem;
+  height: 1.25rem;
+  margin-left: 1.875rem;
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
-  font-size: 17px;
-  line-height: 25px;
+  font-size: 1.063rem;
+  line-height: 1.563rem;
 
   color: #ededed;
 }
 
 .footer__divider {
   position: relative;
-  width: 65px;
-  height: 0px;
-  margin-left: 44px;
+  width: 4.063rem;
+  height: 0;
+  margin-left: 0.75rem;
 
   border: 1px solid #989898;
   transform: rotate(90deg);
@@ -82,28 +90,29 @@
 }
 
 .follow > .Follow {
-  width: 115px;
-  height: 20px;
+  width: 7.188rem;
+  height: 1.25rem;
+  margin-left: 0.75rem;
 
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
-  font-size: 17px;
-  line-height: 25px;
+  font-size: 1.063rem;
+  line-height: 1.563rem;
 
   color: #989898;
 }
 
 .follow > .handles {
-  margin-left: 50px;
+  margin-left: 0.4rem;
 }
 
-.follow > .handles > .twitter {
-  margin-right: 8px;
+.follow > .handles > a > .twitter {
+  margin-right: 0.5rem;
 }
-.follow > .handles > .insta {
-  margin-right: 10px;
+.follow > .handles > a > .insta {
+  margin-right: 0.5rem;
 }
-.follow > .handles > .linkedin {
-  margin-right: 10px;
+.follow > .handles > a > .linkedin {
+  margin-right: 0.5rem;
 }
