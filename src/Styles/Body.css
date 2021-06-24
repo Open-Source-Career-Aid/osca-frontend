@@ -87,17 +87,7 @@
  }
 
  .button2 {
-    /* padding: 4%;
-    font-size: 2vh;
-    font-weight: 600;
-    background: #FFFFFF;
-    color: #8750A9;
-    border: 1px solid #8750A9;
-    box-sizing: border-box;
-    border-radius: 2rem;
-    z-index:  -1; */
     padding: 1vh !important;
-
 }
 
 }
@@ -127,7 +117,7 @@
 h1.headingPart1  {
     font-size: 5vh;
     font-weight: 600;
-    line-height: 10vh%;
+    line-height: 10vh;
  }
  h1.headingPart2  {
      font-weight: 600;
@@ -150,26 +140,12 @@ h1.headingPart1  {
 .button1 {
     padding: 1.5vh !important;
     
-    /* font-size : 2vh;
-    background:  #8750A9;
-    font-weight: 700;
-    border: 1px solid #8750A9;
-    box-sizing: border-box;
-    border-radius: 2rem; */
     
  }
 
  .button2 {
     padding: 1.5vh !important;
 
-    
-    /* font-size: 2vh;
-    font-weight: 600;
-    background: #FFFFFF;
-    color: #8750A9;
-    border: 1px solid #8750A9;
-    box-sizing: border-box;
-    border-radius: 2rem; */
 }
 
 }
