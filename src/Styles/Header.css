@@ -1,59 +1,121 @@
 .header-text {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 27px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: #8750A9;
-  color: #ffffff;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #8750A9;
+    color: #ffffff;
 }
 
-.header{
-  background: linear-gradient(0deg, #8750A9, #8750A9),
-  linear-gradient(0deg, #C4C4C4, #C4C4C4);
-  background-color: #8750A9;
-  position: fixed;
-  width: 100%;
-  z-index: 100;
-  padding-top: 15px;
-  padding-bottom: 15px;
+.header {
+    background: linear-gradient(0deg, #8750A9, #8750A9), linear-gradient(0deg, #C4C4C4, #C4C4C4);
+    background-color: #8750A9;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    transition: ease 1s;
 }
 
-.header-s{
-  box-shadow: 0 0 6px 6px rgba(0, 0, 0, 0.25);
+.header-s {
+    box-shadow: 0 0 6px 6px rgba(0, 0, 0, 0.25);
 }
 
-.link{
-  text-decoration: none;
-  color: #ffffff;
+.link {
+    text-decoration: none;
+    color: #ffffff;
+    justify-content: center;
 }
 
-.link:hover{
-  text-decoration: none;
-  color: #ffffff;
+.link:hover {
+    text-decoration: none;
+    color: #ffffff;
 }
 
-.link:visited{
-  text-decoration: none;
-  color: #ffffff;
+.link:visited {
+    text-decoration: none;
+    color: #ffffff;
 }
 
-.signup{
-  background-color: #ffffff;
-  border-radius: 20.5px;
-  height: 30px;
+.signup {
+    background-color: #ffffff;
+    border-radius: 20.5px;
+    height: 30px;
 }
 
-.link-s{
-  color: #8750A9;
-  text-decoration: none;
+.link-s {
+    color: #8750A9;
+    text-decoration: none;
 }
 
-.link-s:hover:visited{
-  color: #8750A9;
-  text-align: center;
-  text-decoration: #8750A9;
+.link-s:hover:visited {
+    color: #8750A9;
+    text-align: center;
+    text-decoration: #8750A9;
+}
+
+.menu-btn {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar-1,
+.bar-2,
+.bar-3 {
+    width: 25px;
+    height: 2px;
+    background-color: #ffffff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change-1 {
+    margin-top: 60px;
+    width: 25px;
+    transform: rotate(45deg) translateY(10px);
+    height: 2px;
+    background-color: #ffffff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change-2 {
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.change-3 {
+    width: 25px;
+    transform: rotate(-45deg) translateY(-6px) translateX(-5px);
+    height: 2px;
+    background-color: #ffffff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.header-ex {
+    z-index: 200;
+    transition: 1s ease;
+    background-color: #8750A9;
+}
+
+.bar {
+    width: 80px;
+    height: 2px;
+    z-index: 300;
+    color: #ffffff !important;
+    border-width: 2px;
+}
+
+.header-bar {
+    margin-left: 10%;
+    width: 80%;
+    border-width: 10px;
+    margin-right: 10%;
+    color: #ffffff;
 }
