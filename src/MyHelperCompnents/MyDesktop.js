@@ -13,7 +13,7 @@ const MyMobile = (props) => {
 
     return (
         <React.Fragment>
-            {windowSize >= 550 ? props.children : null}
+            {windowSize > 550 ? props.children : null}
         </React.Fragment>
     )
 }

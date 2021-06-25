@@ -1,11 +1,13 @@
 import React, { useState, useLayoutEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MyDesktop from "../MyHelperCompnents/MyDesktop";
+import MyMobile from "../MyHelperCompnents/MyMobile";
 import "../Styles/Header.css";
 
 const Header = () => {
 
     const [scroll, setScroll] = useState(0);
+    const [drawerOpen, setDrawerOpen] = useState(0);
 
     useLayoutEffect(() => {
         function UpdateScroll() {
@@ -21,7 +23,7 @@ const Header = () => {
                 <div
                     className={scroll < 30 ? "header" : "header header-s"}
                 >
-                    <div className="row py-3">
+                    <div className="row">
                         <div className="col-2 line">
                         </div>
                         <div className="col-4 header-text">
@@ -63,6 +65,21 @@ const Header = () => {
                     </div>
                 </div>
             </MyDesktop>
+            <MyMobile>
+                <div
+                    className={scroll < 30 ? "header" : "header header-s"}
+                >
+                    <div className="row">
+                        <div className="col-1">
+                            
+                        </div>
+                        <div className="col-4"></div>
+                        <div className="col-1 header-text">
+                            OSCA
+                        </div>
+                    </div>
+                </div>
+            </MyMobile>
         </>
     )
 }
