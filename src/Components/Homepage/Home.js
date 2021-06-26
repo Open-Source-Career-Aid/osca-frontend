@@ -2,7 +2,7 @@ import React, { useState, useLayoutEffect } from 'react'
 import { Row, Col } from 'react-bootstrap';
 import Button from '@material-ui/core/Button'
 
-import './../Styles/Body.css';
+import '../../Styles/Body.css';
 
 const Home = () => {
 
