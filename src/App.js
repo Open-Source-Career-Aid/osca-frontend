@@ -16,11 +16,8 @@ function App() {
             <Home />
             <LowerBody />
           </Route>
-          <Route exact path="/error" render={() => {
-            return (
-              <ErrorPage />
-            );
-          }}>
+          <Route exact path="/error">
+            <ErrorPage />
           </Route>
         </Switch>
         <Footer />

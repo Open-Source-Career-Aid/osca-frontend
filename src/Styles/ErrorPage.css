@@ -81,12 +81,9 @@
 }
 
 @media screen and (max-width: 650px) {
-  .btns {
-    margin-bottom: 5rem;
-  }
-
   .container {
     padding-top: 6.25rem;
+    margin-bottom: 5rem;
   }
   .error__container {
     margin-top: 3rem;
