@@ -28,7 +28,7 @@ const Header = () => {
                         </div>
                         <div className="col-4 header-text">
                             <div className="col-3 header-text">
-                                <Link className="link">
+                                <Link to="/learnskill" className="link">
                                     Learn a Skill
                                 </Link>
                             </div>
@@ -87,7 +87,7 @@ const Header = () => {
                             <>
                                 <div className="row pt-5 header-ex">
                                     <div className="justify-content-center text-center header-text">
-                                        <Link className="link">
+                                        <Link to="/learnskill" className="link">
                                             Learn a Skill
                                         </Link>
                                     </div>
