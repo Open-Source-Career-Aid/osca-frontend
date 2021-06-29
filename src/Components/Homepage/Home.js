@@ -32,7 +32,7 @@ const Home = () => {
     window.addEventListener("scroll", () => {
         let windowwidth = document.documentElement.clientWidth;
         let height = window.pageYOffset;
-        let topmargin = -7.5 + ((height * 0.063) / 5) + ((1900 - windowwidth) * 0.063) / 10 + "rem";
+        let topmargin = -9 + ((height * 0.063) / 2) + (((windowwidth - 2000) * 0.063) / 7) + "rem";
         document.querySelector(".rectangle").style.top = topmargin;
     })
 
