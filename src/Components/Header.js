@@ -55,7 +55,7 @@ const Header = () => {
                                     </Link>
                                 </div>
                                 <div className="col-2"></div>
-                                <div className="col-6 header-text text-center signup">
+                                <div className="col-6 justify-content-center header-text text-center signup">
                                     <Link className="link-s text-center">
                                         Sign Up
                                     </Link>
