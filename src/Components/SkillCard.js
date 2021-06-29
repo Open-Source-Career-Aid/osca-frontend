@@ -17,8 +17,11 @@ const SkillCard = (props) => {
                 {/* </p>  */}
             </Col>
             <Col xs={1} sm={1} md={1}  lg={1} xl={1}>
-                <Button onClick={() => {navigator.clipboard.writeText("text")}}>
-                    {/* <img style={{height:'1vh'}} src="./copy.png" /> */}
+                <Button size="sm" style={styles.copyButton}  onClick={() => {navigator.clipboard.writeText("text")}}>
+                    <a>
+
+                    <img style={styles.copyButtonIcon} src="./copy.png" />
+                    </a>
                 </Button>
             </Col>
         </Row>
@@ -30,6 +33,17 @@ jisdjfaksdf knk Hiikfsd fihis f  .jisadjf i.   asdf sdfn uhn dnf djfn djnfu bauj
     </div>
         );
 
+}
+
+const styles = {
+    copyButton: {
+        backgroundColor: 'white',
+        border: 'none'
+    },
+    copyButtonIcon: {
+        height: '3vh',
+        width: '1.8vw'
+    }
 }
 
 export default SkillCard;
