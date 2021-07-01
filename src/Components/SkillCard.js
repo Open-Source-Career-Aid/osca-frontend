@@ -11,7 +11,7 @@ const SkillCard = (props) => {
         <div className="skillCard">
 
         <Row className="links">
-            <Col xs={8} sm={10} md={10}  lg={11} xl={11}>
+            <Col xs={11} sm={10} md={10}  lg={11} xl={11}>
                 {/* <p>  */}
                     https://cdn.discordapp.com/attachments/852968860768010280/.... 
                 {/* </p>  */}

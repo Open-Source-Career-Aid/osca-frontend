@@ -7,15 +7,14 @@
 .links {
     background-color: #FFFFFF;
     display: flex;
-     /* justify-content: center; */
-     align-items: center;
-     /* text-align: center; */
-     align-content: space-between;
+    align-items: center;
+    align-content: space-between;
     padding: .1em 0 .1em;
     border-radius: .4rem;
-    /* height: 4vh; */
+    overflow: hidden;
 }
 
 .description {
     padding-top: 1.5em ;
 }
+
