@@ -68,10 +68,10 @@ const Skill = () => {
             }
         </Row>
         <Row   >
-            <Col  xs={10} sm={10} md={10}  lg={10} xl={10}>
+            <Col  xs={10} sm={10} md={10}  lg={10} xl={11} >
         <h3 className='skillName'>HTML</h3>
             </Col>
-            <Col >
+            <Col xs={1} sm={1} md={1}  lg={1} xl={1} >
             <Button
             style={styles.dropButton}
             
@@ -104,8 +104,8 @@ const styles = {
         border: 'none'
     },
     copyButtonIcon: {
-        height: '3vh',
-        width: '1.8vw',
+        height: '2vw',
+        width: '2vw',
         filter: 'grayscale(100%)'
     },
     fullWidth: {
