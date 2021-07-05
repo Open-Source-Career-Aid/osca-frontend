@@ -5,7 +5,7 @@ import { LowerBody } from './Components/Homepage/LowerBody';
 import { Footer } from './Components/Footer';
 import Home from './Components/Homepage/Home';
 import { ErrorPage } from './Components/ErrorPage';
-import Form from './Components/Form/Form';
+import RoadmapForm from './Components/Form/Form';
 
 function App() {
   return (
@@ -14,8 +14,8 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/">
-            <Home />
-            <LowerBody />
+            <RoadmapForm />
+            {/* <LowerBody /> */}
           </Route>
           <Route exact path="/error">
             <ErrorPage />
