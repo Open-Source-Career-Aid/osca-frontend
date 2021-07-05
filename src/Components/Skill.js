@@ -40,16 +40,16 @@ const Skill = () => {
  return (
      <div className="headingRow">
            <Col className="backarrow" xs={12} sm={12} md={1}  lg={1} xl={1}>
-              <img src='./../../back.png' />
+              <img style={styles.copyButtonIcon} src='./../../back.png' />
             </Col>
             <Col xs={12} sm={12} md={11}  lg={11} xl={11}>
 
          <Row style={styles.fullWidth} >
           
-            <Col xs={10} sm={10} md={10}  lg={11} xl={11} >
+            <Col xs={10} sm={11} md={11}  lg={11} xl={11} >
             <h2>Web Devlopment</h2>
             </Col>
-            <Col xs={2} sm={2} md={2}  lg={1} xl={1}>
+            <Col xs={2} sm={1} md={1}  lg={1} xl={1}>
                 {isDesktop ? 
                 (<Button className="addbutton" > Add</Button>)
                 :
@@ -68,7 +68,7 @@ const Skill = () => {
             }
         </Row>
         <Row   >
-            <Col  xs={10} sm={10} md={10}  lg={10} xl={11} >
+            <Col  xs={10} sm={10} md={11}  lg={11} xl={11} >
         <h3 className='skillName'>HTML</h3>
             </Col>
             <Col xs={1} sm={1} md={1}  lg={1} xl={1} >
@@ -104,9 +104,9 @@ const styles = {
         border: 'none'
     },
     copyButtonIcon: {
-        height: '2vw',
-        width: '2vw',
-        filter: 'grayscale(100%)'
+        height: '1.2em',
+        width: '1.2em',
+        
     },
     fullWidth: {
         width: '100%'
