@@ -1,12 +1,17 @@
 .headingRow {
     color: #586060;
     font-weight: 600;
+   
 }
 
 .spacebetween {
     justify-content: space-between;
 }
 
+.formgroup {
+    padding-top: 1em;
+    
+}
 
 
 
