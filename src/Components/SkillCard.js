@@ -10,8 +10,8 @@ const SkillCard = (props) => {
 
         <div className="skillCard">
 
-        <Row className="links">
-            <Col xs={11} sm={10} md={10}  lg={11} xl={11}>
+        <Row  className="links">
+            <Col xs={11} sm={11} md={11}  lg={11} xl={11}>
                 {/* <p>  */}
                     https://cdn.discordapp.com/attachments/852968860768010280/.... 
                 {/* </p>  */}
@@ -43,6 +43,9 @@ const styles = {
     copyButtonIcon: {
         height: '3vh',
         width: '1.8vw'
+    },
+    fullWidth: {
+        width: '100%'
     }
 }
 

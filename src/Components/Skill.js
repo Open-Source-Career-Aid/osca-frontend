@@ -67,8 +67,8 @@ const Skill = () => {
                 //tags
             }
         </Row>
-        <Row   >
-            <Col  xs={10} sm={10} md={11}  lg={11} xl={11} >
+        <Row  style={styles.fullWidth}  >
+            <Col  xs={10} sm={11} md={11}  lg={11} xl={11} >
         <h3 className='skillName'>HTML</h3>
             </Col>
             <Col xs={1} sm={1} md={1}  lg={1} xl={1} >
