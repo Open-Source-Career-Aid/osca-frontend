@@ -46,10 +46,10 @@ const Skill = () => {
 
          <Row style={styles.fullWidth} >
           
-            <Col xs={10} sm={11} md={11}  lg={11} xl={11} >
+            <Col xs={11} sm={11} md={11}  lg={11} xl={11} >
             <h2>Web Devlopment</h2>
             </Col>
-            <Col xs={2} sm={1} md={1}  lg={1} xl={1}>
+            <Col xs={1} sm={1} md={1}  lg={1} xl={1}>
                 {isDesktop ? 
                 (<Button className="addbutton" > Add</Button>)
                 :
@@ -68,25 +68,24 @@ const Skill = () => {
             }
         </Row>
         <Row  style={styles.fullWidth}  >
-            <Col  xs={10} sm={11} md={11}  lg={11} xl={11} >
-        <h3 className='skillName'>HTML</h3>
+            <Col  xs={11} sm={11} md={11}  lg={11} xl={11} >
+                <h3 className='skillName'>HTML</h3>
             </Col>
             <Col xs={1} sm={1} md={1}  lg={1} xl={1} >
-            <Button
-            style={styles.dropButton}
+                <Button
+                    style={styles.dropButton}
             
-            onClick={() => handleChange()}
-
-            aria-controls="example-collapse-text"
-        aria-expanded={open}>
-                <img style={styles.copyButtonIcon} src={iconsrc} />
-            </Button>
+                    onClick={() => handleChange()}
+                    aria-controls="example-collapse-text"
+                    aria-expanded={open}>
+                    <img style={styles.copyButtonIcon} src={iconsrc} />
+                </Button>
             </Col>
         </Row>
         <Collapse  in={open}>
             <div id="example-collapse-text">
 
-            <SkillCard />
+                <SkillCard />
             </div>
         </Collapse>
         
