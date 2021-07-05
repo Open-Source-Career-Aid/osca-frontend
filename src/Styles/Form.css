@@ -1,0 +1,47 @@
+
+
+
+
+
+@media screen and (max-width: 4400px) {
+
+    .headingRow {
+        padding-top: 15%;
+        padding-left: 20vh;
+        padding-right: 20vh;
+         display: flex;
+       
+    }
+
+    .backarrow {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding-top: 1vh;
+        padding-right: 2vw;
+    }
+
+    
+}
+
+@media screen and (max-width: 750px) {
+
+    .headingRow {
+        padding-top: 25%;
+        display: flex;
+        padding-left: 5vh;
+        padding-right: 5vh;
+        padding-bottom: 10vh;
+        flex-direction: column;
+    }
+    .backarrow {
+        display: block;
+        padding-top: 1vh;
+        padding-bottom: 2vh;
+        padding-right: 2vw;
+    }
+
+   
+    
+}

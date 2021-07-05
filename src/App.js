@@ -5,6 +5,7 @@ import { LowerBody } from './Components/Homepage/LowerBody';
 import { Footer } from './Components/Footer';
 import Home from './Components/Homepage/Home';
 import { ErrorPage } from './Components/ErrorPage';
+import Form from './Components/Form/Form';
 
 function App() {
   return (
