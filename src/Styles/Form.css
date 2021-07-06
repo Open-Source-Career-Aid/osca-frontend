@@ -8,19 +8,16 @@
     justify-content: space-between;
 }
 
-.formgroup {
-    padding-top: 1em;
-    
-}
+
 
 
 
 @media screen and (max-width: 4400px) {
 
     .headingRow {
-        padding-top: 15%;
-        padding-left: 20vh;
-        padding-right: 20vh;
+        padding-top: 10%;
+        padding-left: 10%;
+        padding-right: 15%;
          display: flex;
        
     }
@@ -34,6 +31,9 @@
         padding-right: 2vw;
     }
 
+    .formgroup {
+        padding-top: 0em;
+    }
     
 }
 
@@ -54,6 +54,9 @@
         padding-right: 2vw;
     }
 
-   
+    .formgroup {
+        padding-top: 1em;
+        
+    }
     
 }
