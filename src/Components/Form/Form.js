@@ -100,7 +100,6 @@ const RoadmapForm = () => {
     }
 
 
-<<<<<<< Updated upstream
  return (
     <div className="headingRow">
        
@@ -175,7 +174,6 @@ const RoadmapForm = () => {
         </Col>
     </div>
  );   
-=======
     return (
         <div className="headingRow">
 
@@ -325,7 +323,6 @@ const RoadmapForm = () => {
             </Col>
         </div>
     );
->>>>>>> Stashed changes
 
 }
 
