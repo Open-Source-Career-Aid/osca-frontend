@@ -9,6 +9,8 @@ import { purple } from '@material-ui/core/colors';
 import TextField from '@material-ui/core/TextField';
 import AddIcon from '@material-ui/icons/Add';
 import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
+import SkillRoadmap from './SkillRoadmap';
+import Skill from './Skill';
 
 const CustomSwitch = withStyles({
     switchBase: {
@@ -103,7 +105,7 @@ const RoadmapForm = () => {
         <div className="headingRow">
 
             <Col className="backarrow" xs={12} sm={12} md={1} lg={1} xl={1}>
-                <img style={styles.buttonIcon} src='./../../../../../Vector.png' />
+                <img style={styles.buttonIcon} src='./../../../../../back.png' />
             </Col>
 
             <Col xs={12} sm={12} md={11} lg={11} xl={11}>
@@ -245,7 +247,15 @@ const RoadmapForm = () => {
                         </Row>
                     </Row>
                 </Form >
+                {
+                    state.is_supperskill 
+                    ?
+                    <SkillRoadmap />
+                    :
+                    <Skill />
+                }
             </Col>
+            
         </div>
     );
 
