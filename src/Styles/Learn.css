@@ -1,0 +1,230 @@
+.learn-txt {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: rgba(152, 152, 152, 1);
+}
+
+.top-pad {
+    padding-top: 80px;
+}
+
+.SearchField {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: rgba(152, 152, 152, 1);
+    border-radius: 31px;
+    border: 1px solid #989898;
+}
+
+.Search {
+    color: rgba(152, 152, 152, 1);
+    border-radius: 31px;
+    border: none;
+    border-right: none;
+    border-bottom-right-radius: 31px;
+    text-align: center !important;
+    align-items: center !important;
+}
+
+.Search:active {
+    text-decoration: none;
+    border: none;
+    border: 0px;
+    border-width: 0px;
+}
+
+.card-css {
+    left: 456px;
+    top: 274px;
+    background: #F5F5F5;
+    border-radius: 13px;
+}
+
+.card-heading {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 54px;
+    display: flex;
+    align-items: center;
+    color: #586060;
+}
+
+.track {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: #42D651;
+    margin-top: 15px;
+}
+
+.skill {
+    width: 60px;
+    background: #28B5E1;
+    border-radius: 9px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 10px;
+    padding-left: 8px;
+    padding-right: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.content {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    color: #989898;
+}
+
+.search-btn {
+    padding-right: 15px
+}
+
+.skillset {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #989898;
+}
+
+.active {
+    color: #8750A9 !important;
+}
+
+.skillRed {
+    width: 60px;
+    background: #D74646;
+    border-radius: 9px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 10px;
+    padding-left: 8px;
+    padding-right: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.subSkill {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    color: #586060;
+    text-align: right;
+}
+
+.box-skill-blue {
+    background: #2C91B0;
+    border-radius: 9px;
+    text-align: center;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.box-skill-red {
+    background: #D74646;
+    border-radius: 9px;
+    text-align: center;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.box-skill-blueD {
+    background: #4248D2;
+    border-radius: 9px;
+    text-align: center;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.addition {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    /* display: flex; */
+    /* align-items: center; */
+    color: #989898;
+}
+
+.mobile-card {
+    font-size: 14px !important;
+}
+
+.icon-time {
+    color: #36CF45;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-right: 25px;
+}
+
+@media only screen and (max-width: 768px) {
+    .mobile-content {
+        font-size:11px !important;
+    }
+    
+    .mobile-subskill{
+        font-size: 11px !important;
+        padding-left: 20px;
+    }
+
+    .mobile-font{
+        font-size: 10px;
+    }
+
+    .mobile-add{
+        font-size: 11px !important;
+        padding-top: 6px;
+    }
+}

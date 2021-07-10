@@ -25,17 +25,33 @@
     margin-left: 0 !important;
     margin-top: 1.625rem;
   }
-  .follow {
-    display: flex;
-    flex-direction: column;
-  }
   .follow > .Follow {
     margin-bottom: 0.9rem;
     margin-top: 0.45rem;
     margin-left: 0 !important;
   }
+  .follow {
+    display: flex;
+    flex-direction: row;
+  }
   .follow > .handles {
-    margin-left: -0.9rem !important;
+    margin-left: 0 !important;
+    margin-top: -0.4rem;
+  }
+  .handles > a > .linkedin {
+    height: 1rem;
+    margin-right: 0.1rem !important;
+  }
+  .handles > a > .insta {
+    height: 1rem;
+    margin-right: 0.1rem !important;
+  }
+  .handles > a > .facebook {
+    height: 1rem;
+  }
+  .handles > a > .twitter {
+    height: 1rem;
+    margin-right: 0.1rem !important;
   }
 }
 .lower__footer {

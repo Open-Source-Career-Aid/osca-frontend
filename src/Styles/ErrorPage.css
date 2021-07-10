@@ -1,0 +1,116 @@
+.container {
+  padding-top: 11.4rem;
+  margin-bottom: -6.9rem;
+}
+.error__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 5rem;
+}
+
+.error__container > p {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 54px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-top: 1.078rem;
+
+  color: #989898;
+}
+
+.btns {
+  position: relative;
+  margin-top: 2.422rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btns > a > .req__btn {
+  width: 18rem;
+  height: 4rem;
+  background: #8750a9;
+  border-radius: 40.5px;
+  border: none;
+}
+
+.btns > a > .req__btn > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 45px;
+  color: #ffffff;
+  padding-top: 0.5rem;
+}
+
+.btns > a > .create__btn {
+  width: 18rem;
+  height: 4rem;
+  border: none;
+  background-color: #ffffff;
+  border: 1px solid #8750a9;
+  box-sizing: border-box;
+  border-radius: 40.5px;
+  margin-top: 1.125rem;
+}
+
+.btns > a > .create__btn > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.3rem;
+  line-height: 45px;
+  padding-top: 0.5rem;
+
+  color: #8750a9;
+}
+
+@media screen and (max-width: 650px) {
+  .container {
+    padding-top: 6.25rem;
+    margin-bottom: 5rem;
+  }
+  .error__container {
+    margin-top: 3rem;
+  }
+  .error__container > p {
+    font-size: 20px;
+    margin-top: -1rem !important;
+  }
+  .error__container > svg {
+    width: 90px;
+  }
+  .btns > a > .req__btn {
+    width: 18rem;
+    height: 3rem;
+  }
+  .btns > a > .create__btn {
+    width: 18rem;
+    height: 3rem;
+  }
+  .btns > a > .req__btn > p {
+    font-weight: 400;
+    font-size: 1.1rem;
+    padding-top: 0;
+  }
+  .btns > a > .create__btn > p {
+    font-weight: 400;
+    font-size: 1.1rem;
+    padding-top: 0;
+  }
+}
