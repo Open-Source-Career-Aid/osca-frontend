@@ -2,8 +2,9 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from './Components/Header';
 import { Footer } from './Components/Footer';
-import Skill from './Components/Skill';
 import Home from './Components/Homepage/Home';
+import { LowerBody } from './Components/Homepage/LowerBody';
+import LearnSkill from './Components/LearnSkill';
 
 function App() {
   return (
@@ -16,8 +17,8 @@ function App() {
             <Home />
             <LowerBody />
           </Route>
-          <Route exact path="/error">
-            <ErrorPage />
+          <Route  path="/learnskill">
+            <LearnSkill />
           </Route>
         </Switch>
         <Footer />
