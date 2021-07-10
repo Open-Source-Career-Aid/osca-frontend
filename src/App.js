@@ -2,14 +2,15 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from './Components/Header';
 import { Footer } from './Components/Footer';
+import Skill from './Components/Skill';
 import Home from './Components/Homepage/Home';
-
 
 function App() {
   return (
     <>
       <Router>
         <Header />
+
         <Switch>
           <Route exact path="/">
             <Home />

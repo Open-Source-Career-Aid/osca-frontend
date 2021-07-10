@@ -1,0 +1,91 @@
+.skillContainer {
+    width: 100%;
+    color: #586060;
+}
+
+
+
+h5.tags {
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    padding-top: 3rem;
+    
+    color: #989898;
+}
+h3.skillName {
+    display: flex;
+align-items: center;
+font-weight: 600;
+font-size: 1.5rem;
+line-height: 2em;
+color: #586060;
+}
+
+
+
+
+@media screen and (max-width: 4400px) {
+
+    .headingRow {
+        padding-top: 15%;
+        padding-left: 15vh;
+        padding-right: 25vh;
+         display: flex;
+       
+    }
+
+    .backarrow {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding-top: 1vh;
+        padding-right: 2vw;
+    }
+
+    .addbutton {
+        background: #FFFFFF;
+    border: 1px solid #8750A9;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25) ;
+    border-radius: 2rem;
+    text-align: center;
+    color: #8750A9;
+    font-weight: 600;
+      padding: .3em 1.5rem .3rem;  
+    }
+
+}
+
+@media screen and (max-width: 750px) {
+
+    .headingRow {
+        padding-top: 20%;
+        display: flex;
+        padding-left: 5vh;
+        padding-right: 5vh;
+        padding-bottom: 10vh;
+        flex-direction: column;
+    }
+    .backarrow {
+        display: block;
+        padding-top: 1vh;
+        padding-bottom: 2vh;
+        padding-right: 2vw;
+        color: #586060;
+    }
+
+    .addbutton {
+    background: #FFFFFF;
+    border: 3px solid #8750A9;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25) ;
+    border-radius: 100%;
+    color: #8750A9;
+    padding: .31em;
+    }
+    
+}
