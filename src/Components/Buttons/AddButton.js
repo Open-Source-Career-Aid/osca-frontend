@@ -3,25 +3,45 @@ import { Row, Col } from 'react-bootstrap';
 import {Button}  from 'react-bootstrap';
 import './Button.css';
 
-const Addbutton = () => {
-
+const Deletebutton = (variation) => {
+    if (Object.entries(variation).length === 0) {
+        
+        return( 
+                <Button type='submit' onClick={() => {variation.fun(variation.index)}} style={styles.btn} >
+                <img style={styles.icon} src='./../../../../../../add.png' />
+            </Button>
+        );
+    }
+    else {
+        let tempstyle = styles.btn;
+        if ( variation.shape !== undefined && variation.shape === 'rounded') {
+            tempstyle = ({...styles.btn, borderRadius: '100%'} );
+        }
+        if( variation.shape !== undefined && variation.color !== null)
+        {
+            tempstyle = ({...tempstyle, backgroundColor: variation.color})
+        }
     return( 
-        <Button style={styles.btn} className='Button'>
-            <img style={styles.icon} src='./../../../../../../add.png' />
-        </Button>
-    );
+        <Button type='submit' onClick={() => {variation.fun(variation.index)}} style={tempstyle} className='Button'>
+        <img style={styles.icon} src='./../../../../../../add.png' />
+    </Button> )
+
+    }
+
+
 };
 
-const styles = {
+let styles = {
     btn: {
         backgroundColor: 'transparent',
-        borderColor: 'transparent',
-        // padding: '0',
+        borderColor: 'none',
+        border: 'none'
+        // padding: '',
     },
     icon: {
-        height: '1.3em',
-        width: '1.2em'
+        height: '1em',
+        width: '1em'
     }
 }
 
-export default Addbutton;
+export default Deletebutton;

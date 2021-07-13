@@ -7,54 +7,232 @@ import Deletebutton from '../Buttons/Deletebutton';
 import Editbutton from '../Buttons/Editbutton';
 import './Skill.css';
 import Addbutton from '../Buttons/AddButton';
+import OkButton from '../Buttons/OkButton';
 
 const Skill = () => {
+
+    const [topicsidx, setTopicsidx] = useState({'0': 0});
+   
+    const [title, setTitle] = useState('');
+
+    const [titleEdit, setTitleEdit] = useState(0);
+
+    const [topics, setTopics] = useState([{name: null, resources:[{link: null}] }])
+
+    const [inputsLinks, setInputLinks] = useState({'0': null});
+
+    // handles the change in title name
+
+    const handleChangeTitle = (e) => {
+        setTitle(e.target.value);
+    }
+
+    //handles the click on edit button
+
+    const handleEditButtonTitle = () => {
+        setTitleEdit(!titleEdit);
+    }
+
+    //handles ok button in title
+    const handleOkButtonTitle = () => {
+        if(title === '' || title === null ) {
+            alert('cannot be empty');
+            return;
+        }
+        setTitleEdit(!titleEdit);
+    }
+
+    // changes to input when clicked on edit icon
+    const handleClickEdit = (idx) => {
+        let ex = topicsidx;
+        ex[idx] = 1- ex[idx];
+        setTopicsidx({...ex});
+    }
+
+    // saves the topic name 
+
+    const handleClickOk= (idx) => {
+        
+        if(topics[idx].name === '' || topics[idx].name === null ) {
+            alert('cannot be empty');
+            return;
+        }
+        handleClickEdit(idx);
+
+    }
+
+    //handels the change in topic name
+
+    const handleChangeTopicName = (e, idx) => {
+        if(e.target.value === '') {
+            alert('Cannot be empty');
+            return;
+        }
+        let values = [...topics];
+        values[idx].name = e.target.value;
+        setTopics([...values]);
+    }   
+
+    // Deletion of Topic
+
+    const handleClickDelete = (idx) => {
+        let values = [...topics];
+        values.splice(idx, 1);
+        setTopics([...values]);
+    }
+
+    // Addition of link to resouces of a topic
+
+    const handleAddResource = (idx) => {
+        let values = [...topics];
+        values[idx].resources.push({link: inputsLinks[idx]});
+        inputsLinks[idx ] = '';
+        console.log(inputsLinks);
+        setInputLinks({...inputsLinks});
+        setTopics([...values]);
+    }
+
+    // Handle change in input links 
+
+    const handleChangeResourceLink = (e, idx) => {
+        let values = {...inputsLinks};
+        values[idx] = e.target.value;
+        setInputLinks({...values});
+    }
+
+    // handle deletion of resource links
+
+    const handleDeleteResource = (idx1, idx2) => {
+        let values = [...topics];
+        values[idx1].resources.splice(idx2, 1);
+        setTopics([...values]);
+    }
+
+    // Addition of topics
+    
+    const handleAddTopic = () => {
+        const values = [...topics];
+        values.push({ name: null, resources: [{ link: null }] });
+        const indexofAddedtopic = values.length ;
+        topicsidx[indexofAddedtopic -1] = 0;
+        inputsLinks[indexofAddedtopic ] = null;
+        setInputLinks({...inputsLinks});
+        setTopicsidx({...topicsidx});
+        setTopics(values);
+    }
 
     return (
         <div className='Skill'>
             <Row className='title'>
                 <Col>
-                    <h2>Title</h2>
+                    {titleEdit? 
+                        <InputGroup style={styles.input} className="mb-3 ">
+                        <FormControl
+                         required
+                        value={title}
+                        onChange={e => handleChangeTitle(e)}
+                        placeholder={"Name of the Topic"}
+                        aria-label="Name of the Topic"
+                        aria-describedby="basic-addon2"
+                        className ="inputresource"
+                        />
+                        </InputGroup>
+                        :
+                        <h2>{title}</h2>
+                }
                 </Col>
                 <Col  xs={1} sm={1} md={1} lg={1} xl={1}>
-                    <Editbutton/>
+                    {titleEdit
+                    ?
+                    <OkButton fun={handleOkButtonTitle} />
+                    :
+                    <Editbutton fun={handleEditButtonTitle} />
+                }
                 </Col>
             </Row>
-            <div className='container'>
-
-            <Row >
+            {topics.map((topic, idx) => {
+            return (
+                <div className='container'>
+                <Row >
                 <Col >
-                    <h3>Attributes</h3>
+                    {topicsidx[idx] ?
+                        <h3>{topic.name}</h3>
+                        :
+                    <>
+                        <InputGroup className="mb-3 ">
+                        <FormControl
+                         required
+                        value={topics[idx].name }
+                        onChange={e => handleChangeTopicName(e, idx)}
+                        placeholder={"Name of the Topic"}
+                        aria-label="Name of the Topic"
+                        aria-describedby="basic-addon2"
+                        className ="inputresource"
+                        />
+                        </InputGroup>
+                    </>
+                }
                 </Col>
-                <Col xs={1} sm={1} md={1} lg={1} xl={1}>
-                    <Editbutton shape='rounded' color='#FFFFFF'  />
+                {topicsidx[idx]  
+                    ? 
+                    <Col xs={1} sm={1} md={1} lg={1} xl={1}>
+                    <Editbutton index={idx} fun={handleClickEdit} shape='rounded' color='#FFFFFF'  />
                 </Col>
+                    :
+                    <Col xs={1} sm={1} md={1} lg={1} xl={1}>
+                    <OkButton index={idx} fun={handleClickOk} shape='rounded' color='#FFFFFF'  />
+                </Col>
+                }
                 <Col xs={1} sm={1} md={1} lg={1} xl={1}>
-                    <Deletebutton/>
+                    <Deletebutton index={idx} fun={handleClickDelete}  shape='rounded' color='#FFFFFF' />
                 </Col>
             </Row>
            <div className='resourcelinks'>
-                <InputGroup className="mb-3">
+                
+                
+                <InputGroup className="mb-3 ">
                 <FormControl
-                placeholder="Recipient's username"
-                aria-label="Recipient's username"
+                 required
+                values={inputsLinks[idx]}
+                onChange={e => handleChangeResourceLink(e, idx)}
+                placeholder="Paste the resource link here"
+                aria-label="Paste the resource link here"
                 aria-describedby="basic-addon2"
+                className ="inputresource"
                 />
-                {/* <Button variant="outline-secondary" id="button-addon2">
-                    +
-                </Button> */}
-                <Addbutton/>
+            
+                <Addbutton type='submit' index={idx} fun={handleAddResource}  color='#FFFFFF' />
                 </InputGroup>
-                <Row>
-                    <Col>
-                        <h5>https://websitesetup.org/bootstrap-tutorial-for-beginners/</h5>
-                    </Col>
-                    <Col xs={1} sm={1} md={1} lg={1} xl={1} >
-                        <Deletebutton/>
-                    </Col>
-                </Row>
+                {topic.resources.map((resource, idx2) => {
+             
+                    if(idx2 > 0) {
+                        return (
+
+                            <Row>
+                                <Col>
+                                    <a href={resource.link}>{resource.link}</a>
+                                </Col>
+                                <Col  xs={1} sm={1} md={1} lg={1} xl={1} >
+                                    <Deletebutton  index={idx} index2={idx2} fun={handleDeleteResource} />
+                                </Col>
+                            </Row>
+                        );
+                    } else {return null;}
+
+                
+                    // )
+                })}
            </div>
+
+           <hr className='hrline' />
             </div>
+            )})}
+           <div>
+
+           <Button onClick={e => handleAddTopic(e)} style={styles.btn} >
+                        Add a topic    
+                    </Button> 
+           </div>
         </div>
     )
 
@@ -62,15 +240,23 @@ const Skill = () => {
 
 const styles = {
     btn: {
-        backgroundColor: 'transparent',
-        borderColor: '#989898',
+        display:'block',
+        margin: '2%  auto ',
+        backgroundColor: '#FFFFFF',
+        // borderColor: '#989898',
+        border: 'none',
         borderRadius: '2em',
-        color: '#989898',
-        fontSize: '.81em',
+        color: '#464646',
+        fontSize: '.91em',
+        fontWeight: '700',
         paddingLeft: '1.5em',
         paddingRight: '1.5em',
         paddingTop: '.4em',
         paddingBottom: '.4em',
+    },
+    input: {
+        borderRadius: '2em',
+        paddingTop: '.5em'
     }
 }
 

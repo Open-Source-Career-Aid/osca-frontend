@@ -3,13 +3,12 @@ import { Row, Col } from 'react-bootstrap';
 import {Button}  from 'react-bootstrap';
 import './Button.css';
 
-const Editbutton = (variation) => {
-    
+const Deletebutton = (variation) => {
     if (Object.entries(variation).length === 0) {
         
         return( 
-                <Button onClick={() => {variation.fun(variation.index)}}  style={styles.btn} >
-                <img style={styles.icon} src='./../../../../../../edit.png' />
+                <Button  onClick={() => {variation.fun(variation.index)}} style={styles.btn} >
+                <img style={styles.icon} src='./../../../../../../ok.png' />
             </Button>
         );
     }
@@ -23,8 +22,8 @@ const Editbutton = (variation) => {
             tempstyle = ({...tempstyle, backgroundColor: variation.color})
         }
     return( 
-        <Button onClick={() => {variation.fun(variation.index)}}  style={tempstyle} className='Button'>
-        <img style={styles.icon} src='./../../../../../../edit.png' />
+        <Button  onClick={() => {variation.fun(variation.index)}} style={tempstyle} className='Button'>
+        <img style={styles.icon} src='./../../../../../../ok.png' />
     </Button> )
 
     }
@@ -36,12 +35,12 @@ let styles = {
     btn: {
         backgroundColor: 'transparent',
         borderColor: 'transparent',
-        // padding: '.3em',
+        // padding: '',
     },
     icon: {
         height: '1em',
-        width: '1em'
+        width: '1.2em'
     }
 }
 
-export default Editbutton;
+export default Deletebutton;

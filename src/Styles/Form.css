@@ -7,7 +7,19 @@
     justify-content: space-between;
 }
 
-
+.tags {
+    border-radius: .8em;
+    background-color: white;
+    margin-left: 2% ;
+    color: #989898;
+    align-items: center;
+    padding: 0.01em;
+    border: 1px solid #989898;
+    font-size:1em;
+    font-weight: 750;
+    overflow: hidden;
+    line-height: 1em;
+}
 
 
 
