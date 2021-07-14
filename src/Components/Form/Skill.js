@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap';
-import Form from 'react-bootstrap/Form';
 import {Button, InputGroup, FormControl}  from 'react-bootstrap';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Deletebutton from '../Buttons/Deletebutton';
 import Editbutton from '../Buttons/Editbutton';
 import './Skill.css';
@@ -84,10 +82,13 @@ const Skill = () => {
     // Addition of link to resouces of a topic
 
     const handleAddResource = (idx) => {
+        if(inputsLinks[idx] === '' || inputsLinks[idx] === null) {
+            alert('Cannot be Empty');
+            return;
+        } 
         let values = [...topics];
         values[idx].resources.push({link: inputsLinks[idx]});
         inputsLinks[idx ] = '';
-        console.log(inputsLinks);
         setInputLinks({...inputsLinks});
         setTopics([...values]);
     }
@@ -123,9 +124,11 @@ const Skill = () => {
 
     return (
         <div className='Skill'>
-            <Row className='title'>
+            <Row className='title '>
                 <Col>
                     {titleEdit? 
+                        <h2>{title}</h2>
+                        :
                         <InputGroup style={styles.input} className="mb-3 ">
                         <FormControl
                          required
@@ -137,29 +140,30 @@ const Skill = () => {
                         className ="inputresource"
                         />
                         </InputGroup>
-                        :
-                        <h2>{title}</h2>
                 }
                 </Col>
                 <Col  xs={1} sm={1} md={1} lg={1} xl={1}>
                     {titleEdit
                     ?
-                    <OkButton fun={handleOkButtonTitle} />
-                    :
                     <Editbutton fun={handleEditButtonTitle} />
+                    :
+                    <OkButton fun={handleOkButtonTitle} />
                 }
                 </Col>
             </Row>
+            <div className="topicContainer">
+
+            
             {topics.map((topic, idx) => {
             return (
                 <div className='container'>
                 <Row >
-                <Col >
+                <Col   >
                     {topicsidx[idx] ?
                         <h3>{topic.name}</h3>
                         :
                     <>
-                        <InputGroup className="mb-3 ">
+                        <InputGroup style={styles.input} className="mb-3 ">
                         <FormControl
                          required
                         value={topics[idx].name }
@@ -175,11 +179,11 @@ const Skill = () => {
                 </Col>
                 {topicsidx[idx]  
                     ? 
-                    <Col xs={1} sm={1} md={1} lg={1} xl={1}>
+                    <Col xs={1} sm={2} md={1} lg={1} xl={1} >
                     <Editbutton index={idx} fun={handleClickEdit} shape='rounded' color='#FFFFFF'  />
                 </Col>
                     :
-                    <Col xs={1} sm={1} md={1} lg={1} xl={1}>
+                    <Col xs={1} sm={2} md={1} lg={1} xl={1}>
                     <OkButton index={idx} fun={handleClickOk} shape='rounded' color='#FFFFFF'  />
                 </Col>
                 }
@@ -227,6 +231,7 @@ const Skill = () => {
            <hr className='hrline' />
             </div>
             )})}
+            </div>
            <div>
 
            <Button onClick={e => handleAddTopic(e)} style={styles.btn} >
@@ -256,7 +261,8 @@ const styles = {
     },
     input: {
         borderRadius: '2em',
-        paddingTop: '.5em'
+        paddingTop: '.7em',
+        marginBottom: '.8em'
     }
 }
 

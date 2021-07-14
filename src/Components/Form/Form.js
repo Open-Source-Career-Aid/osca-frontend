@@ -53,8 +53,11 @@ const RoadmapForm = () => {
         skill: "",
     });
 
-    const [prereqs, setpreReqs] = useState([{ value: null }]);
-    const [tags, setTags] = useState([{ value: null }]);
+    const [preReqs, setpreReqs] = useState([{name: null}]);
+    const [preReqsField, setPreReqsField] = useState('');
+    const [tags, setTags] = useState([{name: null}]);
+    const [tagsField, setTagsField] = useState('');
+   
     const [fields, setFields] = useState([{ value: null, resources: [{ value: null }] }]);
 
     const handleChangeName = (e) => {
@@ -85,11 +88,66 @@ const RoadmapForm = () => {
         setState({ ...state, skill: e.target.value })
     }
 
+    // handle change in input of pre-req
+    const handleChangePreReqName = (e) => {
+        setPreReqsField(e.target.value);
+    }
+
+    // handle click on add button in pre Req 
+    const handleClickPreRequisite = () => {
+        console.log(preReqs, preReqsField);
+        let values = [...preReqs];
+        values.push({name: preReqsField});
+        setTagsField('');
+        setpreReqs([...values]);
+    }
+
+    //handle deletion of pre Requisetes
+
+    const handleDeletePreReqs = (e, idx) => {
+        let values = [...preReqs];
+        values.splice(idx, 1);
+        setpreReqs([...values]);
+    }
+
+    // handle clear pre reqs
+
+    const handleClickPreqsClear = (e) => {
+        setpreReqs([{name: null}]);
+    }
+
+    //handle change of tag name
+
+    const handleChangeTagName = (e) => {
+        setTagsField(e.target.value);
+    }
+
+    // handle click on add button in pre Req 
+    const handleClickTags = () => {
+        // console.log(, preReqsField);
+        let values = [...tags];
+        values.push({name: tagsField});
+        setPreReqsField('');
+        setTags([...values]);
+    }
+
+    // handle deletion of tags
+    
+    const handleDeleteTags = (e, idx) => {
+        let values = [...tags];
+        values.splice(idx, 1);
+        setTags([...values]);
+    }
+
+    // handles clear all tags 
+    const handleClicktagsClear = (e) => {
+        setTags([{name: null}]);
+    }
 
     const handelSubmit = (e) => {
         e.preventDefault();
         const detail = fields;
-        const prerequisites = prereqs;
+        const prerequisites = preReqs;
         const formData = {
             ...state,
             prerequisites,
@@ -186,75 +244,35 @@ const RoadmapForm = () => {
                             Pre-requisites
                         </Col>
                         <Col xs={12} sm={12} md={6} lg={5} xl={4} className="field text-center justify-content-center">
-                            <input type="text" className='inputField' placeholder="Add a pre-requisite" />
-                            <AddIcon className='addIcon' />
+                            <input onChange={e => handleChangePreReqName(e)} value={preReqsField} type="text" className='inputField' placeholder="Add a pre-requisite" />
+                            <AddIcon onClick={e => handleClickPreRequisite(e)} className='addIcon' />
                         </Col>
                     </Row>
                     <Row className="backDrop">
-                    
-                        <Col md='auto' className='tags'>
-                            <div >
-                                <span style={{padding: '.1em 1em' }}  >Machine Learning2</span>
-                                <DeleteIcon style={styles.btn} />
-                            </div>
-                        </Col>
-                        <Col md='auto' className='tags'>
-                            <div >
-                                <span style={{padding: '.1em 1em' }} >Machine Learning2</span>
-                                <DeleteIcon style={styles.btn} />
-                            </div>
-                        </Col>
-                        <Col md='auto' className='tags'>
-                            <div >
-                                <span style={{padding: '.1em 1em' }}  >HTML</span>
-                                <DeleteIcon style={styles.btn} />
-                            </div>
-                        </Col>
-                        <Col md='auto' className='tags'>
-                            <div >
-                                <span style={{padding: '.1em 1em' }}  >HTML</span>
-                                <DeleteIcon style={styles.btn} />
-                            </div>
-                        </Col>
-                        <Col md='auto' className='tags'>
-                            <div >
-                                <span style={{padding: '.1em 1em' }}  >HTML</span>
-                                <DeleteIcon style={styles.btn} />
-                            </div>
-                        </Col>
-                        <Col md='auto' className='tags'>
-                            <div >
-                                <span style={{padding: '.1em 1em' }}  >HTML</span>
-                                <DeleteIcon style={styles.btn} />
-                            </div>
-                        </Col>
-                        <Col md='auto' className='tags'>
-                            <div >
-                                <span style={{padding: '.1em 1em' }}  >HTML</span>
-                                <DeleteIcon style={styles.btn} />
-                            </div>
-                        </Col>
-                        <Col md='auto' className='tags'>
-                            <div >
-                                <span style={{padding: '.1em 1em' }}  >HTML</span>
-                                <DeleteIcon style={styles.btn} />
-                            </div>
-                        </Col>
-                        <Col md='auto' className='tags'>
-                            <div >
-                                <span style={{padding: '.1em 1em' }}  >HTML</span>
-                                <DeleteIcon style={styles.btn} />
-                            </div>
-                        </Col>
-                        <Col md='auto' className='tags'>
-                            <div >
-                                <span style={{padding: '.1em 1em' }}  >HTML</span>
-                                <DeleteIcon style={styles.btn} />
-                            </div>
-                        </Col>
+                    {preReqs.map((preReq, idx) => {
+                        if(idx>0) {
+
+                            return (
+                                <Col xs='auto' md='auto' className='tags'>
+                                    <Row  className='tagsRow'>
+
+                                    <Col xs='auto' md='auto'  style={{maxWidth: '80%', overflow: 'hidden' , whiteSpace:'nowrap'}}>
+                                            <span   >{preReq.name}</span>
+                                    </Col>
+                                    <Col xs='auto' md='auto' style={{paddingRight: '0'}}>
+                                        <DeleteIcon onClick={e => handleDeletePreReqs(e, idx)}  style={styles.btn} />
+                                    </Col>
+                                    </Row>
+
+                                 </Col>
+                        )
+                        } else {return null}
+
+                    })}
+                       
+
                         
-                        
-                        <Row className="justify-content-end text-end">
+                        <Row onClick={e => handleClickPreqsClear(e)} className="justify-content-end text-end">
                             Clear All
                         </Row>
                     </Row>
@@ -263,31 +281,33 @@ const RoadmapForm = () => {
                             Tags
                         </Col>
                         <Col xs={12} sm={12} md={6} lg={5} xl={4}  className="field text-center justify-content-center">
-                            <input type="text" className='inputField' placeholder="Add a Tag" />
-                            <AddIcon className='addIcon' />
+                            <input onChange={e =>  handleChangeTagName(e)} type="text" className='inputField' placeholder="Add a Tag" />
+                            <AddIcon onClick={e => handleClickTags(e)} className='addIcon' />
                         </Col>
                     </Row>
                     <Row className="backDrop">
-                    <Col md='auto' className='tags'>
-                            <div >
-                                <span style={{padding: '.1em 1em' }}  >Machine Learning2</span>
-                                <DeleteIcon style={styles.btn} />
-                            </div>
-                        </Col>
-                        <Col md='auto' className='tags'>
-                            <div >
-                                <span style={{padding: '.1em 1em' }} >Machine Learning2</span>
-                                <DeleteIcon style={styles.btn} />
-                            </div>
-                        </Col>
-                        <Col md='auto' className='tags'>
-                            <div >
-                                <span style={{padding: '.1em 1em' }}  >HTML</span>
-                                <DeleteIcon style={styles.btn} />
-                            </div>
-                        </Col>
-                        
-                        <Row className="justify-content-end text-end">
+                        {tags.map((tag, idx) => {
+                            if(idx>0) {
+
+                                return (
+                                    <Col xs='auto' md='auto' className='tags'>
+                                    <Row  className='tagsRow'>
+
+                                    <Col xs='auto' md='auto' style={{maxWidth: '80%', overflow: 'hidden' , whiteSpace:'nowrap'}} >
+                                        <span   >{tag.name}</span>
+                                    </Col>
+                                    <Col xs='auto' md='auto' style={{paddingRight: '0'}}>
+                                        <DeleteIcon onClick={e => handleDeleteTags(e, idx)}  style={styles.btn} />
+                                    </Col>
+                                    </Row>
+
+                                 </Col>
+                            )
+                            } else {return null}
+
+                        })}   
+                         
+                        <Row onClick={e => handleClicktagsClear(e)} className="justify-content-end text-end">
                             Clear All
                         </Row>
                     </Row>
@@ -319,8 +339,8 @@ const styles = {
         borderBottomRightRadius: '24%',
         borderTopRightRadius: '24%',
         height: '1em',
-        width: '1.3em',
-        padding: '.18em'
+        width: '1.2em',
+        padding: '.15em'
         // paddingLeft:'.3em',
         // paddingTop:'.3em',
     }

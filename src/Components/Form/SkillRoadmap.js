@@ -43,7 +43,7 @@ const SkillRoadmap = () => {
 
     //handles the ok button
     const handleOkButton = (idx) => {
-        if(skills[idx] === '' || skills[idx] === null ) {
+        if(skills[idx].name === '' || skills[idx].name === null ) {
             alert('cannot be empty');
             return;
         }
@@ -131,6 +131,10 @@ const styles = {
         paddingRight: '1.5em',
         paddingTop: '.4em',
         paddingBottom: '.4em',
+    },
+    input: {
+        marginTop: '.6em',
+        
     }
 }
 

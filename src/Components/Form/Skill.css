@@ -6,6 +6,8 @@
 }
 .title {
     background-color: #F5F5F5;
+    padding: 1% 4% 1% 2%;
+    justify-content: space-around;
 }
 
 .resourcelinks {
@@ -14,6 +16,9 @@
     padding: 2% 1% 2%;
     margin-top: 3%;
     margin-bottom: 3%;
+}
+.topicContainer {
+    padding: 1% 4% 1% 4%;
 }
 
 .container {
@@ -24,6 +29,7 @@
 
 .row {
     margin: 0 !important;
+    align-items: center !important;
 }
 
 .inputresource {

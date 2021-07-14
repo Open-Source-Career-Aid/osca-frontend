@@ -10,17 +10,33 @@
 .tags {
     border-radius: .8em;
     background-color: white;
-    margin-left: 2% ;
+    margin-left: 4% ;
     color: #989898;
     align-items: center;
-    padding: 0.01em;
+    padding: 0.00001em;
     border: 1px solid #989898;
     font-size:1em;
     font-weight: 750;
     overflow: hidden;
     line-height: 1em;
+    margin-top: 1%;
+    margin-bottom: 1%;
+
 }
 
+span.tags {
+    overflow: hidden;
+    
+    
+}
+
+.tagsRow {
+    justify-content:space-between !important;
+    width: auto !important; 
+    padding:0 0% 0 0;
+    /* display: inline-flex !important; */
+    
+}
 
 
 @media screen and (max-width: 4400px) {
@@ -115,7 +131,7 @@
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 2.5%;
-    padding: 2.5% 2.5% 2.5% 2.5%;
+    padding: 2.5% 8% 2.5% 2.5%;
 }
 
 .subtFields {

@@ -35,7 +35,6 @@ let styles = {
     btn: {
         backgroundColor: 'transparent',
         borderColor: 'transparent',
-        // padding: '',
     },
     icon: {
         height: '1em',
