@@ -179,11 +179,11 @@ const Skill = () => {
                 </Col>
                 {topicsidx[idx]  
                     ? 
-                    <Col xs={1} sm={2} md={1} lg={1} xl={1} >
+                    <Col xs={2} sm={2} md={1} lg={1} xl={1} >
                     <Editbutton index={idx} fun={handleClickEdit} shape='rounded' color='#FFFFFF'  />
                 </Col>
                     :
-                    <Col xs={1} sm={2} md={1} lg={1} xl={1}>
+                    <Col xs={2} sm={2} md={1} lg={1} xl={1}>
                     <OkButton index={idx} fun={handleClickOk} shape='rounded' color='#FFFFFF'  />
                 </Col>
                 }
@@ -228,7 +228,7 @@ const Skill = () => {
                 })}
            </div>
 
-           <hr className='hrline' />
+                <hr className='hrline' />
             </div>
             )})}
             </div>
