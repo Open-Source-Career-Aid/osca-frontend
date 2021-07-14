@@ -319,6 +319,11 @@ const RoadmapForm = () => {
                     :
                     <Skill />
                 }
+                <Row xs='auto' className="justify-content-end text-end">
+                    <Button style={styles.submitButton} type='submit'>
+                        Submit
+                    </Button>
+                </Row>
             </Col>
             
         </div>
@@ -341,8 +346,11 @@ const styles = {
         height: '1em',
         width: '1.2em',
         padding: '.15em'
-        // paddingLeft:'.3em',
-        // paddingTop:'.3em',
+    },
+    submitButton: {
+        backgroundColor: '#8750A9',
+        fontWeight: '600',
+        marginTop: '2em'
     }
 }
 
