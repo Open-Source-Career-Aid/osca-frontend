@@ -1,23 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Row, Col } from 'react-bootstrap';
-import Form from 'react-bootstrap/Form';
 import {Button, InputGroup, FormControl}  from 'react-bootstrap';
-// import FormControlLabel from '@material-ui/core/FormControlLabel';
-
-
-import { withStyles } from '@material-ui/core/styles';
-import { purple } from '@material-ui/core/colors';
-import TextField from '@material-ui/core/TextField';
-import AddIcon from '@material-ui/icons/Add';
-import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
 import Deletebutton from '../Buttons/Deletebutton';
 import Editbutton from '../Buttons/Editbutton';
 import './SkillRoadmap.css';
-import { border, borderColor } from '@material-ui/system';
 import OkButton from './../Buttons/OkButton';
 
-const SkillRoadmap = () => {
+const SkillRoadmap = (props) => {
 
+
+    const [data, setData] = useState();
+    
     const [skills, setSkills] = useState([{name:null}]);
 
     const [editSkill, setEditSkill] = useState({'0': 1, });
@@ -65,8 +58,20 @@ const SkillRoadmap = () => {
         setSkills([...values]);
     }
 
+    // handles the change in component 
+
+    const handleChangeInData = () => {
+
+        let values = {
+            ...skills
+        }
+        setData({...values});
+        props.onChange(data);
+    }
+
+
     return (
-        <div className='SkillRoadmap'>
+        <div onChange={() => handleChangeInData()} className='SkillRoadmap'>
             <Row >
                 <Col >
                     <h3>Skills</h3>

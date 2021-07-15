@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Row, Col } from 'react-bootstrap';
 import {Button, InputGroup, FormControl}  from 'react-bootstrap';
 import Deletebutton from '../Buttons/Deletebutton';
@@ -7,8 +7,9 @@ import './Skill.css';
 import Addbutton from '../Buttons/AddButton';
 import OkButton from '../Buttons/OkButton';
 
-const Skill = () => {
+const Skill = (props) => {
 
+    const [data, setData] = useState();
     const [topicsidx, setTopicsidx] = useState({'0': 0});
    
     const [title, setTitle] = useState('');
@@ -17,7 +18,7 @@ const Skill = () => {
 
     const [topics, setTopics] = useState([{name: null, resources:[{link: null}] }])
 
-    const [inputsLinks, setInputLinks] = useState({'0': null});
+    const [inputsLinks, setInputLinks] = useState({'0': ''});
 
     // handles the change in title name
 
@@ -88,8 +89,11 @@ const Skill = () => {
         } 
         let values = [...topics];
         values[idx].resources.push({link: inputsLinks[idx]});
-        inputsLinks[idx ] = '';
-        setInputLinks({...inputsLinks});
+        let links =    inputsLinks;
+        // console.log(links);
+        links[idx] = '';
+        // console.log(links);
+        setInputLinks({...links});
         setTopics([...values]);
     }
 
@@ -122,8 +126,19 @@ const Skill = () => {
         setTopics(values);
     }
 
+    // handle change in skill data
+
+    const handleChangeInData = () => {
+        let values = {
+            title,
+            topics
+        }
+        setData({...values});
+        props.onChange(data);
+    }
+
     return (
-        <div className='Skill'>
+        <div onChange={e => handleChangeInData(e)} className='Skill'>
             <Row className='title '>
                 <Col>
                     {titleEdit? 
@@ -248,7 +263,6 @@ const styles = {
         display:'block',
         margin: '2%  auto ',
         backgroundColor: '#FFFFFF',
-        // borderColor: '#989898',
         border: 'none',
         borderRadius: '2em',
         color: '#464646',

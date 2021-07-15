@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState} from 'react'
 import { Row, Col, Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -6,12 +6,9 @@ import Switch from '@material-ui/core/Switch';
 import './../../Styles/Form.css';
 import { withStyles } from '@material-ui/core/styles';
 import { purple } from '@material-ui/core/colors';
-import TextField from '@material-ui/core/TextField';
 import AddIcon from '@material-ui/icons/Add';
-import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
 import SkillRoadmap from './SkillRoadmap';
 import Skill from './Skill';
-import Deletebutton from '../Buttons/Deletebutton';
 import { SvgIcon } from '@material-ui/core';
 
 const CustomSwitch = withStyles({
@@ -54,11 +51,18 @@ const RoadmapForm = () => {
     });
 
     const [preReqs, setpreReqs] = useState([{name: null}]);
+    
     const [preReqsField, setPreReqsField] = useState('');
+    
     const [tags, setTags] = useState([{name: null}]);
+    
     const [tagsField, setTagsField] = useState('');
    
-    const [fields, setFields] = useState([{ value: null, resources: [{ value: null }] }]);
+
+    const [skillRoadmapdata, setSkillRoadmapdata] = useState();
+
+    const [skilldata, setSkilldata] = useState();
+
 
     const handleChangeName = (e) => {
         setState({ ...state, name: e.target.value })
@@ -81,12 +85,14 @@ const RoadmapForm = () => {
     }
 
     const handleChangeSuperSkillcheckbox = (e) => {
+        if(e.target.value === false) {
+            setSkillRoadmapdata(null);
+        } else {
+            setSkilldata(null);
+        }
         setState({ ...state, is_supperskill: !state.is_supperskill })
     }
 
-    const handleChangeskill = (e) => {
-        setState({ ...state, skill: e.target.value })
-    }
 
     // handle change in input of pre-req
     const handleChangePreReqName = (e) => {
@@ -95,10 +101,10 @@ const RoadmapForm = () => {
 
     // handle click on add button in pre Req 
     const handleClickPreRequisite = () => {
-        console.log(preReqs, preReqsField);
+       
         let values = [...preReqs];
         values.push({name: preReqsField});
-        setTagsField('');
+        setPreReqsField('');
         setpreReqs([...values]);
     }
 
@@ -127,7 +133,7 @@ const RoadmapForm = () => {
         // console.log(, preReqsField);
         let values = [...tags];
         values.push({name: tagsField});
-        setPreReqsField('');
+        setTagsField('');
         setTags([...values]);
     }
 
@@ -144,17 +150,38 @@ const RoadmapForm = () => {
         setTags([{name: null}]);
     }
 
-    const handelSubmit = (e) => {
+    // gets data from skill Roadmap component 
+
+    const getDataFromSkillRoadmap = (data) => {
+        setSkilldata(null);
+        setSkillRoadmapdata({...data})
+    }
+
+    //gets data from sill component
+
+    const getDataFromSkill = (data) => {
+        setSkillRoadmapdata(null);
+        setSkilldata({...data});
+    }
+
+    const handleSubmit = (e) => {
         e.preventDefault();
-        const detail = fields;
+        let details = state;
+        let roadmapOrSkill ;
+        if(skillRoadmapdata === undefined ||skillRoadmapdata === null ) {
+            roadmapOrSkill = skilldata;            
+        } else {
+            roadmapOrSkill = skillRoadmapdata;
+        }
         const prerequisites = preReqs;
         const formData = {
-            ...state,
+            ...details,
             prerequisites,
             tags,
-            detail
+            roadmapOrSkill
         };
 
+        console.log(formData);
 
         // axios.post('https://oscaweb.herokuapp.com/form/add-new-skill/', formData)
         // .then(res => {
@@ -183,7 +210,7 @@ const RoadmapForm = () => {
                 <h4>Add a Roadmap</h4>
                 <br />
                 <h5>Personal information</h5>
-                <Form onSubmit={e => handelSubmit(e)}>
+                <Form>
 
                     <Row className='spacebetween'>
                         <Col xs={12} sm={12} md={5} lg={5} xl={5} >
@@ -281,7 +308,7 @@ const RoadmapForm = () => {
                             Tags
                         </Col>
                         <Col xs={12} sm={12} md={6} lg={5} xl={4}  className="field text-center justify-content-center">
-                            <input onChange={e =>  handleChangeTagName(e)} type="text" className='inputField' placeholder="Add a Tag" />
+                            <input onChange={e =>  handleChangeTagName(e)} value={tagsField} type="text" className='inputField' placeholder="Add a Tag" />
                             <AddIcon onClick={e => handleClickTags(e)} className='addIcon' />
                         </Col>
                     </Row>
@@ -315,12 +342,12 @@ const RoadmapForm = () => {
                 {
                     state.is_supperskill 
                     ?
-                    <SkillRoadmap />
+                    <SkillRoadmap onChange={skillRoadmapdata => getDataFromSkillRoadmap(skillRoadmapdata)}  />
                     :
-                    <Skill />
+                    <Skill onChange={skilldata => getDataFromSkill(skilldata)} />
                 }
                 <Row xs='auto' className="justify-content-center text-end">
-                    <Button style={styles.submitButton} type='submit'>
+                    <Button onClick={e => handleSubmit(e)} style={styles.submitButton} type='submit'>
                         Submit
                     </Button>
                 </Row>
