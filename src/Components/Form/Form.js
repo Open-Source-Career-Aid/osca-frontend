@@ -239,7 +239,7 @@ const RoadmapForm = () => {
                             <FormControlLabel control={<CustomSwitch checked={state.is_supperskill} onChange={handleChangeSuperSkillcheckbox} name="checkedB" />} label="" />
                         </Col>
                     </Row>
-                    <Row className="py-3">
+                    <Row className="py-4">
                         <Col xs={12} sm={12} md={6} lg={7} xl={8}  >
                             Pre-requisites
                         </Col>
@@ -276,7 +276,7 @@ const RoadmapForm = () => {
                             Clear All
                         </Row>
                     </Row>
-                    <Row className="py-3 ">
+                    <Row className="py-4 ">
                         <Col xs={12} sm={12} md={6} lg={7} xl={8} >
                             Tags
                         </Col>
@@ -319,7 +319,7 @@ const RoadmapForm = () => {
                     :
                     <Skill />
                 }
-                <Row xs='auto' className="justify-content-end text-end">
+                <Row xs='auto' className="justify-content-center text-end">
                     <Button style={styles.submitButton} type='submit'>
                         Submit
                     </Button>
@@ -349,8 +349,11 @@ const styles = {
     },
     submitButton: {
         backgroundColor: '#8750A9',
-        fontWeight: '600',
-        marginTop: '2em'
+        fontWeight: '700',
+        marginTop: '2em',
+        borderRadius: '2em',
+        border: 'none',
+        fontSize: '1.2em'
     }
 }
 

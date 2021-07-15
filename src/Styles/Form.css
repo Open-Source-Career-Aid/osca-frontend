@@ -104,6 +104,7 @@ span.tags {
     padding-bottom: 3px;
     margin-top: 4px;
     font-size: medium;
+    line-height: 1em;
 }
 
 .inputField:focus {
@@ -128,10 +129,10 @@ span.tags {
 .backDrop {
     background: #F5F5F5;
     border-radius: 18px;
-    padding-left: 5%;
+    /* padding-left: 5%;
     padding-right: 5%;
-    padding-top: 2.5%;
-    padding: 2.5% 8% 2.5% 2.5%;
+    padding-top: 2.5%; */
+    padding: 2.5% 2% 2.5% 2.5%;
 }
 
 .subtFields {

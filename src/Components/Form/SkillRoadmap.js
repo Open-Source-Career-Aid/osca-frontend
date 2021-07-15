@@ -71,11 +71,7 @@ const SkillRoadmap = () => {
                 <Col >
                     <h3>Skills</h3>
                 </Col>
-                <Col xs={3} sm={3} md={3} lg={3} xl={2}>
-                    <Button onClick={e => handleAddButton(e)} style={styles.btn} >
-                        Add a skill    
-                    </Button>
-                </Col>
+                
             </Row>
             {/* for loops for skills */}
             <div className='R-1'>
@@ -113,7 +109,12 @@ const SkillRoadmap = () => {
                             </Col>
                         </Row>
                     )
-                })}               
+                })}   
+                     <Row xs='auto' className='justify-content-center'>
+                    <Button onClick={e => handleAddButton(e)} style={styles.btn} >
+                        Add a skill    
+                    </Button>
+                </Row>       
             </div>
         </div>
     )
@@ -126,11 +127,12 @@ const styles = {
         borderColor: '#989898',
         borderRadius: '2em',
         color: '#989898',
-        fontSize: '.81em',
+        fontSize: '.91em',
         paddingLeft: '1.5em',
         paddingRight: '1.5em',
         paddingTop: '.4em',
         paddingBottom: '.4em',
+        fontWeight: '600'
     },
     input: {
         marginTop: '.6em',
