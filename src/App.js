@@ -14,8 +14,8 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/">
-            <RoadmapForm />
-            {/* <LowerBody /> */}
+            <Home />
+            <LowerBody />
           </Route>
           <Route exact path="/error">
             <ErrorPage />
