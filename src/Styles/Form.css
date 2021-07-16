@@ -1,0 +1,162 @@
+.headingRow {
+    color: #586060;
+    font-weight: 600;
+}
+
+.spacebetween {
+    justify-content: space-between;
+}
+
+.tags {
+    border-radius: .8em;
+    background-color: white;
+    margin-left: 4% ;
+    color: #989898;
+    align-items: center;
+    padding: 0.00001em;
+    border: 1px solid #989898;
+    font-size:1em;
+    font-weight: 750;
+    overflow: hidden;
+    line-height: 1em;
+    margin-top: 1%;
+    margin-bottom: 1%;
+
+}
+
+span.tags {
+    overflow: hidden;
+    
+    
+}
+
+.tagsRow {
+    justify-content:space-between !important;
+    width: auto !important; 
+    padding:0 0% 0 0;
+    /* display: inline-flex !important; */
+    
+}
+
+
+@media screen and (max-width: 4400px) {
+    .headingRow {
+        padding-top: 10%;
+        padding-left: 10%;
+        padding-right: 15%;
+         display: flex;
+       
+        padding-top: 10%;
+        padding-left: 10%;
+        padding-right: 15%;
+        display: flex;
+    }
+    .backarrow {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding-top: 1vh;
+        padding-right: 2vw;
+    }
+
+    .formgroup {
+        padding-top: 0em;
+    }
+    
+    .formgroup {
+        padding-top: 0em;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .headingRow {
+        padding-top: 20%;
+        display: flex;
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-bottom: 10vh;
+        flex-direction: column;
+    }
+    .backarrow {
+        display: block;
+        padding-top: 1vh;
+        padding-bottom: 2vh;
+        padding-right: 2%;
+        padding-left: 2%;
+    }
+
+    .formgroup {
+        padding-top: 1em;
+    }
+    .field {
+        width: 90%;
+        margin-left: 3%;
+        margin-top: 10px;
+        /* margin-right: 5%; */
+    }
+}
+
+.inputField {
+    border: none;
+    width: 89.1%;
+    padding-right: 5%;
+    border-radius: 31px;
+    padding-bottom: 3px;
+    margin-top: 4px;
+    font-size: medium;
+    line-height: 1em;
+}
+
+.inputField:focus {
+    border: none;
+    outline: none;
+}
+
+.field {
+    /* padding-top: 1px;s */
+    /* margin-left: 2.5%; */
+    /* width: 90%; */
+    border: 1px solid #989898;
+    border-radius: 31px;
+    padding-bottom: 2px;
+}
+
+.addIcon {
+    font-size: 21px;
+    color: #989898;
+}
+
+.backDrop {
+    background: #F5F5F5;
+    border-radius: 18px;
+    /* padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2.5%; */
+    padding: 2.5% 2% 2.5% 2.5%;
+}
+
+.subtFields {
+    background-color: white;
+    border: 1px solid #989898;
+    width: 80%;
+    border-radius: 9px 0 0 9px;
+    color: #989898;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 3.5px 0px 2.5px 0px;
+    text-align: center;
+}
+
+.subtFields:focus {
+    outline: none;
+}
+
+.deleteIcon {
+    padding: 3.5px 0px 5.5px 0px;
+    border-radius: 0 9px 9px 0px;
+    background-color: #989898 !important;
+    color: white;
+}
