@@ -130,7 +130,6 @@ const RoadmapForm = () => {
 
     // handle click on add button in pre Req 
     const handleClickTags = () => {
-        // console.log(, preReqsField);
         let values = [...tags];
         values.push({name: tagsField});
         setTagsField('');
@@ -363,7 +362,7 @@ const styles = {
 
     buttonIcon: {
         height: '1.1em',
-        width: '1.0em',
+        width: '1.3em',
 
     },
     btn: {

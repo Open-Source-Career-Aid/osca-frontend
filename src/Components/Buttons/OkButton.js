@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import { Row, Col } from 'react-bootstrap';
+import React from 'react'
 import {Button}  from 'react-bootstrap';
 import './Button.css';
 

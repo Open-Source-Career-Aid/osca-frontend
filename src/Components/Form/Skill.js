@@ -144,7 +144,7 @@ const Skill = (props) => {
                     {titleEdit? 
                         <h2>{title}</h2>
                         :
-                        <InputGroup style={styles.input} className="mb-3 ">
+                        <InputGroup  style={styles.input} className="mb-4 ">
                         <FormControl
                          required
                         value={title}

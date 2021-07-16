@@ -46,7 +46,6 @@ const SkillRoadmap = (props) => {
     // handles the change in name of skill
     const handleChangeSkill = (e, idx) => {
         let values = [...skills];
-        console.log(values);
         values[idx].name = e.target.value;
         setSkills([...values]);
     }
