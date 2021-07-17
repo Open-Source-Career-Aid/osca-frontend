@@ -1,7 +1,7 @@
 import React, { useState, useLayoutEffect } from 'react'
 import { Row, Col } from 'react-bootstrap';
 import Button from '@material-ui/core/Button'
-
+import { LowerBody } from './LowerBody';
 import '../../Styles/Body.css';
 
 const Home = () => {
@@ -43,7 +43,7 @@ const Home = () => {
     })
 
     return (
-
+        <>
 
         <div fluid className="upperBody">
 
@@ -63,9 +63,9 @@ const Home = () => {
                     </Col>
                     <Col xs={12} sm={12} md={6} lg={6} xl={6} className="buttonCol">
 
-                        <Row  >
+                        <Row>
                             <Button style={styles.button1} size="small" type='submit' variant="contained" color='primary' className='button1' >Learn A Skill </Button>
-                        </Row  >
+                        </Row>
                         <Row style={{ paddingTop: '10%' }} >
                             <Button style={styles.button2} type='submit' variant="contained" size="small" color='secondry' className='button2' >Track Your Progress</Button>
                         </Row>
@@ -77,7 +77,8 @@ const Home = () => {
                 </div>
             </Col>
         </div>
-
+        <LowerBody/>
+        </>
     )
 
 }

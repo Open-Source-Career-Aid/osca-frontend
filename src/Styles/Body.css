@@ -69,6 +69,7 @@
   .buttonCol {
     max-width: 20vw;
     margin: 0 10vw 0;
+    padding-top: 1rem;
   }
 
   .button1 {

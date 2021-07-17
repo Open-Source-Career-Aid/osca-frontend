@@ -26,14 +26,14 @@ const Header = () => {
                     <div className="row">
                         <div className="col-2 line">
                         </div>
-                        <div className="col-4 header-text">
-                            <div className="col-3 header-text">
-                                <Link className="link">
+                        <div className="col-6 header-text">
+                            <div className="col-3 justify-content-center header-text">
+                                <Link to="/learnskill" className="link">
                                     Learn a Skill
                                 </Link>
                             </div>
                             <div className="row">
-                                <div className="col-9 text-center">
+                                <div className="col-9 text-center justify-content-center">
                                     <Link className="link">
                                         Track Your Progress
                                     </Link>
@@ -46,16 +46,16 @@ const Header = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-3"></div>
-                        <div className="col-2 header-text">
+                        <div className="col-1"></div>
+                        <div className="col-3 header-text">
                             <div className="row">
                                 <div className="col-3 header-text">
                                     <Link className="link">
                                         Login
                                     </Link>
                                 </div>
-                                <div className="col-2"></div>
-                                <div className="col-6 header-text text-center signup">
+                                <div className="col-1"></div>
+                                <div className="col-6 justify-content-center header-text text-center signup">
                                     <Link className="link-s text-center">
                                         Sign Up
                                     </Link>
@@ -87,7 +87,7 @@ const Header = () => {
                             <>
                                 <div className="row pt-5 header-ex">
                                     <div className="justify-content-center text-center header-text">
-                                        <Link className="link">
+                                        <Link to="/learnskill" className="link">
                                             Learn a Skill
                                         </Link>
                                     </div>
