@@ -50,24 +50,53 @@ const Skill = () => {
             <h2>Web Devlopment</h2>
             </Col>
             <Col xs={1} sm={1} md={1}  lg={1} xl={1}>
-                {isDesktop ? 
+                {/* {isDesktop ? 
                 (<Button className="addbutton" > Add</Button>)
                 :
                 (<Button className="addbutton" >
                     <img style={styles.copyButtonIcon} src='./../../plus.png' />
                 </Button>)
 
-                }
+                } */}
+
             </Col>
          </Row>
+         <div className='tagContainer'>
+             <h5 >Tags</h5>
+             <Row style={{marginLeft: '0'}}>
+                 <Col  className='colorTags' xs='auto'>
+                     HTML
+                 </Col>
+                 <Col className='colorTags' xs='auto'>
+                     HTML
+                 </Col>
+                 <Col className='colorTags' xs='auto'>
+                     HTML
+                 </Col>
+             </Row>
+         </div>
+         <div className='tagContainer'>
+             <h5   >Pre-requisites</h5>
+             <Row style={{marginLeft: '0'}} >
+                 <Col className='tags' xs='auto'>
+                     HTML
+                 </Col>
+                 <Col className='tags' xs='auto'>
+                     HTML
+                 </Col>
+                 <Col className='tags' xs='auto'>
+                     HTML
+                 </Col>
+             </Row>
+         </div>
      <div className='skillContainer'>
-        <h5 className="tags">Subskills</h5>
+        <h5 className="subHeading">Subskills</h5>
         <Row>
             {
                 //tags
             }
         </Row>
-        <Row  style={styles.fullWidth}  >
+        <Row  style={styles.fullWidth} className='align-items-center'  >
             <Col  xs={11} sm={11} md={11}  lg={11} xl={11} >
                 <h3 className='skillName'>HTML</h3>
             </Col>
@@ -100,11 +129,12 @@ const Skill = () => {
 const styles = {
     dropButton: {
         backgroundColor: 'white',
-        border: 'none'
+        border: 'none',
+        
     },
     copyButtonIcon: {
-        height: '1.2em',
-        width: '1.2em',
+        height: '1em',
+        width: '1.4em',
         
     },
     fullWidth: {

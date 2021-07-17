@@ -3,17 +3,17 @@
     color: #586060;
 }
 
+.tagContainer {
+    padding: 2% 0 2%;
+}
 
-
-h5.tags {
+.tagContainer > h5 {
     font-weight: 600;
-    font-size: 19px;
-    line-height: 28px;
+    font-size: 1.1em;
+    line-height: 1.5em;
     display: flex;
     align-items: center;
-    padding-top: 3rem;
-    
-    color: #989898;
+    color: #989898 ;
 }
 h3.skillName {
     display: flex;
@@ -25,14 +25,33 @@ color: #586060;
 }
 
 
+.tags {
+    border-radius: .7em;
+    border: 1px solid #7A7A7A;
+    margin-right: 2em;
+    padding: .1em .9em .2em;
+    font-weight: 500;
+    color: #424242;
+    font-size: small;
+}
+
+.colorTags {
+    border-radius: .7em;
+    margin-right: 2em;
+    padding: .1em .9em .2em;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: small;
+    background-color: #2C91B0;
+}
 
 
 @media screen and (max-width: 4400px) {
 
     .headingRow {
-        padding-top: 15%;
+        padding-top: 10%;
         padding-left: 15vh;
-        padding-right: 25vh;
+        padding-right: 30vh;
          display: flex;
        
     }
