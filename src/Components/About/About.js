@@ -1,4 +1,5 @@
 import React from 'react'
+import { ContactForm } from './ContactForm'
 
 import '../../Styles/About.css'
 
@@ -158,7 +159,13 @@ export const About = () => {
                             guidelines to ensure that you get the best.</p>
                     </div>
                     <hr></hr>
+                    <div className="contact__form">
+                        <ContactForm />
+                    </div>
                 </div>
+            </div>
+            <div className="team">
+                hello
             </div>
         </div >
     )

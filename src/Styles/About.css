@@ -61,7 +61,7 @@
 
 .what__we__do {
   width: 100%;
-  height: 30.48rem;
+  height: 36.48rem;
   margin-top: -2.5rem;
 }
 
@@ -92,10 +92,15 @@
 }
 
 .what__we__do > .container > hr {
-  top: 5rem;
   position: relative;
-  left: 2rem;
+  top: 11.5rem;
   transform: rotate(90deg);
-  width: 20rem;
+  width: 28rem;
   height: 0.1rem;
+  left: -10rem;
+}
+
+.contact__form {
+  margin-left: -15rem;
+  width: 25rem;
 }
