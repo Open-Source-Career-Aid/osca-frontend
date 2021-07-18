@@ -9,8 +9,6 @@ import { LowerBody } from './Components/Homepage/LowerBody';
 import LearnSkill from './Components/LearnSkill';
 import { About } from './Components/About/About'
 
-import Skill from './Components/Skill';
-
 
 function App() {
   return (
@@ -20,19 +18,14 @@ function App() {
 
         <Switch>
           <Route exact path="/">
-            {/* <Home /> */}
-            {/* <LowerBody /> */}
-            <Skill />
+            <Home />
+            <LowerBody />
           </Route>
-
           <Route path="/learnskill">
             <LearnSkill />
           </Route>
           <Route path="/error">
             <ErrorPage />
-          <Route  path="/learnskill">
-            <LearnSkill />
-
           </Route>
           <Route path="/aboutus">
             <About />
