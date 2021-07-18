@@ -67,38 +67,42 @@ const roadmap ={
 
 
 
-function getWindowDimensions() {
-    const { innerWidth: width, innerHeight: height } = window;
-    return {
-      width,
-      height
-    };
-  }
+// function getWindowDimensions() {
+//     const { innerWidth: width, innerHeight: height } = window;
+//     return {
+//       width,
+//       height
+//     };
+//   }
+const leftsrc = './../../leftarrow.png';
+const upsrc = './../../up.png';
+
+let srcdict  = {};
+let opendict = {};
+
+let i=0;
+for(i = 0; i<=roadmap.skills.length; i++) {
+    srcdict[i] = leftsrc;
+    opendict[i] =false;
+}
 
 const Skill = () => {
-    const [open, setOpen] = useState(false);
-    const upsrc = './../../up.png';
-    const leftsrc = './../../leftarrow.png';
-    const [iconsrc, setSrc] = useState(leftsrc);
-    const handleChange = () => {
-        setOpen(!open);
-        if(iconsrc === leftsrc) {
-            setSrc(upsrc)
+    
+    const [open, setOpen] = useState(opendict);
+    const [src, setSrc] = useState(srcdict);
+    
+    const handleChange = (idx) => {
+        let values = {...open};
+        values[idx] = !values[idx];
+        setOpen({...values});
+        if(src[idx] === leftsrc) {
+            src[idx] = upsrc;
+            setSrc({...src})
         } else { 
-            setSrc(leftsrc)
+            src[idx] = leftsrc;
+            setSrc({...src})
         }
     }
-
-    const [isDesktop, setDesktop] = useState(window.innerWidth > 750);
-
-  const updateMedia = () => {
-    setDesktop(window.innerWidth > 750);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", updateMedia);
-    return () => window.removeEventListener("resize", updateMedia);
-  });
 
  return (
      <div className="headingRow">
@@ -170,6 +174,7 @@ const Skill = () => {
          </div>
      <div className='skillContainer'>
        {roadmap.skills.map((skill, idx) => {
+                     
            return (
             <>
                <Row  style={styles.fullWidth} className='align-items-center'  >
@@ -180,14 +185,14 @@ const Skill = () => {
                 <Button
                     style={styles.btn}
                     
-                    onClick={() => handleChange()}
+                    onClick={() => handleChange(idx)}
                     aria-controls="example-collapse-text"
                     aria-expanded={open}>
-                    <img style={ open? styles.dropButton : styles.leftbutton} src={iconsrc} />
+                    <img style={ open[idx]? styles.dropButton : styles.leftbutton} src={src[idx]} />
                 </Button>
             </Col>
         </Row>
-        <Collapse  in={open}>
+        <Collapse  in={open[idx]}>
             <div id="example-collapse-text">
 
                 <SkillCard props={skill.resources} />
@@ -211,12 +216,12 @@ const styles = {
         border: 'none',
     },
     leftbutton: {
-        height: '1em',
-        width: '.8em',
+        height: '.8em',
+        width: '.9em',
     },
     dropButton: {
-        height: '.8em',
-        width: '1.1em'
+        height: '.6em',
+        width: '1em'
     },
     backButton: {
         marginTop: '.3em',
