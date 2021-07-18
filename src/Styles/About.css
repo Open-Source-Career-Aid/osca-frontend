@@ -63,7 +63,11 @@
   width: 30.438rem;
 }
 
-.container {
+.upper__part > .container {
+  display: flex;
+  justify-content: center;
+}
+.what__we__do > .container {
   display: flex;
   justify-content: center;
 }
