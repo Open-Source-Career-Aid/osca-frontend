@@ -1,6 +1,7 @@
 import React, { useState, useLayoutEffect } from 'react'
 import { Row, Col } from 'react-bootstrap';
 import Button from '@material-ui/core/Button'
+import { LowerBody } from './LowerBody';
 import '../../Styles/Body.css';
 
 const Home = () => {
@@ -44,38 +45,39 @@ const Home = () => {
     return (
         <>
 
-            <div fluid className="upperBody">
+        <div fluid className="upperBody">
 
-                <Col >
-                    <Row style={{ ...styles.colorbackground, ...styles.gridRows, }} xs={12} md={12} lg={12} xl={12}>
-                        <Col style={styles.gridCol} xs={12} sm={12} md={6} lg={6} xl={6} >
-                            <h2>Welcome to OSCA!</h2>
-                        </Col>
-                        <Col style={{ ...styles.gridCol }} className="seprator" xs={12} sm={12} md={6} lg={6} xl={6} >
-                            <p >A platform of resources; created and and organised by skilled individuals of planet Earth.</p>
-                        </Col>
-                    </Row>
-                    <Row className='center' style={{ ...styles.gridRows, ...styles.whiteBackground, }} xs={12} md={12} lg={12} xl={12} >
-                        <Col xs={12} sm={12} md={6} lg={6} xl={6} className='headingCol' >
-                            <h1 className='headingPart1' >Let's Start</h1>
-                            <h1 className='headingPart2' >Learning!</h1>
-                        </Col>
-                        <Col xs={12} sm={12} md={6} lg={6} xl={6} className="buttonCol">
+            <Col >
+                <Row style={{ ...styles.colorbackground, ...styles.gridRows, }} xs={12} md={12} lg={12} xl={12}>
+                    <Col style={styles.gridCol} xs={12} sm={12} md={6} lg={6} xl={6} >
+                        <h2>Welcome to OSCA!</h2>
+                    </Col>
+                    <Col style={{ ...styles.gridCol }} className="seprator" xs={12} sm={12} md={6} lg={6} xl={6} >
+                        <p >A platform of resources; created and and organised by skilled individuals of planet Earth.</p>
+                    </Col>
+                </Row>
+                <Row className='center' style={{ ...styles.gridRows, ...styles.whiteBackground, }} xs={12} md={12} lg={12} xl={12} >
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6} className='headingCol' >
+                        <h1 className='headingPart1' >Let's Start</h1>
+                        <h1 className='headingPart2' >Learning!</h1>
+                    </Col>
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6} className="buttonCol">
 
-                            <Row>
-                                <Button style={styles.button1} size="small" type='submit' variant="contained" color='primary' className='button1' >Learn A Skill </Button>
-                            </Row>
-                            <Row style={{ paddingTop: '10%' }} >
-                                <Button style={styles.button2} type='submit' variant="contained" size="small" color='secondry' className='button2' >Track Your Progress</Button>
-                            </Row>
-                        </Col>
-                    </Row>
-                    <div className="rectangle" onClick={scroll < 415 ? scrollToBottom : scrollToTop}>
-                        <div className="circle">
-                        </div>
+                        <Row>
+                            <Button style={styles.button1} size="small" type='submit' variant="contained" color='primary' className='button1' >Learn A Skill </Button>
+                        </Row>
+                        <Row style={{ paddingTop: '10%' }} >
+                            <Button style={styles.button2} type='submit' variant="contained" size="small" color='secondry' className='button2' >Track Your Progress</Button>
+                        </Row>
+                    </Col>
+                </Row>
+                <div className="rectangle" onClick={scroll < 415 ? scrollToBottom : scrollToTop}>
+                    <div className="circle">
                     </div>
-                </Col>
-            </div>
+                </div>
+            </Col>
+        </div>
+        <LowerBody/>
         </>
     )
 
