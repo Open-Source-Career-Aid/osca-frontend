@@ -1,6 +1,9 @@
-.container {
-  padding-top: 11.4rem;
-  margin-bottom: -6.9rem;
+.error__page {
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+  margin-bottom: -3.5rem;
+  min-height: 67.5vh;
 }
 .error__container {
   display: flex;
@@ -81,9 +84,10 @@
 }
 
 @media screen and (max-width: 650px) {
-  .container {
-    padding-top: 6.25rem;
-    margin-bottom: 5rem;
+  .error__page {
+    min-height: 70vh;
+    padding-top: 4rem;
+    margin-bottom: 9em;
   }
   .error__container {
     margin-top: 3rem;

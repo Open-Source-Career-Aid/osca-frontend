@@ -1,0 +1,51 @@
+.card {
+  min-width: 18.75rem;
+  max-width: 19rem;
+  margin: 2rem;
+  max-height: 22.25rem;
+  border: none;
+}
+
+.card > img {
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+}
+
+.card > .card-body {
+  padding: 0.5rem 0 0 0;
+}
+
+.card > .card-body > .card-title {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  margin-bottom: 0;
+  color: #8750a9;
+}
+
+.card > .card-body > .body {
+  display: flex;
+}
+
+.card > .card-body > .body > .card-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+
+  color: #666666;
+}
+
+.card > .card-body > .body > hr {
+  transform: rotate(90deg);
+  position: relative;
+  width: 0.938rem;
+  height: 0rem;
+  margin-top: 0.5rem;
+
+  border: 0.5px solid rgba(153, 153, 153, 0.75);
+}
