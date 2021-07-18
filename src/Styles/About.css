@@ -61,7 +61,7 @@
 
 .what__we__do {
   width: 100%;
-  height: 36.48rem;
+  height: 34.48rem;
   margin-top: -2.5rem;
 }
 
@@ -103,4 +103,26 @@
 .contact__form {
   margin-left: -15rem;
   width: 25rem;
+}
+
+.team > .container > h1 {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 52px;
+  line-height: 96px;
+  color: #000000;
+  display: flex;
+  justify-content: center;
+}
+
+.team > .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.team > .container > .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

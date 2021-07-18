@@ -1,7 +1,10 @@
 import React from 'react'
 import { ContactForm } from './ContactForm'
+import { ProfileCard } from './ProfileCard'
 
 import '../../Styles/About.css'
+
+import man from './photo.jpg'
 
 export const About = () => {
     return (
@@ -165,7 +168,18 @@ export const About = () => {
                 </div>
             </div>
             <div className="team">
-                hello
+                <div className="container">
+                    <h1>Our Team</h1>
+                    <div className="cards">
+                        <ProfileCard Image={man} Name="Chinmay Shrivastava" Branch="Mechanical Engineering" Role="Mentor" />
+                        <ProfileCard Image={man} Name="Chinmay Shrivastava" Branch="Mechanical Engineering" Role="Mentor" />
+                        <ProfileCard Image={man} Name="Chinmay Shrivastava" Branch="Mechanical Engineering" Role="Mentor" />
+                        <ProfileCard Image={man} Name="Chinmay Shrivastava" Branch="Mechanical Engineering" Role="Mentor" />
+                        <ProfileCard Image={man} Name="Chinmay Shrivastava" Branch="Mechanical Engineering" Role="Mentor" />
+                        <ProfileCard Image={man} Name="Chinmay Shrivastava" Branch="Mechanical Engineering" Role="Mentor" />
+                        <ProfileCard Image={man} Name="Chinmay Shrivastava" Branch="Mechanical Engineering" Role="Mentor" />
+                    </div>
+                </div>
             </div>
         </div >
     )
