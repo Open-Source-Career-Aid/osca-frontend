@@ -24,8 +24,7 @@ const SkillCard = ({props}) => {
                     <Col xs={2} sm={1} md={1}  lg={1} xl={1}>
                         <Button size="sm" style={styles.copyButton}  onClick={() => {navigator.clipboard.writeText(link)}}>
                             <a>
-        
-                             <img style={styles.copyButtonIcon} src="./copy.png" />
+                              <img style={styles.copyButtonIcon} src="./copy.png" />
                             </a>
                         </Button>
                     </Col>
