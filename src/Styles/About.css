@@ -1,0 +1,101 @@
+.full_container {
+  padding-top: 3.7rem;
+  margin-bottom: -15.5rem;
+}
+.upper__part {
+  width: 100%;
+  height: 30.438rem;
+  left: 0;
+
+  background: rgba(199, 199, 199, 0.15);
+}
+
+.about__us {
+  width: 30.438rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.about__us > h1 {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 550;
+  font-size: 44px;
+  line-height: 72px;
+  color: #000000;
+}
+
+.about__us > h6 {
+  position: relative;
+  margin-top: 2.375rem;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 36px;
+
+  color: #000000;
+}
+
+.about__us > p {
+  position: relative;
+  margin-top: 2.375rem;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 150%;
+  color: #666666;
+}
+
+.image > svg {
+  margin-top: -3rem;
+  margin-left: 3rem;
+  width: 32rem;
+}
+
+.what__we__do {
+  width: 100%;
+  height: 30.48rem;
+  margin-top: -2.5rem;
+}
+
+.we__do {
+  width: 30.438rem;
+}
+
+.we__do > h1 {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 54px;
+  color: #000000;
+}
+
+.we__do > p {
+  position: relative;
+  top: 1.875rem;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 150%;
+
+  color: #666666;
+}
+
+.what__we__do > .container > hr {
+  top: 5rem;
+  position: relative;
+  left: 2rem;
+  transform: rotate(90deg);
+  width: 20rem;
+  height: 0.1rem;
+}
