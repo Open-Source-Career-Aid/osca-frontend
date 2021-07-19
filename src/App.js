@@ -18,8 +18,9 @@ function App() {
 
         <Switch>
           <Route exact path="/">
-            <Home />
-            <LowerBody />
+            {/* <Home /> */}
+            {/* <LowerBody /> */}
+            <RoadmapForm />
           </Route>
           <Route path="/learnskill">
             <LearnSkill />

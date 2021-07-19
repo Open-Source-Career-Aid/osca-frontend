@@ -41,20 +41,19 @@ function DeleteIcon(props) {
 const RoadmapForm = () => {
 
     const [state, setState] = useState({
-        name: "",
+        userName: "",
         organization_name: "IIT Roorkee",
         branch_name: "",
         program_duration: "",
         show: false,
         is_supperskill: false,
-        skill: "",
     });
 
-    const [preReqs, setpreReqs] = useState([{name: null}]);
+    const [preReqs, setpreReqs] = useState([{prereqName: null}]);
     
     const [preReqsField, setPreReqsField] = useState('');
     
-    const [tags, setTags] = useState([{name: null}]);
+    const [tags, setTags] = useState([{tagName: null}]);
     
     const [tagsField, setTagsField] = useState('');
    
@@ -65,7 +64,7 @@ const RoadmapForm = () => {
 
 
     const handleChangeName = (e) => {
-        setState({ ...state, name: e.target.value })
+        setState({ ...state, userName: e.target.value })
     }
 
     const handleChangeOrganizationName = (e) => {
@@ -103,7 +102,7 @@ const RoadmapForm = () => {
     const handleClickPreRequisite = () => {
        
         let values = [...preReqs];
-        values.push({name: preReqsField});
+        values.push({prereqName: preReqsField});
         setPreReqsField('');
         setpreReqs([...values]);
     }
@@ -119,7 +118,7 @@ const RoadmapForm = () => {
     // handle clear pre reqs
 
     const handleClickPreqsClear = (e) => {
-        setpreReqs([{name: null}]);
+        setpreReqs([{prereqName: null}]);
     }
 
     //handle change of tag name
@@ -131,7 +130,7 @@ const RoadmapForm = () => {
     // handle click on add button in pre Req 
     const handleClickTags = () => {
         let values = [...tags];
-        values.push({name: tagsField});
+        values.push({tagName: tagsField});
         setTagsField('');
         setTags([...values]);
     }
@@ -146,7 +145,7 @@ const RoadmapForm = () => {
 
     // handles clear all tags 
     const handleClicktagsClear = (e) => {
-        setTags([{name: null}]);
+        setTags([{tagName: null}]);
     }
 
     // gets data from skill Roadmap component 
@@ -166,20 +165,25 @@ const RoadmapForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         let details = state;
-        let roadmapOrSkill ;
+        let roadmap ;
+        let skill  ;
+
         if(skillRoadmapdata === undefined ||skillRoadmapdata === null ) {
-            roadmapOrSkill = skilldata;            
+            skill = skilldata;            
         } else {
-            roadmapOrSkill = skillRoadmapdata;
+            roadmap = skillRoadmapdata;
         }
         const prerequisites = preReqs;
+        let tagsval = tags;
+        tagsval = tagsval.splice(0,1);
+        // setTags([...tagsval]);
         const formData = {
             ...details,
             prerequisites,
             tags,
-            roadmapOrSkill
+            skill
         };
-
+        console.log(skilldata)
         console.log(formData);
 
         // axios.post('https://oscaweb.herokuapp.com/form/add-new-skill/', formData)
@@ -215,7 +219,7 @@ const RoadmapForm = () => {
                         <Col xs={12} sm={12} md={5} lg={5} xl={5} >
                             <Form.Group controlId='formName'>
                                 <Form.Label>Name</Form.Label>
-                                <Form.Control required type='text' value={state.name} placeholder='Enter your name' onChange={handleChangeName} />
+                                <Form.Control required type='text' value={state.userName} placeholder='Enter your name' onChange={handleChangeName} />
                             </Form.Group>
                         </Col>
 
@@ -283,7 +287,7 @@ const RoadmapForm = () => {
                                     <Row  className='tagsRow'>
 
                                     <Col xs='auto' md='auto'  style={{maxWidth: '80%', overflow: 'hidden' , whiteSpace:'nowrap'}}>
-                                            <span   >{preReq.name}</span>
+                                            <span   >{preReq.prereqName}</span>
                                     </Col>
                                     <Col xs='auto' md='auto' style={{paddingRight: '0'}}>
                                         <DeleteIcon onClick={e => handleDeletePreReqs(e, idx)}  style={styles.btn} />
@@ -320,7 +324,7 @@ const RoadmapForm = () => {
                                     <Row  className='tagsRow'>
 
                                     <Col xs='auto' md='auto' style={{maxWidth: '80%', overflow: 'hidden' , whiteSpace:'nowrap'}} >
-                                        <span   >{tag.name}</span>
+                                        <span   >{tag.tagName}</span>
                                     </Col>
                                     <Col xs='auto' md='auto' style={{paddingRight: '0'}}>
                                         <DeleteIcon onClick={e => handleDeleteTags(e, idx)}  style={styles.btn} />

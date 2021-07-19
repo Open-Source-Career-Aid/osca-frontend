@@ -11,14 +11,14 @@ const SkillRoadmap = (props) => {
 
     const [data, setData] = useState();
     
-    const [skills, setSkills] = useState([{name:null}]);
+    const [skills, setSkills] = useState([{skillName:null}]);
 
     const [editSkill, setEditSkill] = useState({'0': 1, });
 
     //handles the addition of skills
     const handleAddButton = () => {
         let values = [...skills];
-        values.push({name: null});
+        values.push({skillName: null});
         let indexoflastelement = values.length;
         editSkill[indexoflastelement -1 ] = 1;
     
@@ -36,7 +36,7 @@ const SkillRoadmap = (props) => {
 
     //handles the ok button
     const handleOkButton = (idx) => {
-        if(skills[idx].name === '' || skills[idx].name === null ) {
+        if(skills[idx].skillName === '' || skills[idx].skillName === null ) {
             alert('cannot be empty');
             return;
         }
@@ -46,7 +46,7 @@ const SkillRoadmap = (props) => {
     // handles the change in name of skill
     const handleChangeSkill = (e, idx) => {
         let values = [...skills];
-        values[idx].name = e.target.value;
+        values[idx].skillName = e.target.value;
         setSkills([...values]);
     }
 
@@ -61,10 +61,11 @@ const SkillRoadmap = (props) => {
 
     const handleChangeInData = () => {
 
-        let values = {
+        let values = [
             ...skills
-        }
-        setData({...values});
+        ]
+        values.splice(0, 1);
+        setData([...values]);
         props.onChange(data);
     }
 
@@ -88,7 +89,7 @@ const SkillRoadmap = (props) => {
                                     <InputGroup style={styles.input} className="mb-3 ">
                                     <FormControl
                                     required
-                                    value={skill.name}
+                                    value={skill.skillName}
                                     onChange={e => handleChangeSkill(e, idx)}
                                     placeholder={"Name of the Topic"}
                                     aria-label="Name of the Topic"
@@ -97,7 +98,7 @@ const SkillRoadmap = (props) => {
                                     />
                                     </InputGroup>
                                 :
-                                <h4>{skill.name}</h4>
+                                <h4>{skill.skillName}</h4>
                             }
                             </Col>
                             <Col xs={1} sm={1} md={1} lg={1} xl={1} >
