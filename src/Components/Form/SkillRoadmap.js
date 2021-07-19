@@ -81,7 +81,7 @@ const SkillRoadmap = (props) => {
             <div className='R-1'>
                 {skills.map((skill, idx) => {
                     return(
-                        <Row className='align-items-center skill' >
+                        <Row className='align-items-center skills' >
                             <Col>
                                 {editSkill[idx]
                                 ?

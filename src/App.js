@@ -7,7 +7,8 @@ import { ErrorPage } from './Components/ErrorPage';
 import RoadmapForm from './Components/Form/Form';
 import { LowerBody } from './Components/Homepage/LowerBody';
 import LearnSkill from './Components/LearnSkill';
-import Skill from './Components/Skill';
+import { About } from './Components/About/About'
+
 
 function App() {
   return (
@@ -17,12 +18,17 @@ function App() {
 
         <Switch>
           <Route exact path="/">
-            {/* <Home /> */}
-            {/* <LowerBody /> */}
-            <Skill />
+            <Home />
+            <LowerBody />
           </Route>
-          <Route  path="/learnskill">
+          <Route path="/learnskill">
             <LearnSkill />
+          </Route>
+          <Route path="/error">
+            <ErrorPage />
+          </Route>
+          <Route path="/aboutus">
+            <About />
           </Route>
         </Switch>
         <Footer />
