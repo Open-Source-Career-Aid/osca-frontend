@@ -1,12 +1,12 @@
 import React from 'react';
 import { Container, Row, Col, Form, InputGroup } from 'react-bootstrap';
-import "../Styles/Learn.css";
+import "../../Styles/Learn.css";
 import SearchIcon from '@material-ui/icons/Search';
 import { IconButton } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import { red } from '@material-ui/core/colors';
-import MyMobile from "../MyHelperCompnents/MyMobile";
-import MyDesktop from "../MyHelperCompnents/MyDesktop";
+import MyMobile from "../../MyHelperCompnents/MyMobile";
+import MyDesktop from "../../MyHelperCompnents/MyDesktop";
 
 const LearnSkill = () => {
 
