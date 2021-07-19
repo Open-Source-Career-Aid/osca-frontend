@@ -4,7 +4,7 @@ import { ProfileCard } from './ProfileCard'
 
 import '../../Styles/About.css'
 
-import man from './photo.jpg'
+import man from '../../Images/photo.jpg'
 
 export const About = () => {
     return (
