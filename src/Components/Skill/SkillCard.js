@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap';
 import {Button}  from 'react-bootstrap';
-import './../Styles/skillCard.css';
+import './../../Styles/skillCard.css';
 
 
 const SkillCard = ({props}) => {

@@ -8,7 +8,7 @@ import RoadmapForm from './Components/Form/Form';
 import { LowerBody } from './Components/Homepage/LowerBody';
 import LearnSkill from './Components/LearnSkill';
 import { About } from './Components/About/About'
-
+import Skill from './Components/Skill/Skill';
 
 function App() {
   return (
@@ -18,9 +18,8 @@ function App() {
 
         <Switch>
           <Route exact path="/">
-            {/* <Home /> */}
-            {/* <LowerBody /> */}
-            <RoadmapForm />
+            <Home />
+            <LowerBody />
           </Route>
           <Route path="/learnskill">
             <LearnSkill />
