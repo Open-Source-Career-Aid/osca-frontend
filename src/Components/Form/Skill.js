@@ -16,7 +16,7 @@ const Skill = (props) => {
 
     const [titleEdit, setTitleEdit] = useState(0);
 
-    const [topics, setTopics] = useState([{name: null, resources:[{link: null}] }])
+    const [topics, setTopics] = useState([{topicName: null, resources:[{link: null}] }])
 
     const [inputsLinks, setInputLinks] = useState({'0': ''});
 
@@ -52,7 +52,7 @@ const Skill = (props) => {
 
     const handleClickOk= (idx) => {
         
-        if(topics[idx].name === '' || topics[idx].name === null ) {
+        if(topics[idx].topicName === '' || topics[idx].topicName === null ) {
             alert('cannot be empty');
             return;
         }
@@ -68,7 +68,7 @@ const Skill = (props) => {
             return;
         }
         let values = [...topics];
-        values[idx].name = e.target.value;
+        values[idx].topicName = e.target.value;
         setTopics([...values]);
     }   
 
@@ -117,7 +117,7 @@ const Skill = (props) => {
     
     const handleAddTopic = () => {
         const values = [...topics];
-        values.push({ name: null, resources: [{ link: null }] });
+        values.push({ topicName: null, resources: [{ link: null }] });
         const indexofAddedtopic = values.length ;
         topicsidx[indexofAddedtopic -1] = 0;
         inputsLinks[indexofAddedtopic ] = null;
@@ -129,8 +129,9 @@ const Skill = (props) => {
     // handle change in skill data
 
     const handleChangeInData = () => {
+        let skillName = title;
         let values = {
-            title,
+            skillName,
             topics
         }
         setData({...values});
@@ -175,7 +176,7 @@ const Skill = (props) => {
                 <Row >
                 <Col   >
                     {topicsidx[idx] ?
-                        <h3>{topic.name}</h3>
+                        <h3>{topic.topicName}</h3>
                         :
                     <>
                         <InputGroup style={styles.input} className="mb-3 ">

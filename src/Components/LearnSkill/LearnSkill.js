@@ -7,6 +7,7 @@ import MyMobile from "../MyHelperCompnents/MyMobile";
 import MyDesktop from "../MyHelperCompnents/MyDesktop";
 import SearchBar from './SearchBar/SearchBar';
 import { Link } from "react-router-dom"
+import "../../Styles/Learn.css";
 
 const LearnSkill = () => {
 
