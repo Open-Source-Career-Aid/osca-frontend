@@ -1,0 +1,77 @@
+.Icon {
+    color: #586060;
+}
+
+.heading {
+    color: #586060;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 29px;
+}
+
+.Edit {
+    color: #8750A9;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.SubHeading {
+    color: #989898;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.box-skill-blue {
+    background: #2C91B0;
+    border-radius: 9px;
+    text-align: center;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    color: #FFFFFF;
+    margin-right: 10px;
+    padding: 3px 7px 3px 7px;
+}
+
+.box-skill-red {
+    background: #D74646;
+    border-radius: 9px;
+    text-align: center;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    color: #FFFFFF;
+    margin-right: 10px;
+    padding: 3px 7px 3px 7px;
+}
+
+.box-skill-blueD {
+    margin-right: 10px;
+    background: #4248D2;
+    border-radius: 9px;
+    text-align: center;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    color: #FFFFFF;
+    padding: 3px 7px 3px 7px;
+}
+
+.box {
+    border: 1px solid #7A7A7A;
+    box-sizing: border-box;
+    border-radius: 9px;
+    padding: 0px 7px 1px 7px;
+    margin-right: 10px;
+}
