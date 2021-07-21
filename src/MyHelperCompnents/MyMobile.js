@@ -12,7 +12,7 @@ const MyMobile = (props) => {
     }, [])
 
     return (
-            <React.Fragment> {windowSize <= 750 ? props.children : null} </React.Fragment>)
-        }
+        <React.Fragment> {windowSize <= 750 ? props.children : null} </React.Fragment>)
+}
 
-        export default MyMobile;
+export default MyMobile;

@@ -58,7 +58,7 @@
     line-height: 54px;
     display: flex;
     align-items: center;
-    color: #586060;
+    color: #586060 !important;
 }
 
 .track {
@@ -211,20 +211,33 @@
 
 @media only screen and (max-width: 768px) {
     .mobile-content {
-        font-size:11px !important;
+        font-size: 11px !important;
     }
-    
-    .mobile-subskill{
+    .mobile-subskill {
         font-size: 11px !important;
         padding-left: 20px;
     }
-
-    .mobile-font{
+    .mobile-font {
         font-size: 10px;
     }
-
-    .mobile-add{
+    .mobile-add {
         font-size: 11px !important;
         padding-top: 6px;
     }
+}
+
+.Spacing {
+    padding-top: 20px !important;
+}
+
+.linkTo{
+    color: #586060;
+}
+
+.linkTo:hover{
+    color: #586060;
+}
+
+.linkTo:focus{
+    color: #586060;
 }
