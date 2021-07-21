@@ -1,12 +1,12 @@
 import React from 'react';
-import { Container, Row, Col, Form, InputGroup } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import "../Styles/Learn.css";
-import SearchIcon from '@material-ui/icons/Search';
-import { IconButton } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import { red } from '@material-ui/core/colors';
 import MyMobile from "../MyHelperCompnents/MyMobile";
 import MyDesktop from "../MyHelperCompnents/MyDesktop";
+import SearchBar from './SearchBar/SearchBar';
+import { Link } from "react-router-dom"
 
 const LearnSkill = () => {
 
@@ -18,32 +18,12 @@ const LearnSkill = () => {
         }
     });
 
-    const classes = useStyle;
+    const classes = useStyle();
 
     return (
         <>
-            <Container>
-                <Row className="top-pad">
-                    <MyDesktop>
-                        <Col className="learn-txt center" md={{ span: 1, offset: 2 }}>
-                            Skillset
-                        </Col>
-                    </MyDesktop>
-                    <Col md={{ span: 3, offset: 4 }} xs={{ span: 8, offset: 2 }} >
-                        <InputGroup className="SearchField">
-                            <Form.Control
-                                type="text"
-                                className="Search text-center"
-                                placeholder="Search a Skill"
-                            />
-                            <InputGroup.Append className="search-btn">
-                                <IconButton aria-label="Search" size="small">
-                                    <SearchIcon className={classes.root} />
-                                </IconButton>
-                            </InputGroup.Append>
-                        </InputGroup>
-                    </Col>
-                </Row>
+            <Container className="Spacing">
+                <SearchBar />
                 <Row className="pt-3">
                     <Col md={{ offset: 7, span: 1 }} xs={{ span: 3, offset: 3 }}>
                         <div className="skillset justify-content-center">
@@ -63,14 +43,16 @@ const LearnSkill = () => {
                         </Container>
                     </Row>
                 </MyMobile>
-                <Row className="my-4">
+                <Row className="my-5 py-4">
                     <Col md={{ span: 8, offset: 2 }}>
                         <div className="card-css">
-                            <Row className="pt-2">
+                            <Row className="pt-3">
                                 <MyDesktop>
                                     <Col md={{ span: 4, offset: 1 }}>
                                         <div className="card-heading">
-                                            Web Development
+                                            <Link className="linkTo" to="/webD">
+                                                Web Development
+                                            </Link>
                                         </div>
                                     </Col>
                                     <Col md={1}>
@@ -88,11 +70,13 @@ const LearnSkill = () => {
                                     <Col xs={{ span: 6, offset: 1 }}>
                                         <span>
                                             <div className="card-heading mobile-card">
-                                                Web Development
+                                                <Link>
+                                                    Web Development
+                                                </Link>
                                             </div>
                                         </span>
                                     </Col>
-                                    <Col xs={2}>
+                                    <Col xs={2} className="kustify-content-start text-center">
                                         <div className="skill text-center">
                                             SuperSkill
                                         </div>
@@ -105,13 +89,13 @@ const LearnSkill = () => {
                             <Row>
                                 <Col md={{ span: 10, offset: 1 }}>
                                     <Container>
-                                        <div className="content mobile-content pt-2">
+                                        <div className="content mobile-content">
                                             This contains a detailed guide to be a full stack developer in most effecient way. It includes all the required resources and work plan which is easy to follow.
                                         </div>
                                     </Container>
                                 </Col>
                             </Row>
-                            <Row className="py-3">
+                            <Row className="py-4">
                                 <Col md={{ span: 1, offset: 1 }} xs={{ span: 3 }}>
                                     <div className="subSkill mobile-subskill">
                                         Subskills:
@@ -128,7 +112,7 @@ const LearnSkill = () => {
                                     </div>
                                 </Col>
                                 <MyDesktop>
-                                    <Col md={{ span: 2 }} xs={0}>
+                                    <Col md={{ span: 3 }} xs={0}>
                                         <div className="box-skill-blueD">
                                             Machine Learning
                                         </div>
@@ -146,7 +130,7 @@ const LearnSkill = () => {
                 <Row className="my-5">
                     <Col md={{ span: 8, offset: 2 }}>
                         <div className="card-css">
-                            <Row className="py-2">
+                            <Row className="pt-3">
                                 <MyDesktop>
                                     <Col md={{ span: 3, offset: 1 }}>
                                         <div className="card-heading">
@@ -185,13 +169,13 @@ const LearnSkill = () => {
                             <Row>
                                 <Col md={{ span: 10, offset: 1 }}>
                                     <Container>
-                                        <div className="content pt-2">
+                                        <div className="content">
                                             This contains a detailed guide to be a full stack developer in most effecient way. It includes all the required resources and work plan which is easy to follow.
                                         </div>
                                     </Container>
                                 </Col>
                             </Row>
-                            <Row className="py-3">
+                            <Row className="py-4">
                                 <Col md={{ span: 1, offset: 1 }} xs={3}>
                                     <div className="subSkill mobile-subskill">
                                         Subskills:
@@ -208,7 +192,7 @@ const LearnSkill = () => {
                                     </div>
                                 </Col>
                                 <MyDesktop>
-                                    <Col md={{ span: 2 }}>
+                                    <Col md={{ span: 3 }}>
                                         <div className="box-skill-blueD">
                                             Machine Learning
                                         </div>

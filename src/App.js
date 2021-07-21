@@ -8,6 +8,8 @@ import RoadmapForm from './Components/Form/Form';
 import { LowerBody } from './Components/Homepage/LowerBody';
 import LearnSkill from './Components/LearnSkill';
 import { About } from './Components/About/About'
+import SuperSkill from './Components/SuperSkill/SuperSkill';
+import Subskill from './Components/Subskill/Subskill';
 
 
 function App() {
@@ -29,6 +31,12 @@ function App() {
           </Route>
           <Route path="/aboutus">
             <About />
+          </Route>
+          <Route path="/webD">
+            <SuperSkill />
+          </Route>
+          <Route path="/html">
+            <Subskill />
           </Route>
         </Switch>
         <Footer />
