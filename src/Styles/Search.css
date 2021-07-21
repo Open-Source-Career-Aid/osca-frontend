@@ -1,0 +1,13 @@
+.Search{
+    border: none;
+    border-radius: 32px;
+}
+
+.Search:focus{
+    outline: none !important;
+    border: none;
+}
+
+.Search:active{
+    outline: none;
+}

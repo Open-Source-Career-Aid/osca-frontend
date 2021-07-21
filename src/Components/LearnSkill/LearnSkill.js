@@ -1,25 +1,22 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import "../Styles/Learn.css";
-import { makeStyles } from '@material-ui/styles';
-import { red } from '@material-ui/core/colors';
-import MyMobile from "../MyHelperCompnents/MyMobile";
-import MyDesktop from "../MyHelperCompnents/MyDesktop";
-import SearchBar from './SearchBar/SearchBar';
-import { Link } from "react-router-dom"
 import "../../Styles/Learn.css";
+import MyMobile from '../../MyHelperCompnents/MyMobile';
+import MyDesktop from '../../MyHelperCompnents/MyDesktop';
+import SearchBar from '../SearchBar/SearchBar';
+import { Link } from "react-router-dom";
 
 const LearnSkill = () => {
 
-    const useStyle = makeStyles({
-        root: {
-            color: red,
-            paddingLeft: "20px",
-            paddingRight: "20px"
-        }
-    });
+    // const useStyle = makeStyles({
+    //     root: {
+    //         color: red,
+    //         paddingLeft: "20px",
+    //         paddingRight: "20px"
+    //     }
+    // });
 
-    const classes = useStyle();
+    // const classes = useStyle();
 
     return (
         <>
