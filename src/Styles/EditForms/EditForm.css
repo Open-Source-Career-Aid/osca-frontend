@@ -1,0 +1,61 @@
+@media screen and (max-width: 750px) {
+  .modal-content {
+    min-width: 90vw !important;
+  }
+}
+
+.modal-header > .modal-title {
+  flex: 1;
+  text-align: center;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #464646;
+}
+
+.modal-dialog-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100% - 1rem);
+}
+
+.modal-header > button {
+  border: none;
+  background: none;
+}
+
+.modal-header {
+  border: 0;
+}
+
+.modal-content {
+  background: #ececec;
+  border-radius: 16px;
+  min-width: 42.75rem;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.submit__btn {
+  background: #8750a9;
+  border-radius: 10px;
+  height: 1.875rem;
+  min-width: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.submit__btn:hover {
+  background: #8750a9;
+}

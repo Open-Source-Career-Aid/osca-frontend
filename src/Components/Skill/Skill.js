@@ -8,6 +8,7 @@ import EditButton from './../Buttons/Editbutton';
 import Modal from 'react-bootstrap/Modal'
 
 import { TagsEdit } from '../EditFroms/TagsEdit';
+import '../../Styles/EditForms/EditForm.css'
 import '../../Styles/EditForms/TagsEdit.css'
 
 const roadmap = {
@@ -111,8 +112,8 @@ const Skill = () => {
 
     const [tags, setTags] = useState(false);
 
-    const handleClose = () => setTags(false);
-    const handleShow = () => setTags(true);
+    const handleCloseTagsForm = () => setTags(false);
+    const handleShowTagsForm = () => setTags(true);
 
     return (
         <div className="headingRow">
@@ -136,7 +137,7 @@ const Skill = () => {
                             <h5 >Tags</h5>
                         </Col>
                         <Col xs={1}>
-                            <EditButton fun={handleShow} />
+                            <EditButton fun={handleShowTagsForm} />
                         </Col>
                     </Row>
                     <Row >
@@ -214,7 +215,7 @@ const Skill = () => {
                     })}
                 </div>
             </Col>
-            <Modal centered show={tags} onHide={handleClose}>
+            <Modal centered show={tags} onHide={handleCloseTagsForm}>
                 <Modal.Header>
                     <button type="button">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -222,17 +223,17 @@ const Skill = () => {
                         </svg>
                     </button>
                     <Modal.Title>Suggest an Edit</Modal.Title>
-                    <button type="button" onClick={handleClose}>
+                    <button type="button" onClick={handleCloseTagsForm}>
                         <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.37857 6.37857L11.7571 11.7571M1 11.7571L6.37857 6.37857L1 11.7571ZM11.7571 1L6.37754 6.37857L11.7571 1ZM6.37754 6.37857L1 1L6.37754 6.37857Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </button>
                 </Modal.Header>
                 <Modal.Body>
-                    <TagsEdit onSubmit={handleClose} />
+                    <TagsEdit onSubmit={handleCloseTagsForm} data={roadmap.tags} />
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <Button className="submit__btn" onClick={handleCloseTagsForm}>
                         Submit
                     </Button>
                 </Modal.Footer>

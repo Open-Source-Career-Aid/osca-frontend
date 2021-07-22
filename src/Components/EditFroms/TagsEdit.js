@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 import Form from 'react-bootstrap/Form'
-import { Row, Col, Button } from 'react-bootstrap';
 import { SvgIcon } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 
@@ -13,9 +12,13 @@ function DeleteIcon(props) {
     );
 }
 
-export const TagsEdit = ({ onSubmit }) => {
+export const TagsEdit = ({ data }) => {
 
-    const [tags, setTags] = useState([{ tagName: null }]);
+    console.log(data, "hello")
+
+    const [tags, setTags] = useState([...data]);
+
+    console.log(tags, "hey")
 
     const [tagsField, setTagsField] = useState('');
 
@@ -28,7 +31,7 @@ export const TagsEdit = ({ onSubmit }) => {
     // handle click on add button in pre Req 
     const handleClickTags = () => {
         let values = [...tags];
-        values.push({ tagName: tagsField });
+        values.push({ name: tagsField });
         setTagsField('');
         setTags([...values]);
     }
@@ -41,48 +44,35 @@ export const TagsEdit = ({ onSubmit }) => {
         setTags([...values]);
     }
 
-    // handles clear all tags 
-    const handleClicktagsClear = (e) => {
-        setTags([{ tagName: null }]);
-    }
-
     return (
         <Form>
-            <Row className="py-4 ">
-                <Col xs={12} sm={12} md={6} lg={7} xl={8} >
+            <div className="all__tags">
+                <div className="tags__edit">
                     Tags
-                </Col>
-                <Col xs={12} sm={12} md={6} lg={5} xl={4} className="field text-center justify-content-center">
+                </div>
+                <div className="tags__field">
                     <input onChange={e => handleChangeTagName(e)} value={tagsField} type="text" className='inputField' placeholder="Add a Tag" />
-                    <AddIcon onClick={e => handleClickTags(e)} className='addIcon' />
-                </Col>
-            </Row>
-            <Row className="backDrop">
+                    <AddIcon onClick={e => handleClickTags(e)} />
+                </div>
+            </div>
+            <div className="tags__area">
                 {tags.map((tag, idx) => {
-                    if (idx > 0) {
+                    if (idx >= 0) {
 
                         return (
-                            <Col xs='auto' md='auto' className='tags'>
-                                <Row className='tagsRow'>
-
-                                    <Col xs='auto' md='auto' style={{ maxWidth: '80%', overflow: 'hidden', whiteSpace: 'nowrap' }} >
-                                        <span   >{tag.tagName}</span>
-                                    </Col>
-                                    <Col xs='auto' md='auto' style={{ paddingRight: '0' }}>
-                                        <DeleteIcon onClick={e => handleDeleteTags(e, idx)} style={styles.btn} />
-                                    </Col>
-                                </Row>
-
-                            </Col>
+                            <div className="tags__button">
+                                <div className="tag__name">
+                                    {tag.name}
+                                </div>
+                                <div className="delete__btn">
+                                    <DeleteIcon onClick={e => handleDeleteTags(e, idx)} style={styles.btn} />
+                                </div>
+                            </div>
                         )
                     } else { return null }
 
                 })}
-
-                <Row onClick={e => handleClicktagsClear(e)} className="justify-content-end text-end">
-                    Clear All
-                </Row>
-            </Row>
+            </div>
         </Form>
     )
 }
@@ -101,13 +91,5 @@ const styles = {
         height: '1em',
         width: '1.2em',
         padding: '.15em'
-    },
-    submitButton: {
-        backgroundColor: '#8750A9',
-        fontWeight: '700',
-        marginTop: '2em',
-        borderRadius: '2em',
-        border: 'none',
-        fontSize: '1.2em'
     }
 }
