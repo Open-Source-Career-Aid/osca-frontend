@@ -159,7 +159,7 @@ const Skill = () => {
                  {roadmap.preReuqisites.map((preReuqisite, idx) => {
                      return(
                          
-                         <Col className='tags' xs='auto'>
+                         <Col className='skilltags' xs='auto'>
                              {preReuqisite.name}
                         </Col>
                          )
