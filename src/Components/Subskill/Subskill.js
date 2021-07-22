@@ -34,46 +34,15 @@ const roadmap ={
 }
 
 
-
-
-
-// function getWindowDimensions() {
-//     const { innerWidth: width, innerHeight: height } = window;
-//     return {
-//       width,
-//       height
-//     };
-//   }
-const leftsrc = './../../leftarrow.png';
-const upsrc = './../../up.png';
-
-let srcdict  = {};
-let opendict = {};
-
-// let i=0;
-// for(i = 0; i<=roadmap.skills.length; i++) {
-//     srcdict[i] = leftsrc;
-//     opendict[i] =false;
-// }
-
 const Subskill = () => {
     
-    const [open, setOpen] = useState(opendict);
-    const [src, setSrc] = useState(srcdict);
-    
-    const handleChange = (idx) => {
-        let values = {...open};
-        values[idx] = !values[idx];
-        setOpen({...values});
-        if(src[idx] === leftsrc) {
-            src[idx] = upsrc;
-            setSrc({...src})
-        } else { 
-            src[idx] = leftsrc;
-            setSrc({...src})
-        }
-    }
+   const [editMode, setEditMode] = useState(0);
 
+   const handleEditMode = () => {
+       setEditMode(!editMode);
+   }
+
+   
  return (
      <div className="headingRow">
            <Col className="backarrow" xs={12} sm={12} md={1}  lg={1} xl={1}>
@@ -86,18 +55,28 @@ const Subskill = () => {
             <Col xs={11} sm={11} md={11}  lg={11} xl={11} >
             <h2>{roadmap.name}</h2>
             </Col>
-            <Col xs={1} sm={1} md={1}  lg={1} xl={1}>
-                <EditButton />
-            </Col>
+            {editMode ?
+
+                <Col xs={1} sm={1} md={1}  lg={1} xl={1}>
+                    <EditButton />
+                </Col>
+                :
+                null
+            }
          </Row>
          <div className='tagContainer'>
              <Row>
                 <Col>
                     <h5 >Tags</h5>
                 </Col>
-                <Col xs={1}>
+                {editMode ?
+
+                <Col xs={1} sm={1} md={1}  lg={1} xl={1}>
                     <EditButton />
                 </Col>
+                :
+                null
+            }
              </Row>
              <Row >
                  {roadmap.tags.map((tag, idx) => {
@@ -115,9 +94,14 @@ const Subskill = () => {
                 <Col>
                     <h5  >Pre-requisites</h5>
                 </Col>
-                <Col xs={1}>
+                {editMode ?
+
+                <Col xs={1} sm={1} md={1}  lg={1} xl={1}>
                     <EditButton />
                 </Col>
+                :
+                null
+            }
              </Row>
              <Row  >
                  {roadmap.preReuqisites.map((preReuqisite, idx) => {
