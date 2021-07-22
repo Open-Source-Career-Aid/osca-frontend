@@ -21,3 +21,8 @@
     padding-top: 1.5em ;
 }
 
+
+.copyButtonCol {
+    padding: 0;
+    text-align-last: end;
+}
