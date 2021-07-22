@@ -136,7 +136,7 @@ const Skill = () => {
                             <h5 >Tags</h5>
                         </Col>
                         <Col xs={1}>
-                            <EditButton touch={handleShow} />
+                            <EditButton fun={handleShow} />
                         </Col>
                     </Row>
                     <Row >

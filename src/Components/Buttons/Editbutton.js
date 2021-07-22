@@ -2,9 +2,9 @@ import React from 'react'
 import { Button } from 'react-bootstrap';
 import './Button.css';
 
-const Editbutton = (/*variation*/{ touch }) => {
+const Editbutton = (variation) => {
 
-    /*if (Object.entries(variation).length === 0) {
+    if (Object.entries(variation).length === 0) {
 
         return (
             <Button onClick={() => { variation.fun(variation.index) }} style={styles.btn} >
@@ -25,14 +25,7 @@ const Editbutton = (/*variation*/{ touch }) => {
                 <img style={styles.icon} src='./../../../../../../edit.png' />
             </Button>)
 
-    }*/
-
-    return (
-        <Button onClick={touch} style={styles.btn} >
-            <img style={styles.icon} src='./../../../../../../edit.png' />
-        </Button>
-    );
-
+    }
 
 };
 
