@@ -8,10 +8,10 @@ const SuperSkill = () => {
     return (
         <>
             <Row>
-                <Col xl={2} md={2} lg={2} className="SideBar justify-content-start text-start" >
+                <Col md={2} xl={2} lg={2} className="SideBar">
                     <SideBar />
                 </Col>
-                <Col xl={10} md={10} lg={10} className="Spacing">
+                <Col xl={{span:10, offset:2}} md={{span:10, offset:2}} lg={{span:10, offset:2}} className="Spacing">
                     <Content />
                 </Col>
             </Row>

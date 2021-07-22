@@ -20,7 +20,7 @@ const LearnSkill = () => {
 
     return (
         <>
-            <Container className="Spacing">
+            <Container className="SpacingTop">
                 <SearchBar />
                 <Row className="pt-3">
                     <Col md={{ offset: 7, span: 1 }} xs={{ span: 3, offset: 3 }}>

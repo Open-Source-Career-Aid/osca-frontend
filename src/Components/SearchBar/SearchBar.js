@@ -4,7 +4,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import { IconButton } from '@material-ui/core';
 import MyDesktop from "../../MyHelperCompnents/MyDesktop";
 import { makeStyles } from '@material-ui/styles';
-import "../../Styles/Search.css"
+import Style from "../../Styles/Search.css"
 const SearchBar = () => {
 
     const useStyle = makeStyles({
@@ -26,7 +26,7 @@ const SearchBar = () => {
                 <InputGroup className="SearchField">
                     <Form.Control
                         type="text"
-                        className="Search text-center"
+                        className="Search"
                         placeholder="Search a Skill"
                     />
                     <InputGroup.Append className="search-btn">

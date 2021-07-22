@@ -2,6 +2,10 @@
     color: #586060;
 }
 
+.font {
+    font-size: 24px !important;
+}
+
 .heading {
     color: #586060;
     font-family: Poppins;
@@ -74,4 +78,51 @@
     border-radius: 9px;
     padding: 0px 7px 1px 7px;
     margin-right: 10px;
+}
+
+.backDrop {
+    background-color: #F5F5F5;
+    padding: 20px;
+}
+
+.heading-txt {
+    color: #586060;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.text-sub {
+    color: #989898;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.ArrowDown {
+    transform: rotate(-90deg);
+    font-size: 15px;
+    color: #586060;
+}
+
+.backDrop-1 {
+    padding: 10px;
+    margin-top: 15px;
+    background: #FFFFFF;
+    border-radius: 4px;
+}
+
+.Link-txt {
+    color: #989898;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    padding-top: 1px !important;
+}
+
+.CopyIcon{
+    color: #586060;
 }
