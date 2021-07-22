@@ -14,11 +14,7 @@ function DeleteIcon(props) {
 
 export const TagsEdit = ({ data }) => {
 
-    console.log(data, "hello")
-
     const [tags, setTags] = useState([...data]);
-
-    console.log(tags, "hey")
 
     const [tagsField, setTagsField] = useState('');
 
