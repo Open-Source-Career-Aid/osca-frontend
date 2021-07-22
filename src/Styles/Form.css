@@ -33,7 +33,7 @@ span.tags {
 .tagsRow {
     justify-content:space-between !important;
     width: auto !important; 
-    padding:0 0% 0 0;
+    padding:0;
     /* display: inline-flex !important; */
     
 }
