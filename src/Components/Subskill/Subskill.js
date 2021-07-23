@@ -36,6 +36,7 @@ const roadmap ={
 
 const Subskill = () => {
     
+    
    const [editMode, setEditMode] = useState(0);
 
    const handleEditMode = () => {
@@ -52,17 +53,23 @@ const Subskill = () => {
 
          <Row style={styles.fullWidth} >
           
-            <Col xs={11} sm={11} md={11}  lg={11} xl={11} >
+            <Col xs='auto' >
             <h2>{roadmap.name}</h2>
             </Col>
-            {editMode ?
 
-                <Col xs={1} sm={1} md={1}  lg={1} xl={1}>
-                    <EditButton />
-                </Col>
+            {editMode ?
+                <>
+                    <Col xs={1} sm={1} md={1}  lg={1} xl={1}>
+                    
+                        <EditButton />
+                    </Col>
+                </>
                 :
-                null
+                <Col xs='auto' >
+                   <h6 style={styles.suggestEdit} onClick={()  => handleEditMode()}>Suggest an edit</h6>
+                </Col>
             }
+                
          </Row>
          <div className='tagContainer'>
              <Row>
@@ -117,7 +124,7 @@ const Subskill = () => {
          </div>
          <div style={{paddingLeft: '.6em'}}>
             <h3>Roadmap</h3>
-            <SkillCard  props={roadmap.resources} />
+            <SkillCard editMode={editMode}  props={roadmap.resources} />
          </div>
 </Col>
  </div>
@@ -140,14 +147,22 @@ const styles = {
         width: '1em'
     },
     backButton: {
-        marginTop: '.3em',
-        height: '1.2em',
-        width: '1.5em',
+        marginTop: '.1em',
+        height: '1.4em',
+        width: '1.6em',
         
     },
     fullWidth: {
-        width: '100%'
-    }
+        width: '100%',
+        justifyContent: 'space-between',
+    },
+    suggestEdit: {
+        color: '#8750A9',
+        fontWeight: '600',
+        textDecorationLine: 'underline',
+        
+    },
+   
 }
 
 export default Subskill;
