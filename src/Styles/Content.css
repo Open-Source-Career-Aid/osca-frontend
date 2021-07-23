@@ -1,5 +1,15 @@
 .Icon {
     color: #586060;
+    animation: Visible 1s;
+}
+
+@keyframes Visible {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .font {
@@ -22,12 +32,20 @@
     font-size: 15px;
 }
 
+.Edit:hover {
+    cursor: pointer;
+}
+
 .SubHeading {
     color: #989898;
     font-family: Poppins;
     font-style: normal;
     font-weight: 600;
     font-size: 17px;
+}
+
+.Display {
+    display: none;
 }
 
 .box-skill-blue {
@@ -102,9 +120,18 @@
 }
 
 .ArrowDown {
-    transform: rotate(-90deg);
+    transform: rotate(-90deg) translateX(5px);
+    transition: ease-in 1s;
+}
+
+.StyleArrow {
     font-size: 15px;
     color: #586060;
+}
+
+.ArrowUp {
+    transform: rotate(+90deg) translateX(5px);
+    transition: ease-in 1s;
 }
 
 .backDrop-1 {
@@ -123,6 +150,22 @@
     padding-top: 1px !important;
 }
 
-.CopyIcon{
+.CopyIcon {
     color: #586060;
+}
+
+@keyframes Display {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.panel {
+    transform: translateY(-100%);
+    transition: ease-in 0.6s;
+    animation: Display 0.6s;
+    display: none;
 }
