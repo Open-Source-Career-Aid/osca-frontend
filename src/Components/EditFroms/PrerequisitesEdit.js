@@ -12,56 +12,57 @@ function DeleteIcon(props) {
     );
 }
 
-export const TagsEdit = ({ tags_data }) => {
 
-    const [tags, setTags] = useState([...tags_data]);
+export const PrerequisitesEdit = ({ prerequisite_data }) => {
 
-    const [tagsField, setTagsField] = useState('');
+    const [prerequisites, setPrerequisites] = useState([...prerequisite_data]);
 
-    //handle change of tag name
+    const [prerequisitesField, setPrerequisitesField] = useState('');
 
-    const handleChangeTagName = (e) => {
-        setTagsField(e.target.value);
+    //handle change of prerequisite name
+
+    const handleChangePrerequisitesName = (e) => {
+        setPrerequisitesField(e.target.value);
     }
 
     // handle click on add button in pre Req 
-    const handleClickTags = () => {
-        let values = [...tags];
-        values.push({ name: tagsField });
-        setTagsField('');
-        setTags([...values]);
+    const handleClickPrerequites = () => {
+        let values = [...prerequisites];
+        values.push({ name: prerequisitesField });
+        setPrerequisitesField('');
+        setPrerequisites([...values]);
     }
 
-    // handle deletion of tags
+    // handle deletion of prerequisites
 
-    const handleDeleteTags = (e, idx) => {
-        let values = [...tags];
+    const handleDeletePrerequisites = (e, idx) => {
+        let values = [...prerequisites];
         values.splice(idx, 1);
-        setTags([...values]);
+        setPrerequisites([...values]);
     }
 
     return (
         <Form>
             <div className="all__tags">
                 <div className="tags__edit">
-                    Tags
+                    Pre-requisites
                 </div>
                 <div className="tags__field">
-                    <input onChange={e => handleChangeTagName(e)} value={tagsField} type="text" className='inputField' placeholder="Add a Tag" />
-                    <AddIcon onClick={e => handleClickTags(e)} />
+                    <input onChange={e => handleChangePrerequisitesName(e)} value={prerequisitesField} type="text" className='inputField' placeholder="Add a pre-requisite" />
+                    <AddIcon onClick={e => handleClickPrerequites(e)} />
                 </div>
             </div>
             <div className="tags__area">
-                {tags.map((tag, idx) => {
+                {prerequisites.map((prerequisite, idx) => {
                     if (idx >= 0) {
 
                         return (
                             <div className="tags__button">
                                 <div className="tag__name">
-                                    {tag.name}
+                                    {prerequisite.name}
                                 </div>
                                 <div className="delete__btn">
-                                    <DeleteIcon onClick={e => handleDeleteTags(e, idx)} style={styles.btn} />
+                                    <DeleteIcon onClick={e => handleDeletePrerequisites(e, idx)} style={styles.btn} />
                                 </div>
                             </div>
                         )
@@ -72,6 +73,7 @@ export const TagsEdit = ({ tags_data }) => {
         </Form>
     )
 }
+
 
 const styles = {
 
