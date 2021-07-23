@@ -25,13 +25,13 @@ color: #586060;
 }
 
 
-.tags {
+.skilltags {
     border-radius: .7em;
     border: 1px solid #7A7A7A;
     margin-right: 2em ;
     margin-left: 1em ;
     /* margin: 0; */
-    padding: .1em .9em .3em;
+    /* padding: .1em .9em .3em; */
     font-weight: 500;
     color: #424242;
     font-size: small;

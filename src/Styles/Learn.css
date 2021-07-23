@@ -9,40 +9,6 @@
     color: rgba(152, 152, 152, 1);
 }
 
-.top-pad {
-    padding-top: 80px;
-}
-
-.SearchField {
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: rgba(152, 152, 152, 1);
-    border-radius: 31px;
-    border: 1px solid #989898;
-}
-
-.Search {
-    color: rgba(152, 152, 152, 1);
-    border-radius: 31px;
-    border: none;
-    border-right: none;
-    border-bottom-right-radius: 31px;
-    text-align: center !important;
-    align-items: center !important;
-}
-
-.Search:active {
-    text-decoration: none;
-    border: none;
-    border: 0px;
-    border-width: 0px;
-}
-
 .card-css {
     left: 456px;
     top: 274px;
@@ -160,7 +126,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
-    line-height: 24px;
+    width: 45px;
     color: #FFFFFF;
 }
 
@@ -172,7 +138,8 @@
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
-    line-height: 24px;
+    padding-right: 5px;
+    width: 40px;
     color: #FFFFFF;
 }
 
@@ -184,7 +151,6 @@
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
-    line-height: 24px;
     color: #FFFFFF;
 }
 
@@ -193,8 +159,6 @@
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    /* display: flex; */
-    /* align-items: center; */
     color: #989898;
 }
 

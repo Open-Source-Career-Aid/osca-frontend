@@ -4,6 +4,8 @@ import "../../Styles/Content.css"
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import IconButton from '@material-ui/core/IconButton';
 import EditIcon from '@material-ui/icons/Edit';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import FileCopyIcon from '@material-ui/icons/FileCopy';
 
 const Content = () => {
     return (
@@ -14,15 +16,10 @@ const Content = () => {
                         <ArrowBackIcon className="Icon" />
                     </IconButton>
                 </Col>
-                <Col md={7} className="heading text-start">
+                <Col md={6} className="heading text-start">
                     Web Development
                 </Col>
-                <Col md={1}>
-                    <IconButton>
-                        <EditIcon className="Icon" />
-                    </IconButton>
-                </Col>
-                <Col md={2} className="Edit text-center justify-content-center">
+                <Col md={2} className="Edit text-end">
                     Suggest an edit
                 </Col>
             </Row>
@@ -94,6 +91,74 @@ const Content = () => {
                     <span className="box">
                         CSS
                     </span>
+                </Col>
+            </Row>
+            <Row>
+                <Col md={{ span: 7, offset: 1 }} className="heading pt-3 font">
+                    HTML
+                </Col>
+                <Col md={1} className="text-end justify-content-end">
+                    <IconButton>
+                        <ArrowBackIosIcon className="ArrowDown" />
+                    </IconButton>
+                </Col>
+            </Row>
+            <Row className="py-4">
+                <Col md={{ span: 8, offset: 1 }} className="backDrop">
+                    <div className="heading-txt">
+                        Installation and Setup
+                    </div>
+                    <div className="backDrop-1">
+                        <Row>
+                            <Col md={11} className="Link-txt">
+                                Exp-1
+                            </Col>
+                            <Col md={1}>
+                                <IconButton>
+                                    <FileCopyIcon className="CopyIcon" />
+                                </IconButton>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md={11} className="Link-txt">
+                                Exp-1
+                            </Col>
+                            <Col md={1}>
+                                <IconButton>
+                                    <FileCopyIcon className="CopyIcon" />
+                                </IconButton>
+                            </Col>
+                        </Row>
+                    </div>
+                </Col>
+            </Row>
+            <Row>
+                <Col md={{ span: 8, offset: 1 }} className="backDrop">
+                    <div className="heading-txt">
+                        Attributes
+                    </div>
+                    <div className="backDrop-1">
+                        <Row>
+                            <Col md={11} className="Link-txt">
+                                Exp-1
+                            </Col>
+                            <Col md={1}>
+                                <IconButton>
+                                    <FileCopyIcon className="CopyIcon" />
+                                </IconButton>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md={11} className="Link-txt">
+                                Exp-1
+                            </Col>
+                            <Col md={1}>
+                                <IconButton>
+                                    <FileCopyIcon className="CopyIcon" />
+                                </IconButton>
+                            </Col>
+                        </Row>
+                    </div>
                 </Col>
             </Row>
         </div>
