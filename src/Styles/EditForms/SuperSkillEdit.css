@@ -35,7 +35,7 @@
   background: #ffffff;
   border-radius: 4px;
   height: 2rem;
-  padding-left: 1.5rem;
+  padding-left: 1rem;
   font-size: 15px;
 }
 
@@ -67,4 +67,17 @@
   padding-right: 0.8rem;
   display: flex;
   align-items: center;
+  cursor: pointer;
+}
+
+.remove__roadmap {
+  color: #989898;
+}
+
+.remove__roadmap > h1 {
+  color: #989898;
+}
+
+.remove__roadmap > input {
+  color: #989898;
 }
