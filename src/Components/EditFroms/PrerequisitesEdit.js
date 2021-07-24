@@ -27,10 +27,12 @@ export const PrerequisitesEdit = ({ prerequisite_data }) => {
 
     // handle click on add button in pre Req 
     const handleClickPrerequites = () => {
-        let values = [...prerequisites];
-        values.push({ name: prerequisitesField });
-        setPrerequisitesField('');
-        setPrerequisites([...values]);
+        if (prerequisitesField !== '') {
+            let values = [...prerequisites];
+            values.push({ name: prerequisitesField });
+            setPrerequisitesField('');
+            setPrerequisites([...values]);
+        }
     }
 
     // handle deletion of prerequisites

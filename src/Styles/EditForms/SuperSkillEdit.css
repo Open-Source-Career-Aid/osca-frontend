@@ -1,0 +1,83 @@
+.remove__skill {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  margin-top: -1rem;
+}
+
+.remove__skill > p {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+
+  color: #464646;
+}
+
+.title__field > h1 {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+
+  color: #464646;
+}
+
+.title__field > .Roadmap__title > input {
+  border: none;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 4px;
+  height: 2rem;
+  padding-left: 1rem;
+  font-size: 15px;
+}
+
+.title__field > .Roadmap__title > input:focus {
+  outline: none;
+}
+
+.title__field > .Roadmap__title {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 4px;
+  height: 2rem;
+  margin-bottom: 2rem;
+}
+
+.skills__button {
+  display: flex;
+  background: #ffffff;
+  border-radius: 11px;
+  margin-bottom: 1rem;
+}
+
+.skills__button > .skills__name {
+  width: 100%;
+  padding: 0.3rem 0 0.3rem 1rem;
+}
+
+.skills__button > .skillsdelete__btn {
+  padding-right: 0.8rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.remove__roadmap {
+  color: #989898;
+}
+
+.remove__roadmap > h1 {
+  color: #989898;
+}
+
+.remove__roadmap > input {
+  color: #989898;
+}
