@@ -367,7 +367,7 @@ const Skill = () => {
                         </button>
                     </Modal.Header>
                     <Modal.Body>
-                        <SuperSkillEdit onSubmit={handleCloseRoadmapForm} prerequisite_data={roadmap.preReuqisites} />
+                        <SuperSkillEdit onSubmit={handleCloseRoadmapForm} Roadmap_title={roadmap.name} roadmap_topic={roadmap.skills} />
                     </Modal.Body>
                     <Modal.Footer>
                         <Button className="submit__btn" onClick={handleCloseRoadmapForm}>

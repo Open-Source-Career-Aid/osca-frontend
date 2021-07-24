@@ -8,11 +8,13 @@ import Switch from '@material-ui/core/Switch';
 import { withStyles } from '@material-ui/core/styles';
 import { purple } from '@material-ui/core/colors';
 
+import Editbutton from '../Buttons/Editbutton'
+
 function DeleteIcon(props) {
     return (
-        <SvgIcon viewBox="0 0 14 16" fill="none" {...props}>
-            <path d="M7.00009 5.51126e-09C7.62831 -4.29406e-05 8.23273 0.250907 8.68936 0.70137C9.146 1.15183 9.42023 1.76766 9.45579 2.42252L9.45958 2.5679H13.4326C13.5764 2.56795 13.7148 2.62498 13.8199 2.72748C13.925 2.82999 13.9889 2.97031 13.9987 3.1201C14.0085 3.2699 13.9635 3.41799 13.8727 3.53446C13.782 3.65093 13.6522 3.72709 13.5098 3.74756L13.4326 3.75309H12.8302L11.8616 14.0405C11.813 14.5534 11.5915 15.0315 11.2365 15.3896C10.8814 15.7477 10.4161 15.9623 9.92347 15.9953L9.79028 16H4.20989C3.71607 16 3.23835 15.8166 2.86209 15.4827C2.48584 15.1488 2.23558 14.686 2.15603 14.1772L2.13862 14.0397L1.1692 3.75309H0.567575C0.43042 3.75308 0.297907 3.70122 0.194541 3.6071C0.0911757 3.51297 0.0239503 3.38296 0.00529734 3.24109L0 3.16049C5.78389e-06 3.01729 0.0496761 2.87894 0.139825 2.77102C0.229975 2.6631 0.354504 2.59291 0.490384 2.57343L0.567575 2.5679H4.5406C4.5406 1.88685 4.79972 1.2337 5.26096 0.752121C5.72221 0.270546 6.34779 5.51126e-09 7.00009 5.51126e-09ZM11.6898 3.75309H2.30965L3.26847 13.9236C3.2897 14.1505 3.38549 14.3628 3.53956 14.5244C3.69364 14.6859 3.89652 14.7869 4.11378 14.8101L4.20989 14.8148H9.79028C10.2443 14.8148 10.6295 14.479 10.7173 14.0231L10.7325 13.9236L11.689 3.75309H11.6898ZM8.32443 5.92593C8.46158 5.92593 8.5941 5.97779 8.69746 6.07191C8.80083 6.16604 8.86805 6.29606 8.8867 6.43793L8.892 6.51852V12.0494C8.89196 12.1995 8.83733 12.3441 8.73916 12.4538C8.64098 12.5635 8.50658 12.6302 8.36311 12.6404C8.21964 12.6506 8.0778 12.6036 7.96625 12.5089C7.8547 12.4141 7.78175 12.2787 7.76215 12.13L7.75685 12.0494V6.51852C7.75685 6.36135 7.81665 6.21063 7.92309 6.09949C8.02953 5.98836 8.1739 5.92593 8.32443 5.92593ZM5.67575 5.92593C5.8129 5.92593 5.94541 5.97779 6.04878 6.07191C6.15214 6.16604 6.21937 6.29606 6.23802 6.43793L6.24332 6.51852V12.0494C6.24328 12.1995 6.18865 12.3441 6.09047 12.4538C5.9923 12.5635 5.8579 12.6302 5.71443 12.6404C5.57096 12.6506 5.42912 12.6036 5.31757 12.5089C5.20602 12.4141 5.13307 12.2787 5.11347 12.13L5.10817 12.0494V6.51852C5.10817 6.36135 5.16797 6.21063 5.27441 6.09949C5.38085 5.98836 5.52522 5.92593 5.67575 5.92593ZM7.00009 1.18519C6.66772 1.1852 6.34751 1.31569 6.10302 1.55076C5.85853 1.78583 5.70763 2.10829 5.68029 2.45412L5.67575 2.5679H8.32443C8.32443 2.20118 8.1849 1.84948 7.93654 1.59017C7.68818 1.33086 7.35132 1.18519 7.00009 1.18519Z" fill="white" />
-        </SvgIcon>
+        <svg width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+            <path d="M7.50009 5.85571e-09C8.17319 -4.56244e-05 8.82078 0.266589 9.31003 0.745206C9.79928 1.22382 10.0931 1.87814 10.1312 2.57393L10.1353 2.72839H14.3921C14.5461 2.72844 14.6945 2.78904 14.807 2.89795C14.9196 3.00686 14.9881 3.15595 14.9986 3.31511C15.0091 3.47426 14.9608 3.63161 14.8636 3.75536C14.7664 3.87911 14.6274 3.96003 14.4748 3.98178L14.3921 3.98765H13.7467L12.7088 14.918C12.6568 15.463 12.4194 15.971 12.0391 16.3515C11.6587 16.7319 11.1601 16.96 10.6323 16.995L10.4896 17H4.5106C3.9815 17 3.46966 16.8052 3.06653 16.4504C2.6634 16.0956 2.39526 15.6039 2.31003 15.0633L2.29138 14.9172L1.25272 3.98765H0.608116C0.461164 3.98765 0.319186 3.93255 0.208437 3.83254C0.0976883 3.73254 0.0256611 3.59439 0.00567572 3.44365L0 3.35802C6.19702e-06 3.20587 0.0532244 3.05887 0.149813 2.94421C0.246401 2.82954 0.379826 2.75496 0.525412 2.73427L0.608116 2.72839H4.86492C4.86492 2.00478 5.14256 1.3108 5.63675 0.799128C6.13094 0.287455 6.8012 5.85571e-09 7.50009 5.85571e-09ZM12.5247 3.98765H2.47463L3.50194 14.7938C3.52468 15.0349 3.62731 15.2604 3.79239 15.4321C3.95747 15.6038 4.17485 15.7111 4.40762 15.7357L4.5106 15.7407H10.4896C10.9761 15.7407 11.3888 15.3839 11.4828 14.8996L11.4991 14.7938L12.5239 3.98765H12.5247ZM8.91903 6.2963C9.06598 6.2963 9.20796 6.3514 9.31871 6.45141C9.42946 6.55141 9.50148 6.68956 9.52147 6.8403L9.52714 6.92593V12.8025C9.5271 12.962 9.46857 13.1156 9.36338 13.2321C9.25819 13.3487 9.11419 13.4196 8.96048 13.4304C8.80676 13.4413 8.65479 13.3914 8.53527 13.2907C8.41575 13.19 8.33759 13.0461 8.31659 12.8881L8.31091 12.8025V6.92593C8.31091 6.75894 8.37498 6.59879 8.48903 6.48071C8.60307 6.36263 8.75775 6.2963 8.91903 6.2963ZM6.08116 6.2963C6.22811 6.2963 6.37009 6.3514 6.48083 6.45141C6.59158 6.55141 6.66361 6.68956 6.6836 6.8403L6.68927 6.92593V12.8025C6.68922 12.962 6.63069 13.1156 6.52551 13.2321C6.42032 13.3487 6.27632 13.4196 6.12261 13.4304C5.96889 13.4413 5.81692 13.3914 5.6974 13.2907C5.57787 13.19 5.49972 13.0461 5.47872 12.8881L5.47304 12.8025V6.92593C5.47304 6.75894 5.53711 6.59879 5.65115 6.48071C5.7652 6.36263 5.91987 6.2963 6.08116 6.2963ZM7.50009 1.25926C7.14399 1.25927 6.80091 1.39792 6.53895 1.64768C6.277 1.89744 6.11532 2.24005 6.08602 2.60751L6.08116 2.72839H8.91903C8.91903 2.33876 8.76954 1.96508 8.50343 1.68956C8.23733 1.41404 7.87642 1.25926 7.50009 1.25926Z" fill="black" />
+        </svg>
     );
 }
 
@@ -34,21 +36,25 @@ const CustomSwitch = withStyles({
     track: {},
 })(Switch);
 
-export const SuperSkillEdit = () => {
+export const SuperSkillEdit = ({ Roadmap_title, roadmap_topic }) => {
+
+    console.log(roadmap_topic)
 
     const [superskill, setSuperskill] = useState([{ superskillField: null }]);
 
     const [superskillField, setSuperskillField] = useState('');
 
-    const [removeSuperskill, setRemoveSuperskill] = useState(false)
+    const [state, setstate] = useState({
+        removeSuperskill: false
+    })
 
-    //handle change of tag name
+    //handle change
 
     const handleChangeSuperskillName = (e) => {
         setSuperskillField(e.target.value);
     }
 
-    // handle click on add button in pre Req 
+    // handle click on add button 
     const handleClickSuperskill = () => {
         let values = [...superskill];
         values.push({ name: superskillField });
@@ -65,35 +71,66 @@ export const SuperSkillEdit = () => {
     }
 
     const handleChangeSuperSkillcheckbox = () => {
-        setRemoveSuperskill({ ...removeSuperskill })
+        setstate({ ...state, removeSuperskill: !state.removeSuperskill })
+    }
+
+    const [title, setTitle] = useState([...Roadmap_title])
+
+    const [titleField, setTitleField] = useState('')
+
+    const handleChangeTitle = (e) => {
+        let titleValue = [...title]
+        titleValue.push({ name: titleField })
+        setTitle([...titleValue])
+    }
+
+    const handleChangeTitleName = (e) => {
+        setTitleField(e.target.value)
+        let titleValue = [...title]
+        titleValue.push({ name: titleField })
+        setTitle([...titleValue])
     }
 
     return (
         <Form>
             <div className="remove__skill">
-                Do you want to remove this Super-Skill ?
-                <FormControlLabel control={<CustomSwitch checked={removeSuperskill} onChange={handleChangeSuperSkillcheckbox} name="checkedB" />} label="" />
+                <p>
+                    Do you want to remove this Super-Skill ?
+                </p>
+                <div>
+                    <FormControlLabel control={<CustomSwitch checked={state.removeSuperskill} onChange={handleChangeSuperSkillcheckbox} name="checkedB" />} label="" />
+                </div>
+            </div>
+            <div className="title__field">
+                <h1>
+                    Title
+                </h1>
+                <div className="Roadmap__title">
+                    <input onChange={e => handleChangeTitleName(e)} value={titleField} type="text" >
+                        {title.name}
+                    </input>
+                </div>
             </div>
             <div className="all__tags">
                 <div className="tags__edit">
-                    Tags
+                    Skills
                 </div>
                 <div className="tags__field">
-                    <input onChange={e => handleChangeSuperskillName(e)} value={superskillField} type="text" className='inputField' placeholder="Add a Tag" />
+                    <input onChange={e => handleChangeSuperskillName(e)} value={superskillField} type="text" className='inputField' placeholder="Add a skill" />
                     <AddIcon onClick={e => handleClickSuperskill(e)} />
                 </div>
             </div>
-            <div className="tags__area">
-                {superskill.map((tag, idx) => {
+            <div className="skills__area">
+                {roadmap_topic.map((skill, idx) => {
                     if (idx >= 0) {
 
                         return (
-                            <div className="tags__button">
-                                <div className="tag__name">
-                                    {tag.name}
+                            <div className="skills__button">
+                                <div className="skills__name">
+                                    {skill.name}
                                 </div>
-                                <div className="delete__btn">
-                                    <DeleteIcon onClick={e => handleDeleteSuperskill(e, idx)} style={styles.btn} />
+                                <div className="skillsdelete__btn">
+                                    <DeleteIcon onClick={e => handleDeleteSuperskill(e, idx)} />
                                 </div>
                             </div>
                         )
@@ -103,21 +140,4 @@ export const SuperSkillEdit = () => {
             </div>
         </Form>
     )
-}
-
-const styles = {
-
-    buttonIcon: {
-        height: '1.1em',
-        width: '1.3em',
-
-    },
-    btn: {
-        backgroundColor: '#989898',
-        borderBottomRightRadius: '24%',
-        borderTopRightRadius: '24%',
-        height: '1em',
-        width: '1.2em',
-        padding: '.15em'
-    }
 }
