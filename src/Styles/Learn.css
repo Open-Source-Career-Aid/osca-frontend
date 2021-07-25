@@ -194,14 +194,43 @@
     padding-top: 20px !important;
 }
 
-.linkTo{
+.linkTo {
     color: #586060;
 }
 
-.linkTo:hover{
+.linkTo:hover {
     color: #586060;
 }
 
-.linkTo:focus{
+.linkTo:focus {
     color: #586060;
+}
+
+.kn-style {
+    color: #999999;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.sub-txt {
+    color: #586060;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.req-txt {
+    padding-left: 20px;
+}
+
+.translate-css {
+    transform: translateY(-15px);
+}
+
+.style-txt {
+    padding-left: 20px;
+    color: #999999;
 }

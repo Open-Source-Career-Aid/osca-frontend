@@ -23,7 +23,12 @@ const LearnSkill = () => {
             <Container className="SpacingTop">
                 <SearchBar />
                 <Row className="pt-3">
-                    <Col md={{ offset: 7, span: 1 }} xs={{ span: 3, offset: 3 }}>
+                    <MyDesktop>
+                        <Col md={{ span: 6, offset: 1 }} className="text-center kn-style">
+                            No previous knowledge required!
+                        </Col>
+                    </MyDesktop>
+                    <Col md={{ span: 1 }} xs={{ span: 3, offset: 0 }}>
                         <div className="skillset justify-content-center">
                             Superskill
                         </div>
@@ -41,10 +46,10 @@ const LearnSkill = () => {
                         </Container>
                     </Row>
                 </MyMobile>
-                <Row className="my-5 py-4">
+                <Row className="my-5 py-5">
                     <Col md={{ span: 8, offset: 2 }}>
                         <div className="card-css">
-                            <Row className="pt-3">
+                            <Row className="pt-2">
                                 <MyDesktop>
                                     <Col md={{ span: 4, offset: 1 }}>
                                         <div className="card-heading">
@@ -53,7 +58,7 @@ const LearnSkill = () => {
                                             </Link>
                                         </div>
                                     </Col>
-                                    <Col md={1}>
+                                    <Col md={1} className="translate-css">
                                         <div className="skill text-center">
                                             SuperSkill
                                         </div>
@@ -86,31 +91,32 @@ const LearnSkill = () => {
                             </Row>
                             <Row>
                                 <Col md={{ span: 10, offset: 1 }}>
-                                    <Container>
-                                        <div className="content mobile-content">
-                                            This contains a detailed guide to be a full stack developer in most effecient way. It includes all the required resources and work plan which is easy to follow.
-                                        </div>
-                                    </Container>
+                                    <div className="sub-txt">
+                                        Prerequisite:
+                                        <span className="req-txt">
+                                            HTML | CSS | Javascript | HTML
+                                        </span>
+                                    </div>
                                 </Col>
                             </Row>
                             <Row className="py-4">
-                                <Col md={{ span: 1, offset: 1 }} xs={{ span: 3 }}>
+                                <Col xl={{ span: 1, offset: 1 }} lg={{ span: 2, offset: 1 }} md={{ span: 2, offset: 1 }} xs={{ span: 3 }}>
                                     <div className="subSkill mobile-subskill">
                                         Subskills:
                                     </div>
                                 </Col>
-                                <Col md={{ span: 1 }} xs={2}>
+                                <Col md={{ span: 2 }} xl={{ span: 1 }} xs={2}>
                                     <div className="box-skill-blue mobile-font">
                                         HTML
                                     </div>
                                 </Col>
-                                <Col md={{ span: 1 }} xs={2}>
+                                <Col md={{ span: 2 }} xl={{ span: 1 }} xs={2}>
                                     <div className="box-skill-red mobile-font">
                                         CSS
                                     </div>
                                 </Col>
                                 <MyDesktop>
-                                    <Col md={{ span: 3 }} xs={0}>
+                                    <Col md={{ span: 3 }} xl={{ span: 3 }} xs={0}>
                                         <div className="box-skill-blueD">
                                             Machine Learning
                                         </div>
@@ -135,7 +141,7 @@ const LearnSkill = () => {
                                             HTML & CSS
                                         </div>
                                     </Col>
-                                    <Col md={1}>
+                                    <Col md={1} className="translate-css">
                                         <div className="skillRed text-center justify-content-center">
                                             SubSkill
                                         </div>
@@ -166,31 +172,113 @@ const LearnSkill = () => {
                             </Row>
                             <Row>
                                 <Col md={{ span: 10, offset: 1 }}>
-                                    <Container>
-                                        <div className="content">
-                                            This contains a detailed guide to be a full stack developer in most effecient way. It includes all the required resources and work plan which is easy to follow.
-                                        </div>
-                                    </Container>
+                                    <div className="sub-txt">
+                                        Prerequisite:
+                                        <span className="style-txt">
+                                            A working internet connection.
+                                        </span>
+                                    </div>
                                 </Col>
                             </Row>
                             <Row className="py-4">
-                                <Col md={{ span: 1, offset: 1 }} xs={3}>
+                                <Col md={{ span: 2, offset: 1 }} xl={{ span: 1, offset: 1 }} xs={3}>
                                     <div className="subSkill mobile-subskill">
                                         Subskills:
                                     </div>
                                 </Col>
-                                <Col md={{ span: 1 }} xs={2}>
+                                <Col md={{ span: 2 }} xl={{ span: 1 }} xs={2}>
                                     <div className="box-skill-blue mobile-font">
                                         HTML
                                     </div>
                                 </Col>
-                                <Col md={{ span: 1 }} xs={2}>
+                                <Col md={{ span: 2 }} xl={{ span: 1 }} xs={2}>
                                     <div className="box-skill-red mobile-font">
                                         CSS
                                     </div>
                                 </Col>
                                 <MyDesktop>
                                     <Col md={{ span: 3 }}>
+                                        <div className="box-skill-blueD">
+                                            Machine Learning
+                                        </div>
+                                    </Col>
+                                </MyDesktop>
+                                <Col md={2} xs={3}>
+                                    <div className="addition mobile-add">
+                                        +7 more
+                                    </div>
+                                </Col>
+                            </Row>
+                        </div>
+                    </Col>
+                </Row>
+                <Row className="my-5 py-5">
+                    <Col md={{ span: 8, offset: 2 }}>
+                        <div className="card-css">
+                            <Row className="pt-3">
+                                <MyDesktop>
+                                    <Col md={{ span: 4, offset: 1 }}>
+                                        <div className="card-heading">
+                                            Machine Learning
+                                        </div>
+                                    </Col>
+                                    <Col md={1} className="translate-css">
+                                        <div className="skillRed text-center justify-content-center">
+                                            SubSkill
+                                        </div>
+                                    </Col>
+                                    <Col md={{ span: 3, offset: 3 }} className="text-end">
+                                        <div className="track">
+                                            Track Your Progress
+                                        </div>
+                                    </Col>
+                                </MyDesktop>
+                                <MyMobile>
+                                    <Col xs={{ span: 6, offset: 1 }}>
+                                        <span>
+                                            <div className="card-heading mobile-card">
+                                                HTML & CSS
+                                            </div>
+                                        </span>
+                                    </Col>
+                                    <Col xs={2}>
+                                        <div className="skillRed justify-content-center text-center">
+                                            SubSkill
+                                        </div>
+                                    </Col>
+                                    <Col xs={3} className="text-end icon-time">
+                                        <i class="fa fa-clock-o"></i>
+                                    </Col>
+                                </MyMobile>
+                            </Row>
+                            <Row>
+                                <Col md={{ span: 10, offset: 1 }}>
+                                    <div className="sub-txt">
+                                        Prerequisite:
+                                        <span className="req-txt">
+                                            Python | Ruby
+                                        </span>
+                                    </div>
+                                </Col>
+                            </Row>
+                            <Row className="py-4">
+                                <Col md={{ span: 2, offset: 1 }} xl={{ span: 1, offset: 1 }} xs={3}>
+                                    <div className="subSkill mobile-subskill">
+                                        Subskills:
+                                    </div>
+                                </Col>
+                                <Col md={{ span: 2 }} xl={{ span: 1 }} xs={2}>
+                                    <div className="box-skill-blue mobile-font">
+                                        HTML
+                                    </div>
+                                </Col>
+                                <Col md={{ span: 2 }} xl={{ span: 1 }} xs={2}>
+                                    <div className="box-skill-red mobile-font">
+                                        CSS
+                                    </div>
+                                </Col>
+                                <MyDesktop>
+                                    <Col md={{ span: 3 }} xl={{ span: 3 }}>
                                         <div className="box-skill-blueD">
                                             Machine Learning
                                         </div>

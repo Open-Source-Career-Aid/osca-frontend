@@ -4,7 +4,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import { IconButton } from '@material-ui/core';
 import MyDesktop from "../../MyHelperCompnents/MyDesktop";
 import { makeStyles } from '@material-ui/styles';
-import Style from "../../Styles/Search.css"
+import "../../Styles/Search.css"
 const SearchBar = () => {
 
     const useStyle = makeStyles({

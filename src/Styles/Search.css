@@ -1,5 +1,5 @@
 .top-pad {
-    padding-top: 80px;
+    padding-top: 20px;
 }
 
 .SearchField {
@@ -13,6 +13,12 @@
     color: rgba(152, 152, 152, 1);
     border-radius: 31px;
     border: 1px solid #989898;
+}
+
+@media screen and (max-width: 758px) {
+    .top-pad {
+        padding-top: 80px;
+    }
 }
 
 .Search {
