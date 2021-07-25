@@ -59,3 +59,35 @@
 .submit__btn:hover {
   background: #8750a9;
 }
+
+.tooltip {
+  background: #f1f1f1;
+  border-radius: 10px;
+  width: 15.375rem;
+}
+
+.tooltip-inner {
+  background: #f1f1f1;
+  color: #989898;
+  width: 15.375rem;
+}
+.tooltip-inner > h1 {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  color: #989898;
+  width: 15.375rem;
+}
+.tooltip-inner > p > li {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 13px;
+  text-align: start;
+  width: 15.375rem;
+  padding: 0.16rem;
+}

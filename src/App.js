@@ -43,6 +43,9 @@ function App() {
           <Route path="/skill">
             <Skill />
           </Route>
+          <Route path="/Subskill">
+            <Subskill />
+          </Route>
         </Switch>
         <Footer />
       </Router>

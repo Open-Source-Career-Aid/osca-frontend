@@ -20,7 +20,7 @@
 .tags__edit {
   font-family: Poppins;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 15px;
   line-height: 22px;
   display: flex;
@@ -78,7 +78,7 @@
 .tag__name {
   font-family: Poppins;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 15px;
   line-height: 22px;
   display: flex;

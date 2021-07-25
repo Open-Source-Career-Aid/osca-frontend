@@ -26,10 +26,12 @@ export const TagsEdit = ({ tags_data }) => {
 
     // handle click on add button in pre Req 
     const handleClickTags = () => {
-        let values = [...tags];
-        values.push({ name: tagsField });
-        setTagsField('');
-        setTags([...values]);
+        if (tagsField !== '') {
+            let values = [...tags];
+            values.push({ name: tagsField });
+            setTagsField('');
+            setTags([...values]);
+        }
     }
 
     // handle deletion of tags
