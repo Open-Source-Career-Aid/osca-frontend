@@ -188,6 +188,17 @@
         font-size: 11px !important;
         padding-top: 6px;
     }
+    .mobile-card {
+        padding-left: 10px;
+    }
+    .sub-txt {
+        color: #586060;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px !important;
+        padding-left: 10px;
+    }
 }
 
 .Spacing {

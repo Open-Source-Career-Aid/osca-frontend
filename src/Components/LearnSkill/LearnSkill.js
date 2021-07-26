@@ -28,12 +28,12 @@ const LearnSkill = () => {
                             No previous knowledge required!
                         </Col>
                     </MyDesktop>
-                    <Col md={{ span: 1 }} xs={{ span: 3, offset: 0 }}>
-                        <div className="skillset justify-content-center">
+                    <Col md={{ span: 1, offset: 1 }} xs={{ span: 1, offset: 5 }} xl={1}>
+                        <div className="skillset justify-content-end text-start">
                             Superskill
                         </div>
                     </Col>
-                    <Col md={1} xs={{ span: 2, offset: 1 }}>
+                    <Col md={1} xl={1} xs={{ span: 1 }} >
                         <div className="skillset active justify-content-start">
                             Subskills
                         </div>
@@ -51,35 +51,35 @@ const LearnSkill = () => {
                         <div className="card-css">
                             <Row className="pt-2">
                                 <MyDesktop>
-                                    <Col md={{ span: 4, offset: 1 }}>
+                                    <Col lg={{ span: 6, offset: 1 }} md={{ span: 6, offset: 1 }} >
                                         <div className="card-heading">
                                             <Link className="linkTo" to="/webD">
                                                 Web Development
                                             </Link>
                                         </div>
                                     </Col>
-                                    <Col md={1} className="translate-css">
+                                    <Col md={1} lg={1} className="translate-css">
                                         <div className="skill text-center">
                                             SuperSkill
                                         </div>
                                     </Col>
-                                    <Col md={{ span: 3, offset: 3 }} className="text-end">
+                                    <Col md={{ span: 3, offset: 1 }} lg={{ span: 3, offset: 1 }} className="text-end">
                                         <div className="track">
                                             Track Your Progress
                                         </div>
                                     </Col>
                                 </MyDesktop>
                                 <MyMobile>
-                                    <Col xs={{ span: 6, offset: 1 }}>
+                                    <Col xs={{ span: 7 }} sm={{ span: 7 }}>
                                         <span>
                                             <div className="card-heading mobile-card">
-                                                <Link>
+                                                <Link className="linkTo">
                                                     Web Development
                                                 </Link>
                                             </div>
                                         </span>
                                     </Col>
-                                    <Col xs={2} className="kustify-content-start text-center">
+                                    <Col xs={2} className="justify-content-start translate-css text-center">
                                         <div className="skill text-center">
                                             SuperSkill
                                         </div>
@@ -153,14 +153,14 @@ const LearnSkill = () => {
                                     </Col>
                                 </MyDesktop>
                                 <MyMobile>
-                                    <Col xs={{ span: 6, offset: 1 }}>
+                                    <Col xs={{ span: 7 }}>
                                         <span>
                                             <div className="card-heading mobile-card">
                                                 HTML & CSS
                                             </div>
                                         </span>
                                     </Col>
-                                    <Col xs={2}>
+                                    <Col xs={2} className="translate-css">
                                         <div className="skillRed justify-content-center text-center">
                                             SubSkill
                                         </div>
@@ -234,14 +234,14 @@ const LearnSkill = () => {
                                     </Col>
                                 </MyDesktop>
                                 <MyMobile>
-                                    <Col xs={{ span: 6, offset: 1 }}>
+                                    <Col xs={{ span: 7 }}>
                                         <span>
-                                            <div className="card-heading mobile-card">
-                                                HTML & CSS
+                                            <div className="text-center card-heading mobile-card">
+                                                Machine Learning
                                             </div>
                                         </span>
                                     </Col>
-                                    <Col xs={2}>
+                                    <Col xs={2} className="translate-css">
                                         <div className="skillRed justify-content-center text-center">
                                             SubSkill
                                         </div>
