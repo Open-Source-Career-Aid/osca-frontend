@@ -11,6 +11,7 @@ import { About } from './Components/About/About'
 import SuperSkill from './Components/SuperSkill/SuperSkill';
 import Subskill from './Components/Subskill/Subskill';
 import Skill from './Components/Skill/Skill';
+import SubskillEdit from './Components/Editing-Pages/SubskillEdit';
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route path="/html">
             <Subskill />
+          </Route>
+          <Route path="/htmledit">
+            <SubskillEdit />
           </Route>
           <Route path="/RoadmapForm">
             <RoadmapForm />

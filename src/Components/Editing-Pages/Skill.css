@@ -1,0 +1,35 @@
+.spacingTop {
+    padding-top: 100px;
+}
+
+.editLabel {
+    width: 100%;
+    height: 50px;
+    border: none;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #989898;
+}
+
+.editLabel:focus {
+    outline: none;
+}
+
+.labelEdit {
+    color: #000000;
+    border-color: #000000;
+}
+
+.Extension {}
+
+.inputExtension {
+    border: 1px solid #989898;
+    border-radius: 13px;
+}
+
+.EditBtn {
+    color: #000000;
+}
+

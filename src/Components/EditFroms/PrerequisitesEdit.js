@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import { Col, Row } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form'
 import { SvgIcon } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
@@ -15,6 +15,7 @@ function DeleteIcon(props) {
 
 export const PrerequisitesEdit = ({ prerequisite_data }) => {
 
+    const initialData = prerequisite_data;
     const [prerequisites, setPrerequisites] = useState([...prerequisite_data]);
 
     const [prerequisitesField, setPrerequisitesField] = useState('');
@@ -55,22 +56,36 @@ export const PrerequisitesEdit = ({ prerequisite_data }) => {
                 </div>
             </div>
             <div className="tags__area">
-                {prerequisites.map((prerequisite, idx) => {
-                    if (idx >= 0) {
+                <div className="tagsDisplay">
+                    {prerequisites.map((prerequisite, idx) => {
+                        if (idx >= 0) {
 
-                        return (
-                            <div className="tags__button">
-                                <div className="tag__name">
-                                    {prerequisite.name}
+                            return (
+                                <div className="tags__button">
+                                    <div className="tag__name">
+                                        {prerequisite.name}
+                                    </div>
+                                    <div className="delete__btn">
+                                        <DeleteIcon onClick={e => handleDeletePrerequisites(e, idx)} style={styles.btn} />
+                                    </div>
                                 </div>
-                                <div className="delete__btn">
-                                    <DeleteIcon onClick={e => handleDeletePrerequisites(e, idx)} style={styles.btn} />
-                                </div>
-                            </div>
-                        )
-                    } else { return null }
+                            )
+                        } else { return null }
 
-                })}
+                    })}
+                </div>
+                <Row>
+                    <Col md={{ spam: 2, offset: 9 }}>
+                        <div className="bottomTxt text-center" onClick={() => setPrerequisites(initialData)}>
+                            Undo Changes
+                        </div>
+                    </Col>
+                    <Col md={1}>
+                        <div className="bottomTxt text-center" onClick={() => setPrerequisites([])}>
+                            Clear
+                        </div>
+                    </Col>
+                </Row>
             </div>
         </Form>
     )

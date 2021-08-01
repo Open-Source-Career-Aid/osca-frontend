@@ -138,7 +138,9 @@ const LearnSkill = () => {
                                 <MyDesktop>
                                     <Col md={{ span: 3, offset: 1 }}>
                                         <div className="card-heading">
-                                            HTML & CSS
+                                            <Link className="linkTo" to="/html">
+                                                HTML & CSS
+                                            </Link>
                                         </div>
                                     </Col>
                                     <Col md={1} className="translate-css">

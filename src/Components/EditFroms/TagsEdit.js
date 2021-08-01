@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-
 import Form from 'react-bootstrap/Form'
 import { SvgIcon } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
+import { Row, Col } from 'react-bootstrap';
 
 function DeleteIcon(props) {
     return (
@@ -14,10 +14,10 @@ function DeleteIcon(props) {
 
 export const TagsEdit = ({ tags_data }) => {
 
+    const initialData = tags_data;
     const [tags, setTags] = useState([...tags_data]);
-
     const [tagsField, setTagsField] = useState('');
-
+    console.log(tags)
     //handle change of tag name
 
     const handleChangeTagName = (e) => {
@@ -54,22 +54,35 @@ export const TagsEdit = ({ tags_data }) => {
                 </div>
             </div>
             <div className="tags__area">
-                {tags.map((tag, idx) => {
-                    if (idx >= 0) {
-
-                        return (
-                            <div className="tags__button">
-                                <div className="tag__name">
-                                    {tag.name}
+                <div className="tagsDisplay">
+                    {tags.map((tag, idx) => {
+                        if (idx >= 0) {
+                            return (
+                                <div className="tags__button">
+                                    <div className="tag__name">
+                                        {tag.name}
+                                    </div>
+                                    <div className="delete__btn">
+                                        <DeleteIcon onClick={e => handleDeleteTags(e, idx)} style={styles.btn} />
+                                    </div>
                                 </div>
-                                <div className="delete__btn">
-                                    <DeleteIcon onClick={e => handleDeleteTags(e, idx)} style={styles.btn} />
-                                </div>
-                            </div>
-                        )
-                    } else { return null }
+                            )
+                        } else { return null }
 
-                })}
+                    })}
+                </div>
+                <Row>
+                    <Col md={{ spam: 2, offset: 9 }}>
+                        <div className="bottomTxt text-center" onClick={() => setTags(initialData)}>
+                            Undo Changes
+                        </div>
+                    </Col>
+                    <Col md={1}>
+                        <div className="bottomTxt text-center" onClick={() => setTags([])}>
+                            Clear
+                        </div>
+                    </Col>
+                </Row>
             </div>
         </Form>
     )
