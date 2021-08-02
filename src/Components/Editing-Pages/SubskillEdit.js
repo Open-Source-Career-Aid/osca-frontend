@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import IconButton from '@material-ui/core/IconButton';
+import { IconButton } from '@material-ui/core';
 import "./Skill.css";
 import { useState } from 'react';
 import EditIcon from '@material-ui/icons/Edit';
@@ -9,6 +9,7 @@ import CheckIcon from '@material-ui/icons/Check';
 import ClearIcon from '@material-ui/icons/Clear';
 import { TagsEdit } from '../EditFroms/TagsEdit';
 import { PrerequisitesEdit } from '../EditFroms/PrerequisitesEdit';
+import RoadmapEdit from '../EditFroms/RoadmapEdit';
 
 const SubskillEdit = () => {
 
@@ -62,6 +63,11 @@ const SubskillEdit = () => {
             <Row>
                 <Col md={{ span: 6, offset: 3 }}>
                     <TagsEdit tags_data={Tagdata} />
+                </Col>
+            </Row>
+            <Row className="pt-4">
+                <Col md={{ span: 6, offset: 3 }}>
+                    <RoadmapEdit />
                 </Col>
             </Row>
         </div>
