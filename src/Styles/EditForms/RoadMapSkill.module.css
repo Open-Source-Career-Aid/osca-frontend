@@ -59,3 +59,7 @@
 .trans {
   transform: translateY(-8px);
 }
+
+.Delete:hover{
+  cursor: pointer;
+}

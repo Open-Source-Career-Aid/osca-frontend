@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Row, Col } from 'react-bootstrap';
-import {Button, InputGroup, FormControl}  from 'react-bootstrap';
+import { Button, InputGroup, FormControl } from 'react-bootstrap';
 import Deletebutton from '../Buttons/Deletebutton';
 import Editbutton from '../Buttons/Editbutton';
 import './SkillRoadmap.css';
@@ -10,33 +10,33 @@ const SkillRoadmap = (props) => {
 
 
     const [data, setData] = useState();
-    
-    const [skills, setSkills] = useState([{skillName:null}]);
 
-    const [editSkill, setEditSkill] = useState({'0': 1, });
+    const [skills, setSkills] = useState([{ skillName: null }]);
+
+    const [editSkill, setEditSkill] = useState({ '0': 1, });
 
     //handles the addition of skills
     const handleAddButton = () => {
         let values = [...skills];
-        values.push({skillName: null});
+        values.push({ skillName: null });
         let indexoflastelement = values.length;
-        editSkill[indexoflastelement -1 ] = 1;
-    
-        setEditSkill({...editSkill});
+        editSkill[indexoflastelement - 1] = 1;
+
+        setEditSkill({ ...editSkill });
         setSkills([...values]);
     }
 
     // Handles the editing of Skill name
 
     const handleEditButton = (idx) => {
-        let values = {...editSkill};
+        let values = { ...editSkill };
         values[idx] = !values[idx];
-        setEditSkill({...values});
+        setEditSkill({ ...values });
     }
 
     //handles the ok button
     const handleOkButton = (idx) => {
-        if(skills[idx].skillName === '' || skills[idx].skillName === null ) {
+        if (skills[idx].skillName === '' || skills[idx].skillName === null) {
             alert('cannot be empty');
             return;
         }
@@ -51,7 +51,7 @@ const SkillRoadmap = (props) => {
     }
 
     // handles the deletion of the skill
-    const handleDeleteButton = ( idx) => {
+    const handleDeleteButton = (idx) => {
         let values = [...skills];
         values.splice(idx, 1);
         setSkills([...values]);
@@ -76,50 +76,50 @@ const SkillRoadmap = (props) => {
                 <Col >
                     <h3>Skills</h3>
                 </Col>
-                
+
             </Row>
             {/* for loops for skills */}
             <div className='R-1'>
                 {skills.map((skill, idx) => {
-                    return(
+                    return (
                         <Row className='align-items-center skills' >
                             <Col>
                                 {editSkill[idx]
-                                ?
+                                    ?
                                     <InputGroup style={styles.input} className="mb-3 ">
-                                    <FormControl
-                                    required
-                                    value={skill.skillName}
-                                    onChange={e => handleChangeSkill(e, idx)}
-                                    placeholder={"Name of the Topic"}
-                                    aria-label="Name of the Topic"
-                                    aria-describedby="basic-addon2"
-                                    className ="inputresource"
-                                    />
+                                        <FormControl
+                                            required
+                                            value={skill.skillName}
+                                            onChange={e => handleChangeSkill(e, idx)}
+                                            placeholder={"Name of the Topic"}
+                                            aria-label="Name of the Topic"
+                                            aria-describedby="basic-addon2"
+                                            className="inputresource"
+                                        />
                                     </InputGroup>
-                                :
-                                <h4>{skill.skillName}</h4>
-                            }
+                                    :
+                                    <h4>{skill.skillName}</h4>
+                                }
                             </Col>
                             <Col xs={1} sm={1} md={1} lg={1} xl={1} >
                                 {editSkill[idx]
-                                ?
-                                <OkButton index={idx} fun={handleOkButton} />
-                                :
-                                <Editbutton index={idx} fun={handleEditButton} />
+                                    ?
+                                    <OkButton index={idx} fun={handleOkButton} />
+                                    :
+                                    <Editbutton index={idx} fun={handleEditButton} />
                                 }
                             </Col>
                             <Col xs={1} sm={1} md={1} lg={1} xl={1}>
-                                <Deletebutton index={idx} fun={handleDeleteButton}  />
+                                <Deletebutton index={idx} fun={handleDeleteButton} />
                             </Col>
                         </Row>
                     )
-                })}   
-                     <Row xs='auto' className='justify-content-center'>
+                })}
+                <Row xs='auto' className='justify-content-center'>
                     <Button onClick={e => handleAddButton(e)} style={styles.btn} >
-                        Add a skill    
+                        Add a skill
                     </Button>
-                </Row>       
+                </Row>
             </div>
         </div>
     )
@@ -141,7 +141,6 @@ const styles = {
     },
     input: {
         marginTop: '.6em',
-        
     }
 }
 
