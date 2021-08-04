@@ -77,7 +77,7 @@ export const TagsEdit = ({ tags_data }) => {
                             Undo Changes
                         </div>
                     </Col>
-                    <Col md={1}>
+                    <Col xs={1}>
                         <div className="bottomTxt text-center" onClick={() => setTags([])}>
                             Clear
                         </div>

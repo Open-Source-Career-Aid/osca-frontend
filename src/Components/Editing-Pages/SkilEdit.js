@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import { IconButton } from '@material-ui/core';
-import "./Skill.css";
+import "./SkillEdit.css";
 import { useState } from 'react';
 import EditIcon from '@material-ui/icons/Edit';
 import CheckIcon from '@material-ui/icons/Check';
@@ -28,14 +28,14 @@ const SkillEdit = () => {
     return (
         <div className="spacingTop">
             <Row>
-                <Col md={{ span: 1, offset: 2 }} className="text-end">
+                <Col xs={{ span: 1, offset: 0 }} md={{ span: 1, offset: 2 }} className="text-end">
                     <IconButton>
                         <ArrowBackIcon className="EditBtn" />
                     </IconButton>
                 </Col>
                 <Col md={6} className="inputExtension">
                     <Row>
-                        <Col md={10}>
+                        <Col xs={8}  md={10}>
                             <input
                                 type="text"
                                 className={!isEdit ? "editLabel" : "editLabel labelEdit"}
@@ -43,7 +43,7 @@ const SkillEdit = () => {
                                 value={!isEdit ? valueEdit : null}
                             />
                         </Col>
-                        <Col md={2} className={`Extension justify-content-center ${isEdit ? "text-center" : "text-end"}`}>
+                        <Col xs={4} md={2} className={`Extension justify-content-center ${isEdit ? "text-center" : "text-end"}`}>
                             {isEdit ? (
                                 <>
                                     <IconButton>
@@ -75,7 +75,7 @@ const SkillEdit = () => {
                     <SuperSkillEdit roadmap_topic={preData} Roadmap_title='web'  />
                 </Col>
             </Row>
-            <Row style={{paddingRight:'25%'}} xs='auto'  className="justify-content-end text-end ">
+            <Row  xs='auto'  className=" submit_button justify-content-end text-end ">
             
                     <Button onClick={e => handleSubmit(e)} style={styles.submitButton} type='submit'>
                         Submit

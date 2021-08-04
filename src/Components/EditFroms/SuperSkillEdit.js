@@ -156,11 +156,11 @@ export const SuperSkillEdit = ({ Roadmap_title, roadmap_topic }) => {
                                            {quote.name}
                                            
                                         </div>
-                                        <div className='skillsdelete__btn'>
+                                        {/* <div className='skillsdelete__btn'>
                                             <IconButton style={{padding:'0'}}>
                                                 <Editbutton fun={handleChangeSuperSkillsEdit} index={index} />
                                             </IconButton>
-                                        </div>
+                                        </div> */}
                                         <div className="skillsdelete__btn">
                                             <DeleteIcon1 onClick={e => handleDeleteSuperskill(e, index)} />
                                         </div>

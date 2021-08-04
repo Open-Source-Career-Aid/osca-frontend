@@ -1,0 +1,52 @@
+
+.editLabel {
+    width: 100%;
+    height: 2rem;
+    border: none;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5em;
+    color: #989898;
+}
+
+.editLabel:focus {
+    outline: none;
+}
+
+.labelEdit {
+    color: #000000;
+    border-color: #000000;
+}
+
+.inputExtension {
+    border: 1px solid #989898;
+    border-radius: 13px;
+}
+
+.EditBtn {
+    color: #000000;
+}
+
+@media screen and (max-width: 2250px) {
+    .spacingTop {
+        padding-top: 100px;
+    }
+    
+    .submit_button {
+        padding-right: 25%;
+    }
+    
+}
+
+@media screen and (max-width: 750px) {
+    .spacingTop {
+        padding: 100px 2% 30% 2%;
+    }
+
+    .submit_button {
+        padding-right: 6%;
+    }
+}
+
+

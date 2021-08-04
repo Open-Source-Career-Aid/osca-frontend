@@ -80,7 +80,7 @@ export const PrerequisitesEdit = ({ prerequisite_data }) => {
                             Undo Changes
                         </div>
                     </Col>
-                    <Col md={1}>
+                    <Col xs={1}>
                         <div className="bottomTxt text-center" onClick={() => setPrerequisites([])}>
                             Clear
                         </div>
