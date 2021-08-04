@@ -1,11 +1,27 @@
 import React, { useState } from 'react'
-
+import { Row, Col } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form'
 import AddIcon from '@material-ui/icons/Add';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import { withStyles } from '@material-ui/core/styles';
 import { purple } from '@material-ui/core/colors';
+import { Icon, IconButton } from '@material-ui/core';
+import Editbutton from '../Buttons/Editbutton';
+import DragIndicatorIcon from '@material-ui/icons/DragIndicator';
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+
+// a little function to help us with reordering the result
+const reorder = (list, startIndex, endIndex) => {
+    const result = Array.from(list);
+    const [removed] = result.splice(startIndex, 1);
+    result.splice(endIndex, 0, removed);
+  
+    return result;
+  };
+
+
+
 
 function DeleteIcon1(props) {
     return (
@@ -41,15 +57,25 @@ const CustomSwitch = withStyles({
     track: {},
 })(Switch);
 
+let edit_array = () => {
+
+}
+
 export const SuperSkillEdit = ({ Roadmap_title, roadmap_topic }) => {
+
+
+
 
     const [superskill, setSuperskill] = useState(roadmap_topic);
 
+    console.log(superskill);
     const [superskillField, setSuperskillField] = useState('');
 
     const [state, setstate] = useState({
         removeSuperskill: false
     })
+
+    const [input_feild_skills, set_input_feild_skill] = useState(Array.apply(null, Array(roadmap_topic.length)).map(function (x, i) { return true; }));
 
     //handle change
 
@@ -76,6 +102,15 @@ export const SuperSkillEdit = ({ Roadmap_title, roadmap_topic }) => {
             setSuperskill([...values]);
         }
     }
+    
+    // change name in skill list
+
+    // const handleChangeSuperskill_listName = (e, idx) => {
+    //     e.preventDefault();
+    //     let values = [...superskill];
+    //     values[idx].name = e.target.value;
+    //     setSuperskill([...values]);
+    // }
 
     const handleChangeSuperSkillcheckbox = () => {
         setstate({ ...state, removeSuperskill: !state.removeSuperskill })
@@ -90,6 +125,83 @@ export const SuperSkillEdit = ({ Roadmap_title, roadmap_topic }) => {
         titleValue.push({ name: titleField })
     }
 
+    // handle change input edit
+    const handleChangeSuperSkillsEdit = ( idx) => {
+        let values = [...input_feild_skills];
+        console.log(idx, 'here its ')
+        values[idx] = !values[idx];
+        set_input_feild_skill([...values]);
+    }
+
+    const  Quote = ({ quote, index }) => {
+        return (
+          <Draggable draggableId= {'id-'+ index} index={index}>
+            {provided => (
+              <div
+                ref={provided.innerRef}
+                {...provided.draggableProps}
+                {...provided.dragHandleProps}
+              >
+                  <>
+                  <Row>
+                      <Col xs='auto'>
+                        <IconButton style={{paddingRight:'0', paddingBottom:'1em', paddingLeft:'0'}} >
+                            <DragIndicatorIcon/>
+                        </IconButton>
+                      </Col>
+                      <Col>
+                      
+                <div className="skills__button">
+                                        <div className="skills__name">
+                                           {quote.name}
+                                           
+                                        </div>
+                                        <div className='skillsdelete__btn'>
+                                            <IconButton style={{padding:'0'}}>
+                                                <Editbutton fun={handleChangeSuperSkillsEdit} index={index} />
+                                            </IconButton>
+                                        </div>
+                                        <div className="skillsdelete__btn">
+                                            <DeleteIcon1 onClick={e => handleDeleteSuperskill(e, index)} />
+                                        </div>
+                                    </div>
+                      </Col>
+                  </Row>
+                  </>
+              </div>
+            )}
+          </Draggable>
+        );
+      }
+      const QuoteList = React.memo(function QuoteList({ quotes }) {
+      return quotes.map((quote, index) => (
+          
+        <Quote quote={quote} index={index} key={quote.id} />
+      ));
+    });
+
+    function onDragEnd(result) {
+        if (!result.destination) {
+          return;
+        }
+    
+        if (result.destination.index === result.source.index) {
+          return;
+        }
+        console.log(result, 'result')
+        const skills_list = reorder(
+          superskill,
+          result.source.index,
+          result.destination.index
+        );
+    
+        setSuperskill([...skills_list]);
+      }
+    
+
+   
+    
+
     if (state.removeSuperskill) {
         return (
             <Form>
@@ -101,15 +213,8 @@ export const SuperSkillEdit = ({ Roadmap_title, roadmap_topic }) => {
                         <FormControlLabel control={<CustomSwitch checked={state.removeSuperskill} onChange={handleChangeSuperSkillcheckbox} name="checkedB" />} label="" />
                     </div>
                 </div>
-                <div className="title__field remove__roadmap">
-                    <h1>
-                        Title
-                    </h1>
-                    <div className="Roadmap__title remove__roadmap">
-                        <input onChange={e => handleChangeTitleName(e)} value={titleField} type="text" disabled />
-                    </div>
-                </div>
-                <div className="all__tags">
+               
+                {/* <div className="all__tags">
                     <div className="tags__edit remove__roadmap">
                         Skills
                     </div>
@@ -117,8 +222,8 @@ export const SuperSkillEdit = ({ Roadmap_title, roadmap_topic }) => {
                         <input onChange={e => handleChangeSuperskillName(e)} value={superskillField} type="text" className='inputField' placeholder="Add a skill" disabled />
                         <AddIcon onClick={e => handleClickSuperskill(e)} />
                     </div>
-                </div>
-                <div className="skills__area">
+                </div> */}
+                {/* <div className="skills__area hidden">
                     {superskill.map((skill, idx) => {
                         if (idx >= 0) {
 
@@ -135,7 +240,8 @@ export const SuperSkillEdit = ({ Roadmap_title, roadmap_topic }) => {
                         } else { return null }
 
                     })}
-                </div>
+                     
+                </div> */}
             </Form>
         )
     }
@@ -150,14 +256,7 @@ export const SuperSkillEdit = ({ Roadmap_title, roadmap_topic }) => {
                         <FormControlLabel control={<CustomSwitch checked={state.removeSuperskill} onChange={handleChangeSuperSkillcheckbox} name="checkedB" />} label="" />
                     </div>
                 </div>
-                <div className="title__field">
-                    <h1>
-                        Title
-                    </h1>
-                    <div className="Roadmap__title">
-                        <input onChange={e => handleChangeTitleName(e)} value={titleField} type="text" />
-                    </div>
-                </div>
+               
                 <div className="all__tags">
                     <div className="tags__edit">
                         Skills
@@ -168,23 +267,18 @@ export const SuperSkillEdit = ({ Roadmap_title, roadmap_topic }) => {
                     </div>
                 </div>
                 <div className="skills__area">
-                    {superskill.map((skill, idx) => {
-                        if (idx >= 0) {
-
-                            return (
-                                <div className="skills__button">
-                                    <div className="skills__name">
-                                        {skill.name}
-                                    </div>
-                                    <div className="skillsdelete__btn">
-                                        <DeleteIcon1 onClick={e => handleDeleteSuperskill(e, idx)} />
-                                    </div>
-                                </div>
-                            )
-                        } else { return null }
-
-                    })}
+                    <DragDropContext onDragEnd={onDragEnd}>
+                        <Droppable droppableId="list">
+                            {provided => (
+                            <div ref={provided.innerRef} {...provided.droppableProps}>
+                                <QuoteList quotes={superskill} />
+                                {provided.placeholder}
+                            </div>
+                            )}
+                        </Droppable>
+                    </DragDropContext>
                 </div>
+               
             </Form>
         )
     }
