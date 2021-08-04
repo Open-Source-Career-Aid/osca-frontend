@@ -25,7 +25,6 @@ const SkillEdit = () => {
 
     }
 
-    console.log(preData)
     return (
         <div className="spacingTop">
             <Row>
