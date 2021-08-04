@@ -75,7 +75,7 @@ export const PrerequisitesEdit = ({ prerequisite_data }) => {
                     })}
                 </div>
                 <Row>
-                    <Col md={{ spam: 2, offset: 9 }}>
+                    <Col sm={{span:3, offset:8}} md={{ spam: 3, offset: 8 }}>
                         <div className="bottomTxt text-center" onClick={() => setPrerequisites(initialData)}>
                             Undo Changes
                         </div>

@@ -72,7 +72,7 @@ export const TagsEdit = ({ tags_data }) => {
                     })}
                 </div>
                 <Row>
-                    <Col md={{ spam: 2, offset: 9 }}>
+                    <Col sm={{span:3, offset:8}} md={{ spam: 3, offset: 8 }}>
                         <div className="bottomTxt text-center" onClick={() => setTags(initialData)}>
                             Undo Changes
                         </div>

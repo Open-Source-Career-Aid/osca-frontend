@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap';
 import { Button, Collapse } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 import SkillCard from './SkillCard';
 import './../../Styles/Skill.css';
 import EditButton from './../Buttons/Editbutton';
@@ -392,7 +393,9 @@ const Skill = () => {
                             <h2>{roadmap.name}</h2>
                         </Col>
                         <Col xs={2} sm={2} md={2} lg={2} xl={2} onClick={handleShowEditButton} className="suggest__edit">
-                            Suggest an edit
+                            <Link to='/skilledit'>
+                                Suggest an edit
+                            </Link>
                         </Col>
                     </Row>
                     <div className='tagContainer'>

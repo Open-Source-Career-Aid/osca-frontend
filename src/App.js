@@ -12,6 +12,7 @@ import SuperSkill from './Components/SuperSkill/SuperSkill';
 import Subskill from './Components/Subskill/Subskill';
 import Skill from './Components/Skill/Skill';
 import SubskillEdit from './Components/Editing-Pages/SubskillEdit';
+import SkillEdit from './Components/Editing-Pages/SkilEdit';
 
 function App() {
   return (
@@ -49,6 +50,9 @@ function App() {
           </Route>
           <Route path="/Subskill">
             <Subskill />
+          </Route>
+          <Route path="/skilledit">
+            <SkillEdit />
           </Route>
         </Switch>
         <Footer />
