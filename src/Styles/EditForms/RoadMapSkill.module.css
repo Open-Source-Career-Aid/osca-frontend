@@ -5,6 +5,7 @@
   font-weight: 450;
   font-size: 16px;
   color: #586060;
+  /* padding-bottom: 15px; */
 }
 
 .backDrop {
@@ -76,14 +77,27 @@
 }
 
 .AddCSS {
-  transform: translateY(-100%) translateX(2400%) ;
+  transform: translateY(-100%) translateX(2400%);
 }
 
-.Arrow{
+.Arrow {
   display: inline-flex;
 }
 
-.ArrowBtn{
+.ArrowBtn {
   padding-right: 10px;
 }
 
+.Drag {
+  background: #586060;
+  border-radius: 14.5px 0px 0px 14.5px;
+  width: 35px;
+  height: 29px;
+  transform: translateX(-100%) translateY(+110%);
+}
+
+.dragArrow {
+  width: 15px;
+  height: 15px;
+  transform: translateX(80%);
+}

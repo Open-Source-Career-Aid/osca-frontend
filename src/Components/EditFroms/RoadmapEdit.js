@@ -11,6 +11,7 @@ import ClearIcon from "@material-ui/icons/Clear";
 import AddIcon from "@material-ui/icons/Add";
 import AddBack from "../../Images/ArrowBack.png";
 import ArrowForward from "../../Images/ArrowForward.png";
+import Arrow from "../../Images/Arrow.png";
 
 const RoadmapEdit = () => {
   const [isEditable, setIsEditable] = useState(false);
@@ -42,13 +43,18 @@ const RoadmapEdit = () => {
 
   return (
     <>
-      <Row className={`my-2 ${style.head}`}>RoadMap</Row>
+      <Row className={`${style.head}`}>RoadMap</Row>
       {/* <hr /> */}
+
       {resourses.map((res, idx) => {
         return (
           <>
+            {isEditable ? (
+              <div className={style.Drag}>
+                <img src={Arrow} className={style.dragArrow} alt="" />
+              </div>
+            ) : null}
             <Row className={`my-1 ${style.backDrop}`}>
-              <img src="" alt="" />
               <Col md={{ span: 9 }} className={style.headLine}>
                 {res.name}
               </Col>
