@@ -9,6 +9,8 @@ import Delete from "../../Images/Delete.png";
 import CheckIcon from "@material-ui/icons/Check";
 import ClearIcon from "@material-ui/icons/Clear";
 import AddIcon from "@material-ui/icons/Add";
+import AddBack from "../../Images/ArrowBack.png";
+import ArrowForward from "../../Images/ArrowForward.png";
 
 const RoadmapEdit = () => {
   const [isEditable, setIsEditable] = useState(false);
@@ -40,12 +42,13 @@ const RoadmapEdit = () => {
 
   return (
     <>
-      <Row className={style.head}>RoadMap</Row>
+      <Row className={`my-2 ${style.head}`}>RoadMap</Row>
       {/* <hr /> */}
       {resourses.map((res, idx) => {
         return (
           <>
             <Row className={`my-1 ${style.backDrop}`}>
+              <img src="" alt="" />
               <Col md={{ span: 9 }} className={style.headLine}>
                 {res.name}
               </Col>
@@ -125,7 +128,14 @@ const RoadmapEdit = () => {
                   </Row>
                 </Col>
               </Row>
+              <Row className={`${style.Arrow} pt-3`}>
+                <Col md={{ span: 2, offset: 10 }} className="text-end">
+                  <img src={AddBack} className={style.ArrowBtn} alt="" />
+                  <img src={ArrowForward} alt="" />
+                </Col>
+              </Row>
             </Row>
+            <hr className={style.hrCSS} />
           </>
         );
       })}
