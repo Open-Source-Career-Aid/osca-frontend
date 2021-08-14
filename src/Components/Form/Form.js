@@ -104,11 +104,15 @@ const RoadmapForm = () => {
 
     // handle click on add button in pre Req 
     const handleClickPreRequisite = () => {
-
-        let values = [...preReqs];
-        values.push({ prereqName: preReqsField });
-        setPreReqsField('');
-        setpreReqs([...values]);
+        if (preReqsField !== '') {
+            let values = [...preReqs];
+            values.push({ prereqName: preReqsField });
+            setPreReqsField('');
+            setpreReqs([...values]);
+        }
+        else {
+            alert('Field cannot be empty')
+        }
     }
 
     //handle deletion of pre Requisetes
@@ -122,7 +126,7 @@ const RoadmapForm = () => {
     // handle clear pre reqs
 
     const handleClickPreqsClear = (e) => {
-        setpreReqs([{ prereqName: null }]);
+        setpreReqs([]);
     }
 
     //handle change of tag name
@@ -133,10 +137,15 @@ const RoadmapForm = () => {
 
     // handle click on add button in pre Req 
     const handleClickTags = () => {
-        let values = [...tags];
-        values.push({ tagName: tagsField });
-        setTagsField('');
-        setTags([...values]);
+        if (tagsField !== '') {
+            let values = [...tags];
+            values.push({ tagName: tagsField });
+            setTagsField('');
+            setTags([...values]);
+        }
+        else {
+            alert('Field cannot be empty')
+        }
     }
 
     // handle deletion of tags
@@ -149,7 +158,7 @@ const RoadmapForm = () => {
 
     // handles clear all tags 
     const handleClicktagsClear = (e) => {
-        setTags([{ tagName: null }]);
+        setTags([]);
     }
 
     // gets data from skill Roadmap component 
@@ -187,15 +196,16 @@ const RoadmapForm = () => {
         };
         console.log(formData);
 
-        /*axios.post('https://oscaweb.herokuapp.com/form/add-new-skill/', formData)
+        axios.post('https://oscaweb.herokuapp.com/form/add-new-skill/', formData)
             .then(res => {
                 history.push('/thankyou');
+                console.log(res)
 
             })
             .catch(error => {
                 console.log(error);
 
-            })*/
+            })
 
 
 
@@ -303,7 +313,7 @@ const RoadmapForm = () => {
 
 
 
-                        <Row onClick={e => handleClickPreqsClear(e)} className="justify-content-end text-end">
+                        <Row onClick={e => handleClickPreqsClear(e)} className="justify-content-end text-end del">
                             Clear All
                         </Row>
                     </Row>
@@ -338,7 +348,7 @@ const RoadmapForm = () => {
 
                         })}
 
-                        <Row onClick={e => handleClicktagsClear(e)} className="justify-content-end text-end">
+                        <Row onClick={e => handleClicktagsClear(e)} className="justify-content-end text-end del">
                             Clear All
                         </Row>
                     </Row>

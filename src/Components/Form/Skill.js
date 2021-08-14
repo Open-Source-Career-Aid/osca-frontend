@@ -117,7 +117,7 @@ const Skill = (props) => {
 
     const handleAddTopic = () => {
         const values = [...topics];
-        values.push({ topicName: null, resources: [{ link: null }] });
+        values.push({ topicName: null, resources: [] });
         const indexofAddedtopic = values.length;
         topicsidx[indexofAddedtopic - 1] = 0;
         inputsLinks[indexofAddedtopic] = null;
