@@ -64,7 +64,6 @@ const SkillRoadmap = (props) => {
         let values = [
             ...skills
         ]
-        values.splice(0, 1);
         setData([...values]);
         props.onChange(data);
     }
