@@ -49,7 +49,7 @@ function App() {
             <Skill />
           </Route>
           <Route path="/Subskill">
-            <Subskill />
+            <Subskill  />
           </Route>
           <Route path="/skilledit">
             <SkillEdit />

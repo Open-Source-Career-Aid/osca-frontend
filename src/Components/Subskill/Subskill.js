@@ -5,7 +5,7 @@ import './../../Styles/Skill.css';
 import EditButton from '../Buttons/Editbutton';
 import { Link } from "react-router-dom"
 
-const roadmap = {
+const Roadmap = {
     name: 'HTML',
     tags: [{ name: 'HTML' }, { name: 'HTML' }, { name: 'HTML' }, { name: 'Machine Learning' }, { name: 'CSS' }],
     preReuqisites: [{ name: 'HTML' }, { name: 'HTML' }, { name: 'HTML' }, { name: 'Machine Learning' }, { name: 'CSS' }],
@@ -34,19 +34,41 @@ const roadmap = {
 
 }
 
+const  getList =(skillId) =>{
+    return fetch('http://osca-api.herokuapp.com/form/get-skill/?id=' + '1')
+      .then(data => data.json())
+  }
 
-const Subskill = () => {
+const Subskill = (props) => {
 
-
+    console.log(props);
     const [editMode, setEditMode] = useState(0);
 
     const handleEditMode = () => {
         setEditMode(!editMode);
     }
 
+    const [subskilldata, setSubskilldata] = useState(null);
+
+    useEffect(() => {
+        let mounted = true;
+        getList()
+          .then(items => {
+            if(mounted) {
+                console.log(items, 'mayank', items.skill);
+                setSubskilldata({...items});
+            }
+          })
+        return () => mounted = false;
+      }, [])
 
     return (
-        <div className="headingRow">
+        <>
+        {subskilldata === null ?
+            <h4> loading...</h4>
+            :
+            <>
+            <div className="headingRow">
             <Col className="backarrow" xs={12} sm={12} md={1} lg={1} xl={1}>
                 <img style={styles.backButton} src='./../../back.png' />
             </Col>
@@ -55,10 +77,10 @@ const Subskill = () => {
                 <Row style={styles.fullWidth} >
 
                     <Col xs='auto' >
-                        <h2>{roadmap.name}</h2>
+                        <h2>{subskilldata.skill}</h2>
                     </Col>
                     <Col xs='auto' >
-                        <Link to="/htmledit">
+                        <Link to="/htmledit" params={subskilldata}>
                             <h6 style={styles.suggestEdit}>Suggest an edit</h6>
                         </Link>
                     </Col>
@@ -70,11 +92,11 @@ const Subskill = () => {
                         </Col>
                     </Row>
                     <Row >
-                        {roadmap.tags.map((tag, idx) => {
+                        {subskilldata.tag.map((tagName, idx) => {
                             return (
-
+                                
                                 <Col key={idx} className='colorTags' xs='auto'>
-                                    {tag.name}
+                                    {tagName}
                                 </Col>
                             )
                         })}
@@ -87,11 +109,11 @@ const Subskill = () => {
                         </Col>
                     </Row>
                     <Row  >
-                        {roadmap.preReuqisites.map((preReuqisite, idx) => {
+                        {subskilldata.prerequisite.map((preReuqisiteName, idx) => {
                             return (
-
+                                
                                 <Col className='skilltags' xs='auto'>
-                                    {preReuqisite.name}
+                                    {preReuqisiteName}
                                 </Col>
                             )
                         })}
@@ -100,10 +122,14 @@ const Subskill = () => {
                 </div>
                 <div style={{ paddingLeft: '.6em' }}>
                     <h3>Roadmap</h3>
-                    <SkillCard editMode={editMode} props={roadmap.resources} />
+                    <SkillCard  props={subskilldata.topics} />
                 </div>
             </Col>
         </div>
+            </>
+        }
+        </>
+        
     );
 
 }

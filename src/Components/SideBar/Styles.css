@@ -1,0 +1,14 @@
+.Sidebar {
+    background-color: #ffff;
+  width: 20%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 10%;
+  left: -0%;
+  transition: 850ms;
+  z-index: 13;
+  /* padding-top: 12%; */
+  color:#878787;
+}
