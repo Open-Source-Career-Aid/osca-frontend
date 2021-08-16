@@ -52,7 +52,7 @@ h3.skillName {
   /* padding: .1em .9em .3em; */
   font-weight: 500;
   color: #424242;
-  font-size: small;
+  font-size: medium;
   margin-bottom: 1em;
 }
 
@@ -63,7 +63,7 @@ h3.skillName {
   padding: 0.1em 0.9em 0.2em;
   color: #ffffff;
   font-weight: 500;
-  font-size: small;
+  font-size: medium;
   background-color: #2c91b0;
   margin-bottom: 1em;
 }

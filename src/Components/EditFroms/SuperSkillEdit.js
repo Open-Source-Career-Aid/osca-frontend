@@ -68,7 +68,7 @@ export const SuperSkillEdit = ({ Roadmap_title, roadmap_topic }) => {
 
     const [superskill, setSuperskill] = useState(roadmap_topic);
 
-    console.log(superskill);
+    // console.log(superskill);
     const [superskillField, setSuperskillField] = useState('');
 
     const [state, setstate] = useState({

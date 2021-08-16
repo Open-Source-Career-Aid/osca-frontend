@@ -39,8 +39,8 @@ function App() {
           <Route path="/html">
             <Subskill />
           </Route>
-          <Route path="/htmledit">
-            <SubskillEdit />
+          <Route path="/htmledit" component={SubskillEdit}>
+           
           </Route>
           <Route path="/RoadmapForm">
             <RoadmapForm />

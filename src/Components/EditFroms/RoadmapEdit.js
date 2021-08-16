@@ -12,41 +12,102 @@ import AddIcon from "@material-ui/icons/Add";
 import AddBack from "../../Images/ArrowBack.png";
 import ArrowForward from "../../Images/ArrowForward.png";
 import Arrow from "../../Images/Arrow.png";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
-const RoadmapEdit = () => {
+// a little function to help us with reordering the result
+const reorder = (list, startIndex, endIndex) => {
+  const result = Array.from(list);
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+
+  return result;
+};
+
+
+
+const RoadmapEdit = ( props) => {
   const [isEditable, setIsEditable] = useState(false);
   const [links, setLinks] = useState("");
-  const [resourses, setResourses] = useState([
-    {
-      name: "Full HTML Lecture PlayList",
-      links: [
-        "https://cdn.discordapp.com/attachments/852968860768010280/.... ",
-        "https://cdn.discordapp.com/attachments/852968860768010280/.... ",
-      ],
-    },
-  ]);
-
+  const [roadmap_data, setroadmap_data] = useState(props.data);
+  console.log(props, 'ter');
   // let resourses =
 
   const handleAdd = (idx) => {
-    const values = resourses[idx];
-    values.links.push(links);
+    const values = roadmap_data[idx];
+    values.resources.push({'link':links});
     console.log(values);
-    setResourses([values]);
+    setLinks('');
+    setroadmap_data([values]);
   };
 
   const handleDelete = (idx, i) => {
-    const values = resourses[idx];
+    const values = roadmap_data[idx];
     values.links.splice(i, 1);
-    setResourses([values]);
+    setroadmap_data([values]);
   };
+
+
+//   const  Quote = ({ quote, index }) => {
+//     return (
+//       <Draggable draggableId= {'id-'+ index} index={index}>
+//         {provided => (
+//           <div
+//             ref={provided.innerRef}
+//             {...provided.draggableProps}
+//             {...provided.dragHandleProps}
+//           >
+//               <>
+              
+//               </>
+//           </div>
+//         )}
+//       </Draggable>
+//     );
+//   }
+//   const QuoteList = React.memo(function QuoteList({ quotes }) {
+//   return quotes.map((quote, index) => (
+      
+//     <Quote quote={quote} index={index} key={quote.id} />
+//   ));
+// });
+
+// function onDragEnd(result) {
+//     if (!result.destination) {
+//       return;
+//     }
+
+//     if (result.destination.index === result.source.index) {
+//       return;
+//     }
+//     console.log(result, 'result')
+//     const skills_list = reorder(
+//       superskill,
+//       result.source.index,
+//       result.destination.index
+//     );
+
+//     setSuperskill([...skills_list]);
+//   }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   return (
     <>
       <Row className={`${style.head}`}>RoadMap</Row>
-      {/* <hr /> */}
+      
 
-      {resourses.map((res, idx) => {
+      {roadmap_data.map((res, idx) => {
         return (
           <>
             {isEditable ? (
@@ -56,7 +117,7 @@ const RoadmapEdit = () => {
             ) : null}
             <Row className={`my-1 ${style.backDrop}`}>
               <Col md={{ span: 9 }} className={style.headLine}>
-                {res.name}
+                {res.topicName}
               </Col>
               <Col md={3} className={`text-end`}>
                 {isEditable ? (
@@ -74,7 +135,7 @@ const RoadmapEdit = () => {
                   </IconButton>
                 )}
               </Col>
-              {res.links.map((data, i) => {
+              {res.resources.map((data, i) => {
                 return (
                   <>
                     <Row className="pt-2">
@@ -87,7 +148,7 @@ const RoadmapEdit = () => {
                             <input
                               type="text"
                               className={style.inputF}
-                              value={data}
+                              value={data.link}
                             />
                           </Col>
                           <Col

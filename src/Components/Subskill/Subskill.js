@@ -2,8 +2,19 @@ import React, { useState, useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap';
 import SkillCard from './../Skill/SkillCard';
 import './../../Styles/Skill.css';
-import EditButton from '../Buttons/Editbutton';
 import { Link } from "react-router-dom"
+
+function generateRandomColor()
+{
+    // var randomColor = '#'+Math.floor(Math.random()*10777215).toString(16);
+    // return randomColor;
+    let color = "#";
+  for (let i = 0; i < 3; i++)
+    color += ("0" + Math.floor(Math.random() * Math.pow(16, 2) / 2).toString(16)).slice(-2);
+  return color;
+    //random color will be freshly served
+}
+let color_dict = {};
 
 const Roadmap = {
     name: 'HTML',
@@ -35,7 +46,7 @@ const Roadmap = {
 }
 
 const  getList =(skillId) =>{
-    return fetch('http://osca-api.herokuapp.com/form/get-skill/?id=' + '1')
+    return fetch('http://osca-api.herokuapp.com/form/get-skill/?id=' + '2')
       .then(data => data.json())
   }
 
@@ -50,17 +61,20 @@ const Subskill = (props) => {
 
     const [subskilldata, setSubskilldata] = useState(null);
 
+   
+
     useEffect(() => {
         let mounted = true;
         getList()
           .then(items => {
             if(mounted) {
-                console.log(items, 'mayank', items.skill);
+                // console.log(items, 'mayank', items.skill);
                 setSubskilldata({...items});
             }
           })
         return () => mounted = false;
       }, [])
+
 
     return (
         <>
@@ -80,7 +94,8 @@ const Subskill = (props) => {
                         <h2>{subskilldata.skill}</h2>
                     </Col>
                     <Col xs='auto' >
-                        <Link to="/htmledit" params={subskilldata}>
+                        {/* <Link to="/htmledit" params={subskilldata}> */}
+                        <Link to={{pathname:"/htmledit", state: {subskilldata }}}>
                             <h6 style={styles.suggestEdit}>Suggest an edit</h6>
                         </Link>
                     </Col>
@@ -92,11 +107,11 @@ const Subskill = (props) => {
                         </Col>
                     </Row>
                     <Row >
-                        {subskilldata.tag.map((tagName, idx) => {
+                        {subskilldata.tags.map((tag, idx) => {
                             return (
                                 
-                                <Col key={idx} className='colorTags' xs='auto'>
-                                    {tagName}
+                                <Col key={idx} style={{backgroundColor: generateRandomColor()  }}  className='colorTags' xs='auto'>
+                                    {tag.tagName}
                                 </Col>
                             )
                         })}
@@ -109,11 +124,11 @@ const Subskill = (props) => {
                         </Col>
                     </Row>
                     <Row  >
-                        {subskilldata.prerequisite.map((preReuqisiteName, idx) => {
+                        {subskilldata.prerequisites.map((preReuqisite, idx) => {
                             return (
                                 
                                 <Col className='skilltags' xs='auto'>
-                                    {preReuqisiteName}
+                                    {preReuqisite.prereqName}
                                 </Col>
                             )
                         })}
