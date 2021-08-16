@@ -12,6 +12,7 @@ import Skill from './Skill';
 import { SvgIcon } from '@material-ui/core';
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
+import { TrainRounded } from '@material-ui/icons';
 
 const CustomSwitch = withStyles({
     switchBase: {
@@ -50,8 +51,9 @@ const RoadmapForm = () => {
         branch_name: "",
         program_duration: "",
         show: false,
-        is_supperskill: false,
     });
+
+    const [is_supperskill, setIs_supperskill] = useState(false)
 
     const [preReqs, setpreReqs] = useState([]);
 
@@ -93,7 +95,7 @@ const RoadmapForm = () => {
         } else {
             setSkilldata(null);
         }
-        setState({ ...state, is_supperskill: !state.is_supperskill })
+        setIs_supperskill(!is_supperskill)
     }
 
 
@@ -181,34 +183,58 @@ const RoadmapForm = () => {
         let roadmap;
         let skill;
 
-        if (skillRoadmapdata === undefined || skillRoadmapdata === null) {
-            skill = skilldata;
-        } else {
-            roadmap = skillRoadmapdata;
-        }
         const prerequisites = preReqs;
-        const formData = {
-            ...details,
-            roadmap,
-            prerequisites,
-            tags,
-            skill
-        };
-        console.log(formData);
 
-        axios.post('https://oscaweb.herokuapp.com/form/add-new-skill/', formData)
-            .then(res => {
-                history.push('/thankyou');
-                console.log(res)
+        if (skillRoadmapdata === undefined || skillRoadmapdata === null) {
+            skill = skilldata.skillName;
+            let topics = skilldata.topics;
 
-            })
-            .catch(error => {
-                console.log(error);
+            const formData = {
+                ...details,
+                prerequisites,
+                tags,
+                skill,
+                topics
+            };
+            console.log(formData);
 
-            })
+            if (is_supperskill === false) {
+                axios.post('http://osca-api.herokuapp.com/form/add-new-skill/', formData)
+                    .then(res => {
+                        history.push('/thankyou');
+                        console.log(res)
 
+                    })
+                    .catch(error => {
+                        console.log(error);
 
+                    })
+            }
 
+        } else {
+            roadmap = skillRoadmapdata.skills;
+            let super_skill = skillRoadmapdata.roadmapName;
+            const formData = {
+                ...details,
+                prerequisites,
+                tags,
+                roadmap,
+                super_skill
+            };
+            console.log(formData);
+            if (is_supperskill === true) {
+                axios.post('http://osca-api.herokuapp.com/form/add-new-super-skill/', formData)
+                    .then(res => {
+                        history.push('/thankyou');
+                        console.log(res)
+
+                    })
+                    .catch(error => {
+                        console.log(error);
+
+                    })
+            }
+        }
     }
 
     return (
@@ -277,7 +303,7 @@ const RoadmapForm = () => {
                             <p>Is this a Superskill</p>
                         </Col>
                         <Col xs={2} sm={2} md={1} lg={1} xl={1} >
-                            <FormControlLabel control={<CustomSwitch checked={state.is_supperskill} onChange={handleChangeSuperSkillcheckbox} name="checkedB" />} label="" />
+                            <FormControlLabel control={<CustomSwitch checked={is_supperskill} onChange={handleChangeSuperSkillcheckbox} name="checkedB" />} label="" />
                         </Col>
                     </Row>
                     <Row className="py-4">
@@ -354,7 +380,7 @@ const RoadmapForm = () => {
                     </Row>
                 </Form >
                 {
-                    state.is_supperskill
+                    is_supperskill
                         ?
                         <SkillRoadmap onChange={skillRoadmapdata => getDataFromSkillRoadmap(skillRoadmapdata)} />
                         :

@@ -12,8 +12,28 @@ const SkillRoadmap = (props) => {
     const [data, setData] = useState();
 
     const [skills, setSkills] = useState([{ skillName: null }]);
+    const [title, setTitle] = useState('');
+
+    const [titleEdit, setTitleEdit] = useState(0);
 
     const [editSkill, setEditSkill] = useState({ '0': 1, });
+
+    const handleChangeTitle = (e) => {
+        setTitle(e.target.value);
+    }
+
+    const handleEditButtonTitle = () => {
+        setTitleEdit(!titleEdit);
+    }
+
+    //handles ok button in title
+    const handleOkButtonTitle = () => {
+        if (title === '' || title === null) {
+            alert('cannot be empty');
+            return;
+        }
+        setTitleEdit(!titleEdit);
+    }
 
     //handles the addition of skills
     const handleAddButton = () => {
@@ -60,11 +80,12 @@ const SkillRoadmap = (props) => {
     // handles the change in component 
 
     const handleChangeInData = () => {
-
-        let values = [
-            ...skills
-        ]
-        setData([...values]);
+        let roadmapName = title;
+        let values = {
+            skills,
+            roadmapName
+        }
+        setData({ ...values });
         props.onChange(data);
     }
 
@@ -76,6 +97,33 @@ const SkillRoadmap = (props) => {
                     <h3>Skills</h3>
                 </Col>
 
+            </Row>
+            <Row className='title '>
+                <Col>
+                    {titleEdit ?
+                        <h2>{title}</h2>
+                        :
+                        <InputGroup style={styles.input} className="mb-4 ">
+                            <FormControl
+                                required
+                                value={title}
+                                onChange={e => handleChangeTitle(e)}
+                                placeholder={"Roadmap Title"}
+                                aria-label="Name of the Topic"
+                                aria-describedby="basic-addon2"
+                                className="inputresource"
+                            />
+                        </InputGroup>
+                    }
+                </Col>
+                <Col xs={1} sm={1} md={1} lg={1} xl={1}>
+                    {titleEdit
+                        ?
+                        <Editbutton fun={handleEditButtonTitle} />
+                        :
+                        <OkButton fun={handleOkButtonTitle} />
+                    }
+                </Col>
             </Row>
             {/* for loops for skills */}
             <div className='R-1'>
