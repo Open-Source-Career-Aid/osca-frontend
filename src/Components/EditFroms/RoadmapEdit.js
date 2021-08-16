@@ -14,84 +14,56 @@ import ArrowForward from "../../Images/ArrowForward.png";
 import Arrow from "../../Images/Arrow.png";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
-// a little function to help us with reordering the result
-const reorder = (list, startIndex, endIndex) => {
-  const result = Array.from(list);
-  const [removed] = result.splice(startIndex, 1);
-  result.splice(endIndex, 0, removed);
-
-  return result;
-};
-
 
 
 const RoadmapEdit = ( props) => {
   const [isEditable, setIsEditable] = useState(false);
-  const [links, setLinks] = useState("");
-  const [roadmap_data, setroadmap_data] = useState(props.data);
+  
   console.log(props, 'ter');
+  const links_dict = {};
+  const isEditable_dict = {};
+  for(let i=0;i<props.data.length; i++) {
+    links_dict[i]='';
+    isEditable_dict[i]=0;
+  }
+  const [isEditable_topicname, setIsEditable_topicname] = useState(isEditable_dict);
+  const [edit_links, setLinks] = useState(links_dict);
+  const [roadmap_data, setroadmap_data] = useState(props.data);
   // let resourses =
 
   const handleAdd = (idx) => {
-    const values = roadmap_data[idx];
-    values.resources.push({'link':links});
+    let values = roadmap_data;
+    values[idx].resources.push({'link':edit_links[idx]});
     console.log(values);
-    setLinks('');
-    setroadmap_data([values]);
+    let links_value = edit_links;
+    links_value[idx] = "";
+    setLinks({...links_value});
+    setroadmap_data([...values]);
   };
 
   const handleDelete = (idx, i) => {
-    const values = roadmap_data[idx];
-    values.links.splice(i, 1);
-    setroadmap_data([values]);
+    const values = roadmap_data;
+    values[idx].resources.splice(i, 1);
+    setroadmap_data([...values]);
   };
 
+  const handle_link_change = (idx, val) => {
+    let values = edit_links;
+    edit_links[idx] = val;
+    setLinks({...values});
+  }
 
-//   const  Quote = ({ quote, index }) => {
-//     return (
-//       <Draggable draggableId= {'id-'+ index} index={index}>
-//         {provided => (
-//           <div
-//             ref={provided.innerRef}
-//             {...provided.draggableProps}
-//             {...provided.dragHandleProps}
-//           >
-//               <>
-              
-//               </>
-//           </div>
-//         )}
-//       </Draggable>
-//     );
-//   }
-//   const QuoteList = React.memo(function QuoteList({ quotes }) {
-//   return quotes.map((quote, index) => (
-      
-//     <Quote quote={quote} index={index} key={quote.id} />
-//   ));
-// });
+  const handle_topic_name_change = (idx, val) => {
+    let values = roadmap_data;
+    values[idx].topicName = val;
+    setroadmap_data([...values]);
+  }
 
-// function onDragEnd(result) {
-//     if (!result.destination) {
-//       return;
-//     }
-
-//     if (result.destination.index === result.source.index) {
-//       return;
-//     }
-//     console.log(result, 'result')
-//     const skills_list = reorder(
-//       superskill,
-//       result.source.index,
-//       result.destination.index
-//     );
-
-//     setSuperskill([...skills_list]);
-//   }
-
-
-
-
+  const handle_topicName_edit = (idx) => {
+    isEditable_topicname[idx] =1- isEditable_topicname[idx];
+    console.log(idx)
+    setIsEditable_topicname({...isEditable_topicname});
+  }
 
 
 
@@ -117,20 +89,32 @@ const RoadmapEdit = ( props) => {
             ) : null}
             <Row className={`my-1 ${style.backDrop}`}>
               <Col md={{ span: 9 }} className={style.headLine}>
-                {res.topicName}
+              {isEditable_topicname[idx] === 1?
+                            
+                            <input 
+                              value={res.topicName}
+                              className={style.inputF}
+                              onChange={e => handle_topic_name_change(idx, e.target.value)}
+                            />
+                          :
+                          <>
+                          {res.topicName}
+                          </>
+                          }
+                
               </Col>
               <Col md={3} className={`text-end`}>
-                {isEditable ? (
+                {isEditable_topicname[idx] ? (
                   <>
-                    <IconButton>
+                    {/* <IconButton>
                       <CheckIcon className={style.Icon} />
-                    </IconButton>
-                    <IconButton onClick={() => setIsEditable(false)}>
-                      <ClearIcon className={style.Icon} />
+                    </IconButton> */}
+                    <IconButton onClick={() => handle_topicName_edit(idx)}>
+                      <CheckIcon className={style.Icon} />
                     </IconButton>
                   </>
                 ) : (
-                  <IconButton onClick={() => setIsEditable(true)}>
+                  <IconButton onClick={() => handle_topicName_edit(idx)}>
                     <EditIcon className={style.Icon} />
                   </IconButton>
                 )}
@@ -145,11 +129,8 @@ const RoadmapEdit = ( props) => {
                       <Col md={11} className={style.links}>
                         <Row>
                           <Col md={11}>
-                            <input
-                              type="text"
-                              className={style.inputF}
-                              value={data.link}
-                            />
+                            
+                          {data.link}  
                           </Col>
                           <Col
                             md={1}
@@ -181,7 +162,8 @@ const RoadmapEdit = ( props) => {
                         type="text"
                         className={`${style.inputF} ${style.inputE}`}
                         placeholder="Place the resourse link here."
-                        onChange={(e) => setLinks(e.target.value)}
+                        onChange={(e) => handle_link_change(idx,e.target.value)}
+                        value={edit_links[idx]}
                       />
                     </Col>
                     <Col md={1} className="text-center justify-content-center">

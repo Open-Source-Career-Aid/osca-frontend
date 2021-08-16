@@ -14,14 +14,14 @@ const SkillCard = ( props) => {
                 return (
                     <>
                         <div className="skillCard">
-                            <h5 className='py-2'>Installation and setup</h5>
+                            <h5 className='py-2'>{SkillCard.topicName}</h5>
                             <Row className="links ">
                                 {SkillCard.resources.map((link, idx) => {
                                     return (
                                         <>
                                             <Col style={{ maxWidth: '90%', overflow: 'hidden' }} xs={10} sm={11} md={11} lg={11} xl={11}>
                                                 
-                                                <span style={styles.value} >{link.value}</span>
+                                                <span style={styles.value} >{link.link}</span>
                                                 
                                             </Col>
                                             <Col className='copyButtonCol' xs={2} sm={1} md={1} lg={1} xl={1}>
