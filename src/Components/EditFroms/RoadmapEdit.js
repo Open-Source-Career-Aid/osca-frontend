@@ -12,41 +12,74 @@ import AddIcon from "@material-ui/icons/Add";
 import AddBack from "../../Images/ArrowBack.png";
 import ArrowForward from "../../Images/ArrowForward.png";
 import Arrow from "../../Images/Arrow.png";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
-const RoadmapEdit = () => {
+
+
+const RoadmapEdit = ( props) => {
   const [isEditable, setIsEditable] = useState(false);
-  const [links, setLinks] = useState("");
-  const [resourses, setResourses] = useState([
-    {
-      name: "Full HTML Lecture PlayList",
-      links: [
-        "https://cdn.discordapp.com/attachments/852968860768010280/.... ",
-        "https://cdn.discordapp.com/attachments/852968860768010280/.... ",
-      ],
-    },
-  ]);
-
+  
+  console.log(props, 'ter');
+  const links_dict = {};
+  const isEditable_dict = {};
+  for(let i=0;i<props.data.length; i++) {
+    links_dict[i]='';
+    isEditable_dict[i]=0;
+  }
+  const [isEditable_topicname, setIsEditable_topicname] = useState(isEditable_dict);
+  const [edit_links, setLinks] = useState(links_dict);
+  const [roadmap_data, setroadmap_data] = useState(props.data);
   // let resourses =
 
   const handleAdd = (idx) => {
-    const values = resourses[idx];
-    values.links.push(links);
+    let values = roadmap_data;
+    values[idx].resources.push({'link':edit_links[idx]});
     console.log(values);
-    setResourses([values]);
+    let links_value = edit_links;
+    links_value[idx] = "";
+    setLinks({...links_value});
+    setroadmap_data([...values]);
   };
 
   const handleDelete = (idx, i) => {
-    const values = resourses[idx];
-    values.links.splice(i, 1);
-    setResourses([values]);
+    const values = roadmap_data;
+    values[idx].resources.splice(i, 1);
+    setroadmap_data([...values]);
   };
+
+  const handle_link_change = (idx, val) => {
+    let values = edit_links;
+    edit_links[idx] = val;
+    setLinks({...values});
+  }
+
+  const handle_topic_name_change = (idx, val) => {
+    let values = roadmap_data;
+    values[idx].topicName = val;
+    setroadmap_data([...values]);
+  }
+
+  const handle_topicName_edit = (idx) => {
+    isEditable_topicname[idx] =1- isEditable_topicname[idx];
+    console.log(idx)
+    setIsEditable_topicname({...isEditable_topicname});
+  }
+
+
+
+
+
+
+
+
+
 
   return (
     <>
       <Row className={`${style.head}`}>RoadMap</Row>
-      {/* <hr /> */}
+      
 
-      {resourses.map((res, idx) => {
+      {roadmap_data.map((res, idx) => {
         return (
           <>
             {isEditable ? (
@@ -56,25 +89,37 @@ const RoadmapEdit = () => {
             ) : null}
             <Row className={`my-1 ${style.backDrop}`}>
               <Col md={{ span: 9 }} className={style.headLine}>
-                {res.name}
+              {isEditable_topicname[idx] === 1?
+                            
+                            <input 
+                              value={res.topicName}
+                              className={style.inputF}
+                              onChange={e => handle_topic_name_change(idx, e.target.value)}
+                            />
+                          :
+                          <>
+                          {res.topicName}
+                          </>
+                          }
+                
               </Col>
               <Col md={3} className={`text-end`}>
-                {isEditable ? (
+                {isEditable_topicname[idx] ? (
                   <>
-                    <IconButton>
+                    {/* <IconButton>
                       <CheckIcon className={style.Icon} />
-                    </IconButton>
-                    <IconButton onClick={() => setIsEditable(false)}>
-                      <ClearIcon className={style.Icon} />
+                    </IconButton> */}
+                    <IconButton onClick={() => handle_topicName_edit(idx)}>
+                      <CheckIcon className={style.Icon} />
                     </IconButton>
                   </>
                 ) : (
-                  <IconButton onClick={() => setIsEditable(true)}>
+                  <IconButton onClick={() => handle_topicName_edit(idx)}>
                     <EditIcon className={style.Icon} />
                   </IconButton>
                 )}
               </Col>
-              {res.links.map((data, i) => {
+              {res.resources.map((data, i) => {
                 return (
                   <>
                     <Row className="pt-2">
@@ -84,11 +129,8 @@ const RoadmapEdit = () => {
                       <Col md={11} className={style.links}>
                         <Row>
                           <Col md={11}>
-                            <input
-                              type="text"
-                              className={style.inputF}
-                              value={data}
-                            />
+                            
+                          {data.link}  
                           </Col>
                           <Col
                             md={1}
@@ -120,7 +162,8 @@ const RoadmapEdit = () => {
                         type="text"
                         className={`${style.inputF} ${style.inputE}`}
                         placeholder="Place the resourse link here."
-                        onChange={(e) => setLinks(e.target.value)}
+                        onChange={(e) => handle_link_change(idx,e.target.value)}
+                        value={edit_links[idx]}
                       />
                     </Col>
                     <Col md={1} className="text-center justify-content-center">

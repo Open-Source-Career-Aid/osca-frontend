@@ -30,7 +30,7 @@ export const PrerequisitesEdit = ({ prerequisite_data }) => {
     const handleClickPrerequites = () => {
         if (prerequisitesField !== '') {
             let values = [...prerequisites];
-            values.push({ name: prerequisitesField });
+            values.push({ prereqName: prerequisitesField });
             setPrerequisitesField('');
             setPrerequisites([...values]);
         }
@@ -63,7 +63,7 @@ export const PrerequisitesEdit = ({ prerequisite_data }) => {
                             return (
                                 <div className="tags__button">
                                     <div className="tag__name">
-                                        {prerequisite.name}
+                                        {prerequisite.prereqName}
                                     </div>
                                     <div className="delete__btn">
                                         <DeleteIcon onClick={e => handleDeletePrerequisites(e, idx)} style={styles.btn} />

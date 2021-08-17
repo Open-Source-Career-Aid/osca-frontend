@@ -2,10 +2,21 @@ import React, { useState, useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap';
 import SkillCard from './../Skill/SkillCard';
 import './../../Styles/Skill.css';
-import EditButton from '../Buttons/Editbutton';
 import { Link } from "react-router-dom"
 
-const roadmap = {
+function generateRandomColor()
+{
+    // var randomColor = '#'+Math.floor(Math.random()*10777215).toString(16);
+    // return randomColor;
+    let color = "#";
+  for (let i = 0; i < 3; i++)
+    color += ("0" + Math.floor(Math.random() * Math.pow(16, 2) / 2).toString(16)).slice(-2);
+  return color;
+    //random color will be freshly served
+}
+let color_dict = {};
+
+const Roadmap = {
     name: 'HTML',
     tags: [{ name: 'HTML' }, { name: 'HTML' }, { name: 'HTML' }, { name: 'Machine Learning' }, { name: 'CSS' }],
     preReuqisites: [{ name: 'HTML' }, { name: 'HTML' }, { name: 'HTML' }, { name: 'Machine Learning' }, { name: 'CSS' }],
@@ -34,19 +45,44 @@ const roadmap = {
 
 }
 
+const  getList =(skillId) =>{
+    return fetch('http://osca-api.herokuapp.com/form/get-skill/?id=' + '2')
+      .then(data => data.json())
+  }
 
-const Subskill = () => {
+const Subskill = (props) => {
 
-
+    console.log(props);
     const [editMode, setEditMode] = useState(0);
 
     const handleEditMode = () => {
         setEditMode(!editMode);
     }
 
+    const [subskilldata, setSubskilldata] = useState(null);
+
+   
+
+    useEffect(() => {
+        let mounted = true;
+        getList()
+          .then(items => {
+            if(mounted) {
+                // console.log(items, 'mayank', items.skill);
+                setSubskilldata({...items});
+            }
+          })
+        return () => mounted = false;
+      }, [])
+
 
     return (
-        <div className="headingRow">
+        <>
+        {subskilldata === null ?
+            <h4> loading...</h4>
+            :
+            <>
+            <div className="headingRow">
             <Col className="backarrow" xs={12} sm={12} md={1} lg={1} xl={1}>
                 <img style={styles.backButton} src='./../../back.png' />
             </Col>
@@ -55,10 +91,11 @@ const Subskill = () => {
                 <Row style={styles.fullWidth} >
 
                     <Col xs='auto' >
-                        <h2>{roadmap.name}</h2>
+                        <h2>{subskilldata.skill}</h2>
                     </Col>
                     <Col xs='auto' >
-                        <Link to="/htmledit">
+                        {/* <Link to="/htmledit" params={subskilldata}> */}
+                        <Link to={{pathname:"/htmledit", state: {subskilldata }}}>
                             <h6 style={styles.suggestEdit}>Suggest an edit</h6>
                         </Link>
                     </Col>
@@ -70,11 +107,11 @@ const Subskill = () => {
                         </Col>
                     </Row>
                     <Row >
-                        {roadmap.tags.map((tag, idx) => {
+                        {subskilldata.tags.map((tag, idx) => {
                             return (
-
-                                <Col key={idx} className='colorTags' xs='auto'>
-                                    {tag.name}
+                                
+                                <Col key={idx} style={{backgroundColor: generateRandomColor()  }}  className='colorTags' xs='auto'>
+                                    {tag.tagName}
                                 </Col>
                             )
                         })}
@@ -87,11 +124,11 @@ const Subskill = () => {
                         </Col>
                     </Row>
                     <Row  >
-                        {roadmap.preReuqisites.map((preReuqisite, idx) => {
+                        {subskilldata.prerequisites.map((preReuqisite, idx) => {
                             return (
-
+                                
                                 <Col className='skilltags' xs='auto'>
-                                    {preReuqisite.name}
+                                    {preReuqisite.prereqName}
                                 </Col>
                             )
                         })}
@@ -100,10 +137,14 @@ const Subskill = () => {
                 </div>
                 <div style={{ paddingLeft: '.6em' }}>
                     <h3>Roadmap</h3>
-                    <SkillCard editMode={editMode} props={roadmap.resources} />
+                    <SkillCard  props={subskilldata.topics} />
                 </div>
             </Col>
         </div>
+            </>
+        }
+        </>
+        
     );
 
 }

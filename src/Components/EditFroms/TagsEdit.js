@@ -17,7 +17,7 @@ export const TagsEdit = ({ tags_data }) => {
     const initialData = tags_data;
     const [tags, setTags] = useState([...tags_data]);
     const [tagsField, setTagsField] = useState('');
-    console.log(tags)
+    // console.log(tags)
     //handle change of tag name
 
     const handleChangeTagName = (e) => {
@@ -28,7 +28,7 @@ export const TagsEdit = ({ tags_data }) => {
     const handleClickTags = () => {
         if (tagsField !== '') {
             let values = [...tags];
-            values.push({ name: tagsField });
+            values.push({ tagName: tagsField });
             setTagsField('');
             setTags([...values]);
         }
@@ -60,7 +60,7 @@ export const TagsEdit = ({ tags_data }) => {
                             return (
                                 <div className="tags__button">
                                     <div className="tag__name">
-                                        {tag.name}
+                                        {tag.tagName}
                                     </div>
                                     <div className="delete__btn">
                                         <DeleteIcon onClick={e => handleDeleteTags(e, idx)} style={styles.btn} />

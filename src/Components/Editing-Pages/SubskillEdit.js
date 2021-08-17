@@ -10,10 +10,12 @@ import ClearIcon from "@material-ui/icons/Clear";
 import { TagsEdit } from "../EditFroms/TagsEdit";
 import { PrerequisitesEdit } from "../EditFroms/PrerequisitesEdit";
 import RoadmapEdit from "../EditFroms/RoadmapEdit";
+import { useHistory } from "react-router-dom";
 
-const SubskillEdit = () => {
+const SubskillEdit = (props) => {
+  let edit_data = props.location.state.subskilldata;
   const [isEdit, setIsEdit] = useState(false);
-  const [valueEdit, setEditValue] = useState("Hyper-Text Mark");
+  const [valueEdit, setEditValue] = useState(edit_data.skill);
 
   let Tagdata = [
     { name: "HTML" },
@@ -22,11 +24,11 @@ const SubskillEdit = () => {
   ];
 
   let preData = [
-    { name: "HTML" },
+    { name: "HT12ML" },
     { name: "Machine Learning" },
     { name: "HTML" },
   ];
-  console.log(preData);
+  console.log(edit_data);
   return (
     <div className="spacingTop">
       <Row>
@@ -37,7 +39,7 @@ const SubskillEdit = () => {
         </Col>
         <Col md={6} className="inputExtension">
           <Row>
-            <Col md={10}>
+            <Col xs={8}>
               <input
                 type="text"
                 className={!isEdit ? "editLabel" : "editLabel labelEdit"}
@@ -46,7 +48,7 @@ const SubskillEdit = () => {
               />
             </Col>
             <Col
-              md={2}
+              xs={4}
               className={`Extension justify-content-center ${
                 isEdit ? "text-center" : "text-end"
               }`}
@@ -74,17 +76,17 @@ const SubskillEdit = () => {
       </Row>
       <Row>
         <Col md={{ span: 6, offset: 3 }}>
-          <PrerequisitesEdit prerequisite_data={preData} />
+          <PrerequisitesEdit prerequisite_data={edit_data.prerequisites} />
         </Col>
       </Row>
       <Row>
         <Col md={{ span: 6, offset: 3 }}>
-          <TagsEdit tags_data={Tagdata} />
+          <TagsEdit tags_data={edit_data.tags} />
         </Col>
       </Row>
       <Row className="pt-4">
         <Col md={{ span: 6, offset: 3 }}>
-          <RoadmapEdit />
+          <RoadmapEdit data={edit_data.topics}  />
           
         </Col>
         <Col md={2} className="justify-content-end align-bottom"></Col>
