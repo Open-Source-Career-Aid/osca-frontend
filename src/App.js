@@ -45,14 +45,14 @@ function App() {
           <Route path="/RoadmapForm">
             <RoadmapForm />
           </Route>
-          <Route path="/skill">
-            <Skill />
+          <Route path="/skill" component={Skill}>
+            
           </Route>
           <Route path="/Subskill">
             <Subskill  />
           </Route>
-          <Route path="/skilledit">
-            <SkillEdit />
+          <Route path="/skilledit" component={SkillEdit}>
+            
           </Route>
         </Switch>
         <Footer />

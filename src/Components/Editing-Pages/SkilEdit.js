@@ -12,10 +12,11 @@ import { PrerequisitesEdit } from '../EditFroms/PrerequisitesEdit';
 import { SuperSkillEdit } from '../EditFroms/SuperSkillEdit';
 import {Button} from 'react-bootstrap';
 
-const SkillEdit = () => {
-
+const SkillEdit = (props) => {
+    console.log(props, "hey ")
+    let edit_data = props.location.state.skilldata;
     const [isEdit, setIsEdit] = useState(false);
-    const [valueEdit, setEditValue] = useState('Hyper-Text Mark');
+    const [valueEdit, setEditValue] = useState(edit_data.name);
 
     let Tagdata = [{ name: 'HTML' }, { name: 'Machine Learning' }, { name: 'HTML' }];
 
@@ -62,17 +63,17 @@ const SkillEdit = () => {
             </Row>
             <Row>
                 <Col md={{ span: 6, offset: 3 }}>
-                    <PrerequisitesEdit prerequisite_data={preData} />
+                    <PrerequisitesEdit prerequisite_data={edit_data.prerequisites} />
                 </Col>
             </Row>
             <Row>
                 <Col md={{ span: 6, offset: 3 }}>
-                    <TagsEdit tags_data={Tagdata} />
+                    <TagsEdit tags_data={edit_data.tags} />
                 </Col>
             </Row>
             <Row className="pt-4">
                 <Col md={{ span: 6, offset: 3 }}>
-                    <SuperSkillEdit roadmap_topic={preData} Roadmap_title='web'  />
+                    <SuperSkillEdit roadmap_skills={edit_data.sub_skills}  />
                 </Col>
             </Row>
             <Row  xs='auto'  className=" submit_button justify-content-end text-end ">
