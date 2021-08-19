@@ -61,21 +61,21 @@ let edit_array = () => {
 
 }
 
-export const SuperSkillEdit = ({ Roadmap_title, roadmap_topic }) => {
+export const SuperSkillEdit = ( roadmap_topics ) => {
 
 
+    console.log(roadmap_topics, "asdfkjl") ;
 
+    const [superskill, setSuperskill] = useState(roadmap_topics.roadmap_skills);
 
-    const [superskill, setSuperskill] = useState(roadmap_topic);
-
-    // console.log(superskill);
+    console.log(superskill);
     const [superskillField, setSuperskillField] = useState('');
 
     const [state, setstate] = useState({
         removeSuperskill: false
     })
 
-    const [input_feild_skills, set_input_feild_skill] = useState(Array.apply(null, Array(roadmap_topic.length)).map(function (x, i) { return true; }));
+    const [input_feild_skills, set_input_feild_skill] = useState(Array.apply(null, Array(roadmap_topics.length)).map(function (x, i) { return true; }));
 
     //handle change
 
@@ -87,7 +87,7 @@ export const SuperSkillEdit = ({ Roadmap_title, roadmap_topic }) => {
     const handleClickSuperskill = () => {
         if (superskillField !== '') {
             let values = [...superskill];
-            values.push({ name: superskillField, resources: [{}] });
+            values.push({ skill: superskillField, resources: [{}] });
             setSuperskillField('');
             setSuperskill([...values]);
         }
@@ -116,14 +116,14 @@ export const SuperSkillEdit = ({ Roadmap_title, roadmap_topic }) => {
         setstate({ ...state, removeSuperskill: !state.removeSuperskill })
     }
 
-    const [titleField, setTitleField] = useState(Roadmap_title)
+    // const [titleField, setTitleField] = useState(Roadmap_title)
 
-    const handleChangeTitleName = (e) => {
-        let titleValue = [...titleField]
-        setTitleField([...titleValue])
-        setTitleField(e.target.value)
-        titleValue.push({ name: titleField })
-    }
+    // const handleChangeTitleName = (e) => {
+    //     let titleValue = [...titleField]
+    //     setTitleField([...titleValue])
+    //     setTitleField(e.target.value)
+    //     titleValue.push({ name: titleField })
+    // }
 
     // handle change input edit
     const handleChangeSuperSkillsEdit = ( idx) => {
@@ -153,7 +153,7 @@ export const SuperSkillEdit = ({ Roadmap_title, roadmap_topic }) => {
                       
                 <div className="skills__button">
                                         <div className="skills__name">
-                                           {quote.name}
+                                           {quote.skill}
                                            
                                         </div>
                                         {/* <div className='skillsdelete__btn'>
