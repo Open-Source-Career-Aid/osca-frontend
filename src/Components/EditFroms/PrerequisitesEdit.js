@@ -13,8 +13,8 @@ function DeleteIcon(props) {
 }
 
 
-export const PrerequisitesEdit = ({ prerequisite_data }) => {
-
+export const PrerequisitesEdit = ( {prerequisite_data }) => {
+    console.log(prerequisite_data)
     const initialData = prerequisite_data;
     const [prerequisites, setPrerequisites] = useState([...prerequisite_data]);
 
