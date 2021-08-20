@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,300;1,400;1,500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,300;1,400;1,500&display=swap");
 .head {
   font-family: Poppins;
   font-style: normal;
@@ -9,10 +9,11 @@
 }
 
 .backDrop {
-  background: #F5F5F5;
-  border-radius: 18px;
+  background: #f5f5f5;
+  border-radius: 0 18px 18px 18px;
   padding: 20px;
   z-index: 9;
+  margin-bottom: 0.7rem !important;
 }
 
 .headLine {
@@ -23,13 +24,18 @@
   font-size: 14px;
 }
 
+.headLine > input {
+  padding: 0.3rem 0 0.3rem 0.5rem;
+  border-radius: 6px;
+}
+
 .Icon {
   color: black;
   font-size: 18px;
 }
 
 .links {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 4px;
   font-family: Poppins;
   font-size: 15px;
@@ -67,13 +73,7 @@
 }
 
 .hrCSS {
-  /* color: #989898; */
-  border: 1.5px solid #989898;
-}
-
-.hrCSS:hover {
-  /* color: #000000; */
-  border: 1.5px solid #000000;
+  border: 1px solid #000000;
 }
 
 .AddCSS {
@@ -100,4 +100,80 @@
   width: 15px;
   height: 15px;
   transform: translateX(80%);
+}
+
+.submitbtn,
+.submitbtn:hover,
+.submitbtn:focus {
+  background-color: #8750a9;
+  font-weight: 700;
+  margin-top: 2em;
+  border-radius: 2em;
+  border: none;
+  font-size: 1.2em;
+  padding: 0.2rem 1.3rem 0.2rem 1.3rem;
+}
+
+.addbtn,
+.addbtn:focus,
+.addbtn:hover {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 16px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+  flex: 1;
+  color: #000000;
+}
+
+.addelement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.addelement > .hrCSS {
+  width: 100%;
+  flex: 2;
+}
+
+.addtopicbtw {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -1rem;
+}
+
+.addtopicbtw > .divider {
+  width: 95%;
+  border: 1px solid #989898;
+  cursor: pointer;
+}
+
+.addtopicbtw > .add__round {
+  background-image: url("../../Images/Addtopic.svg");
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.addtopicbtw:hover > .divider {
+  border: 1px solid #000000;
+}
+
+.addtopicbtw:hover > .add__round {
+  background-image: url("../../Images/Addtopichover.svg");
 }

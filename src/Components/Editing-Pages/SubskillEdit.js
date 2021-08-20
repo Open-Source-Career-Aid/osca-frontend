@@ -49,9 +49,8 @@ const SubskillEdit = (props) => {
             </Col>
             <Col
               xs={4}
-              className={`Extension justify-content-center ${
-                isEdit ? "text-center" : "text-end"
-              }`}
+              className={`Extension justify-content-center ${isEdit ? "text-center" : "text-end"
+                }`}
             >
               {isEdit ? (
                 <>
@@ -86,8 +85,8 @@ const SubskillEdit = (props) => {
       </Row>
       <Row className="pt-4">
         <Col md={{ span: 6, offset: 3 }}>
-          <RoadmapEdit data={edit_data.topics}  />
-          
+          <RoadmapEdit data={edit_data.topics} />
+
         </Col>
         <Col md={2} className="justify-content-end align-bottom"></Col>
       </Row>
