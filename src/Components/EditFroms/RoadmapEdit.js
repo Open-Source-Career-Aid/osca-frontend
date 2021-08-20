@@ -171,7 +171,7 @@ const RoadmapEdit = (props) => {
             {...provided.dragHandleProps}
           >
             <>
-              <div className={style.addtopicbtw} onClick={handleAddTopicBtw(index)}>
+              <div className={style.addtopicbtw} onClick={() => handleAddTopicBtw(index)}>
                 <hr className={style.divider}></hr>
                 <div className={style.add__round}>
                 </div>

@@ -157,13 +157,23 @@
 .addtopicbtw > .divider {
   width: 95%;
   border: 1px solid #989898;
+  cursor: pointer;
 }
 
 .addtopicbtw > .add__round {
-  margin-left: 19px;
-  width: 5%;
-  background: #989898;
-  border-radius: 18.5px 18.5px 0px 18.5px;
-  transform: rotate(135deg);
-  height: 24.4px;
+  background-image: url("../../Images/Addtopic.svg");
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.addtopicbtw:hover > .divider {
+  border: 1px solid #000000;
+}
+
+.addtopicbtw:hover > .add__round {
+  background-image: url("../../Images/Addtopichover.svg");
 }
