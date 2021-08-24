@@ -5,7 +5,7 @@ import { IconButton } from '@material-ui/core';
 import MyDesktop from "../../MyHelperCompnents/MyDesktop";
 import { makeStyles } from '@material-ui/styles';
 import "../../Styles/Search.css"
-const SearchBar = () => {
+const SearchBar = (props) => {
     const [typed, setTyped] = useState('');
 
     const useStyle = makeStyles({
@@ -18,12 +18,11 @@ const SearchBar = () => {
 
     const url = `http://osca-api.herokuapp.com/form/learn-skill/?searchData=${typed}`;
 
-    console.log(url);
-
     const fetchData = async () => {
         const requestData = await fetch(url);
         const data = requestData.json();
-        console.log(data)
+        // console.log(data)
+        props.handleSearch(data);
         return data;
     };
 
