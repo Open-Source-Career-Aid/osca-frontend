@@ -82,7 +82,7 @@ const Header = (props) => {
                         </div>
                         <div className="col-2"></div>
                         <div className="col-1 header-text">
-                            OSCA
+                            <img src={logo} alt="" />
                         </div>
                     </div>
                     {
