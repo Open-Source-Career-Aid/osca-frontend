@@ -150,4 +150,6 @@ img {
 
 .link__visited {
   text-decoration: underline;
+  text-underline-offset: 24.2px;
+  text-decoration-thickness: 3px;
 }

@@ -36,7 +36,7 @@ const Header = (props) => {
                                         Learn a Skill
                                     </Link>
                                 </div>
-                                <div className={`col-6 text-center justify-content-center ${props.location === "/learnskill" ? "link__visited" : null}`}>
+                                <div className={`col-6 text-center justify-content-center ${props.location === "/track" ? "link__visited" : null}`}>
                                     <Link className="link">
                                         Track Your Progress
                                     </Link>
