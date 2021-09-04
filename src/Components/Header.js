@@ -5,31 +5,10 @@ import MyMobile from "../MyHelperCompnents/MyMobile";
 import "../Styles/Header.css";
 import logo from '../Images/OSCAlogo.png'
 
-const Header = () => {
+const Header = (props) => {
 
     const [scroll, setScroll] = useState(0);
     const [drawerOpen, setDrawerOpen] = useState(false);
-    const [learnskill, setLearnskill] = useState(false)
-    const [trackProgress, setTrackProgress] = useState(false)
-    const [about, setAbout] = useState(false)
-
-    const handleLearnSkill = () => {
-        setLearnskill(true)
-        setTrackProgress(false)
-        setAbout(false)
-    }
-
-    const handleTrackProgress = () => {
-        setLearnskill(false)
-        setTrackProgress(true)
-        setAbout(false)
-    }
-
-    const handleAbout = () => {
-        setLearnskill(false)
-        setTrackProgress(false)
-        setAbout(true)
-    }
 
     useLayoutEffect(() => {
         function UpdateScroll() {
@@ -52,19 +31,19 @@ const Header = () => {
                         <hr className="breaker"></hr>
                         <div className="col-6 header-text">
                             <div className="row">
-                                <div className={`col-4 justify-content-center header-text ${learnskill ? "link__visited" : null}`} >
-                                    <Link to="/learnskill" className="link" onClick={handleLearnSkill}>
+                                <div className={`col-4 justify-content-center header-text ${props.location === "/learnskill" ? "link__visited" : null}`} >
+                                    <Link to="/learnskill" className="link">
                                         Learn a Skill
                                     </Link>
                                 </div>
-                                <div className={`col-6 text-center justify-content-center ${trackProgress ? "link__visited" : null}`}>
-                                    <Link className="link" onClick={handleTrackProgress}>
+                                <div className={`col-6 text-center justify-content-center ${props.location === "/learnskill" ? "link__visited" : null}`}>
+                                    <Link className="link">
                                         Track Your Progress
                                     </Link>
                                 </div>
-                                <div className={`col-1 text-end ${about ? "link__visited" : null}`}>
+                                <div className={`col-1 text-end ${props.location === "/aboutus" ? "link__visited" : null}`}>
                                     &nbsp;
-                                    <Link className="link" onClick={handleAbout}>
+                                    <Link to="/aboutus" className="link">
                                         About
                                     </Link>
                                 </div>
