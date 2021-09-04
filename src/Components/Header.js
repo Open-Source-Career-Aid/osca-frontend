@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import MyDesktop from "../MyHelperCompnents/MyDesktop";
 import MyMobile from "../MyHelperCompnents/MyMobile";
 import "../Styles/Header.css";
+import logo from '../Images/OSCAlogo.png'
 
-const Header = () => {
+const Header = (props) => {
 
     const [scroll, setScroll] = useState(0);
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -25,22 +26,24 @@ const Header = () => {
                 >
                     <div className="row">
                         <div className="col-2 line">
+                            <img src={logo} alt="" />
                         </div>
+                        <hr className="breaker"></hr>
                         <div className="col-6 header-text">
-                            <div className="col-3 justify-content-center header-text">
-                                <Link to="/learnskill" className="link">
-                                    Learn a Skill
-                                </Link>
-                            </div>
                             <div className="row">
-                                <div className="col-9 text-center justify-content-center">
+                                <div className={`col-4 justify-content-center header-text ${props.location === "/learnskill" ? "link__visited" : null}`} >
+                                    <Link to="/learnskill" className="link">
+                                        Learn a Skill
+                                    </Link>
+                                </div>
+                                <div className={`col-6 text-center justify-content-center ${props.location === "/track" ? "link__visited" : null}`}>
                                     <Link className="link">
                                         Track Your Progress
                                     </Link>
                                 </div>
-                                <div className="col-1 text-end">
+                                <div className={`col-1 text-end ${props.location === "/aboutus" ? "link__visited" : null}`}>
                                     &nbsp;
-                                    <Link className="link">
+                                    <Link to="/aboutus" className="link">
                                         About
                                     </Link>
                                 </div>
@@ -79,7 +82,7 @@ const Header = () => {
                         </div>
                         <div className="col-2"></div>
                         <div className="col-1 header-text">
-                            OSCA
+                            <img src={logo} alt="" />
                         </div>
                     </div>
                     {

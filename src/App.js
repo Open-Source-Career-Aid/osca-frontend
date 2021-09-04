@@ -18,41 +18,51 @@ function App() {
   return (
     <>
       <Router>
-        <Header />
         <Switch>
           <Route exact path="/">
+            <Header />
             <Home />
             <LowerBody />
           </Route>
           <Route path="/learnskill">
+            <Header location="/learnskill" />
             <LearnSkill />
           </Route>
           <Route path="/error">
+            <Header />
             <ErrorPage />
           </Route>
           <Route path="/aboutus">
+            <Header location="/aboutus" />
             <About />
           </Route>
           <Route path="/webD">
+            <Header />
             <SuperSkill />
           </Route>
           <Route path="/html">
+            <Header />
             <Subskill />
           </Route>
-          <Route path="/htmledit" component={SubskillEdit}>
-           
+          <Route path="/htmledit">
+            <Header />
+            <SubskillEdit />
           </Route>
           <Route path="/RoadmapForm">
+            <Header />
             <RoadmapForm />
           </Route>
-          <Route path="/skill" component={Skill}>
-            
+          <Route path="/skill">
+            <Header />
+            <Skill />
           </Route>
           <Route path="/Subskill">
-            <Subskill  />
+            <Header />
+            <Subskill />
           </Route>
-          <Route path="/skilledit" component={SkillEdit}>
-            
+          <Route path="/skilledit">
+            <Header />
+            <SkillEdit />
           </Route>
         </Switch>
         <Footer />
