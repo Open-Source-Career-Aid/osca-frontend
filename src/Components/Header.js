@@ -3,11 +3,33 @@ import { Link } from 'react-router-dom';
 import MyDesktop from "../MyHelperCompnents/MyDesktop";
 import MyMobile from "../MyHelperCompnents/MyMobile";
 import "../Styles/Header.css";
+import logo from '../Images/OSCAlogo.png'
 
 const Header = () => {
 
     const [scroll, setScroll] = useState(0);
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const [learnskill, setLearnskill] = useState(false)
+    const [trackProgress, setTrackProgress] = useState(false)
+    const [about, setAbout] = useState(false)
+
+    const handleLearnSkill = () => {
+        setLearnskill(true)
+        setTrackProgress(false)
+        setAbout(false)
+    }
+
+    const handleTrackProgress = () => {
+        setLearnskill(false)
+        setTrackProgress(true)
+        setAbout(false)
+    }
+
+    const handleAbout = () => {
+        setLearnskill(false)
+        setTrackProgress(false)
+        setAbout(true)
+    }
 
     useLayoutEffect(() => {
         function UpdateScroll() {
@@ -25,22 +47,24 @@ const Header = () => {
                 >
                     <div className="row">
                         <div className="col-2 line">
+                            <img src={logo} alt="" />
                         </div>
+                        <hr className="breaker"></hr>
                         <div className="col-6 header-text">
-                            <div className="col-3 justify-content-center header-text">
-                                <Link to="/learnskill" className="link">
-                                    Learn a Skill
-                                </Link>
-                            </div>
                             <div className="row">
-                                <div className="col-9 text-center justify-content-center">
-                                    <Link className="link">
+                                <div className={`col-4 justify-content-center header-text ${learnskill ? "link__visited" : null}`} >
+                                    <Link to="/learnskill" className="link" onClick={handleLearnSkill}>
+                                        Learn a Skill
+                                    </Link>
+                                </div>
+                                <div className={`col-6 text-center justify-content-center ${trackProgress ? "link__visited" : null}`}>
+                                    <Link className="link" onClick={handleTrackProgress}>
                                         Track Your Progress
                                     </Link>
                                 </div>
-                                <div className="col-1 text-end">
+                                <div className={`col-1 text-end ${about ? "link__visited" : null}`}>
                                     &nbsp;
-                                    <Link className="link">
+                                    <Link className="link" onClick={handleAbout}>
                                         About
                                     </Link>
                                 </div>
