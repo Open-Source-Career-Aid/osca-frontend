@@ -34,10 +34,10 @@
     font-size: 14px;
     line-height: 27px;
     display: flex;
-    align-items: center;
+    align-items: flex-start !important;
     text-align: right;
     color: #42D651;
-    margin-top: 15px;
+    /* margin-top: 15px; */
 }
 
 .skill {
@@ -173,31 +173,40 @@
     padding-right: 25px;
 }
 
+.trackIcon {
+    display: none;
+}
+
 @media only screen and (max-width: 768px) {
-    .mobile-content {
+    .cardFooter {
         font-size: 11px !important;
     }
-    .mobile-subskill {
-        font-size: 11px !important;
-        padding-left: 20px;
+    .skillCard {
+        width: 90% !important;
+        padding: 16px !important;
+        /* margin: 1rem 5% !important; */
     }
-    .mobile-font {
-        font-size: 10px;
-    }
-    .mobile-add {
-        font-size: 11px !important;
-        padding-top: 6px;
-    }
-    .mobile-card {
-        padding-left: 10px;
-    }
-    .sub-txt {
-        color: #586060;
+    .cardHeader>h1 {
         font-family: Poppins;
         font-style: normal;
         font-weight: 600;
-        font-size: 12px !important;
-        padding-left: 10px;
+        font-size: 25px !important;
+        line-height: normal !important;
+        /* identical to box height */
+        display: flex;
+        align-items: center;
+        color: #586060;
+    }
+    .cardBody {
+        font-size: 14px !important;
+        line-height: normal !important;
+        margin: 8px 0px !important;
+    }
+    .track {
+        display: none;
+    }
+    .trackIcon {
+        display: initial !important;
     }
 }
 
@@ -244,4 +253,87 @@
 .style-txt {
     padding-left: 20px;
     color: #999999;
+}
+
+.skillCard {
+    background-color: #F5F5F5;
+    width: 58%;
+    margin: 1rem 0 !important;
+    /* margin: 1rem 21%; */
+    display: flex;
+    flex-direction: column;
+}
+
+.cardHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center !important;
+    justify-content: space-between;
+}
+
+.cardHeader>h1 {
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 54px;
+    /* identical to box height */
+    display: flex;
+    align-items: flex-start;
+    color: #586060;
+}
+
+h1>span {
+    margin-left: 20px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 13px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 9px;
+    padding: 2px 5px;
+}
+
+.cardFooter {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    color: #586060;
+}
+
+.cardFooter>span {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px !important;
+    line-height: 24px;
+    display: flex;
+    border-radius: 9px;
+    padding: 2px 5px;
+    margin-left: 10px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.cardBody {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 25px;
+    color: #989898;
+    margin: 15px 30px;
 }

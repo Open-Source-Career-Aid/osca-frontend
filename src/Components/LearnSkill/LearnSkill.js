@@ -4,8 +4,8 @@ import "../../Styles/Learn.css";
 import MyMobile from "../../MyHelperCompnents/MyMobile";
 import MyDesktop from "../../MyHelperCompnents/MyDesktop";
 import SearchBar from "../SearchBar/SearchBar";
-import { Link } from "react-router-dom";
 import { useState } from "react";
+import { AiOutlineClockCircle } from "react-icons/ai";
 
 const LearnSkill = () => {
   const [skills, setSkills] = useState([]);
@@ -31,7 +31,7 @@ const LearnSkill = () => {
         setSkills([]);
       });
   };
-  
+
   useEffect(() => {
     const fetchData = async () => {
       const requestData = await fetch(
@@ -43,6 +43,7 @@ const LearnSkill = () => {
     };
     fetchData();
   }, []);
+  console.log(skills);
 
   return (
     <>
@@ -70,124 +71,74 @@ const LearnSkill = () => {
             <Container className="learn-txt">Skillset</Container>
           </Row>
         </MyMobile>
+      </Container>
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignContent: "center",
+          alignItems: "center",
+        }}
+      >
         {skills.map((skill, idx) => {
           return (
-            <Row className="my-5 py-5">
-              <Col md={{ span: 8, offset: 2 }}>
-                <div className="card-css">
-                  <Row className="pt-2">
-                    <MyDesktop>
-                      <Col
-                        lg={{ span: 6, offset: 1 }}
-                        md={{ span: 6, offset: 1 }}
-                      >
-                        <div className="card-heading">
-                          <Link className="linkTo" to="/webD">
-                            {skill.name}
-                          </Link>
-                        </div>
-                      </Col>
-                      <Col md={1} lg={1} className="translate-css">
-                        <div
-                          className={
-                            skill.skill === "SuperSkill"
-                              ? "skill text-center"
-                              : "skillRed text-center justify-content-center"
-                          }
-                        >
-                          {skill.skill}
-                        </div>
-                      </Col>
-                      <Col
-                        md={{ span: 3, offset: 1 }}
-                        lg={{ span: 3, offset: 1 }}
-                        className="text-end"
-                      >
-                        <div className="track">Track Your Progress</div>
-                      </Col>
-                    </MyDesktop>
-                    <MyMobile>
-                      <Col xs={{ span: 7 }} sm={{ span: 7 }}>
-                        <span>
-                          <div className="card-heading mobile-card">
-                            <Link className="linkTo">{skill.name}</Link>
-                          </div>
-                        </span>
-                      </Col>
-                      <Col
-                        xs={2}
-                        className="justify-content-start translate-css text-center"
-                      >
-                        <div
-                          className={
-                            skill.skill === "SuperSkill"
-                              ? "skill text-center"
-                              : "skillRed text-center justify-content-center"
-                          }
-                        >
-                          {skill.skill}
-                        </div>
-                      </Col>
-                      <Col xs={3} className="text-end icon-time">
-                        <i class="fa fa-clock-o"></i>
-                      </Col>
-                    </MyMobile>
-                  </Row>
-                  <Row>
-                    <Col md={{ span: 10, offset: 1 }}>
-                      <div className="sub-txt">
-                        Prerequisite:
-                        <span className="req-txt">
-                          {skill.prerequisite.map((req, idx) => {
-                            return <span>{` ${req.value} |`}</span>;
-                          })}
-                        </span>
-                      </div>
-                    </Col>
-                  </Row>
-                  <Row className="py-4">
-                    <Col
-                      xl={{ span: 1, offset: 1 }}
-                      lg={{ span: 2, offset: 1 }}
-                      md={{ span: 2, offset: 1 }}
-                      xs={{ span: 3 }}
-                    >
-                      <div className="subSkill mobile-subskill">Subskills:</div>
-                    </Col>
-                    {skill.tags.map((det, idx) => {
-                      return (
-                        <>
-                          <Col
-                            md={det.value.length >= 10 ? 3 : 2}
-                            xl={det.value.length >= 10 ? 3 : 2}
-                            xs={12}
-                            className="justify-content-center text-center"
-                          >
-                            <div
-                              className={
-                                idx % 3 === 0
-                                  ? "box-skill-blue mobile-font"
-                                  : idx % 2 === 0
-                                  ? "box-skill-blueD mobile-font"
-                                  : "box-skill-red mobile-font"
-                              }
-                            >
-                              {det.value}
-                            </div>
-                          </Col>
-                        </>
-                      );
-                    })}
-                    <Col md={2} xs={{ span: 3 }}>
-                      <div className="addition mobile-add">+7 more</div>
-                    </Col>
-                  </Row>
+            <div className="skillCard">
+              <div className="cardHeader">
+                <h1>
+                  {skill.name}
+                  <span
+                    style={{
+                      backgroundColor: `${
+                        skill.skill === "SubSkill" ? "#E85050" : "#28B5E1"
+                      }`,
+                    }}
+                  >
+                    {skill.skill}
+                  </span>
+                </h1>
+                <div className="trackIcon">
+                  <AiOutlineClockCircle
+                    style={{ fill: "#36CF45", width: 24, height: 24 }}
+                  />
                 </div>
-              </Col>
-            </Row>
+                <div className="track">Track Your progress</div>
+              </div>
+              <div className="cardBody">
+                This contains a detailed guide to how to be a full stack web
+                developer in most efficient way. It includes all the required
+                resources and a work plan which is easy to follow.
+                isjdfiasdjfisjfJI jiasdf Ij ijdfi ajfl. kjsadifj Great!
+              </div>
+              <div className="cardFooter">
+                Subskills:
+                {skill.tags.map((data, index) => {
+                  return (
+                    <span
+                      style={{
+                        backgroundColor: `${
+                          index % 3 === 0
+                            ? "#2C91B0"
+                            : index % 2 === 0
+                            ? "#4248D2"
+                            : "#D74646"
+                        }`,
+                      }}
+                      key={index}
+                    >
+                      {data.value}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
           );
         })}
-      </Container>
+      </div>
+      <MyMobile>
+        <div style={{ marginBottom: 64, display: "" }}></div>
+      </MyMobile>
     </>
   );
 };
