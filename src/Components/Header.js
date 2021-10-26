@@ -24,44 +24,46 @@ const Header = (props) => {
                 <div
                     className={scroll < 30 ? "header" : "header header-s"}
                 >
-                    <div className="row">
+                    <div className="row container-fluid">
                         <div className="col-2 line">
                             <img src={logo} alt="" />
+                            <span>OSCA</span>
                         </div>
                         <hr className="breaker"></hr>
-                        <div className="col-6 header-text">
-                            <div className="row">
-                                <div className={`col-4 justify-content-center header-text ${props.location === "/learnskill" ? "link__visited" : null}`} >
-                                    <Link to="/learnskill" className="link">
-                                        Learn a Skill
-                                    </Link>
-                                </div>
-                                <div className={`col-6 text-center justify-content-center ${props.location === "/track" ? "link__visited" : null}`}>
-                                    <Link className="link">
-                                        Track Your Progress
-                                    </Link>
-                                </div>
-                                <div className={`col-1 text-end ${props.location === "/aboutus" ? "link__visited" : null}`}>
-                                    &nbsp;
-                                    <Link to="/aboutus" className="link">
-                                        About
-                                    </Link>
+                        <div className="header-content">
+                            <div className="header-text">
+                                <div className="row">
+                                    <div className={`col-4 justify-content-center header-text ${props.location === "/learnskill" ? "link__visited" : null}`} >
+                                        <Link to="/learnskill" className="link">
+                                            Learn a Skill
+                                        </Link>
+                                    </div>
+                                    <div className={`col-6 text-center justify-content-center ${props.location === "/track" ? "link__visited" : null}`}>
+                                        <Link className="link">
+                                            Track Your Progress
+                                        </Link>
+                                    </div>
+                                    <div className={`col-1 text-end ${props.location === "/aboutus" ? "link__visited" : null}`}>
+                                        &nbsp;
+                                        <Link to="/aboutus" className="link">
+                                            About
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-1"></div>
-                        <div className="col-3 header-text">
-                            <div className="row">
-                                <div className="col-3 header-text">
-                                    <Link className="link">
-                                        Login
-                                    </Link>
-                                </div>
-                                <div className="col-1"></div>
-                                <div className="col-6 justify-content-center header-text text-center signup">
-                                    <Link className="link-s text-center">
-                                        Sign Up
-                                    </Link>
+                            <div className="header-text">
+                                <div className="row">
+                                    <div className="col-3 header-text">
+                                        <Link className="link">
+                                            Login
+                                        </Link>
+                                    </div>
+                                    <div className="col-1"></div>
+                                    <div className="col-6 justify-content-center header-text text-center signup">
+                                        <Link className="link-s text-center">
+                                            Sign Up
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>

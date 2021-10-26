@@ -2,6 +2,7 @@ import React, { useState, useLayoutEffect } from "react";
 import { Row, Col } from "react-bootstrap";
 import Button from "@material-ui/core/Button";
 import { LowerBody } from "./LowerBody";
+import { Link } from "react-router-dom"
 import "../../Styles/Body.css";
 
 const Home = () => {
@@ -85,16 +86,18 @@ const Home = () => {
             </Col>
             <Col xs={12} sm={12} md={6} lg={6} xl={6} className="buttonCol">
               <Row>
-                <Button
-                  style={styles.button1}
-                  size="small"
-                  type="submit"
-                  variant="contained"
-                  color="primary"
-                  className="button1"
-                >
-                  Learn A Skill{" "}
-                </Button>
+                <Link to="/learnskill">
+                  <Button
+                    style={styles.button1}
+                    size="small"
+                    type="submit"
+                    variant="contained"
+                    color="primary"
+                    className="button1"
+                  >
+                    Learn A Skill{" "}
+                  </Button>
+                </Link>
               </Row>
               <Row style={{ paddingTop: "10%" }}>
                 <Button
@@ -124,15 +127,19 @@ const Home = () => {
 
 const styles = {
   gridRows: {
-    paddingTop: "7%",
+    paddingTop: "122px",
     paddingRight: "8%",
     paddingLeft: "8%",
-    paddingBottom: "6%",
+    paddingBottom: "90px",
+    height: "50vh"
   },
   gridCol: {
-    paddingTop: "10vh",
     paddingLeft: "8vw",
     paddingRight: "8vw",
+    height: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
   },
 
   whiteBackground: {

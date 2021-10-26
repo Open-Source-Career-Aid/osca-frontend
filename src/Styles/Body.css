@@ -24,6 +24,7 @@
   line-height: 1.7em;
   display: flex;
   align-items: center;
+  margin-bottom: 0.5rem;
 }
 
 .upperBody h2 {
@@ -31,6 +32,15 @@
   font-weight: 600;
   font-size: 5vh;
   line-height: 1.5em;
+}
+
+.row > a {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.row > a > button {
+  width: 100%;
 }
 
 @media screen and (max-width: 4400px) {
