@@ -5,6 +5,8 @@ import MyMobile from "../../MyHelperCompnents/MyMobile";
 import MyDesktop from "../../MyHelperCompnents/MyDesktop";
 import SearchBar from "../SearchBar/SearchBar";
 import { useState } from "react";
+import { useLoading } from "../../hooks/useLoading"
+import { Loader } from '../Loader/Loader';
 import { AiOutlineClockCircle } from "react-icons/ai";
 
 const LearnSkill = () => {
@@ -45,7 +47,11 @@ const LearnSkill = () => {
   }, []);
   console.log(skills);
 
-  return (
+  const { loading } = useLoading("http://osca-api.herokuapp.com/form/learn-skill/?searchData=");
+
+  return loading ? (
+    <Loader message="Loading! please wait...." />
+  ) : (
     <>
       <Container className="SpacingTop">
         <SearchBar handleSearch={handleSearch} />
@@ -80,6 +86,7 @@ const LearnSkill = () => {
           justifyContent: "center",
           alignContent: "center",
           alignItems: "center",
+          minHeight: "66.5vh"
         }}
       >
         {skills.map((skill, idx) => {
@@ -90,9 +97,8 @@ const LearnSkill = () => {
                   {skill.name}
                   <span
                     style={{
-                      backgroundColor: `${
-                        skill.skill === "SubSkill" ? "#E85050" : "#28B5E1"
-                      }`,
+                      backgroundColor: `${skill.skill === "SubSkill" ? "#E85050" : "#28B5E1"
+                        }`,
                     }}
                   >
                     {skill.skill}
@@ -117,13 +123,12 @@ const LearnSkill = () => {
                   return (
                     <span
                       style={{
-                        backgroundColor: `${
-                          index % 3 === 0
-                            ? "#2C91B0"
-                            : index % 2 === 0
+                        backgroundColor: `${index % 3 === 0
+                          ? "#2C91B0"
+                          : index % 2 === 0
                             ? "#4248D2"
                             : "#D74646"
-                        }`,
+                          }`,
                       }}
                       key={index}
                     >
