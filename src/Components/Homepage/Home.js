@@ -7,40 +7,7 @@ import "../../Styles/Body.css";
 const Home = () => {
   const [scroll, setScroll] = useState(0);
 
-  useLayoutEffect(() => {
-    function UpdateScroll() {
-      setScroll(window.scrollY);
-    }
-    window.addEventListener("scroll", UpdateScroll);
-    UpdateScroll();
-  }, []);
-
-  const scrollToBottom = () => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: "smooth",
-    });
-  };
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
-  window.addEventListener("scroll", () => {
-    let windowwidth = document.documentElement.clientWidth;
-    let height = window.pageYOffset;
-    let topmargin =
-      -9 + (height * 0.063) / 2 + ((windowwidth - 2000) * 0.063) / 7 + "rem";
-    document.querySelector(".rectangle").style.top = topmargin;
-  });
-
-  window.addEventListener("scroll", () => {
-    let height = window.pageYOffset;
-    let circlemargin = 0.3 + (height * 0.063) / 33 + "rem";
-    document.querySelector(".circle").style.top = circlemargin;
-  });
+  
 
   return (
     <>
@@ -114,7 +81,7 @@ const Home = () => {
           </Row>
           <div
             className="rectangle"
-            onClick={scroll < 415 ? scrollToBottom : scrollToTop}
+            // onClick={scroll < 415 ? scrollToBottom : scrollToTop}
           >
             <div className="circle"></div>
           </div>

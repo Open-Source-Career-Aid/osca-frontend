@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import SkillCard from './SkillCard';
 import './../../Styles/Skill.css';
 import EditButton from './../Buttons/Editbutton';
-
+import { useParams,useHistory } from "react-router-dom";
 import Modal from 'react-bootstrap/Modal'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
@@ -17,63 +17,6 @@ import '../../Styles/EditForms/SuperSkillEdit.css'
 import { PrerequisitesEdit } from '../EditFroms/PrerequisitesEdit';
 import { SuperSkillEdit } from '../EditFroms/SuperSkillEdit';
 
-const roadmap = {
-    name: 'Web Devlopment',
-    tags: [{ name: 'HTML' }, { name: 'HTML' }, { name: 'HTML' }, { name: 'Machine Learning' }, { name: 'CSS' }],
-    preReuqisites: [{ name: 'HTML' }, { name: 'HTML' }, { name: 'HTML' }, { name: 'Machine Learning' }, { name: 'CSS' }],
-    skills: [
-        {
-            name: 'HTML',
-            resources: [
-                {
-                    topicName: 'Instalation and Setup',
-                    links: [
-                        'https://cdn.discordapp.com/attachments/852968860768010280/.... ',
-                        'https://cdn.discordapp.com/attachments/852968860768010280/.... ',
-                        'https://cdn.discordapp.com/attachments/852968860768010280/.... ',
-                        'https://cdn.discordapp.com/attachments/852968860768010280/.... '
-                    ]
-                },
-                {
-                    name: 'Attributes',
-                    links: [
-                        'https://cdn.discordapp.com/attachments/852968860768010280/.... ',
-                        'https://cdn.discordapp.com/attachments/852968860768010280/.... ',
-                        'https://cdn.discordapp.com/attachments/852968860768010280/.... ',
-                        'https://cdn.discordapp.com/attachments/852968860768010280/.... '
-                    ]
-                }
-            ]
-
-
-        },
-        {
-            name: 'CSS',
-            resources: [
-                {
-                    name: 'Instalation and Setup',
-                    links: [
-                        'https://cdn.discordapp.com/attachments/852968860768010280/.... ',
-                        'https://cdn.discordapp.com/attachments/852968860768010280/.... ',
-                        'https://cdn.discordapp.com/attachments/852968860768010280/.... ',
-                        'https://cdn.discordapp.com/attachments/852968860768010280/.... '
-                    ]
-                },
-                {
-                    name: 'Attributes',
-                    links: [
-                        'https://cdn.discordapp.com/attachments/852968860768010280/.... ',
-                        'https://cdn.discordapp.com/attachments/852968860768010280/.... ',
-                        'https://cdn.discordapp.com/attachments/852968860768010280/.... ',
-                        'https://cdn.discordapp.com/attachments/852968860768010280/.... '
-                    ]
-                }
-            ]
-
-
-        }
-    ]
-}
 
 
 
@@ -93,33 +36,35 @@ let srcdict = {};
 let opendict = {};
 
 let i = 0;
-for (i = 0; i <= roadmap.skills.length; i++) {
-    srcdict[i] = leftsrc;
-    opendict[i] = false;
-}
+
 
 const  getList =(skillId) =>{
-    return fetch('http://osca-api.herokuapp.com/form/get-super-skill/?id=' + '1')
+    return fetch('http://osca-api.herokuapp.com/form/get-super-skill/?id=' + skillId)
       .then(data => data.json())
   }
 
 
 const Skill = () => {
-
+    let { Id } = useParams();
+    let history = useHistory();
     const [open, setOpen] = useState(opendict);
     const [src, setSrc] = useState(srcdict);
     const [skilldata, setskilldata] = useState(null);
 
     useEffect(() => {
         let mounted = true;
-        getList()
+        getList(Id)
           .then(items => {
             if(mounted) {
-                console.log(items, 'mayank');
+                for (i = 0; i <= items.sub_skills.length; i++) {
+                    srcdict[i] = leftsrc;
+                    opendict[i] = false;
+                }
                 setskilldata({...items});
-
+                
             }
           })
+          
         return () => mounted = false;
       }, [])
 
@@ -172,7 +117,7 @@ const Skill = () => {
         return (
             <div className="headingRow">
                 <Col className="backarrow" xs={12} sm={12} md={1} lg={1} xl={1}>
-                    <img style={styles.backButton} src='./../../back.png' />
+                    <img onClick={() => history.goBack()} style={styles.backButton} src='./../../back.png' />
                 </Col>
                 <Col xs={12} sm={12} md={11} lg={11} xl={11}>
 

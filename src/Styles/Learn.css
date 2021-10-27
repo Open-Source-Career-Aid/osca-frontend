@@ -257,9 +257,11 @@
 
 .skillCard {
     background-color: #F5F5F5;
-    width: 58%;
+     width: 60vw;
     margin: 1rem 0 !important;
-    /* margin: 1rem 21%; */
+    border-radius: 18px;
+    padding: 3vh 6vh 3vh;
+    
     display: flex;
     flex-direction: column;
 }

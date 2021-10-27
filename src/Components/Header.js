@@ -26,7 +26,7 @@ const Header = (props) => {
                 >
                     <div className="row container-fluid">
                         <div className="col-2 line">
-                            <img src={logo} alt="" />
+                            <img className="oscalogo" src={logo} alt="" />
                             <span>OSCA</span>
                         </div>
                         <hr className="breaker"></hr>

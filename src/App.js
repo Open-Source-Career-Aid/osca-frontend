@@ -36,29 +36,25 @@ function App() {
             <Header location="/aboutus" />
             <About />
           </Route>
-          <Route path="/webD">
-            <Header />
-            <SuperSkill />
+          <Route path="/learnskill">
+            <Header location="/learnskill" />
+            <LearnSkill />
           </Route>
-          <Route path="/html">
+          <Route path="/error">
+            <Header />
+            <ErrorPage />
+          </Route>
+          <Route path={`/skill/:Id`}>
+            <Header />
+            <Skill />
+          </Route>
+          <Route path={`/subskill/:Id`}>
             <Header />
             <Subskill />
-          </Route>
-          <Route path="/htmledit">
-            <Header />
-            <SubskillEdit />
           </Route>
           <Route path="/RoadmapForm">
             <Header />
             <RoadmapForm />
-          </Route>
-          <Route path="/skill">
-            <Header />
-            <Skill />
-          </Route>
-          <Route path="/Subskill">
-            <Header />
-            <Subskill />
           </Route>
           <Route path="/skilledit">
             <Header />

@@ -3,6 +3,7 @@ import { Row, Col } from 'react-bootstrap';
 import SkillCard from './../Skill/SkillCard';
 import './../../Styles/Skill.css';
 import { Link } from "react-router-dom"
+import { useParams,useHistory } from "react-router-dom";
 
 function generateRandomColor()
 {
@@ -16,43 +17,16 @@ function generateRandomColor()
 }
 let color_dict = {};
 
-const Roadmap = {
-    name: 'HTML',
-    tags: [{ name: 'HTML' }, { name: 'HTML' }, { name: 'HTML' }, { name: 'Machine Learning' }, { name: 'CSS' }],
-    preReuqisites: [{ name: 'HTML' }, { name: 'HTML' }, { name: 'HTML' }, { name: 'Machine Learning' }, { name: 'CSS' }],
-
-    resources: [
-        {
-            name: 'Instalation and Setup',
-            links: [
-                'https://cdn.discordapp.com/attachments/852968860768010280/.... ',
-                'https://cdn.discordapp.com/attachments/852968860768010280/.... ',
-                'https://cdn.discordapp.com/attachments/852968860768010280/.... ',
-                'https://cdn.discordapp.com/attachments/852968860768010280/.... '
-            ]
-        },
-        {
-            name: 'Attributes',
-            links: [
-                'https://cdn.discordapp.com/attachments/852968860768010280/.... ',
-                'https://cdn.discordapp.com/attachments/852968860768010280/.... ',
-                'https://cdn.discordapp.com/attachments/852968860768010280/.... ',
-                'https://cdn.discordapp.com/attachments/852968860768010280/.... '
-            ]
-        }
-    ]
-
-
-}
 
 const  getList =(skillId) =>{
-    return fetch('http://osca-api.herokuapp.com/form/get-skill/?id=' + '2')
+    return fetch('http://osca-api.herokuapp.com/form/get-skill/?id=' + skillId)
       .then(data => data.json())
   }
 
 const Subskill = (props) => {
-
-    console.log(props);
+    let { Id } = useParams();
+    let history = useHistory();
+   
     const [editMode, setEditMode] = useState(0);
 
     const handleEditMode = () => {
@@ -65,7 +39,7 @@ const Subskill = (props) => {
 
     useEffect(() => {
         let mounted = true;
-        getList()
+        getList(Id)
           .then(items => {
             if(mounted) {
                 // console.log(items, 'mayank', items.skill);
@@ -84,7 +58,8 @@ const Subskill = (props) => {
             <>
             <div className="headingRow">
             <Col className="backarrow" xs={12} sm={12} md={1} lg={1} xl={1}>
-                <img style={styles.backButton} src='./../../back.png' />
+                
+                <img onClick={() => history.goBack()} style={styles.backButton} src='./../back.png' />
             </Col>
             <Col xs={12} sm={12} md={11} lg={11} xl={11}>
 
@@ -135,7 +110,7 @@ const Subskill = (props) => {
 
                     </Row>
                 </div>
-                <div style={{ paddingLeft: '.6em' }}>
+                <div style={{ paddingLeft: '.6em' , ...styles.fullWidth}} >
                     <h3>Roadmap</h3>
                     <SkillCard  props={subskilldata.topics} />
                 </div>

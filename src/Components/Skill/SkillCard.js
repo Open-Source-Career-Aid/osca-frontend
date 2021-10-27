@@ -13,7 +13,7 @@ const SkillCard = ( props) => {
             {props.map((SkillCard, idx) => {
                 return (
                     <>
-                        <div className="skillCard">
+                        <div className="skillCardres">
                             <h5 className='py-2'>{SkillCard.topicName}</h5>
                             <Row className="links ">
                                 {SkillCard.resources.map((link, idx) => {
@@ -27,7 +27,7 @@ const SkillCard = ( props) => {
                                             <Col className='copyButtonCol' xs={2} sm={1} md={1} lg={1} xl={1}>
                                                 <Button size="sm" style={styles.copyButton} onClick={() => { navigator.clipboard.writeText(link.link) }}>
                                                     <a>
-                                                        <img style={styles.copyButtonIcon} src="./copy.png" />
+                                                        <img style={styles.copyButtonIcon} src="../copy.png" />
                                                     </a>
                                                 </Button>
                                             </Col>
