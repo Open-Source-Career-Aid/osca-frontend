@@ -8,7 +8,6 @@ import RoadmapForm from './Components/Form/Form';
 import { LowerBody } from './Components/Homepage/LowerBody';
 import LearnSkill from './Components/LearnSkill/LearnSkill';
 import { About } from './Components/About/About'
-import SuperSkill from './Components/SuperSkill/SuperSkill';
 import Subskill from './Components/Subskill/Subskill';
 import Skill from './Components/Skill/Skill';
 import SubskillEdit from './Components/Editing-Pages/SubskillEdit';
