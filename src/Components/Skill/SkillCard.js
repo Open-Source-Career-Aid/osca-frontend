@@ -2,9 +2,10 @@ import React from 'react'
 import { Row, Col } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import './../../Styles/skillCard.css';
+import {Link} from "react-router-dom"
 
 
-const SkillCard = ( props) => {
+const SkillCard = (props) => {
     // console.log(editMode);
     props = props.props;
     console.log(props, 'skillcard');
@@ -20,15 +21,15 @@ const SkillCard = ( props) => {
                                     return (
                                         <>
                                             <Col style={{ maxWidth: '90%', overflow: 'hidden' }} xs={10} sm={11} md={11} lg={11} xl={11}>
-                                                
+
                                                 <span style={styles.value} >{link.link}</span>
-                                                
+
                                             </Col>
                                             <Col className='copyButtonCol' xs={2} sm={1} md={1} lg={1} xl={1}>
-                                                <Button size="sm" style={styles.copyButton} onClick={() => { navigator.clipboard.writeText(link.link) }}>
-                                                    <a>
-                                                        <img style={styles.copyButtonIcon} src="../copy.png" />
-                                                    </a>
+                                                <Button className="copyButton" style={styles.copyButton} onClick={() => { navigator.clipboard.writeText(link.link) }}>
+                                                    <Link>
+                                                        <img style={styles.copyButtonIcon} src="../copy.png" alt="" />
+                                                    </Link>
                                                 </Button>
                                             </Col>
                                         </>
