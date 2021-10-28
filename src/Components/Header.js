@@ -84,7 +84,7 @@ const Header = (props) => {
                         </div>
                         <div className="col-2"></div>
                         <div className="col-1 header-text">
-                            <img src={logo} alt="" />
+                            <img className="oscalogo" src={logo} alt="" />
                             <span>OSCA</span>
                         </div>
                     </div>
