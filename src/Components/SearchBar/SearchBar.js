@@ -21,7 +21,7 @@ const SearchBar = (props) => {
     const fetchData = async () => {
         const requestData = await fetch(url);
         const data = requestData.json();
-        console.log(data)
+        // console.log(data)
         props.handleSearch(data);
         return data;
     };
