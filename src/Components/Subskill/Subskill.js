@@ -19,6 +19,7 @@ function generateRandomColor() {
 let color_dict = {};
 
 
+
 const getList = (skillId) => {
     return fetch('http://osca-api.herokuapp.com/form/get-skill/?id=' + skillId)
         .then(data => data.json())

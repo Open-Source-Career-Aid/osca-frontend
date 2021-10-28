@@ -1,14 +1,40 @@
-import React from 'react'
-import { Row, Col } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
+import React, { useState ,useRef} from 'react'
+import { Row, Col, Popover } from 'react-bootstrap';
+import { Button, Overlay, OverlayTrigger,Tooltip } from 'react-bootstrap';
 import './../../Styles/skillCard.css';
 import {Link} from "react-router-dom"
 
 
+
 const SkillCard = (props) => {
-    // console.log(editMode);
+    const [show_tooltip,setShow] =useState({});
     props = props.props;
-    console.log(props, 'skillcard');
+    const target = useRef(null);
+    console.log(props);
+    const handleChange = (link, idx) => {
+      navigator.clipboard.writeText(link) ;
+      let item = show_tooltip;
+      item[idx]=!item[idx];
+        setShow({...item});
+    }
+   
+    const renderTooltip = ( idx) => (
+        <Tooltip placement="right">{
+            show_tooltip[idx] === 1?
+            <>Copied</>
+            :
+            <>Click on copy button to copy link</>
+
+        }</Tooltip>
+      );
+
+      useState(() => {
+        let item=show_tooltip;
+        for(let i=0;i<props.length;i++){
+            show_tooltip[i]=0;
+        }
+        setShow({...item});
+      },[])
     return (
         <>
             {props.map((SkillCard, idx) => {
@@ -26,11 +52,19 @@ const SkillCard = (props) => {
 
                                             </Col>
                                             <Col className='copyButtonCol' xs={2} sm={1} md={1} lg={1} xl={1}>
-                                                <Button className="copyButton" style={styles.copyButton} onClick={() => { navigator.clipboard.writeText(link.link) }}>
-                                                    <Link>
+                                            {/* <OverlayTrigger placement="right" overlay={() =>renderTooltip(idx)}> */}
+                                                <Button ref={target}  className="copyButton"  style={styles.copyButton} onClick={() =>handleChange(link.link,idx) }>
+                                                    {/* <Link> */}
                                                         <img style={styles.copyButtonIcon} src="../copy.png" alt="" />
-                                                    </Link>
+                                                    {/* </Link> */}
                                                 </Button>
+                                                <Overlay target={target.current} show={show_tooltip[idx]} placement="right">
+                                                    {(props) => (
+                                                    <Tooltip {...props}>
+                                                        Copied
+                                                    </Tooltip>
+                                                    )}
+                                                </Overlay>
                                             </Col>
                                         </>
                                     )

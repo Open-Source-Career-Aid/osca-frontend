@@ -14,8 +14,6 @@ import { TagsEdit } from '../EditFroms/TagsEdit';
 import '../../Styles/EditForms/EditForm.css'
 import '../../Styles/EditForms/TagsEdit.css'
 import '../../Styles/EditForms/SuperSkillEdit.css'
-import { PrerequisitesEdit } from '../EditFroms/PrerequisitesEdit';
-import { SuperSkillEdit } from '../EditFroms/SuperSkillEdit';
 import { useLoading } from "../../hooks/useLoading"
 import { Loader } from '../Loader/Loader';
 
