@@ -140,7 +140,7 @@ const Skill = () => {
                             <h5 >Tags</h5>
                         </Col>
                     </Row>
-                    <Row >
+                    <Row style={{flexWrap: "wrap"}}>
                         {skilldata.tags.map((tag, idx) => {
                             return (
 
@@ -163,7 +163,7 @@ const Skill = () => {
                             <h5  >Pre-requisites</h5>
                         </Col>
                     </Row>
-                    <Row >
+                    <Row style={{flexWrap: "wrap"}}>
                         {skilldata.prerequisites.map((preReuqisite, idx) => {
                             return (
 

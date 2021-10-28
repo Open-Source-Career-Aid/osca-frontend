@@ -82,7 +82,7 @@ const Subskill = (props) => {
                                 <h5 >Tags</h5>
                             </Col>
                         </Row>
-                        <Row >
+                        <Row style={{flexWrap: "wrap"}}>
                             {subskilldata.tags.map((tag, idx) => {
                                 return (
 
@@ -99,7 +99,7 @@ const Subskill = (props) => {
                                 <h5  >Pre-requisites</h5>
                             </Col>
                         </Row>
-                        <Row  >
+                        <Row  style={{flexWrap: "wrap"}}>
                             {subskilldata.prerequisites.map((preReuqisite, idx) => {
                                 return (
 
