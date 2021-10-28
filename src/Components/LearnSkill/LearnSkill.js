@@ -56,7 +56,7 @@ const LearnSkill = () => {
     };
     fetchData();
   }, []);
-  console.log(skills);
+  // console.log(skills);
 
   const { loading } = useLoading("http://osca-api.herokuapp.com/form/learn-skill/?searchData=");
 
