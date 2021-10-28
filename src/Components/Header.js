@@ -26,7 +26,9 @@ const Header = (props) => {
                 >
                     <div className="row container-fluid">
                         <div className="col-2 line">
+                            <Link to="/">
                             <img className="oscalogo" src={logo} alt="" />
+                            </Link>
                             <span>OSCA</span>
                         </div>
                         <hr className="breaker"></hr>
@@ -84,7 +86,9 @@ const Header = (props) => {
                         </div>
                         <div className="col-2"></div>
                         <div className="col-1 header-text">
+                            <Link to="/">
                             <img className="oscalogo" src={logo} alt="" />
+                            </Link>
                             <span>OSCA</span>
                         </div>
                     </div>
