@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from './Components/Header';
 import { Footer } from './Components/Footer';
 import Home from './Components/Homepage/Home';
-import { ErrorPage } from './Components/Error/ErrorPage';
-import RoadmapForm from './Components/Form/Form';
+// import { ErrorPage } from './Components/Error/ErrorPage';
+// import RoadmapForm from './Components/Form/Form';
 import { LowerBody } from './Components/Homepage/LowerBody';
 import LearnSkill from './Components/LearnSkill/LearnSkill';
-import { About } from './Components/About/About'
+// import { About } from './Components/About/About'
 import Subskill from './Components/Subskill/Subskill';
 import Skill from './Components/Skill/Skill';
-import SkillEdit from './Components/Editing-Pages/SkilEdit';
+// import SkillEdit from './Components/Editing-Pages/SkilEdit';
 
 function App() {
   return (
@@ -26,14 +26,14 @@ function App() {
             <Header location="/learnskill" />
             <LearnSkill />
           </Route>
-          <Route path="/error">
+          {/* <Route path="/error">
             <Header />
             <ErrorPage />
-          </Route>
-          <Route path="/aboutus">
+          </Route> */}
+          {/* <Route path="/aboutus">
             <Header location="/aboutus" />
             <About />
-          </Route>
+          </Route> */}
           <Route path={`/skill/:Id`}>
             <Header />
             <Skill />
@@ -42,14 +42,7 @@ function App() {
             <Header />
             <Subskill />
           </Route>
-          <Route path="/RoadmapForm">
-            <Header />
-            <RoadmapForm />
-          </Route>
-          <Route path="/skilledit">
-            <Header />
-            <SkillEdit />
-          </Route>
+        
         </Switch>
         <Footer />
       </Router>

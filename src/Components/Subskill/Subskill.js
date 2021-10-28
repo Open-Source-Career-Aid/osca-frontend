@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap';
 import SkillCard from './../Skill/SkillCard';
 import './../../Styles/Skill.css';
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 import { useParams, useHistory } from "react-router-dom";
 import { useLoading } from "../../hooks/useLoading"
 import { Loader } from '../Loader/Loader';
@@ -72,9 +72,9 @@ const Subskill = (props) => {
                         </Col>
                         <Col xs='auto' >
                             {/* <Link to="/htmledit" params={subskilldata}> */}
-                            <Link to={{ pathname: "/subskilledit", state: { subskilldata } }}>
+                            {/* <Link to={{ pathname: "/subskilledit", state: { subskilldata } }}>
                                 <h6 style={styles.suggestEdit}>Suggest an edit</h6>
-                            </Link>
+                            </Link> */}
                         </Col>
                     </Row>
                     <div className='tagContainer'>

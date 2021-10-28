@@ -35,27 +35,33 @@ const Header = (props) => {
                         <div className="header-content">
                             <div className="header-text">
                                 <div className="row">
-                                    <div className={`col-4 justify-content-center header-text ${props.location === "/learnskill" ? "link__visited" : null}`} >
+                                    <div className={`col-10 justify-content-center header-text ${props.location === "/learnskill" ? "link__visited" : null}`} >
                                         <Link to="/learnskill" className="link">
                                             Learn a Skill
                                         </Link>
                                     </div>
-                                    <div className={`col-6 text-center justify-content-center ${props.location === "/track" ? "link__visited" : null}`}>
+                                    {/* <div className={`col-6 text-center justify-content-center ${props.location === "/track" ? "link__visited" : null}`}>
                                         <Link className="link">
                                             Track Your Progress
                                         </Link>
-                                    </div>
-                                    <div className={`col-1 text-end ${props.location === "/aboutus" ? "link__visited" : null}`}>
+                                    </div> */}
+                                    {/* <div className={`col-1 text-end ${props.location === "/aboutus" ? "link__visited" : null}`}>
                                         &nbsp;
                                         <Link to="/aboutus" className="link">
                                             About
                                         </Link>
+                                    </div> */}
+                                    <div className={`col-6 text-center justify-content-center ${props.location === "/track" ? "link__visited" : null}`}>
+                                        <Link to={{pathname: "https://www.google.com"}} target="_blank" rel="noopener noreferrer" className="link">
+                                            Feedback
+                                        </Link>
                                     </div>
+                                    
                                 </div>
                             </div>
                             <div className="header-text">
                                 <div className="row">
-                                    <div className="col-3 header-text">
+                                    {/* <div className="col-3 header-text">
                                         <Link className="link">
                                             Login
                                         </Link>
@@ -65,7 +71,7 @@ const Header = (props) => {
                                         <Link className="link-s text-center">
                                             Sign Up
                                         </Link>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap';
 import { Button, Collapse } from 'react-bootstrap';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import SkillCard from './SkillCard';
 import './../../Styles/Skill.css';
 //import EditButton from './../Buttons/Editbutton';
@@ -128,10 +128,10 @@ const Skill = () => {
                     </Col>
                     <Col xs={2} sm={2} md={2} lg={2} xl={2} className="suggest__edit">
                         {/* <Link to='/skilledit'> */}
-                        <Link to={{ pathname: "/skilledit", state: { skilldata } }}>
+                        {/* <Link to={{ pathname: "/skilledit", state: { skilldata } }}>
 
                             Suggest an edit
-                        </Link>
+                        </Link> */}
                     </Col>
                 </Row>
                 <div className='tagContainer'>
