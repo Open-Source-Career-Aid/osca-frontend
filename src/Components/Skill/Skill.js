@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import SkillCard from './SkillCard';
 import './../../Styles/Skill.css';
 import EditButton from './../Buttons/Editbutton';
-import { useParams,useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import Modal from 'react-bootstrap/Modal'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
@@ -16,6 +16,8 @@ import '../../Styles/EditForms/TagsEdit.css'
 import '../../Styles/EditForms/SuperSkillEdit.css'
 import { PrerequisitesEdit } from '../EditFroms/PrerequisitesEdit';
 import { SuperSkillEdit } from '../EditFroms/SuperSkillEdit';
+import { useLoading } from "../../hooks/useLoading"
+import { Loader } from '../Loader/Loader';
 
 
 
@@ -38,10 +40,10 @@ let opendict = {};
 let i = 0;
 
 
-const  getList =(skillId) =>{
+const getList = (skillId) => {
     return fetch('http://osca-api.herokuapp.com/form/get-super-skill/?id=' + skillId)
-      .then(data => data.json())
-  }
+        .then(data => data.json())
+}
 
 
 const Skill = () => {
@@ -54,19 +56,19 @@ const Skill = () => {
     useEffect(() => {
         let mounted = true;
         getList(Id)
-          .then(items => {
-            if(mounted) {
-                for (i = 0; i <= items.sub_skills.length; i++) {
-                    srcdict[i] = leftsrc;
-                    opendict[i] = false;
+            .then(items => {
+                if (mounted) {
+                    for (i = 0; i <= items.sub_skills.length; i++) {
+                        srcdict[i] = leftsrc;
+                        opendict[i] = false;
+                    }
+                    setskilldata({ ...items });
+
                 }
-                setskilldata({...items});
-                
-            }
-          })
-          
+            })
+
         return () => mounted = false;
-      }, [])
+    }, [])
 
 
     const handleChange = (idx) => {
@@ -108,114 +110,110 @@ const Skill = () => {
     }
 
 
-    if (skilldata===null) {
-        return (
-            <h5>loading ....</h5>
-        )
-        }
-    else {
-        return (
-            <div className="headingRow">
-                <Col className="backarrow" xs={12} sm={12} md={1} lg={1} xl={1}>
-                    <img onClick={() => history.goBack()} style={styles.backButton} src='./../../back.png' />
-                </Col>
-                <Col xs={12} sm={12} md={11} lg={11} xl={11}>
+    const { loading } = useLoading('http://osca-api.herokuapp.com/form/get-super-skill/?id=' + Id);
 
-                    <Row style={styles.fullWidth} >
+    return loading ? (
+        <Loader message="Loading! please wait...." />
+    ) : (
+        <div className="headingRow">
+            <Col className="backarrow" xs={12} sm={12} md={1} lg={1} xl={1}>
+                <img onClick={() => history.goBack()} style={styles.backButton} src='./../../back.png' />
+            </Col>
+            <Col xs={12} sm={12} md={11} lg={11} xl={11}>
 
-                        <Col xs={10} sm={10} md={10} lg={10} xl={10} >
-                            <h2>{skilldata.name}</h2>
-                        </Col>
-                        <Col xs={2} sm={2} md={2} lg={2} xl={2} onClick={handleShowEditButton} className="suggest__edit">
-                            {/* <Link to='/skilledit'> */}
-                        <Link to={{pathname:"/skilledit", state: {skilldata }}}>
+                <Row style={styles.fullWidth} >
 
-                                Suggest an edit
-                            </Link>
+                    <Col xs={10} sm={10} md={10} lg={10} xl={10} >
+                        <h2>{skilldata.name}</h2>
+                    </Col>
+                    <Col xs={2} sm={2} md={2} lg={2} xl={2} onClick={handleShowEditButton} className="suggest__edit">
+                        {/* <Link to='/skilledit'> */}
+                        <Link to={{ pathname: "/skilledit", state: { skilldata } }}>
+
+                            Suggest an edit
+                        </Link>
+                    </Col>
+                </Row>
+                <div className='tagContainer'>
+                    <Row>
+                        <Col>
+                            <h5 >Tags</h5>
                         </Col>
                     </Row>
-                    <div className='tagContainer'>
-                        <Row>
-                            <Col>
-                                <h5 >Tags</h5>
-                            </Col>
-                        </Row>
-                        <Row >
-                            {skilldata.tags.map((tag, idx) => {
-                                return (
+                    <Row >
+                        {skilldata.tags.map((tag, idx) => {
+                            return (
 
-                                    <Col key={idx} className='colorTags' xs='auto'>
-                                        {tag.tagName}
-                                    </Col>
-                                )
-                            })}
-                            {/* <Col className='colorTags' xs='auto'>
+                                <Col key={idx} className='colorTags' xs='auto'>
+                                    {tag.tagName}
+                                </Col>
+                            )
+                        })}
+                        {/* <Col className='colorTags' xs='auto'>
                      Machine Learning
                  </Col>
                  <Col className='colorTags' xs='auto'>
                      HTML
                  </Col> */}
-                        </Row>
-                    </div>
-                    <div className='tagContainer'>
-                        <Row>
-                            <Col>
-                                <h5  >Pre-requisites</h5>
-                            </Col>
-                        </Row>
-                        <Row >
-                            {skilldata.prerequisites.map((preReuqisite, idx) => {
-                                return (
+                    </Row>
+                </div>
+                <div className='tagContainer'>
+                    <Row>
+                        <Col>
+                            <h5  >Pre-requisites</h5>
+                        </Col>
+                    </Row>
+                    <Row >
+                        {skilldata.prerequisites.map((preReuqisite, idx) => {
+                            return (
 
-                                    <Col key={idx} className='skilltags' xs='auto'>
-                                        {preReuqisite.prereqName}
-                                    </Col>
-                                )
-                            })}
-                            {/* <Col className='tags' xs='auto'>
+                                <Col key={idx} className='skilltags' xs='auto'>
+                                    {preReuqisite.prereqName}
+                                </Col>
+                            )
+                        })}
+                        {/* <Col className='tags' xs='auto'>
                      HTML
                  </Col>
                  <Col className='tags' xs='auto'>
                      HTML
                  </Col> */}
-                        </Row>
-                    </div>
-                    <div className='skillContainer'>
-                        {skilldata.sub_skills.map((skill, idx) => {
+                    </Row>
+                </div>
+                <div className='skillContainer'>
+                    {skilldata.sub_skills.map((skill, idx) => {
 
-                            return (
-                                <>
-                                    <Row style={styles.fullWidth} className='align-items-center'  >
-                                        <Col xs={11} sm={11} md={11} lg={11} xl={11} >
-                                            <h3 className='skillName'>{skill.skill}</h3>
-                                        </Col>
-                                        <Col xs={1} sm={1} md={1} lg={1} xl={1} >
-                                            <Button
-                                                style={styles.btn}
+                        return (
+                            <>
+                                <Row style={styles.fullWidth} className='align-items-center'  >
+                                    <Col xs={11} sm={11} md={11} lg={11} xl={11} >
+                                        <h3 className='skillName'>{skill.skill}</h3>
+                                    </Col>
+                                    <Col xs={1} sm={1} md={1} lg={1} xl={1} >
+                                        <Button
+                                            style={styles.btn}
 
-                                                onClick={() => handleChange(idx)}
-                                                aria-controls="example-collapse-text"
-                                                aria-expanded={open}>
-                                                <img style={open[idx] ? styles.dropButton : styles.leftbutton} src={src[idx]} />
-                                            </Button>
-                                        </Col>
-                                    </Row>
-                                    <Collapse in={open[idx]}>
-                                        <div id="example-collapse-text">
+                                            onClick={() => handleChange(idx)}
+                                            aria-controls="example-collapse-text"
+                                            aria-expanded={open}>
+                                            <img style={open[idx] ? styles.dropButton : styles.leftbutton} src={src[idx]} />
+                                        </Button>
+                                    </Col>
+                                </Row>
+                                <Collapse in={open[idx]}>
+                                    <div id="example-collapse-text">
 
-                                            <SkillCard props={skill.topics} />
-                                        </div>
-                                    </Collapse>
-                                </>
+                                        <SkillCard props={skill.topics} />
+                                    </div>
+                                </Collapse>
+                            </>
 
-                            )
-                        })}
-                    </div>
-                </Col>
-            </div>
-        );
-    }
-
+                        )
+                    })}
+                </div>
+            </Col>
+        </div>
+    );
 }
 
 

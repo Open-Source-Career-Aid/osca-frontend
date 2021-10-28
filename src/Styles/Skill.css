@@ -68,6 +68,10 @@ h3.skillName {
   margin-bottom: 1em;
 }
 
+.backarrow:hover {
+  cursor: pointer !important;
+}
+
 @media screen and (max-width: 4400px) {
   .headingRow {
     padding-top: 10%;

@@ -35,14 +35,6 @@ function App() {
             <Header location="/aboutus" />
             <About />
           </Route>
-          <Route path="/learnskill">
-            <Header location="/learnskill" />
-            <LearnSkill />
-          </Route>
-          <Route path="/error">
-            <Header />
-            <ErrorPage />
-          </Route>
           <Route path={`/skill/:Id`}>
             <Header />
             <Skill />
