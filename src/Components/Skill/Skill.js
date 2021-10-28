@@ -4,13 +4,13 @@ import { Button, Collapse } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import SkillCard from './SkillCard';
 import './../../Styles/Skill.css';
-import EditButton from './../Buttons/Editbutton';
+//import EditButton from './../Buttons/Editbutton';
 import { useParams, useHistory } from "react-router-dom";
-import Modal from 'react-bootstrap/Modal'
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
-import Tooltip from 'react-bootstrap/Tooltip'
+//import Modal from 'react-bootstrap/Modal'
+//import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+//import Tooltip from 'react-bootstrap/Tooltip'
 
-import { TagsEdit } from '../EditFroms/TagsEdit';
+//import { TagsEdit } from '../EditFroms/TagsEdit';
 import '../../Styles/EditForms/EditForm.css'
 import '../../Styles/EditForms/TagsEdit.css'
 import '../../Styles/EditForms/SuperSkillEdit.css'
@@ -66,7 +66,7 @@ const Skill = () => {
             })
 
         return () => mounted = false;
-    }, [])
+    }, [Id])
 
 
     const handleChange = (idx) => {
@@ -83,29 +83,30 @@ const Skill = () => {
     }
 
     //tags edit form
-    const [tags, setTags] = useState(false);
+    //const [tags, setTags] = useState(false);
 
-    const handleCloseTagsForm = () => setTags(false);
-    const handleShowTagsForm = () => setTags(true);
-
-    //pre-requisites edit form
-    const [prerequisites, setPrerequisites] = useState(false);
-
-    const handleClosePrerequisitesForm = () => setPrerequisites(false);
-    const handleShowPrerequisitesForm = () => setPrerequisites(true);
+    //const handleCloseTagsForm = () => setTags(false);
+    //const handleShowTagsForm = () => setTags(true);
 
     //pre-requisites edit form
-    const [roadmapEdit, setRoadmapEdit] = useState(false);
+    //const [prerequisites, setPrerequisites] = useState(false);
 
-    const handleCloseRoadmapForm = () => setRoadmapEdit(false);
-    const handleShowRoadmapForm = () => setRoadmapEdit(true);
+    //const handleClosePrerequisitesForm = () => setPrerequisites(false);
+    //const handleShowPrerequisitesForm = () => setPrerequisites(true);
+
+    //pre-requisites edit form
+    //const [roadmapEdit, setRoadmapEdit] = useState(false);
+
+    //const handleCloseRoadmapForm = () => setRoadmapEdit(false);
+    //const handleShowRoadmapForm = () => setRoadmapEdit(true);
 
     //edit button
-    const [edit, setEdit] = useState(false);
+    //const [edit, setEdit] = useState(false);
 
-    const handleShowEditButton = () => {
+    /*const handleShowEditButton = () => {
         setEdit(true);
     }
+    */
 
 
     const { loading } = useLoading('http://osca-api.herokuapp.com/form/get-super-skill/?id=' + Id);
@@ -115,7 +116,7 @@ const Skill = () => {
     ) : (
         <div className="headingRow">
             <Col className="backarrow" xs={12} sm={12} md={1} lg={1} xl={1}>
-                <img onClick={() => history.goBack()} style={styles.backButton} src='./../../back.png' />
+                <img onClick={() => history.goBack()} style={styles.backButton} src='./../../back.png' alt="" />
             </Col>
             <Col xs={12} sm={12} md={11} lg={11} xl={11}>
 
@@ -124,7 +125,7 @@ const Skill = () => {
                     <Col xs={10} sm={10} md={10} lg={10} xl={10} >
                         <h2>{skilldata.name}</h2>
                     </Col>
-                    <Col xs={2} sm={2} md={2} lg={2} xl={2} onClick={handleShowEditButton} className="suggest__edit">
+                    <Col xs={2} sm={2} md={2} lg={2} xl={2} className="suggest__edit">
                         {/* <Link to='/skilledit'> */}
                         <Link to={{ pathname: "/skilledit", state: { skilldata } }}>
 
@@ -138,7 +139,7 @@ const Skill = () => {
                             <h5 >Tags</h5>
                         </Col>
                     </Row>
-                    <Row style={{flexWrap: "wrap"}}>
+                    <Row style={{ flexWrap: "wrap" }}>
                         {skilldata.tags.map((tag, idx) => {
                             return (
 
@@ -161,7 +162,7 @@ const Skill = () => {
                             <h5  >Pre-requisites</h5>
                         </Col>
                     </Row>
-                    <Row style={{flexWrap: "wrap"}}>
+                    <Row style={{ flexWrap: "wrap" }}>
                         {skilldata.prerequisites.map((preReuqisite, idx) => {
                             return (
 
@@ -194,7 +195,7 @@ const Skill = () => {
                                             onClick={() => handleChange(idx)}
                                             aria-controls="example-collapse-text"
                                             aria-expanded={open}>
-                                            <img style={open[idx] ? styles.dropButton : styles.leftbutton} src={src[idx]} />
+                                            <img style={open[idx] ? styles.dropButton : styles.leftbutton} src={src[idx]} alt="" />
                                         </Button>
                                     </Col>
                                 </Row>

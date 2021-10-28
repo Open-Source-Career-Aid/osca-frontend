@@ -10,7 +10,6 @@ import LearnSkill from './Components/LearnSkill/LearnSkill';
 import { About } from './Components/About/About'
 import Subskill from './Components/Subskill/Subskill';
 import Skill from './Components/Skill/Skill';
-import SubskillEdit from './Components/Editing-Pages/SubskillEdit';
 import SkillEdit from './Components/Editing-Pages/SkilEdit';
 
 function App() {

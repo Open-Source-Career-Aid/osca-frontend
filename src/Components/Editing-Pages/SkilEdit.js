@@ -18,9 +18,9 @@ const SkillEdit = (props) => {
     const [isEdit, setIsEdit] = useState(false);
     const [valueEdit, setEditValue] = useState(edit_data.name);
 
-    let Tagdata = [{ name: 'HTML' }, { name: 'Machine Learning' }, { name: 'HTML' }];
+    //let Tagdata = [{ name: 'HTML' }, { name: 'Machine Learning' }, { name: 'HTML' }];
 
-    let preData = [{ name: 'HTML' }, { name: 'Machine Learning' }, { name: 'HTML' }];
+    //let preData = [{ name: 'HTML' }, { name: 'Machine Learning' }, { name: 'HTML' }];
 
     const handleSubmit = () => {
 

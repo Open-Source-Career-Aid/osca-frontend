@@ -8,7 +8,7 @@ const Editbutton = (variation) => {
 
         return (
             <Button onClick={() => { variation.fun(variation.index) }} style={styles.btn} >
-                <img style={styles.icon} src='./../../../../../../edit.png' />
+                <img style={styles.icon} src='./../../../../../../edit.png' alt=""/>
             </Button>
         );
     }
@@ -22,7 +22,7 @@ const Editbutton = (variation) => {
         }
         return (
             <Button onClick={() => { variation.fun(variation.index) }} style={tempstyle} className='Button'>
-                <img style={styles.icon} src='./../../../../../../edit.png' />
+                <img style={styles.icon} src='./../../../../../../edit.png' alt="" />
             </Button>)
 
     }

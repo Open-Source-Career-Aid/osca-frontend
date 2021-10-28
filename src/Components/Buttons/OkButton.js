@@ -7,7 +7,7 @@ const Deletebutton = (variation) => {
         
         return( 
                 <Button  onClick={() => {variation.fun(variation.index)}} style={styles.btn} >
-                <img style={styles.icon} src='./../../../../../../ok.png' />
+                <img style={styles.icon} src='./../../../../../../ok.png' alt=""/>
             </Button>
         );
     }
@@ -22,7 +22,7 @@ const Deletebutton = (variation) => {
         }
     return( 
         <Button  onClick={() => {variation.fun(variation.index)}} style={tempstyle} className='Button'>
-        <img style={styles.icon} src='./../../../../../../ok.png' />
+        <img style={styles.icon} src='./../../../../../../ok.png' alt="" />
     </Button> )
 
     }

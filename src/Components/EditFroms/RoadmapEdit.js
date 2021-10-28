@@ -3,14 +3,14 @@ import { Row, Col, Button } from "react-bootstrap";
 import style from "../../Styles/EditForms/RoadMapSkill.module.css";
 import EditIcon from "@material-ui/icons/Edit";
 import { IconButton } from "@material-ui/core";
-import Drag from "../../Images/Drag.png";
+//import Drag from "../../Images/Drag.png";
 import { useState } from "react";
 import Delete from "../../Images/Delete.png";
 import CheckIcon from "@material-ui/icons/Check";
-import ClearIcon from "@material-ui/icons/Clear";
+//import ClearIcon from "@material-ui/icons/Clear";
 import AddIcon from "@material-ui/icons/Add";
-import AddBack from "../../Images/ArrowBack.png";
-import ArrowForward from "../../Images/ArrowForward.png";
+//import AddBack from "../../Images/ArrowBack.png";
+//import ArrowForward from "../../Images/ArrowForward.png";
 import Arrow from "../../Images/Arrow.png";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 

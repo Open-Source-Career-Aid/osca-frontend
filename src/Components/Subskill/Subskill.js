@@ -16,7 +16,7 @@ function generateRandomColor() {
     return color;
     //random color will be freshly served
 }
-let color_dict = {};
+//let color_dict = {};
 
 
 
@@ -29,11 +29,11 @@ const Subskill = (props) => {
     let { Id } = useParams();
     let history = useHistory();
 
-    const [editMode, setEditMode] = useState(0);
+    //const [editMode, setEditMode] = useState(0);
 
-    const handleEditMode = () => {
+    /*const handleEditMode = () => {
         setEditMode(!editMode);
-    }
+    }*/
 
     const [subskilldata, setSubskilldata] = useState(null);
 
@@ -49,7 +49,7 @@ const Subskill = (props) => {
                 }
             })
         return () => mounted = false;
-    }, [])
+    }, [Id])
 
 
     const { loading } = useLoading('http://osca-api.herokuapp.com/form/get-skill/?id=' + Id);
@@ -61,7 +61,7 @@ const Subskill = (props) => {
             <div className="headingRow">
                 <Col className="backarrow" xs={12} sm={12} md={1} lg={1} xl={1}>
 
-                    <img onClick={() => history.goBack()} style={styles.backButton} src='./../back.png' />
+                    <img onClick={() => history.goBack()} style={styles.backButton} src='./../back.png' alt=""/>
                 </Col>
                 <Col xs={12} sm={12} md={11} lg={11} xl={11}>
 
