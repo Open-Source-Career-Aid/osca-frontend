@@ -46,15 +46,16 @@ const LearnSkill = () => {
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      const requestData = await fetch(
+    // const fetchData = async () => {
+      const requestData = fetch(
         "http://osca-api.herokuapp.com/form/learn-skill/?searchData="
-      );
-      const data = requestData.json();
-      handleSearch(data);
-      return data;
-    };
-    fetchData();
+      )
+      .then(data => data.json());
+      // const data = requestData.json();
+      handleSearch(requestData);
+      // return data;
+    // };
+    // fetchData();
   }, []);
   // console.log(skills);
 
