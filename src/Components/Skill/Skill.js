@@ -20,15 +20,16 @@ import { Loader } from '../Loader/Loader';
 
 
 
+function generateRandomColor() {
+    // var randomColor = '#'+Math.floor(Math.random()*10777215).toString(16);
+    // return randomColor;
+    let color = "#";
+    for (let i = 0; i < 3; i++)
+        color += ("0" + Math.floor(Math.random() * Math.pow(16, 2) / 2).toString(16)).slice(-2);
+    return color;
+    //random color will be freshly served
+}
 
-
-// function getWindowDimensions() {
-//     const { innerWidth: width, innerHeight: height } = window;
-//     return {
-//       width,
-//       height
-//     };
-//   }
 const leftsrc = './../../leftarrow.png';
 const upsrc = './../../up.png';
 
@@ -143,7 +144,7 @@ const Skill = () => {
                         {skilldata.tags.map((tag, idx) => {
                             return (
 
-                                <Col key={idx} className='colorTags' xs='auto'>
+                                <Col key={idx} style={{ backgroundColor: generateRandomColor() }} className='colorTags' xs='auto'>
                                     {tag.tagName}
                                 </Col>
                             )
@@ -166,7 +167,7 @@ const Skill = () => {
                         {skilldata.prerequisites.map((preReuqisite, idx) => {
                             return (
 
-                                <Col key={idx} className='skilltags' xs='auto'>
+                                <Col key={idx} style={{ backgroundColor: generateRandomColor() }} className='skilltags' xs='auto'>
                                     {preReuqisite.prereqName}
                                 </Col>
                             )

@@ -72,7 +72,7 @@ const Subskill = (props) => {
                         </Col>
                         <Col xs='auto' >
                             {/* <Link to="/htmledit" params={subskilldata}> */}
-                            <Link to={{ pathname: "/htmledit", state: { subskilldata } }}>
+                            <Link to={{ pathname: "/subskilledit", state: { subskilldata } }}>
                                 <h6 style={styles.suggestEdit}>Suggest an edit</h6>
                             </Link>
                         </Col>
