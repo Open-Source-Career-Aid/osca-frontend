@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Row, Col, Form, InputGroup } from 'react-bootstrap';
 import SearchIcon from '@material-ui/icons/Search';
 import { IconButton } from '@material-ui/core';

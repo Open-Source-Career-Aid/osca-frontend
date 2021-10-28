@@ -10,14 +10,14 @@ import ClearIcon from "@material-ui/icons/Clear";
 import { TagsEdit } from "../EditFroms/TagsEdit";
 import { PrerequisitesEdit } from "../EditFroms/PrerequisitesEdit";
 import RoadmapEdit from "../EditFroms/RoadmapEdit";
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 
 const SubskillEdit = (props) => {
   let edit_data = props.location.state.subskilldata;
   const [isEdit, setIsEdit] = useState(false);
   const [valueEdit, setEditValue] = useState(edit_data.skill);
 
-  let Tagdata = [
+  /*let Tagdata = [
     { name: "HTML" },
     { name: "Machine Learning" },
     { name: "HTML" },
@@ -27,7 +27,7 @@ const SubskillEdit = (props) => {
     { name: "HT12ML" },
     { name: "Machine Learning" },
     { name: "HTML" },
-  ];
+  ];*/
   console.log(edit_data);
   return (
     <div className="spacingTop">

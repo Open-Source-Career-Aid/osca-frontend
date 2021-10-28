@@ -7,7 +7,7 @@ export const useLoading = (props) => {
     useEffect(() => {
         (async () => {
             try {
-                const { data } = await axios.get(
+                await axios.get(
                     `${props}`,
                     {
                         withCredentials: true,
@@ -19,7 +19,7 @@ export const useLoading = (props) => {
                 setLoading(false);
             }
         })();
-    }, []);
+    }, [props]);
 
     return { loading };
 

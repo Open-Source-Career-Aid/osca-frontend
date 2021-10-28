@@ -1,34 +1,32 @@
-import React, { useState, useEffect } from 'react'
-import { Row, Col } from 'react-bootstrap';
-import {Button}  from 'react-bootstrap';
+import React from 'react'
+import { Button } from 'react-bootstrap';
 import './Button.css';
 
 const Deletebutton = (variation) => {
     if (Object.entries(variation).length === 0) {
-        
-        return( 
-                <Button  onClick={() => {variation.fun(variation.index, variation.index2)}} style={styles.btn} >
-                <img style={styles.icon} src='./../../../../../../delete.png' />
+
+        return (
+            <Button onClick={() => { variation.fun(variation.index, variation.index2) }} style={styles.btn} >
+                <img style={styles.icon} src='./../../../../../../delete.png' alt="" />
             </Button>
         );
     }
     else {
         let tempstyle = styles.btn;
         if (variation.shape !== undefined && variation.shape === 'rounded') {
-            tempstyle = ({...styles.btn, borderRadius: '100%'} );
+            tempstyle = ({ ...styles.btn, borderRadius: '100%' });
         }
-        if( variation.shape !== undefined && variation.color !== null)
-        {
-            tempstyle = ({...tempstyle, backgroundColor: variation.color})
+        if (variation.shape !== undefined && variation.color !== null) {
+            tempstyle = ({ ...tempstyle, backgroundColor: variation.color })
         }
-    return( 
-        <Button onClick={() => {variation.fun(variation.index,  variation.index2)}} style={tempstyle} className='Button'>
-        <img style={styles.icon} src='./../../../../../../delete.png' />
-    </Button> )
+        return (
+            <Button onClick={() => { variation.fun(variation.index, variation.index2) }} style={tempstyle} className='Button'>
+                <img style={styles.icon} src='./../../../../../../delete.png' alt="" />
+            </Button>)
 
     }
 
-    
+
 };
 
 let styles = {

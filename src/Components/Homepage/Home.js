@@ -1,13 +1,13 @@
-import React, { useState, useLayoutEffect } from "react";
+import React from "react";
 import { Row, Col } from "react-bootstrap";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom"
 import "../../Styles/Body.css";
 
 const Home = () => {
-  const [scroll, setScroll] = useState(0);
+  //const [scroll, setScroll] = useState(0);
 
-  
+
 
   return (
     <>
@@ -81,7 +81,7 @@ const Home = () => {
           </Row>
           <div
             className="rectangle"
-            // onClick={scroll < 415 ? scrollToBottom : scrollToTop}
+          // onClick={scroll < 415 ? scrollToBottom : scrollToTop}
           >
             <div className="circle"></div>
           </div>

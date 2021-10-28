@@ -12,7 +12,7 @@ import Skill from './Skill';
 import { SvgIcon } from '@material-ui/core';
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
-import { TrainRounded } from '@material-ui/icons';
+//import { TrainRounded } from '@material-ui/icons';
 
 const CustomSwitch = withStyles({
     switchBase: {
@@ -241,7 +241,7 @@ const RoadmapForm = () => {
         <div className="headingRow">
 
             <Col className="backarrow" xs={12} sm={12} md={1} lg={1} xl={1}>
-                <img style={styles.buttonIcon} src='./../../../../../back.png' />
+                <img style={styles.buttonIcon} src='./../../../../../back.png' alt=""/>
             </Col>
 
             <Col xs={12} sm={12} md={11} lg={11} xl={11}>
