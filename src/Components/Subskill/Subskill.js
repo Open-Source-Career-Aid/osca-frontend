@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap';
 import SkillCard from './../Skill/SkillCard';
 import './../../Styles/Skill.css';
-import { Link } from "react-router-dom"
+//import { Link } from "react-router-dom"
 import { useParams, useHistory } from "react-router-dom";
 import { useLoading } from "../../hooks/useLoading"
 import { Loader } from '../Loader/Loader';
@@ -61,7 +61,7 @@ const Subskill = (props) => {
             <div className="headingRow">
                 <Col className="backarrow" xs={12} sm={12} md={1} lg={1} xl={1}>
 
-                    <img onClick={() => history.goBack()} style={styles.backButton} src='./../back.png' alt=""/>
+                    <img onClick={() => history.goBack()} style={styles.backButton} src='./../back.png' alt="" />
                 </Col>
                 <Col xs={12} sm={12} md={11} lg={11} xl={11}>
 
@@ -70,12 +70,12 @@ const Subskill = (props) => {
                         <Col xs='auto' >
                             <h2>{subskilldata.skill}</h2>
                         </Col>
-                        <Col xs='auto' >
-                            {/* <Link to="/htmledit" params={subskilldata}> */}
+                        {/*<Col xs='auto' >
+                            {/* <Link to="/htmledit" params={subskilldata}> 
                             <Link to={{ pathname: "/subskilledit", state: { subskilldata } }}>
                                 <h6 style={styles.suggestEdit}>Suggest an edit</h6>
                             </Link>
-                        </Col>
+                        </Col>*/}
                     </Row>
                     <div className='tagContainer'>
                         <Row>
@@ -83,7 +83,7 @@ const Subskill = (props) => {
                                 <h5 >Tags</h5>
                             </Col>
                         </Row>
-                        <Row style={{flexWrap: "wrap"}}>
+                        <Row style={{ flexWrap: "wrap" }}>
                             {subskilldata.tags.map((tag, idx) => {
                                 return (
 
@@ -100,7 +100,7 @@ const Subskill = (props) => {
                                 <h5  >Pre-requisites</h5>
                             </Col>
                         </Row>
-                        <Row  style={{flexWrap: "wrap"}}>
+                        <Row style={{ flexWrap: "wrap" }}>
                             {subskilldata.prerequisites.map((preReuqisite, idx) => {
                                 return (
 
