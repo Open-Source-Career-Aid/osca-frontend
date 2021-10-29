@@ -110,7 +110,7 @@ const Header = (props) => {
                                 <hr className="header-bar" />
                                 <div className="row pt-2 header-ex">
                                     <div className="justify-content-center text-center header-text">
-                                        <Link to={{ pathname: "https://www.google.com" }} target="_blank" rel="noopener noreferrer" className="link">
+                                        <Link to={{ pathname: "https://docs.google.com/forms/d/e/1FAIpQLSckA-b0y_Xy2T7qUkfZ34eRy1KjUUCQpqkuCXIkuYdX-puyjA/viewform?usp=sf_link" }} target="_blank" rel="noopener noreferrer" className="link">
                                             Feedback
                                         </Link>
                                     </div>
