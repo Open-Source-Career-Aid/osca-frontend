@@ -10,7 +10,7 @@ import LearnSkill from './Components/LearnSkill/LearnSkill';
 //import { About } from './Components/About/About'
 import Subskill from './Components/Subskill/Subskill';
 import Skill from './Components/Skill/Skill';
-//import SkillEdit from './Components/Editing-Pages/SkilEdit';
+import SkillEdit from './Components/Editing-Pages/SkilEdit';
 
 function App() {
   return (
@@ -46,10 +46,10 @@ function App() {
             <Header />
             <RoadmapForm />
           </Route>
-          {/*<Route path="/skilledit">
+          <Route path="/skilledit">
             <Header />
             <SkillEdit />
-  </Route>*/}
+          </Route>
         </Switch>
         <Footer />
       </Router>
