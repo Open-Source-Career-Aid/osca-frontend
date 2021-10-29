@@ -23,7 +23,7 @@
   position: fixed;
   width: 100%;
   z-index: 100;
-  padding-top: 15px;
+  padding-top: 15px !important;
   padding-bottom: 15px;
   transition: ease 1s;
 }
@@ -133,7 +133,7 @@
   color: #ffffff;
 }
 
-.oscalogo  {
+.oscalogo {
   width: 75px;
   height: 39.68px;
   transform: rotate(180deg);
