@@ -10,7 +10,13 @@
 }
 
 .container {
-  padding: 7% 4% 0% 4%;
+  padding: 8vh 4% 0% 4%;
+}
+
+@media screen and (max-width: 750px) {
+  .container {
+    padding: 2vh 4% 0% 4%;
+  }
 }
 
 .card-css {

@@ -9,6 +9,16 @@ import { useLoading } from "../../hooks/useLoading"
 import { Loader } from '../Loader/Loader';
 //import { AiOutlineClockCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
+
+const description = {
+
+  "HTML": "The HyperText Markup Language, or HTML is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.",
+  "Cascading Style Sheet (CSS)": "Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML. CSS is designed to enable the separation of presentation and content, including layout, colors, and fonts.",
+  "JavaScript": "Javascript is often abbreviated as JS, is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled and multi-paradigm. It has curly-bracket syntax, dynamic typing, prototype-based object-orientation and first-class functions.",
+  "Web Devlopment": "Web development is the work involved in developing a Web site for the Internet (World Wide Web) or an intranet (a private network). Web development can range from developing a simple single static page of plain text to complex web applications, electronic businesses, and social network services. "
+
+};
+
 const LearnSkill = () => {
   const [skills, setSkills] = useState([]);
 
@@ -35,17 +45,18 @@ const LearnSkill = () => {
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      const requestData = await fetch(
-        "http://osca-api.herokuapp.com/form/learn-skill/?searchData="
-      );
-      const data = requestData.json();
-      handleSearch(data);
-      return data;
-    };
-    fetchData();
+    // const fetchData = async () => {
+    const requestData = fetch(
+      "http://osca-api.herokuapp.com/form/learn-skill/?searchData="
+    )
+      .then(data => data.json());
+    // const data = requestData.json();
+    handleSearch(requestData);
+    // return data;
+    // };
+    // fetchData();
   }, []);
-  console.log(skills);
+  // console.log(skills);
 
   const { loading } = useLoading("http://osca-api.herokuapp.com/form/learn-skill/?searchData=");
 
@@ -115,10 +126,7 @@ const LearnSkill = () => {
                       <div className="track">Track Your progress</div>*/}
                     </div>
                     <div className="cardBody">
-                      This contains a detailed guide to how to be a full stack web
-                      developer in most efficient way. It includes all the required
-                      resources and a work plan which is easy to follow.
-                      isjdfiasdjfisjfJI jiasdf Ij ijdfi ajfl. kjsadifj Great!
+                      {description["Web Devlopment"]}
                     </div>
                     <div className="cardFooter">
                       Subskills:
@@ -163,10 +171,7 @@ const LearnSkill = () => {
                       <div className="track">Track Your progress</div>*/}
                     </div>
                     <div className="cardBody">
-                      This contains a detailed guide to how to be a full stack web
-                      developer in most efficient way. It includes all the required
-                      resources and a work plan which is easy to follow.
-                      isjdfiasdjfisjfJI jiasdf Ij ijdfi ajfl. kjsadifj Great!
+                      {description[skill.name]}
                     </div>
                     <div className="cardFooter">
                       Subskills:

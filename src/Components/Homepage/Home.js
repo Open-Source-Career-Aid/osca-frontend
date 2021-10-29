@@ -79,12 +79,12 @@ const Home = () => {
               </Row>
             </Col>
           </Row>
-          <div
+          {/*<div
             className="rectangle"
           // onClick={scroll < 415 ? scrollToBottom : scrollToTop}
           >
             <div className="circle"></div>
-          </div>
+          </div>*/}
         </Col>
       </div>
     </>
