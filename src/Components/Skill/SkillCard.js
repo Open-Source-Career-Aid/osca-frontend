@@ -1,29 +1,29 @@
 import React, { useState } from 'react'
-import { Row, Col, Button} from 'react-bootstrap';
+import { Row, Col} from 'react-bootstrap';
 import './../../Styles/skillCard.css';
 
 
 
 const SkillCard = (props) => {
-    const [show_tooltip,setShow] =useState({"0":1});
+    const [show_tooltip, setShow] = useState({ "0": 1 });
     props = props.props;
     // const target = useRef(null);
     // console.log(props);
     const handleChange = (link, idx) => {
-      navigator.clipboard.writeText(link) ;
-      let item = show_tooltip;
-      item[idx]=!item[idx];
-        setShow({...item});
+        navigator.clipboard.writeText(link);
+        let item = show_tooltip;
+        item[idx] = !item[idx];
+        setShow({ ...item });
     }
-   
 
-      useState(() => {
-        let item=show_tooltip;
-        for(let i=0;i<props.length;i++){
-            show_tooltip[i]=0;
+
+    useState(() => {
+        let item = show_tooltip;
+        for (let i = 0; i < props.length; i++) {
+            show_tooltip[i] = 0;
         }
-        setShow({...item});
-      },[])
+        setShow({ ...item });
+    }, [])
     return (
         <>
             {props.map((SkillCard, idx) => {
@@ -39,13 +39,13 @@ const SkillCard = (props) => {
                                                 <span style={styles.value} >{link.link}</span>
                                             </Col>
                                             <Col className='copyButtonCol' xs={2} sm={1} md={1} lg={1} xl={1}>
-                                            
-                                                <Button id={idx}  className="copyButton"  style={styles.copyButton} onClick={() =>handleChange(link.link,idx) }>
+
+                                                <button id={idx} className="copyButton" style={styles.copyButton} onClick={() => handleChange(link.link, idx)}>
                                                     {/* <Link> */}
-                                                        <img style={styles.copyButtonIcon} src="../copy.png" alt="" />
+                                                    <img style={styles.copyButtonIcon} src="../copy.png" alt="" />
                                                     {/* </Link> */}
-                                                </Button>
-                                           
+                                                </button>
+
                                             </Col>
                                         </>
                                     )

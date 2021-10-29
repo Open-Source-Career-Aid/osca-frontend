@@ -9,6 +9,10 @@
   color: rgba(152, 152, 152, 1);
 }
 
+.container {
+  padding: 7% 4% 0% 4%;
+}
+
 .card-css {
   left: 456px;
   top: 274px;

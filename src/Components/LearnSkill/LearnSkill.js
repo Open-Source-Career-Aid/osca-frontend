@@ -7,7 +7,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import { useState } from "react";
 import { useLoading } from "../../hooks/useLoading"
 import { Loader } from '../Loader/Loader';
-import { AiOutlineClockCircle } from "react-icons/ai";
+//import { AiOutlineClockCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 const LearnSkill = () => {
   const [skills, setSkills] = useState([]);
@@ -17,8 +17,8 @@ const LearnSkill = () => {
       .then((res) => {
         const set = res.map((details) => {
           return {
-            id:details.id,
-            name: details.skill||details.name,
+            id: details.id,
+            name: details.skill || details.name,
             skill: details.is_superskill ? "SuperSkill" : "SubSkill",
             prerequisite: [{ value: "" }],
             tags: details.tags.map((det) => {
@@ -61,7 +61,7 @@ const LearnSkill = () => {
               No previous knowledge required!
             </Col>
           </MyDesktop>
-          <Col md={{ span: 1, offset: 1 }} xs={{ span: 1, offset: 5 }} xl={1}>
+          {/*<Col md={{ span: 1, offset: 1 }} xs={{ span: 1, offset: 5 }} xl={1}>
             <div className="skillset justify-content-end text-start">
               Superskill
             </div>
@@ -70,7 +70,7 @@ const LearnSkill = () => {
             <div className="skillset active justify-content-start">
               Subskills
             </div>
-          </Col>
+  </Col>*/}
         </Row>
         <MyMobile>
           <Row>
@@ -93,8 +93,8 @@ const LearnSkill = () => {
           return (
             <div className="skillCard">
               {
-                  skill.skill === "SuperSkill"?
-                  <Link className="linkTo" to={`/skill/${skill.id}`}>         
+                skill.skill === "SuperSkill" ?
+                  <Link className="linkTo" to={`/skill/${skill.id}`}>
                     <div className="cardHeader">
                       <h1>
                         {skill.name}
@@ -107,12 +107,12 @@ const LearnSkill = () => {
                           {skill.skill}
                         </span>
                       </h1>
-                      <div className="trackIcon">
+                      {/*<div className="trackIcon">
                         <AiOutlineClockCircle
                           style={{ fill: "#36CF45", width: 24, height: 24 }}
                         />
                       </div>
-                      <div className="track">Track Your progress</div>
+                      <div className="track">Track Your progress</div>*/}
                     </div>
                     <div className="cardBody">
                       This contains a detailed guide to how to be a full stack web
@@ -140,9 +140,9 @@ const LearnSkill = () => {
                         );
                       })}
                     </div>
-              </Link>
-              :
-              <Link className="linkTo" to={`/subskill/${skill.id}`}>         
+                  </Link>
+                  :
+                  <Link className="linkTo" to={`/subskill/${skill.id}`}>
                     <div className="cardHeader">
                       <h1>
                         {skill.name}
@@ -155,12 +155,12 @@ const LearnSkill = () => {
                           {skill.skill}
                         </span>
                       </h1>
-                      <div className="trackIcon">
+                      {/*<div className="trackIcon">
                         <AiOutlineClockCircle
                           style={{ fill: "#36CF45", width: 24, height: 24 }}
                         />
                       </div>
-                      <div className="track">Track Your progress</div>
+                      <div className="track">Track Your progress</div>*/}
                     </div>
                     <div className="cardBody">
                       This contains a detailed guide to how to be a full stack web
@@ -188,8 +188,8 @@ const LearnSkill = () => {
                         );
                       })}
                     </div>
-              </Link>
-        }
+                  </Link>
+              }
             </div>
           );
         })}

@@ -27,7 +27,7 @@ const Header = (props) => {
                     <div className="row container-fluid">
                         <div className="col-2 line">
                             <Link to="/">
-                            <img className="oscalogo" src={logo} alt="" />
+                                <img className="oscalogo" src={logo} alt="" />
                             </Link>
                             <span>OSCA</span>
                         </div>
@@ -35,12 +35,12 @@ const Header = (props) => {
                         <div className="header-content">
                             <div className="header-text">
                                 <div className="row">
-                                    <div className={`col-4 justify-content-center header-text ${props.location === "/learnskill" ? "link__visited" : null}`} >
+                                    <div className={`col-10 justify-content-center header-text ${props.location === "/learnskill" ? "link__visited" : null}`} >
                                         <Link to="/learnskill" className="link">
                                             Learn a Skill
                                         </Link>
                                     </div>
-                                    <div className={`col-6 text-center justify-content-center ${props.location === "/track" ? "link__visited" : null}`}>
+                                    {/*<div className={`col-6 text-center justify-content-center ${props.location === "/track" ? "link__visited" : null}`}>
                                         <Link className="link">
                                             Track Your Progress
                                         </Link>
@@ -50,10 +50,15 @@ const Header = (props) => {
                                         <Link to="/aboutus" className="link">
                                             About
                                         </Link>
+                                    </div>*/}
+                                    <div className={`col-6 text-center justify-content-center ${props.location === "/track" ? "link__visited" : null}`}>
+                                        <Link to={{ pathname: "https://www.google.com" }} target="_blank" rel="noopener noreferrer" className="link">
+                                            Feedback
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
-                            <div className="header-text">
+                            {/*<div className="header-text">
                                 <div className="row">
                                     <div className="col-3 header-text">
                                         <Link className="link">
@@ -67,7 +72,7 @@ const Header = (props) => {
                                         </Link>
                                     </div>
                                 </div>
-                            </div>
+                                </div>*/}
                         </div>
                     </div>
                 </div>
@@ -84,10 +89,10 @@ const Header = (props) => {
                                 <div className={drawerOpen ? "change-3" : "bar-3"}></div>
                             </div>
                         </div>
-                        <div className="col-2"></div>
+                        <div className="col-1"></div>
                         <div className="col-1 header-text">
                             <Link to="/">
-                            <img className="oscalogo" src={logo} alt="" />
+                                <img className="oscalogo" src={logo} alt="" />
                             </Link>
                             <span>OSCA</span>
                         </div>
@@ -104,6 +109,13 @@ const Header = (props) => {
                                 </div>
                                 <hr className="header-bar" />
                                 <div className="row pt-2 header-ex">
+                                    <div className="justify-content-center text-center header-text">
+                                        <Link to={{ pathname: "https://www.google.com" }} target="_blank" rel="noopener noreferrer" className="link">
+                                            Feedback
+                                        </Link>
+                                    </div>
+                                </div>
+                                {/*<div className="row pt-2 header-ex">
                                     <div className="justify-content-center text-center header-text">
                                         <Link className="link">
                                             Track Your Progress
@@ -133,7 +145,7 @@ const Header = (props) => {
                                             Sign Up
                                         </Link>
                                     </div>
-                                </div>
+                        </div>*/}
                             </>
                         ) : null
                     }

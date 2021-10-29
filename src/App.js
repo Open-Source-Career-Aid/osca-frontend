@@ -7,10 +7,10 @@ import { ErrorPage } from './Components/Error/ErrorPage';
 import RoadmapForm from './Components/Form/Form';
 import { LowerBody } from './Components/Homepage/LowerBody';
 import LearnSkill from './Components/LearnSkill/LearnSkill';
-import { About } from './Components/About/About'
+//import { About } from './Components/About/About'
 import Subskill from './Components/Subskill/Subskill';
 import Skill from './Components/Skill/Skill';
-import SkillEdit from './Components/Editing-Pages/SkilEdit';
+//import SkillEdit from './Components/Editing-Pages/SkilEdit';
 
 function App() {
   return (
@@ -30,10 +30,10 @@ function App() {
             <Header />
             <ErrorPage />
           </Route>
-          <Route path="/aboutus">
+          {/*<Route path="/aboutus">
             <Header location="/aboutus" />
             <About />
-          </Route>
+  </Route>*/}
           <Route path={`/skill/:Id`}>
             <Header />
             <Skill />
@@ -46,10 +46,10 @@ function App() {
             <Header />
             <RoadmapForm />
           </Route>
-          <Route path="/skilledit">
+          {/*<Route path="/skilledit">
             <Header />
             <SkillEdit />
-          </Route>
+  </Route>*/}
         </Switch>
         <Footer />
       </Router>

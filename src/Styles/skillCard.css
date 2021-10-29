@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   align-content: space-between;
-  padding: 0.1em 0 0.1em;
+  padding: 0.2em 0 0.2em;
   border-radius: 0.4rem;
   overflow: hidden;
   justify-content: space-between;
@@ -26,8 +26,8 @@
 }
 
 button.btn.btn-primary.copyButton:focus {
-  outline: none !important;
-  border: none !important;
+  outline: 0 !important;
+  border: 0 !important;
 }
 
 button.btn.btn-primary.copyButton:active {
