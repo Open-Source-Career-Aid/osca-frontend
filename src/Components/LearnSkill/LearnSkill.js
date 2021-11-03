@@ -26,7 +26,10 @@ const LearnSkill = () => {
             }),
           };
         });
-        // console.log(set[0]);
+        //  set.sort(function(a, b){
+        //   return a.skill - b.skill;
+        // });
+        set.sort((a,b)=> (a.skill === "SuperSkill" ? -1 : 1));
         setSkills(set);
       })
       .catch((err) => {
@@ -55,23 +58,7 @@ const LearnSkill = () => {
     <>
       <Container className="SpacingTop">
         <SearchBar handleSearch={handleSearch} />
-        <Row className="pt-3">
-          <MyDesktop>
-            <Col md={{ span: 6, offset: 1 }} className="text-center kn-style">
-              No previous knowledge required!
-            </Col>
-          </MyDesktop>
-          <Col md={{ span: 1, offset: 1 }} xs={{ span: 1, offset: 5 }} xl={1}>
-            <div className="skillset justify-content-end text-start">
-              Superskill
-            </div>
-          </Col>
-          <Col md={1} xl={1} xs={{ span: 1 }}>
-            <div className="skillset active justify-content-start">
-              Subskills
-            </div>
-          </Col>
-        </Row>
+        
         <MyMobile>
           <Row>
             <Container className="learn-txt">Skillset</Container>

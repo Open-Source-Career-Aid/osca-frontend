@@ -11,17 +11,15 @@ import { TagsEdit } from '../EditFroms/TagsEdit';
 import { PrerequisitesEdit } from '../EditFroms/PrerequisitesEdit';
 import { SuperSkillEdit } from '../EditFroms/SuperSkillEdit';
 import {Button} from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 
 const SkillEdit = (props) => {
-    console.log(props, "hey ")
+    // console.log(props, "hey ")
     let edit_data = props.location.state.skilldata;
     const [isEdit, setIsEdit] = useState(false);
     const [valueEdit, setEditValue] = useState(edit_data.name);
-
-    //let Tagdata = [{ name: 'HTML' }, { name: 'Machine Learning' }, { name: 'HTML' }];
-
-    //let preData = [{ name: 'HTML' }, { name: 'Machine Learning' }, { name: 'HTML' }];
-
+    const history = useHistory();
+    
     const handleSubmit = () => {
 
     }
@@ -30,7 +28,7 @@ const SkillEdit = (props) => {
         <div className="spacingTop">
             <Row>
                 <Col xs={{ span: 1, offset: 0 }} md={{ span: 1, offset: 2 }} className="text-end">
-                    <IconButton>
+                    <IconButton onClick={() => history.goBack()} >
                         <ArrowBackIcon className="EditBtn" />
                     </IconButton>
                 </Col>

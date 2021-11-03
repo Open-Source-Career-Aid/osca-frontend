@@ -179,7 +179,7 @@ const RoadmapEdit = (props) => {
               <div className={style.Drag}>
                 <img src={Arrow} className={style.dragArrow} alt="" />
               </div>
-              <Row className={`my-1 ${style.backDrop}`}>
+              <Row style={{"flex-wrap" : "wrap"}} className={`my-1 ${style.backDrop}`}>
                 <Col md={{ span: 9 }} className={style.headLine}>
                   {isEditable_topicname[index] === 1 ?
 
@@ -196,6 +196,7 @@ const RoadmapEdit = (props) => {
                   }
 
                 </Col>
+                
                 <Col md={3} className={`text-end`}>
                   {isEditable_topicname[index] ? (
                     <>
@@ -216,11 +217,10 @@ const RoadmapEdit = (props) => {
                   return (
                     <>
                       <Row className="pt-2">
-                        <Col md={1} className="my-1">
-                        </Col>
+                       
                         <Col md={11} className={style.links}>
                           <Row>
-                            <Col md={11}>
+                            <Col className={style.links_input} md={11}>
 
                               {data.link}
                             </Col>
@@ -252,12 +252,12 @@ const RoadmapEdit = (props) => {
                   </Droppable>
                     </DragDropContext>*/}
                 <Row>
-                  <Col md={{ span: 11, offset: 1 }}>
+                  {/* <Col md="12"> */}
                     <hr className={style.Rule} />
-                  </Col>
+                  {/* </Col> */}
                 </Row>
                 <Row>
-                  <Col md={{ span: 11, offset: 1 }} className={style.links}>
+                  <Col md={{ span: 11}} className={style.links}>
                     <Row>
                       <Col md={11}>
                         <input
@@ -266,6 +266,7 @@ const RoadmapEdit = (props) => {
                           placeholder="Place the resourse link here."
                           onChange={(e) => handle_link_change(index, e.target.value, e)}
                           value={edit_links[index]}
+                          
                         />
                       </Col>
                       <Col md={1} className="text-center justify-content-center">
