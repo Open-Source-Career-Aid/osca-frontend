@@ -36,7 +36,7 @@ const SkillCard = (props) => {
                                     return (
                                         <>
                                             <Col style={{ maxWidth: '90%', overflow: 'hidden' }} xs={10} sm={11} md={11} lg={11} xl={11}>
-                                                <span style={styles.value} >{link.link}</span>
+                                                <span style={styles.value} ><a href={link.link}>{link.link}</a></span>
                                             </Col>
                                             <Col className='copyButtonCol' xs={2} sm={1} md={1} lg={1} xl={1}>
                                             

@@ -10,31 +10,25 @@ import ClearIcon from "@material-ui/icons/Clear";
 import { TagsEdit } from "../EditFroms/TagsEdit";
 import { PrerequisitesEdit } from "../EditFroms/PrerequisitesEdit";
 import RoadmapEdit from "../EditFroms/RoadmapEdit";
-//import { useHistory } from "react-router-dom";
+// import { useHistory, useLocation } from "react-router";
+import { useHistory } from "react-router-dom";
 
 const SubskillEdit = (props) => {
-  let edit_data = props.location.state.subskilldata;
+  const history = useHistory();
+  // console.log(location.state); 
+  let {subskilldata} = props.location.state;
+  let edit_data = subskilldata;
   const [isEdit, setIsEdit] = useState(false);
   const [valueEdit, setEditValue] = useState(edit_data.skill);
 
-  /*let Tagdata = [
-    { name: "HTML" },
-    { name: "Machine Learning" },
-    { name: "HTML" },
-  ];
 
-  let preData = [
-    { name: "HT12ML" },
-    { name: "Machine Learning" },
-    { name: "HTML" },
-  ];*/
-  console.log(edit_data);
+  // console.log(edit_data);
   return (
     <div className="spacingTop">
       <Row>
         <Col md={{ span: 1, offset: 2 }} className="text-end">
-          <IconButton>
-            <ArrowBackIcon className="EditBtn" />
+          <IconButton >
+            <ArrowBackIcon onClick={() => history.goBack()}  className="EditBtn" />
           </IconButton>
         </Col>
         <Col md={6} className="inputExtension">

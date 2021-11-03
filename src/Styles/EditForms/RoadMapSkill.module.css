@@ -42,9 +42,14 @@
   height: 35px;
   padding-top: 5px;
 }
+.links_input {
+  overflow: hidden;
+}
 
 .Rule {
-  width: 100%;
+  margin-top: 1rem;
+  /* margin-left: 1rem; */
+  width: 92%;
   border: 1px solid #989898;
 }
 
@@ -56,12 +61,14 @@
 
 .inputF:focus {
   outline: none;
+  overflow: hidden;
 }
 
 .inputE {
   color: #586060 !important;
   transform: translateY(-8px);
   font-weight: 500;
+  overflow: hidden;
 }
 
 .trans {

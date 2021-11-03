@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Fragment } from 'react';
 import Header from './Components/Header';
 import { Footer } from './Components/Footer';
 import Home from './Components/Homepage/Home';
@@ -11,6 +12,7 @@ import { About } from './Components/About/About'
 import Subskill from './Components/Subskill/Subskill';
 import Skill from './Components/Skill/Skill';
 import SkillEdit from './Components/Editing-Pages/SkilEdit';
+import SubskillEdit from './Components/Editing-Pages/SubskillEdit';
 
 function App() {
   return (
@@ -46,10 +48,18 @@ function App() {
             <Header />
             <RoadmapForm />
           </Route>
-          <Route path="/skilledit">
+          <Route path="/skilledit" exact render={(props) => 
+            <Fragment>
             <Header />
-            <SkillEdit />
-          </Route>
+            <SkillEdit {...props} />
+            </Fragment>}
+          />
+          <Route path="/subskilledit" exact render={(props) =>
+            <Fragment>
+              <Header />
+              <SubskillEdit {...props} />
+            </Fragment>} />
+
         </Switch>
         <Footer />
       </Router>

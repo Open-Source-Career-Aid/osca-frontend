@@ -179,7 +179,7 @@
 
 @media only screen and (max-width: 768px) {
   .cardFooter {
-    font-size: 11px !important;
+    font-size: 1rem !important;
   }
   .skillCard {
     width: 90% !important;
@@ -320,11 +320,11 @@ h1 > span {
   font-family: Poppins;
   font-style: normal;
   font-weight: 500;
-  font-size: 12px !important;
-  line-height: 24px;
+  font-size: .7rem !important;
+  line-height: 1.5rem;
   display: flex;
   border-radius: 9px;
-  padding: 2px 5px;
+  padding: 1px 10px;
   margin: 5px 0 5px 10px;
   align-items: center;
   text-align: center;

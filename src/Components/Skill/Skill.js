@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap';
-import { Button, Collapse } from 'react-bootstrap';
+// import { Button, Collapse } from 'react-bootstrap';
 import { Link } from "react-router-dom";
-import SkillCard from './SkillCard';
+// import SkillCard from './SkillCard';
 import './../../Styles/Skill.css';
 //import EditButton from './../Buttons/Editbutton';
 import { useParams, useHistory } from "react-router-dom";
@@ -25,7 +25,7 @@ function generateRandomColor() {
     // return randomColor;
     let color = "#";
     for (let i = 0; i < 3; i++)
-        color += ("0" + Math.floor(Math.random() * Math.pow(16, 2) / 2).toString(16)).slice(-2);
+        color += ("0" + Math.floor(Math.random() * Math.pow(20, 2) / 2).toString(16)).slice(-2);
     return color;
     //random color will be freshly served
 }
@@ -67,7 +67,7 @@ const Skill = () => {
             })
 
         return () => mounted = false;
-    }, [Id])
+    }, [skilldata])
 
 
     const handleChange = (idx) => {
@@ -82,7 +82,7 @@ const Skill = () => {
             setSrc({ ...src })
         }
     }
-
+    // console.log(skilldata);
     //tags edit form
     //const [tags, setTags] = useState(false);
 
@@ -187,9 +187,13 @@ const Skill = () => {
                             <>
                                 <Row style={styles.fullWidth} className='align-items-center'  >
                                     <Col xs={11} sm={11} md={11} lg={11} xl={11} >
+                                        
+
+                                        <Link to={`/subskill/${skill.id}`}>
                                         <h3 className='skillName'>{skill.skill}</h3>
+                                        </Link>
                                     </Col>
-                                    <Col xs={1} sm={1} md={1} lg={1} xl={1} >
+                                    {/* <Col xs={1} sm={1} md={1} lg={1} xl={1} >
                                         <Button
                                             style={styles.btn}
 
@@ -198,14 +202,14 @@ const Skill = () => {
                                             aria-expanded={open}>
                                             <img style={open[idx] ? styles.dropButton : styles.leftbutton} src={src[idx]} alt="" />
                                         </Button>
-                                    </Col>
+                                    </Col> */}
                                 </Row>
-                                <Collapse in={open[idx]}>
+                                {/* <Collapse in={open[idx]}>
                                     <div id="example-collapse-text">
 
                                         <SkillCard props={skill.topics} />
                                     </div>
-                                </Collapse>
+                                </Collapse> */}
                             </>
 
                         )
