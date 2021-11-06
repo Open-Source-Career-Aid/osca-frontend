@@ -1,0 +1,166 @@
+.blogStructure {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  padding-top: 100px;
+  /* justify-content: center; */
+  flex-direction: column;
+}
+
+.blogStructure > h1 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 96px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #586060;
+}
+
+.blogStructure > p {
+  width: 600px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  color: #989898;
+}
+
+.blogContainer {
+  align-items: center;
+  display: flex;
+  padding: 25px 13%;
+  width: 100%;
+  flex-direction: inherit;
+}
+
+.containerHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  width: inherit;
+}
+
+.blogTopics {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  width: 350px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #757575;
+}
+
+.blogContainer > hr {
+  width: inherit;
+  border: 2px solid #e1e1e1;
+}
+
+.blogSearch > input {
+  outline: none;
+  border: none;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  display: flex;
+  justify-content: center;
+  margin-left: 15px;
+  color: #989898;
+}
+
+.blogSearch {
+  border: 1px solid #989898;
+  border-radius: 5px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.blogSearch > input::placeholder {
+  color: #989898;
+  font-size: 18px;
+}
+
+.blogCard {
+  display: flex;
+  flex-direction: row;
+  width: inherit;
+  height: 350px;
+  justify-content: space-between;
+}
+
+.leftBlog {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  height: inherit;
+  margin-right: 80px;
+}
+
+.leftBlog > h6 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  align-items: center;
+  text-align: center;
+  color: #757575;
+  text-transform: capitalize !important;
+}
+
+.leftBlog > h6 > span {
+  text-transform: capitalize !important;
+  color: #8750a9;
+}
+
+.leftBlog > h1 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 44px;
+  color: #000000;
+}
+
+.leftBlog > p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 30px;
+  color: #a3a3a3;
+}
+
+.leftBlog > ul {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #757575;
+  margin: 0;
+  padding: 0;
+}
+
+.leftBlog>ul>li{
+  margin-left: 30px;
+}
+
+.blogTopics>div:hover{
+  cursor: pointer;
+  color: #8750a9;
+}
