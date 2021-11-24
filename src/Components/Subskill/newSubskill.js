@@ -35,46 +35,61 @@ const roadmap ={
     prerequisites : [ {prereqName: 'HTML'},{prereqName: 'HTML'},{prereqName: 'HTML'},{prereqName: 'HTML'}],
     
     levels: [
-        {
-            name: 'HTML',
-            links: [
-                {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} ,
-                {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} ,
-                {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} 
-            ],
-            subTopics:null
-        },
-        {
-            name: 'HTML',
-            links: null,
-            subTopics: [
-                {
-                    name: 'HTML',
-                    links: [
-                        {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} ,
-                        {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} ,
-                        {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} 
-                    ],
-                },
-                {
-                    name: 'CSS',
-                    links: [
-                        {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} ,
-                        {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} ,
-                        {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} 
-                    ],
-                }
-            ]
-        },
-        {
-            name: 'HTML',
-            links: [
-                {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} ,
-                {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} ,
-                {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} 
-            ],
-            subTopics:null
-        },
+        [
+            {
+                name: 'HTML',
+                links: [
+                    {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} ,
+                    {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} ,
+                    {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} 
+                ],
+                subTopics:null
+            }
+        ],
+        [   
+            {
+                name: 'HTML24',
+                links: null,
+                subTopics: [
+                    {
+                        name: 'colorwe',
+                        links: [
+                            {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} ,
+                            {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} ,
+                            {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} 
+                        ],
+                    },
+                    {
+                        name: 'Tagwe',
+                        links: [
+                            {link: 'www.google.com'} ,
+                            {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} ,
+                            {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} 
+                        ],
+                    }
+                ]
+            },
+            {
+                name: 'HTML12',
+                links: [
+                    {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} ,
+                    {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} ,
+                    {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} 
+                ],
+                subTopics:null
+            } 
+        ],
+        [
+            {
+                name: 'HTML3',
+                links: [
+                    {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} ,
+                    {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} ,
+                    {link: 'https://cdn.discordapp.com/attachments/852968860768010280/.... '} 
+                ],
+                subTopics:null
+            }
+        ],
     ]
             
     
@@ -118,11 +133,24 @@ const NewSubskill = (props) => {
         let values = { ...open };
         values[idx] = !values[idx];
         setOpen({ ...values });
-        if (src[idx] === leftsrc) {
-            src[idx] = upsrc;
+        if (src[idx] === upsrc) {
+            src[idx] = leftsrc;
             setSrc({ ...src })
         } else {
-            src[idx] = leftsrc;
+            src[idx] =upsrc;
+            setSrc({ ...src })
+        }
+    }
+
+    const handleChangeNest = (idx,idx2) => {
+        let values = { ...open };
+        values[10000*idx+idx2] = !values[10000*idx+idx2];
+        setOpen({ ...values });
+        if (src[10000*idx+idx2] === leftsrc) {
+            src[10000*idx+idx2] = upsrc;
+            setSrc({ ...src })
+        } else {
+            src[10000*idx+idx2] = leftsrc;
             setSrc({ ...src })
         }
     }
@@ -165,7 +193,7 @@ const NewSubskill = (props) => {
                     <Row style={styles.fullWidth} >
 
                         <Col xs='auto' >
-                            <h2>{subskilldata.skill}</h2>
+                            <h2>{subskilldata.skill || roadmap.name}</h2>
                         </Col>
                         <Col xs='auto' >
                             {/* <Link to="/htmledit" params={subskilldata}> */}
@@ -211,12 +239,13 @@ const NewSubskill = (props) => {
                     </div>
                     <div style={{ paddingLeft: '.6em', ...styles.fullWidth }} >
                         <h3>Roadmap</h3>
-                        {/* <SkillCard props={subskilldata.topics} /> */}
+                       
                         <>
                              {subskilldata.levels.map((level, idx) => {
 
                                 return (
                                     <div className="try">
+                                        <div className="progCircle"></div>
                                         <Row style={styles.fullWidth} className='align-items-center level'  >
                                             <Col xs={11} sm={11} md={11} lg={11} xl={11} >
                                             
@@ -236,27 +265,90 @@ const NewSubskill = (props) => {
                                         <Collapse in={open[idx]}>
                                             <div id="example-collapse-text " className="outerlevelsubtopic">
 
-                                               {/* <h1>mauanl</h1> */}
-                                               {level.links === null?
-                                                    <>
-                                                        <h1>mayank</h1>
-                                                
-                                                    </>
-                                                :
-                                                <div className="level1">
-                                                    <span className="levelName">{level.name}</span>
-                                                    {level.links.map((link_it,idx2) => {
-                                                        return (
-                                                            <>
-                                                                <span>
-                                                                {link_it.link}
-                                                                </span>
-                                                            </>
-                                                        )
-                                                    })}
-                                                </div>
+                                                {level.map((topic,idx2)=> {
+                                                    return (
+                                                        <>
 
-                                            }
+                                                                {topic.links === null?
+                                                                    <div className="subtopicsDropdown">
+                                                                        <div className="progCircle"></div>
+                                                                        <Row style={styles.fullWidth} className='align-items-center subtopic'  >
+                                                                            <Col xs={11} sm={11} md={11} lg={11} xl={11} >
+                                                                            
+                                                                                <span className="levelName" >{topic.name}</span>
+                                                                            </Col>
+                                                                            <Col xs={1} sm={1} md={1} lg={1} xl={1} >
+                                                                                <Button
+                                                                                    style={styles.btn}
+
+                                                                                    onClick={() => handleChangeNest(idx,idx2)}
+                                                                                    aria-controls="example-collapse-text"
+                                                                                    aria-expanded={open}>
+                                                                                    <img style={open[10000*idx+idx2] ? styles.dropButton : styles.leftbutton} src={src[10000*idx+idx2]} alt="" />
+                                                                                </Button>
+                                                                            </Col>
+                                                                        </Row>
+                                                                        <Collapse in={open[10000*idx+idx2]}>
+                                                                            <div id="example-collapse-text " className="outerlevelsubtopic">
+                                                                                {topic.subTopics.map((subTopic, idx3) => {
+                                                                                    return (
+                                                                                        <>
+                                                                                            <div className="level2">
+                                                                                            <div className="progCircle"></div>
+                                                                                                <span className="levelName">{subTopic.name}</span>
+                                                                                                {subTopic.links.map((link_it,idx4) => {
+                                                                                                    return (
+                                                                                                        <div className="resourceLink">
+                                                                                                            <Col style={{ maxWidth: '90%', overflow: 'hidden' }} xs={10} sm={11} md={11} lg={11} xl={11}>
+                                                                                                                    <span  ><a href={link_it.link}>{link_it.link}</a></span>
+                                                                                                                </Col>
+                                                                                                                <Col className='copyButtonCol' xs={2} sm={1} md={1} lg={1} xl={1}>
+                                                                                                                
+                                                                                                                    <Button id={idx}  className="copyButton"  style={styles.copyButton} onClick={() =>{navigator.clipboard.writeText(link_it.link) } }>
+                                                                                                                        {/* <Link> */}
+                                                                                                                            <img style={styles.copyButtonIcon} src="../copy.png" alt="" />
+                                                                                                                        {/* </Link> */}
+                                                                                                                    </Button>
+                                                                                                            
+                                                                                                            </Col>
+                                                                                                        </div>
+                                                                                                    )
+                                                                                                })}
+                                                                                            </div>
+                                                                                        </>
+                                                                                    )
+                                                                                })}
+                                                                        </div>
+                                                                      </Collapse>  
+                                                                    </div>
+                                                                :
+                                                                <div className="level1">
+                                                                    <div className="progCircle"></div>
+                                                                    <span className="levelName">{topic.name}</span>
+                                                                    {topic.links.map((link_it,idx3) => {
+                                                                        return (
+                                                                            <div className="resourceLink">
+                                                                                <Col style={{ maxWidth: '90%', overflow: 'hidden' }} xs={10} sm={11} md={11} lg={11} xl={11}>
+                                                                                        <span  ><a href={link_it.link}>{link_it.link}</a></span>
+                                                                                    </Col>
+                                                                                    <Col className='copyButtonCol' xs={2} sm={1} md={1} lg={1} xl={1}>
+                                                                                    
+                                                                                        <Button id={idx}  className="copyButton"  style={styles.copyButton} onClick={() =>{navigator.clipboard.writeText(link_it.link) } }>
+                                                                                            {/* <Link> */}
+                                                                                                <img style={styles.copyButtonIcon} src="../copy.png" alt="" />
+                                                                                            {/* </Link> */}
+                                                                                        </Button>
+                                                                                
+                                                                                </Col>
+                                                                            </div>
+                                                                        )
+                                                                    })}
+                                                                </div>
+
+                                                            }
+                                                        </>
+                                                    )
+                                                })}
                                                
                                                 
                                             </div>
@@ -283,12 +375,12 @@ const styles = {
     },
     leftbutton: {
         height: '.8em',
-        width: '.7em',
-        
+        width: '.8em',
+        transform: 'rotate(180deg)'
     },
     dropButton: {
         height: '.8em',
-        width: '1em'
+        width: '.8em'
     },
     backButton: {
         marginTop: '.1em',
@@ -306,7 +398,20 @@ const styles = {
         textDecorationLine: 'underline',
 
     },
+    copyButton: {
+        backgroundColor: 'transparent',
+        border: 'none'
+    },
+    copyButtonIcon: {
+        height: '1.5em',
+        width: '1.2em',
+        objectFit: 'contain'
+    }
 
 }
 
 export default NewSubskill;
+
+
+ {/* <h1>mauanl</h1> */}
+ 

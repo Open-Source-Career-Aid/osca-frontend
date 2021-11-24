@@ -61,6 +61,7 @@ function App() {
               <SubskillEdit {...props} />
             </Fragment>} />
            <Route path="/new">
+             <Header/>
              <NewSubskill></NewSubskill>
             </Route> 
         </Switch>
