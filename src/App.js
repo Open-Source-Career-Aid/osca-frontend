@@ -13,6 +13,7 @@ import Subskill from './Components/Subskill/Subskill';
 import Skill from './Components/Skill/Skill';
 import SkillEdit from './Components/Editing-Pages/SkilEdit';
 import SubskillEdit from './Components/Editing-Pages/SubskillEdit';
+import NewSubskill from './Components/Subskill/newSubskill';
 
 function App() {
   return (
@@ -59,7 +60,10 @@ function App() {
               <Header />
               <SubskillEdit {...props} />
             </Fragment>} />
-
+           <Route path="/new">
+             <Header/>
+             <NewSubskill></NewSubskill>
+            </Route> 
         </Switch>
         <Footer />
       </Router>

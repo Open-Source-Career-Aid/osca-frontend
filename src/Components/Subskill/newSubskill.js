@@ -155,30 +155,35 @@ const NewSubskill = (props) => {
         }
     }
 
+    //   useState(() => {
+    //     let item=show_tooltip;
+    //     for(let i=0;i<subskilldata.levels.length;i++){
+    //         show_tooltip[i]=0;
+    //     }
+    //     setShow({...item});
+    //   },[])
+
 
     useEffect(() => {
         let mounted = true;
         getList(Id)
             .then(items => {
                 if (mounted) {
+                    console.log(items, 'mayank', items.skill);
                     
                     for(i=0;i<items.levels.length;i++) {
                         opendict[i]=0;
                         srcdict[i]=leftsrc;
 
                         for(let j=0;j<items.levels[i].topics.length;j++) {
-   
+
+                        
+                            // for(let k=0;k<items.levels[i].topics[j].subtopics.legth;k++) {
                                 opendict[10000*i+j]=0;
                                 srcdict[10000*i+j]=leftsrc;
+                            // }
                         }    
                     }
-                    {if(items.prerequisites.length ===0) {
-                        items.prerequisites.push({prereqName:"NA"})
-                    }}
-                    {if(items.tags.length ===0) {
-                        items.tags.push({tagName:"NA"})
-                    }}
-
                     setOpen({...opendict});
                     setSrc({...srcdict});
                     setSubskilldata({ ...items });
