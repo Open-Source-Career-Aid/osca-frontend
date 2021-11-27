@@ -99,10 +99,10 @@ const roadmap ={
 
 
 
-// const getList = (skillId) => {
-//     return fetch('http://osca-api.herokuapp.com/form/get-skill/?id=' + skillId)
-//         .then(data => data.json())
-// }
+const getList = (skillId) => {
+    return fetch('http://osca-api.herokuapp.com/form/get-skill/?id=' + skillId)
+        .then(data => data.json())
+}
 
 const NewSubskill = (props) => {
     let { Id } = useParams();
@@ -146,11 +146,11 @@ const NewSubskill = (props) => {
         let values = { ...open };
         values[10000*idx+idx2] = !values[10000*idx+idx2];
         setOpen({ ...values });
-        if (src[10000*idx+idx2] === leftsrc) {
-            src[10000*idx+idx2] = upsrc;
+        if (src[10000*idx+idx2] === upsrc) {
+            src[10000*idx+idx2] = leftsrc;
             setSrc({ ...src })
         } else {
-            src[10000*idx+idx2] = leftsrc;
+            src[10000*idx+idx2] = upsrc;
             setSrc({ ...src })
         }
     }
@@ -164,21 +164,37 @@ const NewSubskill = (props) => {
     //   },[])
 
 
-    // useEffect(() => {
-    //     let mounted = true;
-    //     getList(Id)
-    //         .then(items => {
-    //             if (mounted) {
-    //                 // console.log(items, 'mayank', items.skill);
-    //                 setSubskilldata({ ...items });
-    //             }
-    //         })
-    //     return () => mounted = false;
-    // }, [Id])
+    useEffect(() => {
+        let mounted = true;
+        getList(Id)
+            .then(items => {
+                if (mounted) {
+                    console.log(items, 'mayank', items.skill);
+                    
+                    for(i=0;i<items.levels.length;i++) {
+                        opendict[i]=0;
+                        srcdict[i]=leftsrc;
+
+                        for(let j=0;j<items.levels[i].topics.length;j++) {
+
+                        
+                            // for(let k=0;k<items.levels[i].topics[j].subtopics.legth;k++) {
+                                opendict[10000*i+j]=0;
+                                srcdict[10000*i+j]=leftsrc;
+                            // }
+                        }    
+                    }
+                    setOpen({...opendict});
+                    setSrc({...srcdict});
+                    setSubskilldata({ ...items });
+                }
+            })
+        return () => mounted = false;
+    }, [Id])
 
 
-    // const { loading } = useLoading('http://osca-api.herokuapp.com/form/get-skill/?id=' + Id);
-    const loading=false;
+    const { loading } = useLoading('http://osca-api.herokuapp.com/form/get-skill/?id=' + 1);
+    // const loading=false;
     return loading ? (
         <Loader message="Loading! please wait...." />
     ) : (
@@ -265,17 +281,17 @@ const NewSubskill = (props) => {
                                         <Collapse in={open[idx]}>
                                             <div id="example-collapse-text " className="outerlevelsubtopic">
 
-                                                {level.map((topic,idx2)=> {
+                                                {level.topics.map((topic,idx2)=> {
                                                     return (
                                                         <>
 
-                                                                {topic.links === null?
+                                                                {topic.subtopics.length >= 1?
                                                                     <div className="subtopicsDropdown">
                                                                         <div className="progCircle"></div>
                                                                         <Row style={styles.fullWidth} className='align-items-center subtopic'  >
                                                                             <Col xs={11} sm={11} md={11} lg={11} xl={11} >
                                                                             
-                                                                                <span className="levelName" >{topic.name}</span>
+                                                                                <span className="levelName" >{topic.topicName}</span>
                                                                             </Col>
                                                                             <Col xs={1} sm={1} md={1} lg={1} xl={1} >
                                                                                 <Button
@@ -290,13 +306,13 @@ const NewSubskill = (props) => {
                                                                         </Row>
                                                                         <Collapse in={open[10000*idx+idx2]}>
                                                                             <div id="example-collapse-text " className="outerlevelsubtopic">
-                                                                                {topic.subTopics.map((subTopic, idx3) => {
+                                                                                {topic.subtopics.map((subTopic, idx3) => {
                                                                                     return (
                                                                                         <>
                                                                                             <div className="level2">
                                                                                             <div className="progCircle"></div>
-                                                                                                <span className="levelName">{subTopic.name}</span>
-                                                                                                {subTopic.links.map((link_it,idx4) => {
+                                                                                                <span className="levelName">{subTopic.value}</span>
+                                                                                                {subTopic.resources.map((link_it,idx4) => {
                                                                                                     return (
                                                                                                         <div className="resourceLink">
                                                                                                             <Col style={{ maxWidth: '90%', overflow: 'hidden' }} xs={10} sm={11} md={11} lg={11} xl={11}>
@@ -324,8 +340,8 @@ const NewSubskill = (props) => {
                                                                 :
                                                                 <div className="level1">
                                                                     <div className="progCircle"></div>
-                                                                    <span className="levelName">{topic.name}</span>
-                                                                    {topic.links.map((link_it,idx3) => {
+                                                                    <span className="levelName">{topic.topicName}</span>
+                                                                    {topic.resources.map((link_it,idx3) => {
                                                                         return (
                                                                             <div className="resourceLink">
                                                                                 <Col style={{ maxWidth: '90%', overflow: 'hidden' }} xs={10} sm={11} md={11} lg={11} xl={11}>
