@@ -23,7 +23,7 @@
   position: fixed;
   width: 100%;
   z-index: 100;
-  padding-top: 15px;
+  padding-top: 15px !important;
   padding-bottom: 15px;
   transition: ease 1s;
 }
@@ -133,12 +133,12 @@
   color: #ffffff;
 }
 
-.oscalogo  {
+.oscalogo {
   width: 75px;
   height: 39.68px;
   transform: rotate(180deg);
 }
-.line > span {
+.line > a > span {
   color: white;
   font-size: 25px;
   margin-left: 5px;
@@ -158,14 +158,22 @@
 .breaker {
   width: 50px !important;
   height: 1px;
-  margin-top: 1%;
+  margin-top: 15px;
 
   border: 1px solid #cdcdcd;
   transform: matrix(0, 1, 1, 0, 0, 0);
 }
 
 .line {
-  max-width: 150px;
+  max-width: 170px;
+  min-width: 170px;
+}
+
+.line > a {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .link__visited {

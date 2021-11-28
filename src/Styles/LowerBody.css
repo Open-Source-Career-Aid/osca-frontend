@@ -47,7 +47,7 @@
     align-items: center;
   }
   .aid__component {
-    margin-bottom: -1.5rem !important;
+    margin-bottom: -0.5rem !important;
   }
   .aid__component > .icon {
     height: 50px;
@@ -87,7 +87,7 @@
     margin-top: 0.2rem !important;
   }
   .roadmaps__component {
-    margin-bottom: -12.5rem !important;
+    margin-bottom: -11.5rem !important;
   }
   .roadmaps__component > .icons {
     height: 50px;

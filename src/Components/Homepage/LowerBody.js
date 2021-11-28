@@ -23,7 +23,7 @@ export const LowerBody = () => {
                             Learning Aid
                         </div>
                         <div className="description">
-                            Organised resources for easy Learning.
+                            Organised resources for easy Learning
                         </div>
                     </div>
                     <hr className="component__divider"></hr>
@@ -40,7 +40,7 @@ export const LowerBody = () => {
                             Bite sized
                         </div>
                         <div className="description">
-                            Breaking information down into manageable chunks.
+                            Breaking information down into manageable chunks
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@ export const LowerBody = () => {
                             Track your Progress
                         </div>
                         <div className="description">
-                            Keep track of your learning as your progress
+                            Keep track of your learning as you progress
                         </div>
                     </div>
                 </div>

@@ -14,6 +14,7 @@ import Skill from './Components/Skill/Skill';
 import SkillEdit from './Components/Editing-Pages/SkilEdit';
 import SubskillEdit from './Components/Editing-Pages/SubskillEdit';
 import NewSubskill from './Components/Subskill/newSubskill';
+import { Track } from './Components/Track-your-progress/Track';
 
 function App() {
   return (
@@ -49,10 +50,10 @@ function App() {
             <Header />
             <RoadmapForm />
           </Route>
-          <Route path="/skilledit" exact render={(props) => 
+          <Route path="/skilledit" exact render={(props) =>
             <Fragment>
-            <Header />
-            <SkillEdit {...props} />
+              <Header />
+              <SkillEdit {...props} />
             </Fragment>}
           />
           <Route path="/subskilledit" exact render={(props) =>
@@ -60,10 +61,14 @@ function App() {
               <Header />
               <SubskillEdit {...props} />
             </Fragment>} />
-           <Route path="/new">
-             <Header/>
-             <NewSubskill></NewSubskill>
-            </Route> 
+          <Route path="/new">
+            <Header />
+            <NewSubskill></NewSubskill>
+          </Route>
+          <Route path="/track-your-progress">
+            <Header location="/track-your-progress" />
+            <Track />
+          </Route>
         </Switch>
         <Footer />
       </Router>

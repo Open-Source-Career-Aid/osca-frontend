@@ -30,7 +30,7 @@ const SearchBar = (props) => {
         <Row className="top-pad">
             <MyDesktop>
                 <Col className="learn-txt center" md={{ span: 1, offset: 2 }}>
-                    Skillset
+
                 </Col>
             </MyDesktop>
             <Col md={{ span: 3, offset: 4 }} xs={{ span: 8, offset: 2 }} >
