@@ -188,7 +188,7 @@ const NewSubskill = (props) => {
     }, [Id])
 
 
-    const { loading } = useLoading('http://osca-api.herokuapp.com/form/get-skill/?id=' + 1);
+    const { loading } = useLoading('http://osca-api.herokuapp.com/form/get-skill/?id=' + Id);
     // const loading=false;
     return loading ? (
         <Loader message="Loading! please wait...." />
