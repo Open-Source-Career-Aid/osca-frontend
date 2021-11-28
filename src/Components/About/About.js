@@ -1,6 +1,5 @@
 import React from 'react'
 import { ContactForm } from './ContactForm'
-import { ProfileCard } from './ProfileCard'
 
 import '../../Styles/About.css'
 
@@ -164,20 +163,6 @@ export const About = () => {
                     <hr></hr>
                     <div className="contact__form">
                         <ContactForm />
-                    </div>
-                </div>
-            </div>
-            <div className="team">
-                <div className="container">
-                    <h1>Our Team</h1>
-                    <div className="cards">
-                        <ProfileCard Image={man} Name="Chinmay Shrivastava" Branch="Mechanical Engineering" Role="Mentor" />
-                        <ProfileCard Image={man} Name="Chinmay Shrivastava" Branch="Mechanical Engineering" Role="Mentor" />
-                        <ProfileCard Image={man} Name="Chinmay Shrivastava" Branch="Mechanical Engineering" Role="Mentor" />
-                        <ProfileCard Image={man} Name="Chinmay Shrivastava" Branch="Mechanical Engineering" Role="Mentor" />
-                        <ProfileCard Image={man} Name="Chinmay Shrivastava" Branch="Mechanical Engineering" Role="Mentor" />
-                        <ProfileCard Image={man} Name="Chinmay Shrivastava" Branch="Mechanical Engineering" Role="Mentor" />
-                        <ProfileCard Image={man} Name="Chinmay Shrivastava" Branch="Mechanical Engineering" Role="Mentor" />
                     </div>
                 </div>
             </div>
