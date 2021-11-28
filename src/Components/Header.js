@@ -102,7 +102,7 @@ const Header = (props) => {
                             <>
                                 <div className="row pt-5 header-ex">
                                     <div className="justify-content-center text-center header-text">
-                                        <Link to="/learnskill" className="link">
+                                        <Link to="/learnskill" className="link" onClick={() => { setDrawerOpen(!drawerOpen) }}>
                                             Learn a Skill
                                         </Link>
                                     </div>
@@ -117,7 +117,7 @@ const Header = (props) => {
                         </div>*/}
                                 <div className="row pt-2 header-ex">
                                     <div className="justify-content-center text-center header-text">
-                                        <Link to="/track-your-progress" className="link">
+                                        <Link to="/track-your-progress" className="link" onClick={() => { setDrawerOpen(!drawerOpen) }}>
                                             Track Your Progress
                                         </Link>
                                     </div>
@@ -125,7 +125,7 @@ const Header = (props) => {
                                 <hr className="header-bar" />
                                 <div className="row pt-2 header-ex">
                                     <div className="justify-content-center text-center header-text">
-                                        <Link to="/aboutus" className="link">
+                                        <Link to="/aboutus" className="link" onClick={() => { setDrawerOpen(!drawerOpen) }}>
                                             About us
                                         </Link>
                                     </div>
