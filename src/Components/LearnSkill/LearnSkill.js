@@ -108,7 +108,7 @@ const LearnSkill = () => {
                       isjdfiasdjfisjfJI jiasdf Ij ijdfi ajfl. kjsadifj Great!
                     </div>
                     <div className="cardFooter">
-                      Subskills:
+                      Tags:
                       {skill.tags.map((data, index) => {
                         return (
                           <span
@@ -156,7 +156,7 @@ const LearnSkill = () => {
                       isjdfiasdjfisjfJI jiasdf Ij ijdfi ajfl. kjsadifj Great!
                     </div>
                     <div className="cardFooter">
-                      Subskills:
+                      Tags:
                       {skill.tags.map((data, index) => {
                         return (
                           <span
