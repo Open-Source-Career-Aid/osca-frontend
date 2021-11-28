@@ -17,13 +17,15 @@
   width: 100%;
   color: #586060;
 }
-
+h5 {
+  margin-bottom: 1rem;
+}
 .headingRow {
   min-height: 76vh;
 }
 
 .tagContainer {
-  padding-top: 2%;
+  padding-top: 0.5rem;
 }
 
 .tagContainer > h5 {
