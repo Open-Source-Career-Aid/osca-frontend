@@ -1,5 +1,5 @@
 @media screen and (max-width: 992px) {
-  .image > svg {
+  .image > img {
     width: 18rem !important;
     margin-top: 0 !important;
   }
@@ -21,7 +21,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .image > svg {
+  .image > img {
     display: none !important;
   }
   .what__we__do > .container {
@@ -106,7 +106,7 @@
   color: #666666;
 }
 
-.image > svg {
+.image > img {
   margin-top: -3rem;
   margin-left: 3rem;
   width: 32rem;
@@ -118,6 +118,7 @@
   width: 100vw;
   min-height: 34.48rem;
   margin-top: -2.5rem;
+  margin-bottom: 3rem;
 }
 
 .we__do {

@@ -66,16 +66,18 @@ const Home = () => {
                 </Link>
               </Row>
               <Row style={{ paddingTop: "10%" }}>
-                <Button
-                  style={styles.button2}
-                  type="submit"
-                  variant="contained"
-                  size="small"
-                  color="secondry"
-                  className="button2"
-                >
-                  Track Your Progress
-                </Button>
+                <Link to="/track-your-progress">
+                  <Button
+                    style={styles.button2}
+                    type="submit"
+                    variant="contained"
+                    size="small"
+                    color="secondry"
+                    className="button2"
+                  >
+                    Track Your Progress
+                  </Button>
+                </Link>
               </Row>
             </Col>
           </Row>
