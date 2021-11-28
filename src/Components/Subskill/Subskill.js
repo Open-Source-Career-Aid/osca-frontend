@@ -315,7 +315,11 @@ const NewSubskill = (props) => {
                                                                                                 return (
                                                                                                     <div className="resourceLink">
                                                                                                         <Col style={{ maxWidth: '90%', overflow: 'hidden' }} xs={10} sm={11} md={11} lg={11} xl={11}>
-                                                                                                            <span  ><a href={link_it.link}>{link_it.link}</a></span>
+                                                                                                            <span  >
+                                                                                                                <Link to={{ pathname: `${link_it.link}` }} target="_blank" rel="noopener noreferrer">
+                                                                                                                    {link_it.link}
+                                                                                                                </Link>
+                                                                                                            </span>
                                                                                                         </Col>
                                                                                                         <Col className='copyButtonCol' xs={2} sm={1} md={1} lg={1} xl={1}>
 
@@ -344,7 +348,9 @@ const NewSubskill = (props) => {
                                                                         return (
                                                                             <div className="resourceLink">
                                                                                 <Col style={{ maxWidth: '90%', overflow: 'hidden' }} xs={10} sm={11} md={11} lg={11} xl={11}>
-                                                                                    <span  ><a href={link_it.link}>{link_it.link}</a></span>
+                                                                                    <span  ><Link to={{ pathname: `${link_it.link}` }} target="_blank" rel="noopener noreferrer">
+                                                                                        {link_it.link}
+                                                                                    </Link></span>
                                                                                 </Col>
                                                                                 <Col className='copyButtonCol' xs={2} sm={1} md={1} lg={1} xl={1}>
 

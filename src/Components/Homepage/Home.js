@@ -21,7 +21,7 @@ const Home = () => {
             xl={12}
           >
             <Col className="desc" style={styles.gridCol} xs={12} sm={12} md={6} lg={6} xl={6}>
-              <h2>Welcome to OSCA!</h2>
+              <h2>Open Source Career Aid!</h2>
             </Col>
             <Col
               style={{ ...styles.gridCol }}
@@ -33,7 +33,7 @@ const Home = () => {
               xl={6}
             >
               <p>
-                A platform of resources; created and and organised by skilled
+                A platform of resources; created and organised by skilled
                 individuals of planet Earth.
               </p>
             </Col>

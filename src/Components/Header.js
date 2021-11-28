@@ -35,13 +35,13 @@ const Header = (props) => {
                         <div className="header-content">
                             <div className="header-text">
                                 <div className="row">
-                                    <div className={`col-12 justify-content-center header-text ${props.location === "/learnskill" ? "link__visited" : null}`} >
+                                    <div className={`col-4 justify-content-center header-text ${props.location === "/learnskill" ? "link__visited" : null}`} >
                                         <Link to="/learnskill" className="link">
                                             Learn a Skill
                                         </Link>
                                     </div>
-                                    {/*<div className={`col-6 text-center justify-content-center ${props.location === "/track" ? "link__visited" : null}`}>
-                                        <Link className="link">
+                                    <div className={`col-6 text-center justify-content-center ${props.location === "/track-your-progress" ? "link__visited" : null}`}>
+                                        <Link to="/track-your-progress" className="link">
                                             Track Your Progress
                                         </Link>
                                     </div>
@@ -50,7 +50,7 @@ const Header = (props) => {
                                         <Link to="/aboutus" className="link">
                                             About
                                         </Link>
-                                    </div>*/}
+                                    </div>
                                     {/*<div className={`col-6 text-center justify-content-center ${props.location === "/track" ? "link__visited" : null}`}>
                                         <Link to={{ pathname: "https://docs.google.com/forms/d/e/1FAIpQLSckA-b0y_Xy2T7qUkfZ34eRy1KjUUCQpqkuCXIkuYdX-puyjA/viewform?usp=sf_link" }} target="_blank" rel="noopener noreferrer" className="link">
                                             Feedback
@@ -107,7 +107,7 @@ const Header = (props) => {
                                         </Link>
                                     </div>
                                 </div>
-                                {/*<hr className="header-bar" />*/}
+                                <hr className="header-bar" />
                                 {/*<div className="row pt-2 header-ex">
                                     <div className="justify-content-center text-center header-text">
                                         <Link to={{ pathname: "https://docs.google.com/forms/d/e/1FAIpQLSckA-b0y_Xy2T7qUkfZ34eRy1KjUUCQpqkuCXIkuYdX-puyjA/viewform?usp=sf_link" }} target="_blank" rel="noopener noreferrer" className="link">
@@ -115,9 +115,9 @@ const Header = (props) => {
                                         </Link>
                                     </div>
                         </div>*/}
-                                {/*<div className="row pt-2 header-ex">
+                                <div className="row pt-2 header-ex">
                                     <div className="justify-content-center text-center header-text">
-                                        <Link className="link">
+                                        <Link to="/track-your-progress" className="link">
                                             Track Your Progress
                                         </Link>
                                     </div>
@@ -125,12 +125,12 @@ const Header = (props) => {
                                 <hr className="header-bar" />
                                 <div className="row pt-2 header-ex">
                                     <div className="justify-content-center text-center header-text">
-                                        <Link className="link">
+                                        <Link to="/aboutus" className="link">
                                             About us
                                         </Link>
                                     </div>
                                 </div>
-                                <hr className="header-bar" />
+                                {/*<hr className="header-bar" />
                                 <div className="row pt-2 header-ex">
                                     <div className="justify-content-center text-center header-text">
                                         <Link className="link">
