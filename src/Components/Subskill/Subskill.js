@@ -264,7 +264,7 @@ const NewSubskill = (props) => {
                                         <Row style={styles.fullWidth} className='align-items-center level'  >
                                             <Col xs={11} sm={11} md={11} lg={11} xl={11} >
 
-                                                <span className="levelName" >{`Level ${idx + 1}`}</span>
+                                                <span className="levelName" >{level.levelName}</span>
                                             </Col>
                                             <Col xs={1} sm={1} md={1} lg={1} xl={1} >
                                                 <Button

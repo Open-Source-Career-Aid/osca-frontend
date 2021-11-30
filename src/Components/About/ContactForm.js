@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
+import axios from "axios"
 
 import '../../Styles/ContactForm.css'
 
@@ -28,7 +29,18 @@ export const ContactForm = () => {
             ...feedback
         }
 
-        console.warn(feedbackData)
+        if (feedback.email !== "" && feedback.name !== "" && feedback.message !== "") {
+            axios.post("http://osca-api.herokuapp.com/form/post-user-message/", feedbackData)
+                .then((res) => {
+                    console.log(res)
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
+        }
+        else {
+            console.log("all fields are required")
+        }
     }
     return (
         <>
