@@ -17,8 +17,8 @@ const LearnSkill = () => {
       .then((res) => {
         const set = res.map((details) => {
           return {
-            id:details.id,
-            name: details.skill||details.name,
+            id: details.id,
+            name: details.skill || details.name,
             skill: details.is_superskill ? "SuperSkill" : "SubSkill",
             prerequisite: [{ value: "" }],
             tags: details.tags.map((det) => {
@@ -29,7 +29,7 @@ const LearnSkill = () => {
         //  set.sort(function(a, b){
         //   return a.skill - b.skill;
         // });
-        set.sort((a,b)=> (a.skill === "SuperSkill" ? -1 : 1));
+        set.sort((a, b) => (a.skill === "SuperSkill" ? -1 : 1));
         setSkills(set);
       })
       .catch((err) => {
@@ -58,12 +58,12 @@ const LearnSkill = () => {
     <>
       <Container className="SpacingTop">
         <SearchBar handleSearch={handleSearch} />
-        
-        <MyMobile>
+
+        {/*<MyMobile>
           <Row>
             <Container className="learn-txt">Skillset</Container>
           </Row>
-        </MyMobile>
+        </MyMobile>*/}
       </Container>
       <div
         style={{
@@ -80,8 +80,8 @@ const LearnSkill = () => {
           return (
             <div className="skillCard">
               {
-                  skill.skill === "SuperSkill"?
-                  <Link className="linkTo" to={`/skill/${skill.id}`}>         
+                skill.skill === "SuperSkill" ?
+                  <Link className="linkTo" to={`/skill/${skill.id}`}>
                     <div className="cardHeader">
                       <h1>
                         {skill.name}
@@ -108,7 +108,7 @@ const LearnSkill = () => {
                       isjdfiasdjfisjfJI jiasdf Ij ijdfi ajfl. kjsadifj Great!
                     </div>
                     <div className="cardFooter">
-                      Subskills:
+                      Tags:
                       {skill.tags.map((data, index) => {
                         return (
                           <span
@@ -127,9 +127,9 @@ const LearnSkill = () => {
                         );
                       })}
                     </div>
-              </Link>
-              :
-              <Link className="linkTo" to={`/subskill/${skill.id}`}>         
+                  </Link>
+                  :
+                  <Link className="linkTo" to={`/subskill/${skill.id}`}>
                     <div className="cardHeader">
                       <h1>
                         {skill.name}
@@ -142,12 +142,12 @@ const LearnSkill = () => {
                           {skill.skill}
                         </span>
                       </h1>
-                      <div className="trackIcon">
+                      {/*<div className="trackIcon">
                         <AiOutlineClockCircle
                           style={{ fill: "#36CF45", width: 24, height: 24 }}
                         />
                       </div>
-                      <div className="track">Track Your progress</div>
+                        <div className="track">Track Your progress</div>*/}
                     </div>
                     <div className="cardBody">
                       This contains a detailed guide to how to be a full stack web
@@ -156,7 +156,7 @@ const LearnSkill = () => {
                       isjdfiasdjfisjfJI jiasdf Ij ijdfi ajfl. kjsadifj Great!
                     </div>
                     <div className="cardFooter">
-                      Subskills:
+                      Tags:
                       {skill.tags.map((data, index) => {
                         return (
                           <span
@@ -175,14 +175,14 @@ const LearnSkill = () => {
                         );
                       })}
                     </div>
-              </Link>
-        }
+                  </Link>
+              }
             </div>
           );
         })}
       </div>
       <MyMobile>
-        <div style={{ marginBottom: 64, display: "" }}></div>
+        <div style={{ marginBottom: 130, display: "" }}></div>
       </MyMobile>
     </>
   );

@@ -27,9 +27,9 @@ const Header = (props) => {
                     <div className="row container-fluid">
                         <div className="col-2 line">
                             <Link to="/">
-                            <img className="oscalogo" src={logo} alt="" />
+                                <img className="oscalogo" src={logo} alt="" />
+                                <span>OSCA</span>
                             </Link>
-                            <span>OSCA</span>
                         </div>
                         <hr className="breaker"></hr>
                         <div className="header-content">
@@ -40,8 +40,8 @@ const Header = (props) => {
                                             Learn a Skill
                                         </Link>
                                     </div>
-                                    <div className={`col-6 text-center justify-content-center ${props.location === "/track" ? "link__visited" : null}`}>
-                                        <Link className="link">
+                                    <div className={`col-6 text-center justify-content-center ${props.location === "/track-your-progress" ? "link__visited" : null}`}>
+                                        <Link to="/track-your-progress" className="link">
                                             Track Your Progress
                                         </Link>
                                     </div>
@@ -51,9 +51,14 @@ const Header = (props) => {
                                             About
                                         </Link>
                                     </div>
+                                    {/*<div className={`col-6 text-center justify-content-center ${props.location === "/track" ? "link__visited" : null}`}>
+                                        <Link to={{ pathname: "https://docs.google.com/forms/d/e/1FAIpQLSckA-b0y_Xy2T7qUkfZ34eRy1KjUUCQpqkuCXIkuYdX-puyjA/viewform?usp=sf_link" }} target="_blank" rel="noopener noreferrer" className="link">
+                                            Feedback
+                                        </Link>
+                                </div>*/}
                                 </div>
                             </div>
-                            <div className="header-text">
+                            {/*<div className="header-text">
                                 <div className="row">
                                     <div className="col-3 header-text">
                                         <Link className="link">
@@ -67,7 +72,7 @@ const Header = (props) => {
                                         </Link>
                                     </div>
                                 </div>
-                            </div>
+                                </div>*/}
                         </div>
                     </div>
                 </div>
@@ -84,10 +89,10 @@ const Header = (props) => {
                                 <div className={drawerOpen ? "change-3" : "bar-3"}></div>
                             </div>
                         </div>
-                        <div className="col-2"></div>
+                        <div className="col-1"></div>
                         <div className="col-1 header-text">
                             <Link to="/">
-                            <img className="oscalogo" src={logo} alt="" />
+                                <img className="oscalogo" src={logo} alt="" />
                             </Link>
                             <span>OSCA</span>
                         </div>
@@ -97,15 +102,22 @@ const Header = (props) => {
                             <>
                                 <div className="row pt-5 header-ex">
                                     <div className="justify-content-center text-center header-text">
-                                        <Link to="/learnskill" className="link">
+                                        <Link to="/learnskill" className="link" onClick={() => { setDrawerOpen(!drawerOpen) }}>
                                             Learn a Skill
                                         </Link>
                                     </div>
                                 </div>
                                 <hr className="header-bar" />
+                                {/*<div className="row pt-2 header-ex">
+                                    <div className="justify-content-center text-center header-text">
+                                        <Link to={{ pathname: "https://docs.google.com/forms/d/e/1FAIpQLSckA-b0y_Xy2T7qUkfZ34eRy1KjUUCQpqkuCXIkuYdX-puyjA/viewform?usp=sf_link" }} target="_blank" rel="noopener noreferrer" className="link">
+                                            Feedback
+                                        </Link>
+                                    </div>
+                        </div>*/}
                                 <div className="row pt-2 header-ex">
                                     <div className="justify-content-center text-center header-text">
-                                        <Link className="link">
+                                        <Link to="/track-your-progress" className="link" onClick={() => { setDrawerOpen(!drawerOpen) }}>
                                             Track Your Progress
                                         </Link>
                                     </div>
@@ -113,12 +125,12 @@ const Header = (props) => {
                                 <hr className="header-bar" />
                                 <div className="row pt-2 header-ex">
                                     <div className="justify-content-center text-center header-text">
-                                        <Link className="link">
+                                        <Link to="/aboutus" className="link" onClick={() => { setDrawerOpen(!drawerOpen) }}>
                                             About us
                                         </Link>
                                     </div>
                                 </div>
-                                <hr className="header-bar" />
+                                {/*<hr className="header-bar" />
                                 <div className="row pt-2 header-ex">
                                     <div className="justify-content-center text-center header-text">
                                         <Link className="link">
@@ -133,7 +145,7 @@ const Header = (props) => {
                                             Sign Up
                                         </Link>
                                     </div>
-                                </div>
+                        </div>*/}
                             </>
                         ) : null
                     }
