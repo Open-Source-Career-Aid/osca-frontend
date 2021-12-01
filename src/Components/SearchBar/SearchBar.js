@@ -26,30 +26,30 @@ const SearchBar = (props) => {
     return data;
   };
 
-    return (
-        <Row className="top-pad">
-            <MyDesktop>
-                <Col className="learn-txt center" md={{ span: 1, offset: 2 }}>
+  return (
+    <Row className="top-pad">
+      <MyDesktop>
+        <Col className="learn-txt center" md={{ span: 1, offset: 2 }}>
 
-                </Col>
-            </MyDesktop>
-            <Col md={{ span: 3, offset: 4 }} xs={{ span: 8, offset: 2 }} >
-                <InputGroup className="SearchField">
-                    <Form.Control
-                        type="text"
-                        className="Search"
-                        placeholder="Search a Skill"
-                        onChange={(e) => setTyped(e.target.value)}
-                    />
-                    <InputGroup.Append className="search-btn">
-                        <IconButton aria-label="Search" size="small" onClick={() => fetchData()}>
-                            <SearchIcon className={classes.black} />
-                        </IconButton>
-                    </InputGroup.Append>
-                </InputGroup>
-            </Col>
-        </Row>
-    )
+        </Col>
+      </MyDesktop>
+      <Col md={{ span: 3, offset: 4 }} xs={{ span: 8, offset: 2 }} >
+        <InputGroup className="SearchField">
+          <Form.Control
+            type="text"
+            className="Search"
+            placeholder="Search a Skill"
+            onChange={(e) => setTyped(e.target.value)}
+          />
+          <InputGroup.Append className="search-btn">
+            <IconButton aria-label="Search" size="small" onClick={() => fetchData()}>
+              <SearchIcon className={classes.black} />
+            </IconButton>
+          </InputGroup.Append>
+        </InputGroup>
+      </Col>
+    </Row>
+  )
 }
 
 export default SearchBar;

@@ -1,0 +1,56 @@
+.body {
+  background-color: #8750a9;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 604px;
+  height: 289px;
+  background: #ffffff;
+  border-radius: 11px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card > h1 {
+  font-weight: 600;
+  font-size: 29px;
+  line-height: 43px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #586060;
+  margin-bottom: 30px;
+}
+
+.card > button {
+  border: 1px solid #989898;
+  box-sizing: border-box;
+  border-radius: 15px 15px;
+  width: 383.37px;
+  height: 53.49px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+}
+
+.card > button > p {
+  width: 90%;
+  margin: 0;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  color: #586060;
+}
+
+.googleImg {
+  width: 40px;
+  height: 40px;
+}
