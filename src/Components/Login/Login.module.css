@@ -18,6 +18,32 @@
   justify-content: center;
 }
 
+@media only screen and (max-width: 758px) {
+  .card {
+    width: 90% !important;
+    height: 200px !important;
+  }
+
+  .card > h1 {
+    font-size: 20px !important;
+  }
+
+  .card > button {
+    width: 85% !important;
+    height: 42px !important;
+  }
+
+  .card > button > p {
+    font-size: 16px !important;
+    line-height: normal !important;
+  }
+
+  .googleImg {
+    width: 30px !important;
+    height: 30px !important;
+  }
+}
+
 .card > h1 {
   font-weight: 600;
   font-size: 29px;
