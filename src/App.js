@@ -16,8 +16,11 @@ import SubskillEdit from "./Components/Editing-Pages/SubskillEdit";
 import NewSubskill from "./Components/Subskill/newSubskill";
 import { Track } from "./Components/Track-your-progress/Track";
 import Login from "./Components/Login/Login";
+import { useSelector } from "react-redux";
 
 function App() {
+  const { isAuth } = useSelector((state) => state.user);
+
   return (
     <>
       <Router>
@@ -36,8 +39,14 @@ function App() {
             <ErrorPage />
           </Route>
           <Route path="/login">
-            <Header />
-            <Login />
+            {!isAuth ? (
+              <>
+                <Header />
+                <Login />
+              </>
+            ) : (
+              <></>
+            )}
           </Route>
           <Route path="/aboutus">
             <Header location="/aboutus" />

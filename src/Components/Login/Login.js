@@ -1,9 +1,15 @@
 import React from "react";
 import style from "./Login.module.css";
 import google from "../../Images/google.png";
+import firebaseApp from "../firebase/firebase";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { setAuth } from "../../Store/authSlice";
+import { useHistory } from "react-router";
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const history = useHistory();
   const signInWithGoogle = () => {
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
@@ -12,7 +18,8 @@ const Login = () => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         const user = result.user;
-        console.log(user, token);
+        dispatch(setAuth({ user, token }));
+        history.push("/");
       })
       .catch((error) => {
         console.log(error);
