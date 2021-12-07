@@ -9,6 +9,9 @@ import { Loader } from '../Loader/Loader';
 import { Button, Collapse } from 'react-bootstrap';
 import './newSubskill.css';
 
+import like from "../../Images/thumbs_up.png"
+import dislike from "../../Images/thumbs_down.png"
+
 function generateRandomColor() {
     // var randomColor = '#'+Math.floor(Math.random()*10777215).toString(16);
     // return randomColor;
@@ -264,7 +267,7 @@ const NewSubskill = (props) => {
                                         <Row style={styles.fullWidth} className='align-items-center level'  >
                                             <Col xs={11} sm={11} md={11} lg={11} xl={11} >
 
-                                                <span className="levelName" >{level.levelName}</span>
+                                                <span className="levelName" >{`Level ${idx + 1}`}</span>
                                             </Col>
                                             <Col xs={1} sm={1} md={1} lg={1} xl={1} >
                                                 <Button
@@ -314,14 +317,32 @@ const NewSubskill = (props) => {
                                                                                             {subTopic.resources.map((link_it, idx4) => {
                                                                                                 return (
                                                                                                     <div className="resourceLink">
-                                                                                                        <Col style={{ maxWidth: '90%', overflow: 'hidden' }} xs={10} sm={11} md={11} lg={11} xl={11}>
-                                                                                                            <span  >
-                                                                                                                <Link to={{ pathname: `${link_it.link}` }} target="_blank" rel="noopener noreferrer">
-                                                                                                                    {link_it.link}
-                                                                                                                </Link>
-                                                                                                            </span>
+                                                                                                        <Col style={{ maxWidth: '70rem', overflow: 'hidden', textoverflow: "ellipsis" }} xs={6} sm={6} md={6} lg={6} xl={6}>
+                                                                                                            <span  ><Link to={{ pathname: `${link_it.link}` }} target="_blank" rel="noopener noreferrer">
+                                                                                                                {link_it.link}
+                                                                                                            </Link></span>
                                                                                                         </Col>
-                                                                                                        <Col className='copyButtonCol' xs={2} sm={1} md={1} lg={1} xl={1}>
+                                                                                                        <Col className="understand colbuttonpadding" xs={{ span: 'auto', offset: 2 }}  >Easy to understand?</Col>
+                                                                                                        {/* <Row xs={2} sm={2} md={2} lg={2} xl={2}> */}
+
+                                                                                                        <Col className="rating colbuttonpadding" xs='auto' >
+                                                                                                            <img className="likes" src={like} alt="" />
+
+                                                                                                        </Col>
+                                                                                                        <Col xs='auto' className="colbuttonpadding">
+                                                                                                            <span>25</span>
+
+                                                                                                        </Col>
+
+                                                                                                        <Col xs='auto' className="colbuttonpadding">
+                                                                                                            <img className="dislikes" src={dislike} alt="" />
+                                                                                                        </Col>
+                                                                                                        <Col xs='auto' className="colbuttonpadding">
+                                                                                                            <span>7</span>
+
+                                                                                                        </Col>
+                                                                                                        {/* </Row> */}
+                                                                                                        <Col className='copyButtonCol colbuttonpadding' xs='auto' >
 
                                                                                                             <Button id={idx} className="copyButton" style={styles.copyButton} onClick={() => { navigator.clipboard.writeText(link_it.link) }}>
                                                                                                                 {/* <Link> */}
@@ -347,12 +368,32 @@ const NewSubskill = (props) => {
                                                                     {topic.resources.map((link_it, idx3) => {
                                                                         return (
                                                                             <div className="resourceLink">
-                                                                                <Col style={{ maxWidth: '90%', overflow: 'hidden' }} xs={10} sm={11} md={11} lg={11} xl={11}>
+                                                                                <Col style={{ maxWidth: '70rem', overflow: 'hidden', textoverflow: "ellipsis" }} xs={6} sm={6} md={6} lg={6} xl={6}>
                                                                                     <span  ><Link to={{ pathname: `${link_it.link}` }} target="_blank" rel="noopener noreferrer">
                                                                                         {link_it.link}
                                                                                     </Link></span>
                                                                                 </Col>
-                                                                                <Col className='copyButtonCol' xs={2} sm={1} md={1} lg={1} xl={1}>
+                                                                                <Col className="understand colbuttonpadding" xs={{ span: 'auto', offset: 2 }}  >Easy to understand?</Col>
+                                                                                {/* <Row xs={2} sm={2} md={2} lg={2} xl={2}> */}
+
+                                                                                <Col className="rating colbuttonpadding" xs='auto' >
+                                                                                    <img className="likes" src={like} alt="" />
+
+                                                                                </Col>
+                                                                                <Col xs='auto' className="colbuttonpadding">
+                                                                                    <span>25</span>
+
+                                                                                </Col>
+
+                                                                                <Col xs='auto' className="colbuttonpadding">
+                                                                                    <img className="dislikes" src={dislike} alt="" />
+                                                                                </Col>
+                                                                                <Col xs='auto' className="colbuttonpadding">
+                                                                                    <span>7</span>
+
+                                                                                </Col>
+                                                                                {/* </Row> */}
+                                                                                <Col className='copyButtonCol colbuttonpadding' xs='auto' >
 
                                                                                     <Button id={idx} className="copyButton" style={styles.copyButton} onClick={() => { navigator.clipboard.writeText(link_it.link) }}>
                                                                                         {/* <Link> */}

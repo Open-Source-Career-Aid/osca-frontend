@@ -65,6 +65,13 @@
   display: flex;
   align-items: center;
   padding-left: 1rem;
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+}
+
+.resourceLink::-webkit-scrollbar {
+  display: none;
 }
 
 .resourceLink :hover {
@@ -83,4 +90,36 @@
   align-items: center;
   background-color: white;
   /* border: 1px solid black; */
+}
+
+.resourceLink > .understand {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+
+.rating {
+  margin-left: 6px;
+}
+
+.rating > span {
+  margin: 0 6px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  align-items: center;
+
+  color: #000000;
+}
+
+.colbuttonpadding {
+  padding: 0 0.2rem;
 }
