@@ -9,6 +9,9 @@ import { Loader } from '../Loader/Loader';
 import { Button, Collapse } from 'react-bootstrap';
 import './newSubskill.css';
 
+import like from "../../Images/thumbs_up.png"
+import dislike from "../../Images/thumbs_down.png"
+
 function generateRandomColor() {
     // var randomColor = '#'+Math.floor(Math.random()*10777215).toString(16);
     // return randomColor;
@@ -314,13 +317,14 @@ const NewSubskill = (props) => {
                                                                                             {subTopic.resources.map((link_it, idx4) => {
                                                                                                 return (
                                                                                                     <div className="resourceLink">
-                                                                                                        <Col style={{ maxWidth: '90%', overflow: 'hidden' }} xs={10} sm={11} md={11} lg={11} xl={11}>
+                                                                                                        <Col style={{ maxWidth: '70%', overflow: 'hidden', textoverflow: "ellipsis" }} xs={10} sm={11} md={11} lg={11} xl={11}>
                                                                                                             <span  >
                                                                                                                 <Link to={{ pathname: `${link_it.link}` }} target="_blank" rel="noopener noreferrer">
                                                                                                                     {link_it.link}
                                                                                                                 </Link>
                                                                                                             </span>
                                                                                                         </Col>
+                                                                                                        <p>Easy to understand?</p>
                                                                                                         <Col className='copyButtonCol' xs={2} sm={1} md={1} lg={1} xl={1}>
 
                                                                                                             <Button id={idx} className="copyButton" style={styles.copyButton} onClick={() => { navigator.clipboard.writeText(link_it.link) }}>
@@ -347,12 +351,19 @@ const NewSubskill = (props) => {
                                                                     {topic.resources.map((link_it, idx3) => {
                                                                         return (
                                                                             <div className="resourceLink">
-                                                                                <Col style={{ maxWidth: '90%', overflow: 'hidden' }} xs={10} sm={11} md={11} lg={11} xl={11}>
+                                                                                <Col style={{ maxWidth: '70rem', overflow: 'hidden', textoverflow: "ellipsis" }} xs={8} sm={8} md={8} lg={8} xl={8}>
                                                                                     <span  ><Link to={{ pathname: `${link_it.link}` }} target="_blank" rel="noopener noreferrer">
                                                                                         {link_it.link}
                                                                                     </Link></span>
                                                                                 </Col>
-                                                                                <Col className='copyButtonCol' xs={2} sm={1} md={1} lg={1} xl={1}>
+                                                                                <Col className="understand" xs={2} sm={2} md={2} lg={2} xl={2}>Easy to understand?</Col>
+                                                                                <Col className="rating" xs={1.5} sm={1.5} md={1.5} lg={1.5} xl={1.5}>
+                                                                                    <img className="likes" src={like} alt="" />
+                                                                                    <span>25</span>
+                                                                                    <img className="dislikes" src={dislike} alt="" />
+                                                                                    <span>7</span>
+                                                                                </Col>
+                                                                                <Col className='copyButtonCol' xs={0.5} sm={0.5} md={0.5} lg={0.5} xl={0.5}>
 
                                                                                     <Button id={idx} className="copyButton" style={styles.copyButton} onClick={() => { navigator.clipboard.writeText(link_it.link) }}>
                                                                                         {/* <Link> */}
