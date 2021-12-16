@@ -33,7 +33,7 @@ const Home = () => {
               xl={6}
             >
               <p>
-                A platform of resources; created and organised by skilled
+                A platform of resources created and organised by skilled
                 individuals of planet Earth.
               </p>
             </Col>
