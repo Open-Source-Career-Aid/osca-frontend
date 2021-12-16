@@ -66,6 +66,7 @@ const Home = () => {
                 </Link>
               </Row>
               <Row style={{ paddingTop: "10%" }}>
+              <Link to="/track-your-progress">
                 <Button
                   style={styles.button2}
                   type="submit"
@@ -76,6 +77,7 @@ const Home = () => {
                 >
                   Track Your Progress
                 </Button>
+                </Link>
               </Row>
             </Col>
           </Row>
