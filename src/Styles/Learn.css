@@ -1,3 +1,11 @@
+.siderow {
+  z-index: 20;
+  position: absolute;
+  left:85%;
+  top:50%;
+  color: #586060;
+  font-weight: 600;
+}
 .learn-txt {
   font-family: Poppins;
   font-style: normal;

@@ -57,6 +57,15 @@ const LearnSkill = () => {
   ) : (
     <>
       <Container className="SpacingTop">
+        <div className="siderow">
+        <p>
+            <a href="https://forms.gle/QQc18eT3VCWb1iGh8">Contribute a Roadmap</a>
+        </p>
+        <p>
+          <a href="https://forms.gle/Sp3fnDYbbPCxpyrUA">Request a Roadmap</a>
+        </p> 
+
+        </div>
         <SearchBar handleSearch={handleSearch} />
 
         {/*<MyMobile>
