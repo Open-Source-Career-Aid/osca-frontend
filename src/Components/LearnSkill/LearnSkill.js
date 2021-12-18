@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import "../../Styles/Learn.css";
 import MyMobile from "../../MyHelperCompnents/MyMobile";
-import MyDesktop from "../../MyHelperCompnents/MyDesktop";
+//import MyDesktop from "../../MyHelperCompnents/MyDesktop";
 import SearchBar from "../SearchBar/SearchBar";
 import { useState } from "react";
 import { useLoading } from "../../hooks/useLoading"
@@ -110,12 +110,12 @@ const LearnSkill = () => {
                       </div>
                       <div className="track">Track Your progress</div>
                     </div>
-                    <div className="cardBody">
+                    {/*<div className="cardBody">
                       This contains a detailed guide to how to be a full stack web
                       developer in most efficient way. It includes all the required
                       resources and a work plan which is easy to follow.
                       isjdfiasdjfisjfJI jiasdf Ij ijdfi ajfl. kjsadifj Great!
-                    </div>
+                        </div>*/}
                     <div className="cardFooter">
                       Tags:
                       {skill.tags.map((data, index) => {
@@ -158,12 +158,12 @@ const LearnSkill = () => {
                       </div>
                         <div className="track">Track Your progress</div>*/}
                     </div>
-                    <div className="cardBody">
+                    {/*<div className="cardBody">
                       This contains a detailed guide to how to be a full stack web
                       developer in most efficient way. It includes all the required
                       resources and a work plan which is easy to follow.
                       isjdfiasdjfisjfJI jiasdf Ij ijdfi ajfl. kjsadifj Great!
-                    </div>
+                      </div>*/}
                     <div className="cardFooter">
                       Tags:
                       {skill.tags.map((data, index) => {
