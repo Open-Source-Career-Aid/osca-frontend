@@ -1,11 +1,33 @@
 .siderow {
   z-index: 20;
   position: absolute;
-  left:85%;
-  top:50%;
-  color: #586060;
-  font-weight: 600;
+  left: 85%;
+  top: 13%;
 }
+
+.siderow > p > a {
+  color: #586060;
+  font-weight: 550;
+}
+
+.siderow>p{
+  text-align: center;
+}
+
+.siderow > p:nth-last-child(1) > a {
+  color: #8750a9;
+}
+
+.container {
+  padding: 90px 4% 20px 4%;
+}
+
+@media screen and (max-width: 768px) {
+  .siderow {
+    display: none;
+  }
+}
+
 .learn-txt {
   font-family: Poppins;
   font-style: normal;
@@ -328,7 +350,7 @@ h1 > span {
   font-family: Poppins;
   font-style: normal;
   font-weight: 500;
-  font-size: .7rem !important;
+  font-size: 0.7rem !important;
   line-height: 1.5rem;
   display: flex;
   border-radius: 9px;

@@ -332,7 +332,7 @@ const NewSubskill = (props) => {
                                                                                                             
                                                                                                         </Col>
                                                                                                         <Col xs='auto' className="colbuttonpadding">
-                                                                                                            <span>25</span>
+                                                                                                            <span>0</span>
 
                                                                                                         </Col>
 
@@ -340,7 +340,7 @@ const NewSubskill = (props) => {
                                                                                                         <img className="dislikes" src={dislike} alt="" />
                                                                                                         </Col>
                                                                                                         <Col xs='auto' className="colbuttonpadding">
-                                                                                                        <span>7</span>
+                                                                                                        <span>0</span>
                                                                                                         
                                                                                                         </Col>
                                                                                                         <Col className='copyButtonCol' xs={2} sm={1} md={1} lg={1} xl={1}>
@@ -382,7 +382,7 @@ const NewSubskill = (props) => {
                                                                                     
                                                                                 </Col>
                                                                                 <Col xs='auto' className="colbuttonpadding">
-                                                                                    <span>25</span>
+                                                                                    <span>0</span>
 
                                                                                 </Col>
 
@@ -390,7 +390,7 @@ const NewSubskill = (props) => {
                                                                                 <img className="dislikes" src={dislike} alt="" />
                                                                                 </Col>
                                                                                 <Col xs='auto' className="colbuttonpadding">
-                                                                                <span>7</span>
+                                                                                <span>0</span>
                                                                                 
                                                                                 </Col>
                                                                                 {/* </Row> */}
