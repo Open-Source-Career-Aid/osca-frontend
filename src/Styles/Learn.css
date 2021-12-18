@@ -1,9 +1,8 @@
 .siderow {
   z-index: 20;
   position: absolute;
-  left: 25%;
+  left: 85%;
   top: 13%;
-  display: flex;
 }
 
 .siderow > p > a {
@@ -11,16 +10,19 @@
   font-weight: 550;
 }
 
+.siderow>p{
+  text-align: center;
+}
+
 .siderow > p:nth-last-child(1) > a {
   color: #8750a9;
-  padding-left: 20px;
 }
 
 .container {
   padding: 90px 4% 20px 4%;
 }
 
-@media screen and (max-width: 993px) {
+@media screen and (max-width: 768px) {
   .siderow {
     display: none;
   }
