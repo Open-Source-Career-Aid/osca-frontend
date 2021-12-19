@@ -11,6 +11,13 @@
   padding-bottom: 0%;
 }
 
+.content__link {
+  max-width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 24px;
+}
+
 .levelName {
   font-family: Poppins;
   font-style: normal;
@@ -66,8 +73,8 @@
   align-items: center;
   padding-left: 1rem;
   overflow-x: scroll;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none; 
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
 }
 
 .resourceLink::-webkit-scrollbar {
@@ -121,5 +128,5 @@
 }
 
 .colbuttonpadding {
-  padding: 0 .2rem;
+  padding: 0 0.2rem;
 }

@@ -264,7 +264,7 @@ const NewSubskill = (props) => {
 								return (
 									<div className="try">
 										{/*<div className="progCircle"></div>*/}
-										<Row style={styles.fullWidth} className='align-items-center level'  >
+										<Row style={styles.fullWidth} className='align-items-center level' onClick={() => handleChange(idx)} >
 											<Col xs={11} sm={11} md={11} lg={11} xl={11} >
 
 												<span className="levelName" >{level.levelName}</span>
@@ -290,7 +290,7 @@ const NewSubskill = (props) => {
 															{topic.subtopics.length >= 1 ?
 																<div className="subtopicsDropdown">
 																	{/*<div className="progCircle"></div>*/}
-																	<Row style={styles.fullWidth} className='align-items-center subtopic'  >
+																	<Row style={styles.fullWidth} className='align-items-center subtopic' onClick={() => handleChangeNest(idx, idx2)} >
 																		<Col xs={11} sm={11} md={11} lg={11} xl={11} >
 
 																			<span className="levelName" >{topic.topicName}</span>
@@ -302,7 +302,7 @@ const NewSubskill = (props) => {
 																				onClick={() => handleChangeNest(idx, idx2)}
 																				aria-controls="example-collapse-text"
 																				aria-expanded={open}>
-																				<img style={open[10000 * idx + idx2] ? styles.dropButton : styles.leftbutton} src={src[10000 * idx + idx2]} alt="" />
+																				<BiChevronDown style={open[10000 * idx + idx2] ? styles.dropButton : styles.leftbutton} src={src[10000 * idx + idx2]} alt="" />
 																			</Button>
 																		</Col>
 																	</Row>
@@ -317,8 +317,8 @@ const NewSubskill = (props) => {
 																							{subTopic.resources.map((link_it, idx4) => {
 																								return (
 																									<div className="resourceLink">
-																										<Col style={{ maxWidth: '70%', overflow: 'hidden', textoverflow: "ellipsis" }} xs={6}>
-																											<span  >
+																										<Col className='content__link' xs={6}>
+																											<span >
 																												<Link to={{ pathname: `${link_it.link}` }} target="_blank" rel="noopener noreferrer">
 																													{link_it.link}
 																												</Link>
@@ -369,7 +369,7 @@ const NewSubskill = (props) => {
 																	{topic.resources.map((link_it, idx3) => {
 																		return (
 																			<div className="resourceLink">
-																				<Col style={{ maxWidth: '70rem', overflow: 'hidden', textoverflow: "ellipsis" }} xs={6} sm={6} md={6} lg={6} xl={6}>
+																				<Col className='content__link' xs={6}>
 																					<span  ><Link to={{ pathname: `${link_it.link}` }} target="_blank" rel="noopener noreferrer">
 																						{link_it.link}
 																					</Link></span>

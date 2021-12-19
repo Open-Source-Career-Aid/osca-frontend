@@ -141,7 +141,7 @@
 .line > a > span {
   color: white;
   font-size: 25px;
-  margin-left: 5px;
+  margin-left: -3px;
 }
 .header-text > span {
   color: white;
