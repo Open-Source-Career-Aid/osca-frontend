@@ -9,6 +9,7 @@
   border-radius: 0.3rem;
   padding-top: 0%;
   padding-bottom: 0%;
+  cursor: pointer;
 }
 
 .content__link {
@@ -54,6 +55,7 @@
   background: #e8f7fc;
   border-radius: 9px;
   /* padding: 1rem 1rem; */
+  cursor: pointer;
   background: #e8f7fc;
 }
 
