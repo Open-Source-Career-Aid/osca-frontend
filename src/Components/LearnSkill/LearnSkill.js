@@ -30,6 +30,7 @@ const LearnSkill = () => {
         //   return a.skill - b.skill;
         // });
         set.sort((a, b) => (a.skill === "SuperSkill" ? -1 : 1));
+        set.reverse();
         setSkills(set);
       })
       .catch((err) => {

@@ -136,7 +136,7 @@
 .oscalogo {
   width: 75px;
   height: 39.68px;
-  transform: rotate(180deg);
+  transform: rotate(180deg) scale(0.75);
 }
 .line > a > span {
   color: white;

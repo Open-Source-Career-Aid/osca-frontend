@@ -3,6 +3,9 @@
   position: absolute;
   left: 82%;
   top: 13%;
+color: #8AD4FF;
+
+
 }
 
 .siderow > p > a {
@@ -20,7 +23,10 @@
 
 @media screen and (max-width: 768px) {
   .siderow {
-    display: none;
+    left: 0%;
+  top: 0%;
+  position: relative;
+    
   }
 }
 
