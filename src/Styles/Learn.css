@@ -3,9 +3,7 @@
   position: absolute;
   left: 82%;
   top: 13%;
-color: #8AD4FF;
-
-
+  color: #8ad4ff;
 }
 
 .siderow > p > a {
@@ -13,7 +11,7 @@ color: #8AD4FF;
   font-weight: 550;
 }
 
-.siderow>p{
+.siderow > p {
   text-align: center;
 }
 
@@ -24,9 +22,8 @@ color: #8AD4FF;
 @media screen and (max-width: 768px) {
   .siderow {
     left: 0%;
-  top: 0%;
-  position: relative;
-    
+    top: 0%;
+    position: relative;
   }
 }
 

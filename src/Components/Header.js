@@ -90,11 +90,11 @@ const Header = (props) => {
                             </div>
                         </div>
                         <div className="col-1"></div>
-                        <div className="col-1 header-text">
+                        <div className="col-4 header-text">
                             <Link to="/">
                                 <img className="oscalogo" src={logo} alt="" />
+                                <span>OSCA</span>
                             </Link>
-                            <span>OSCA</span>
                         </div>
                     </div>
                     {

@@ -143,7 +143,7 @@
   font-size: 25px;
   margin-left: -3px;
 }
-.header-text > span {
+.header-text > a > span {
   color: white;
   font-size: 25px;
   margin-left: 5px;
@@ -170,6 +170,12 @@
 }
 
 .line > a {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-text > a {
   width: 100%;
   display: flex;
   justify-content: center;

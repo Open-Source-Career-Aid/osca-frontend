@@ -273,7 +273,7 @@ const NewSubskill = (props) => {
 												<Button
 													style={styles.btn}
 
-													onClick={() => handleChange(idx)}
+													//onClick={() => handleChange(idx)}
 													aria-controls="example-collapse-text"
 													aria-expanded={open}>
 													<BiChevronDown style={open[idx] ? styles.dropButton : styles.leftbutton} alt="" />
@@ -299,7 +299,7 @@ const NewSubskill = (props) => {
 																			<Button
 																				style={styles.btn}
 
-																				onClick={() => handleChangeNest(idx, idx2)}
+																				//onClick={() => handleChangeNest(idx, idx2)}
 																				aria-controls="example-collapse-text"
 																				aria-expanded={open}>
 																				<BiChevronDown style={open[10000 * idx + idx2] ? styles.dropButton : styles.leftbutton} src={src[10000 * idx + idx2]} alt="" />

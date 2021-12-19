@@ -33,7 +33,7 @@ h4 {
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
-  font-size: 48px;
+  font-size: 35px;
   line-height: 72px;
   display: flex;
   align-items: center;
@@ -96,6 +96,14 @@ h4 {
 @media screen and (max-width: 650px) {
   .track__body {
     height: 82vh;
+  }
+
+  h4 {
+    font-size: 30px;
+  }
+
+  .track__body {
+    padding-top: 3rem;
   }
 }
 

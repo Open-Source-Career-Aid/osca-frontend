@@ -3,7 +3,7 @@
     width: 18rem !important;
     margin-top: 0 !important;
   }
-  .what__we__do > .container > hr {
+  .what__we__do > .containers > hr {
     left: -8rem !important;
   }
   .what__we__do {
@@ -12,6 +12,12 @@
   .we__do {
     max-width: 18rem !important;
   }
+}
+
+.containers {
+  padding: 5% 4% 0% 4%;
+  margin-bottom: 0%;
+  margin-top: 0%;
 }
 
 @media screen and (max-width: 650px) {
@@ -24,15 +30,15 @@
   .image > img {
     display: none !important;
   }
-  .what__we__do > .container {
+  .what__we__do > .containers {
     display: flex;
     flex-direction: column;
   }
-  .what__we__do > .container > hr {
+  .what__we__do > .containers > hr {
     display: none;
   }
 
-  .what__we__do > .container > .contact__form {
+  .what__we__do > .containers > .contact__form {
     margin-top: 4rem;
     margin-left: 0;
   }
@@ -63,11 +69,11 @@
   width: 30.438rem;
 }
 
-.upper__part > .container {
+.upper__part > .containers {
   display: flex;
   justify-content: center;
 }
-.what__we__do > .container {
+.what__we__do > .containers {
   display: flex;
   justify-content: center;
 }
@@ -118,6 +124,7 @@
   width: 100vw;
   min-height: 34.48rem;
   margin-top: -2.5rem;
+  margin-bottom: 3rem;
 }
 
 .we__do {
@@ -146,7 +153,7 @@
   color: #666666;
 }
 
-.what__we__do > .container > hr {
+.what__we__do > .containers > hr {
   position: relative;
   top: 11.5rem;
   transform: rotate(90deg);
@@ -160,7 +167,7 @@
   width: 25rem;
 }
 
-.team > .container > h1 {
+.team > .containers > h1 {
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
@@ -171,12 +178,12 @@
   justify-content: center;
 }
 
-.team > .container {
+.team > .containers {
   display: flex;
   flex-direction: column;
 }
 
-.team > .container > .cards {
+.team > .containers > .cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
